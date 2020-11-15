@@ -42,7 +42,6 @@
                 android:shadowDy="1.3"
                 android:shadowRadius="1.6"
                 android:text="@string/acao"
-                android:textColor="@color/white"
                 android:textSize="23sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

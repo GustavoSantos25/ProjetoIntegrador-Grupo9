@@ -50,7 +50,6 @@
             android:layout_marginTop="12dp"
             android:fontFamily="@font/roboto_regular"
             android:text="@string/john_doe"
-            android:textColor="@color/white"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -64,7 +63,6 @@
             android:fontFamily="@font/roboto_regular"
             android:text="@string/lorem_perfil"
             android:textAlignment="center"
-            android:textColor="@color/white"
             android:textSize="18sp"
             app:layout_constraintTop_toBottomOf="@+id/tvNomePerfil"
             tools:layout_editor_absoluteX="30dp" />
@@ -130,7 +128,6 @@
                     android:layout_gravity="center"
                     android:fontFamily="@font/roboto_regular"
                     android:text="@string/_589"
-                    android:textColor="@color/white"
                     android:textSize="21sp"
                     android:textStyle="bold" />
 
@@ -159,7 +156,6 @@
                     android:layout_gravity="center"
                     android:fontFamily="@font/roboto_regular"
                     android:text="@string/_1"
-                    android:textColor="@color/white"
                     android:textSize="21sp"
                     android:textStyle="bold" />
 
@@ -187,7 +183,6 @@
                     android:layout_gravity="center"
                     android:fontFamily="@font/roboto_regular"
                     android:text="@string/_201"
-                    android:textColor="@color/white"
                     android:textSize="21sp"
                     android:textStyle="bold" />
 
