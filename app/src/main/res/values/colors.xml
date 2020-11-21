@@ -6,11 +6,10 @@
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
-    <color name="blackFundo">#99000000</color>
+    <color name="blackFundo">#EE000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="whiteTransparente">#DDFFFFFF</color>
     <color name="darkGreyBackground">#302d2d</color>
     <color name="grey">#d3d6de</color>
-    <color name="greyTrasparente">#99d3d6de</color>
-    <color name="yellow">#BFAC04</color>
+    <color name="yellow">#fbff00</color>
+    <color name="fundoPerguntaRedondo">#121111</color>
 </resources>
