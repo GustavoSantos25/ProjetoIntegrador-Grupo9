@@ -15,26 +15,16 @@
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="match_parent"
-            android:layout_height="230dp"
+            android:layout_height="180dp"
             android:scaleType="fitXY"
             android:src="@drawable/placeholder_profile_cover"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageButton
-            android:id="@+id/ibFotoCapa"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="188dp"
-            android:layout_marginEnd="4dp"
-            android:background="@drawable/ic_outline_camera_alt_24"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/civAvatar"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_marginTop="168dp"
+            android:layout_marginTop="108dp"
             android:src="@drawable/ic_undraw_male_avatar_323b"
             app:civ_border_color="@color/white"
             app:civ_border_width="3dp"

@@ -11,4 +11,5 @@
     <color name="darkGreyBackground">#302d2d</color>
     <color name="grey">#d3d6de</color>
     <color name="yellow">#fbff00</color>
+    <color name="fundoPerguntaRedondo">#121111</color>
 </resources>

@@ -115,4 +115,17 @@
     <string name="instagram">Instagram</string>
     <string name="google">Google</string>
     <string name="sons">Sons</string>
+    <string name="placeholder_pergunta">Qual o codinome de Beatrix Kiddo, em Kill Bill?</string>
+    <string name="placeholder_tempo">00:30</string>
+    <string name="placeholder_perguntas_feitas">2/10</string>
+    <string name="editar">Editar</string>
+    <string name="snake_charmer">Snake Charmer</string>
+    <string name="cottonmouth">Cottonmouth</string>
+    <string name="black_mamba">Black Mamba</string>
+    <string name="placeholder_acerto">1<br />Acerto</string>
+    <string name="_007">007</string>
+    <string name="respostas_corretas">Respostas corretas</string>
+    <string name="_8_10">8/10</string>
+    <string name="compartilhar">Compartilhar</string>
+    <string name="tela_inicial">Tela Inicial</string>
 </resources>
