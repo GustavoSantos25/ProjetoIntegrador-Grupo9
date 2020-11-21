@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:backgroundTint="@color/darkGreyBackgroundRanking"
+    app:cardCornerRadius="20dp"
+    android:layout_margin="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="330dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/civAvatarRanking"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:src="@drawable/ic_undraw_male_avatar_323b"
+                app:civ_border_color="@color/white"
+                app:civ_border_width="3dp"
+                android:layout_margin="3dp"/>
+
+            <TextView
+                android:id="@+id/tvNomeRanking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jogador 1"
+                android:fontFamily="@font/roboto_regular"
+                android:textColor="@color/yellow"
+                android:textSize="40dp"
+                android:layout_margin="10dp"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/darkGreyBackground">
+
+            <TextView
+                android:id="@+id/tvAcertosRanking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1 ACERTO"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+</androidx.cardview.widget.CardView>

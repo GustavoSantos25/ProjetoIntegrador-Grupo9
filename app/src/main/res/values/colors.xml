@@ -9,6 +9,7 @@
     <color name="blackFundo">#EE000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="darkGreyBackground">#302d2d</color>
+    <color name="darkGreyBackgroundRanking">#DD302d2d</color>
     <color name="grey">#d3d6de</color>
     <color name="yellow">#fbff00</color>
     <color name="fundoPerguntaRedondo">#121111</color>
