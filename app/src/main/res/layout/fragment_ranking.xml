@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RankingFragment"
+    android:background="@color/darkGreyBackground">
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/vpRanking"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:foregroundGravity="center"
+        android:overScrollMode="never">
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tl_ranking"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/fundo_amarelo_gradiente"/>
+
+    </androidx.viewpager.widget.ViewPager>
+
+
+
+</FrameLayout>

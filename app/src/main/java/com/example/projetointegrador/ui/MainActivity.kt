@@ -1,7 +1,8 @@
-package com.example.projetointegrador
+package com.example.projetointegrador.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.projetointegrador.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
