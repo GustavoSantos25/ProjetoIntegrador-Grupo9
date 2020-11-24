@@ -1,0 +1,2 @@
+com/example/projetointegrador/BuildConfig.java
+ com.example.projetointegrador.BuildConfig
