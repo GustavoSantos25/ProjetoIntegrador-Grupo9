@@ -9,9 +9,7 @@
         android:id="@+id/homeFragment"
         android:name="com.example.projetointegrador.ui.HomeFragment"
         android:label="HomeFragment" >
-        <action
-            android:id="@+id/action_homeFragment_to_rankingFragment"
-            app:destination="@id/rankingFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/rankingFragment"
@@ -27,7 +25,19 @@
         android:label="fragment_home_v_p"
         tools:layout="@layout/fragment_home_v_p" >
         <action
-            android:id="@+id/action_homeVPFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            android:id="@+id/action_homeVPFragment_to_rankingFragment"
+            app:destination="@id/rankingFragment" />
+        <action
+            android:id="@+id/action_homeVPFragment_to_sinopseFragment"
+            app:destination="@id/sinopseFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sinopseFragment"
+        android:name="com.example.projetointegrador.ui.SinopseFragment"
+        android:label="fragment_sinopse"
+        tools:layout="@layout/fragment_sinopse" >
+        <action
+            android:id="@+id/action_sinopseFragment_to_homeVPFragment"
+            app:destination="@id/homeVPFragment" />
     </fragment>
 </navigation>

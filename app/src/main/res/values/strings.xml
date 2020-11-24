@@ -128,5 +128,16 @@
     <string name="respostas_corretas">Respostas corretas</string>
     <string name="_8_10">8/10</string>
     <string name="compartilhar">Compartilhar</string>
+    <string name="nome_filmeKB">Kill Bill: Volume 1(2003)</string>
+    <string name="data_lançamentoKB">Lançamento: 23/04/2004(BR)</string>
+    <string name="generos_KB">Ação, Crime</string>
+    <string name="duracao_KB">Duração: 1h42m</string>
+    <string name="diretos_KB">Diretor: Quentin Tarantino</string>
+    <string name="avaliacao_KB">80%</string>
+    <string name="avaliacaoDosUsuarios">Avaliação dos usuários</string>
     <string name="tela_inicial">Tela Inicial</string>
+    <string name="sinopse_killBill">A ex-assassina conhecida apenas como "A Noiva" acorda de um coma de quatro anos decidida a se vingar de Bill, seu ex-amante e chefe, que tentou matá-la no dia do casamento.
+        Ela está motivada a acertar as contas com cada uma das pessoas envolvidas com a perda da filha, da festa de casamento e dos quatro anos da sua vida.
+        Na jornada, "A Noiva" é submetida a dores físicas agoniantes ao enfrentar a inescrupulosa gangue de Bill, o Esquadrão Assassino de Víboras Mortais.</string>
+
 </resources>

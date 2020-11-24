@@ -36,6 +36,7 @@ class HomeVPFragment : Fragment() {
         view.tlHome.getTabAt(1)!!.setIcon(R.drawable.ic_play_home)
         view.tlHome.getTabAt(2)!!.setIcon(R.drawable.ic_config)
         view.tlHome.setTabIconTintResource(R.color.black)
+        view.vpHome.currentItem = 1
         return view
     }
 
