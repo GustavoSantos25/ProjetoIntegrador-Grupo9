@@ -1,6 +1,7 @@
 <resources>
     <string name="proj_name">Projeto Integrador</string>
     <string name="app_name">Cinéfilos</string>
+    <string name="RANKING">RANKING</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
 
