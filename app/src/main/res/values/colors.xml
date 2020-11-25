@@ -13,4 +13,5 @@
     <color name="grey">#d3d6de</color>
     <color name="yellow">#fbff00</color>
     <color name="fundoPerguntaRedondo">#121111</color>
+    <color name="transparent">#00000000</color>
 </resources>

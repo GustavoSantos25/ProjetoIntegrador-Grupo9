@@ -1,6 +1,7 @@
 <resources>
     <string name="proj_name">Projeto Integrador</string>
     <string name="app_name">Cinéfilos</string>
+    <string name="resumoApp">Cinéfilos é um aplicativo onde fãs da sétima arte podem testar conhecimentos sobre seus filmes e séries favoritas.</string>
     <string name="RANKING">RANKING</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
@@ -123,7 +124,7 @@
     <string name="snake_charmer">Snake Charmer</string>
     <string name="cottonmouth">Cottonmouth</string>
     <string name="black_mamba">Black Mamba</string>
-    <string name="placeholder_acerto">1<br />Acerto</string>
+    <string name="placeholder_acerto">1\nAcerto</string>
     <string name="_007">007</string>
     <string name="respostas_corretas">Respostas corretas</string>
     <string name="_8_10">8/10</string>
@@ -143,9 +144,27 @@
         A pontuação final do jogador será a quantidade de perguntas respondidas corretamente.</string>
     <string name="explicacao_modo2">Este modo consiste em responder o máximo de perguntas possíveis, num intervalo de tempo de 2 minutos.
         A pontuação final do jogador será a quantidade de perguntas respondidas corretamente.</string>
-
+    <string name="label_mod1">Responda as perguntas\nATÉ VOCÊ ERRAR!</string>
+    <string name="label_mod2">Responda corretamente o máximo de perguntas possíveis,\nNUM TEMPO LIMITADO!</string>
     <string name="sinopse_killBill">A ex-assassina conhecida apenas como "A Noiva" acorda de um coma de quatro anos decidida a se vingar de Bill, seu ex-amante e chefe, que tentou matá-la no dia do casamento.
         Ela está motivada a acertar as contas com cada uma das pessoas envolvidas com a perda da filha, da festa de casamento e dos quatro anos da sua vida.
         Na jornada, "A Noiva" é submetida a dores físicas agoniantes ao enfrentar a inescrupulosa gangue de Bill, o Esquadrão Assassino de Víboras Mortais.</string>
+    <string name="sinopse">Sinopse</string>
+    <string name="diretor_quentin_tarantino">Diretor: Quentin Tarantino</string>
+    <string name="kill_bill_volume_1_2003">Kill Bill: Volume 1 (2003)</string>
+    <string name="sugest_o_do_dia">Sugestão do dia:</string>
+    <string name="jogar">Jogar</string>
+    <string name="generos_favoritos">Gêneros favoritos</string>
+    <string name="editar_bio">Editar bio</string>
+    <string name="salvar">Salvar</string>
+    <string name="anima_o">Animação</string>
+    <string name="aventura">Aventura</string>
+    <string name="comedia">Comédia</string>
+    <string name="crime">Crime</string>
+    <string name="drama">Drama</string>
+    <string name="fantasia">Fantasia</string>
+    <string name="sci_fi">Sci-Fi</string>
+    <string name="terror">Terror</string>
+    <string name="jogador">Jogador</string>
 
 </resources>

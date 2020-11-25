@@ -8,13 +8,13 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.projetointegrador.ui.HomeFragment"
-        android:label="HomeFragment" >
+        android:label="HomeFragment">
 
     </fragment>
     <fragment
         android:id="@+id/rankingFragment"
         android:name="com.example.projetointegrador.ui.RankingFragment"
-        android:label="RankingFragment" >
+        android:label="RankingFragment">
         <action
             android:id="@+id/action_rankingFragment_to_homeVPFragment"
             app:destination="@id/homeVPFragment" />
@@ -23,21 +23,80 @@
         android:id="@+id/homeVPFragment"
         android:name="com.example.projetointegrador.ui.HomeVPFragment"
         android:label="fragment_home_v_p"
-        tools:layout="@layout/fragment_home_v_p" >
+        tools:layout="@layout/fragment_home_v_p">
         <action
             android:id="@+id/action_homeVPFragment_to_rankingFragment"
             app:destination="@id/rankingFragment" />
         <action
             android:id="@+id/action_homeVPFragment_to_sinopseFragment"
             app:destination="@id/sinopseFragment" />
+        <action
+            android:id="@+id/action_homeVPFragment_to_perguntaFragment"
+            app:destination="@id/perguntaFragment" />
+        <action
+            android:id="@+id/action_homeVPFragment_to_ajudaFragment"
+            app:destination="@id/ajudaFragment" />
+        <action
+            android:id="@+id/action_homeVPFragment_to_modosFragment"
+            app:destination="@id/modosFragment" />
     </fragment>
     <fragment
         android:id="@+id/sinopseFragment"
         android:name="com.example.projetointegrador.ui.SinopseFragment"
         android:label="fragment_sinopse"
-        tools:layout="@layout/fragment_sinopse" >
+        tools:layout="@layout/fragment_sinopse">
         <action
             android:id="@+id/action_sinopseFragment_to_homeVPFragment"
             app:destination="@id/homeVPFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/perguntaFragment"
+        android:name="com.example.projetointegrador.ui.PerguntaFragment"
+        android:label="PerguntaFragment">
+        <action
+            android:id="@+id/action_perguntaFragment_to_resultadoFragment"
+            app:destination="@id/resultadoFragment" />
+        <action
+            android:id="@+id/action_perguntaFragment_to_resultadoNegativo"
+            app:destination="@id/resultadoNegativo" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultadoFragment"
+        android:name="com.example.projetointegrador.ui.ResultadoFragment"
+        android:label="ResultadoFragment">
+        <action
+            android:id="@+id/action_resultadoFragment_to_homeVPFragment"
+            app:destination="@id/homeVPFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultadoNegativo"
+        android:name="com.example.projetointegrador.ResultadoNegativoFragment"
+        android:label="fragment_resultado_negativo"
+        tools:layout="@layout/fragment_resultado_negativo">
+        <action
+            android:id="@+id/action_resultadoNegativo_to_homeVPFragment"
+            app:destination="@id/homeVPFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ajudaFragment"
+        android:name="com.example.projetointegrador.ui.AjudaFragment"
+        android:label="fragment_ajuda"
+        tools:layout="@layout/fragment_ajuda" >
+        <action
+            android:id="@+id/action_ajudaFragment_to_homeVPFragment"
+            app:destination="@id/homeVPFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/modosFragment"
+        android:name="com.example.projetointegrador.ui.ModosFragment"
+        android:label="fragment_modos"
+        tools:layout="@layout/fragment_modos" >
+        <action
+            android:id="@+id/action_modosFragment_to_perguntaFragment"
+            app:destination="@id/perguntaFragment" />
+        <action
+            android:id="@+id/action_modosFragment_to_homeVPFragment"
+            app:destination="@id/homeVPFragment" />
+    </fragment>
+
 </navigation>

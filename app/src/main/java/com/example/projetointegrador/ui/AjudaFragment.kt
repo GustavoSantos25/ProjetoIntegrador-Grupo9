@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.example.projetointegrador.R
 import kotlinx.android.synthetic.main.fragment_ajuda.view.*
 
@@ -25,6 +26,9 @@ class AjudaFragment : Fragment() {
         val view =  inflater!!.inflate(R.layout.fragment_ajuda, container, false)
         view.toolbarAjuda.title = "Ajuda"
         view.toolbarAjuda.setTitleTextColor(resources.getColor(R.color.black))
+        view.toolbarAjuda.setNavigationOnClickListener {
+            findNavController().navigate(R.id.action_ajudaFragment_to_homeVPFragment)
+        }
         return view
     }
 

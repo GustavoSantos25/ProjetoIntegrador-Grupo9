@@ -22,13 +22,17 @@ class SinopseFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view =  inflater!!.inflate(R.layout.fragment_sinopse, container, false)
+        val view =  inflater.inflate(R.layout.fragment_sinopse, container, false)
+
         view.toolbarSinopse.title = "Sugestão do dia"
         view.toolbarSinopse.setTitleTextColor(resources.getColor(R.color.black))
+        view.ivCapaSinopse.setImageResource(R.drawable.capa_killbill)
+
         view.toolbarSinopse.setNavigationOnClickListener {
             findNavController().navigate(R.id.action_sinopseFragment_to_homeVPFragment)
         }
-        view.ivCapaSinopse.setImageResource(R.drawable.capa_killbill)
+
+
         return view
     }
 

@@ -56,19 +56,19 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/civAvatar" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnEditar"
-            android:layout_width="80dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="12dp"
-            android:background="@drawable/botao_redondo_transparente"
-            android:fontFamily="@font/roboto_regular"
-            android:text="@string/editar"
-            android:textColor="@color/yellow"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/tvNomePerfil"
-            app:layout_constraintTop_toBottomOf="@+id/ibFotoCapa" />
+<!--        <androidx.appcompat.widget.AppCompatButton-->
+<!--            android:id="@+id/btnEditar"-->
+<!--            android:layout_width="80dp"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:layout_marginTop="12dp"-->
+<!--            android:background="@drawable/botao_redondo_transparente"-->
+<!--            android:fontFamily="@font/roboto_regular"-->
+<!--            android:text="@string/editar"-->
+<!--            android:textColor="@color/yellow"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="1.0"-->
+<!--            app:layout_constraintStart_toEndOf="@+id/tvNomePerfil"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/ibFotoCapa" />-->
 
         <TextView
             android:id="@+id/tvBio"
@@ -82,8 +82,6 @@
             android:textSize="18sp"
             app:layout_constraintTop_toBottomOf="@+id/tvNomePerfil"
             tools:layout_editor_absoluteX="30dp" />
-
-
 
         <GridLayout
             android:id="@+id/gridLayout"
@@ -183,7 +181,7 @@
         </GridLayout>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvGeneros"
+            android:id="@+id/rvGenerosPessoal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -193,8 +191,6 @@
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintTop_toBottomOf="@+id/gridLayout"
             tools:listitem="@layout/card_genero" />
-
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
