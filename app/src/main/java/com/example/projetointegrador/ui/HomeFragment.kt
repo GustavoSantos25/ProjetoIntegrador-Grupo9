@@ -22,9 +22,9 @@ class HomeFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
-        val view : View = inflater!!.inflate(R.layout.fragment_home, container, false)
+        val view : View = inflater.inflate(R.layout.fragment_home, container, false)
         view.btn_ranking.setOnClickListener {
             findNavController().navigate(R.id.action_homeVPFragment_to_rankingFragment)
         }
@@ -33,8 +33,11 @@ class HomeFragment : Fragment() {
             findNavController().navigate(R.id.action_homeVPFragment_to_sinopseFragment)
         }
         view.ivAppName.setImageResource(R.drawable.icon_cinefilos)
+
+        view.btnJogar.setOnClickListener {
+            findNavController().navigate(R.id.action_homeVPFragment_to_perguntaFragment)
+        }
+
         return view
     }
-
-
 }

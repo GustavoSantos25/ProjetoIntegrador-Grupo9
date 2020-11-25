@@ -24,8 +24,9 @@ class HomeVPFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view =  inflater!!.inflate(R.layout.fragment_home_v_p, container, false)
+        val view =  inflater.inflate(R.layout.fragment_home_v_p, container, false)
         val adapter = HomeFragmentsPagerAdapter(parentFragmentManager)
+
         adapter.addFragment(PerfilFragment(), "Perfil")
         adapter.addFragment(HomeFragment(), "Play")
         adapter.addFragment(ConfiguracoesFragment(), "Configurações")
@@ -37,6 +38,7 @@ class HomeVPFragment : Fragment() {
         view.tlHome.getTabAt(2)!!.setIcon(R.drawable.ic_config)
         view.tlHome.setTabIconTintResource(R.color.black)
         view.vpHome.currentItem = 1
+
         return view
     }
 
@@ -49,13 +51,11 @@ class HomeVPFragment : Fragment() {
 
         override fun getItem(position: Int): Fragment = listFrag[position]
 
-        override fun getPageTitle(position: Int): CharSequence?  = listTitles[position]
+        override fun getPageTitle(position: Int): CharSequence = listTitles[position]
 
         fun addFragment(frag : Fragment, title : String){
             listFrag.add(frag)
             listTitles.add(title)
         }
     }
-
-
 }

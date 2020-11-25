@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/darkGreyBackground"
-    tools:context="ui.PerfilFragment">
+    tools:context="ui.PerfilTerceiroFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -39,14 +39,14 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:fontFamily="@font/roboto_regular"
-            android:text="@string/john_doe"
+            android:text="@string/jogador"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/civAvatar" />
 
         <TextView
-            android:id="@+id/tvBio"
+            android:id="@+id/tvBioTerceiro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -62,16 +62,15 @@
             android:layout_width="400dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
+            android:gravity="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvBio">
+            app:layout_constraintTop_toBottomOf="@+id/tvBioTerceiro">
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnSeguir"
-                android:layout_width="wrap_content"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_weight="1"
                 android:background="@drawable/botao_redondo_amarelo"
                 android:fontFamily="@font/roboto_regular"
                 android:text="@string/seguir"
@@ -79,19 +78,19 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnDesafiar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_marginEnd="30dp"
-                android:layout_weight="1"
-                android:background="@drawable/botao_redondo_transparente"
-                android:fontFamily="@font/roboto_regular"
-                android:text="@string/desafiar"
-                android:textColor="#fbff00"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+            <!--            <androidx.appcompat.widget.AppCompatButton-->
+            <!--                android:id="@+id/btnDesafiar"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginStart="30dp"-->
+            <!--                android:layout_marginEnd="30dp"-->
+            <!--                android:layout_weight="1"-->
+            <!--                android:background="@drawable/botao_redondo_transparente"-->
+            <!--                android:fontFamily="@font/roboto_regular"-->
+            <!--                android:text="@string/desafiar"-->
+            <!--                android:textColor="#fbff00"-->
+            <!--                app:layout_constraintStart_toStartOf="parent"-->
+            <!--                app:layout_constraintTop_toBottomOf="@+id/textView2" />-->
 
         </LinearLayout>
 
@@ -190,7 +189,7 @@
         </GridLayout>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvGeneros"
+            android:id="@+id/rvGenerosTerceiro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
