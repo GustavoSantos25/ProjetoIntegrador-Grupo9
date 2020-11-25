@@ -1614,6 +1614,7 @@ drawable gradient_preto
 drawable ic_back_arrow
 drawable ic_baseline_facebook_24
 drawable ic_baseline_timer_24
+drawable ic_clock_timelimit
 drawable ic_config
 drawable ic_help
 drawable ic_icons8_google
@@ -1635,6 +1636,7 @@ drawable ic_outline_vibration_24
 drawable ic_perfil
 drawable ic_play_home
 drawable ic_ranking
+drawable ic_survivalmode
 drawable ic_undraw_male_avatar_323b
 drawable ic_winner
 drawable icon_cinefilos
@@ -1727,6 +1729,7 @@ id accessibility_custom_action_7
 id accessibility_custom_action_8
 id accessibility_custom_action_9
 id action0
+id action_ajudaFragment_to_homeVPFragment
 id action_bar
 id action_bar_activity_content
 id action_bar_container
@@ -1737,6 +1740,8 @@ id action_bar_title
 id action_container
 id action_context_bar
 id action_divider
+id action_homeVPFragment_to_ajudaFragment
+id action_homeVPFragment_to_modosFragment
 id action_homeVPFragment_to_perguntaFragment
 id action_homeVPFragment_to_rankingFragment
 id action_homeVPFragment_to_sinopseFragment
@@ -1746,6 +1751,8 @@ id action_menu_presenter
 id action_mode_bar
 id action_mode_bar_stub
 id action_mode_close_button
+id action_modosFragment_to_homeVPFragment
+id action_modosFragment_to_perguntaFragment
 id action_perguntaFragment_to_resultadoFragment
 id action_perguntaFragment_to_resultadoNegativo
 id action_rankingFragment_to_homeVPFragment
@@ -1756,6 +1763,7 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+id ajudaFragment
 id alertTitle
 id aligned
 id all
@@ -1813,6 +1821,7 @@ id chip2
 id chip3
 id chip_group
 id chronometer
+id cinefilosAjuda
 id circleImageView
 id civAvatar
 id civAvatarRanking
@@ -1853,6 +1862,7 @@ id direct
 id disableHome
 id disablePostScroll
 id disableScroll
+id divirta_se
 id dragDown
 id dragEnd
 id dragLeft
@@ -1918,6 +1928,8 @@ id ivAppName
 id ivCapaSinopse
 id ivCardHome
 id ivGenero
+id ivSurvivalMode
+id ivTimeLimit
 id ivTrofeu
 id jumpToEnd
 id jumpToStart
@@ -1933,11 +1945,14 @@ id linearLayout3
 id listMode
 id list_item
 id llLogo
+id llSurvival
+id llTimeLimit
 id masked
 id media_actions
 id message
 id middle
 id mini
+id modosFragment
 id month_grid
 id month_navigation_bar
 id month_navigation_fragment_toggle
@@ -2005,6 +2020,7 @@ id ratio
 id rectangles
 id resultadoFragment
 id resultadoNegativo
+id resumoApp
 id reverseSawtooth
 id right
 id right_icon
@@ -2091,6 +2107,9 @@ id textSpacerNoTitle
 id textStart
 id textView
 id textView2
+id textView3
+id textView4
+id textView5
 id textView8
 id text_input_end_icon
 id text_input_start_icon
@@ -2111,6 +2130,7 @@ id tl_item_mod1
 id tl_item_mod2
 id tl_ranking
 id toggle
+id toolbarAjuda
 id toolbarRank
 id toolbarSinopse
 id toolbar_quiz
@@ -2130,6 +2150,9 @@ id tvBio
 id tvBioTerceiro
 id tvEditarBio
 id tvGenerosFavoritos
+id tvMod1
+id tvModJogo
+id tvModsJogo
 id tvNomeGenero
 id tvNomePerfil
 id tvNomeRanking
@@ -2137,6 +2160,10 @@ id tvPergunta
 id tvQtdePerguntas
 id tvQtdeSeguidores
 id tvQtdeVitorias
+id tvSuvivalTitle
+id tvTLTitle
+id tvlabel_TL
+id tvlabel_surival
 id unchecked
 id uniform
 id unlabeled
@@ -2237,9 +2264,11 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout dialogue_editar_bio
 layout dialogue_generos_favoritos
+layout fragment_ajuda
 layout fragment_configuracoes
 layout fragment_home
 layout fragment_home_v_p
+layout fragment_modos
 layout fragment_perfil_pessoal
 layout fragment_perfil_terceiro
 layout fragment_pergunta
@@ -2379,6 +2408,8 @@ string duracao_KB
 string editar
 string editar_bio
 string error_icon_content_description
+string explicacao_modo1
+string explicacao_modo2
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
@@ -2397,10 +2428,15 @@ string jogador
 string jogar
 string john_doe
 string kill_bill_volume_1_2003
+string label_mod1
+string label_mod2
 string large_text
 string lorem_perfil
 string material_slider_range_end
 string material_slider_range_start
+string modo1
+string modo2
+string modos_de_jogo
 string mtrl_badge_numberless_content_description
 string mtrl_chip_close_icon_content_description
 string mtrl_exceed_max_badge_number_content_description
@@ -2455,6 +2491,7 @@ string placeholder_tempo
 string placeholder_username
 string proj_name
 string respostas_corretas
+string resumoApp
 string salvar
 string sci_fi
 string search_menu_title

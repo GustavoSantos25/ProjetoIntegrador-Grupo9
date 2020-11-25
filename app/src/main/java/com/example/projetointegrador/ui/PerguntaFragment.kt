@@ -24,6 +24,7 @@ class PerguntaFragment : Fragment() {
             findNavController().navigate(R.id.action_perguntaFragment_to_resultadoFragment)
         }
 
+
         return view
     }
 }

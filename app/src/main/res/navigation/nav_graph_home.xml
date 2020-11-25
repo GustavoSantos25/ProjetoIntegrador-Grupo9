@@ -33,6 +33,12 @@
         <action
             android:id="@+id/action_homeVPFragment_to_perguntaFragment"
             app:destination="@id/perguntaFragment" />
+        <action
+            android:id="@+id/action_homeVPFragment_to_ajudaFragment"
+            app:destination="@id/ajudaFragment" />
+        <action
+            android:id="@+id/action_homeVPFragment_to_modosFragment"
+            app:destination="@id/modosFragment" />
     </fragment>
     <fragment
         android:id="@+id/sinopseFragment"
@@ -69,6 +75,27 @@
         tools:layout="@layout/fragment_resultado_negativo">
         <action
             android:id="@+id/action_resultadoNegativo_to_homeVPFragment"
+            app:destination="@id/homeVPFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ajudaFragment"
+        android:name="com.example.projetointegrador.ui.AjudaFragment"
+        android:label="fragment_ajuda"
+        tools:layout="@layout/fragment_ajuda" >
+        <action
+            android:id="@+id/action_ajudaFragment_to_homeVPFragment"
+            app:destination="@id/homeVPFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/modosFragment"
+        android:name="com.example.projetointegrador.ui.ModosFragment"
+        android:label="fragment_modos"
+        tools:layout="@layout/fragment_modos" >
+        <action
+            android:id="@+id/action_modosFragment_to_perguntaFragment"
+            app:destination="@id/perguntaFragment" />
+        <action
+            android:id="@+id/action_modosFragment_to_homeVPFragment"
             app:destination="@id/homeVPFragment" />
     </fragment>
 

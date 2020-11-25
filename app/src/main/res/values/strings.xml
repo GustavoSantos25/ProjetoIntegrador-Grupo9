@@ -1,6 +1,7 @@
 <resources>
     <string name="proj_name">Projeto Integrador</string>
     <string name="app_name">Cinéfilos</string>
+    <string name="resumoApp">Cinéfilos é um aplicativo onde fãs da sétima arte podem testar conhecimentos sobre seus filmes e séries favoritas.</string>
     <string name="RANKING">RANKING</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
@@ -136,6 +137,15 @@
     <string name="avaliacao_KB">80%</string>
     <string name="avaliacaoDosUsuarios">Avaliação dos usuários</string>
     <string name="tela_inicial">Tela Inicial</string>
+    <string name="modos_de_jogo">Modos de jogo</string>
+    <string name="modo2">Time Limit:</string>
+    <string name="modo1">Sobrevivência:</string>
+    <string name="explicacao_modo1">Este modo consiste em responder o máximo de perguntas possíveis, sem errar.
+        A pontuação final do jogador será a quantidade de perguntas respondidas corretamente.</string>
+    <string name="explicacao_modo2">Este modo consiste em responder o máximo de perguntas possíveis, num intervalo de tempo de 2 minutos.
+        A pontuação final do jogador será a quantidade de perguntas respondidas corretamente.</string>
+    <string name="label_mod1">Responda as perguntas\nATÉ VOCÊ ERRAR!</string>
+    <string name="label_mod2">Responda corretamente o máximo de perguntas possíveis,\nNUM TEMPO LIMITADO!</string>
     <string name="sinopse_killBill">A ex-assassina conhecida apenas como "A Noiva" acorda de um coma de quatro anos decidida a se vingar de Bill, seu ex-amante e chefe, que tentou matá-la no dia do casamento.
         Ela está motivada a acertar as contas com cada uma das pessoas envolvidas com a perda da filha, da festa de casamento e dos quatro anos da sua vida.
         Na jornada, "A Noiva" é submetida a dores físicas agoniantes ao enfrentar a inescrupulosa gangue de Bill, o Esquadrão Assassino de Víboras Mortais.</string>

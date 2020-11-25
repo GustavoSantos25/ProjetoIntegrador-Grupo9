@@ -19,6 +19,7 @@ class RankingFragment : Fragment() {
     lateinit var adapter : RankingAdapter
 
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -54,6 +55,7 @@ class RankingFragment : Fragment() {
 
             }
 
+
         })
         view.tl_ranking.setupWithViewPager(view.vpRanking)
         return view
@@ -84,7 +86,6 @@ class RankingFragment : Fragment() {
         Jogador("Jogador 9", "2 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
         Jogador("Jogador 10", "1 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
     )
-
 
 
 }

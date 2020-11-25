@@ -39,4 +39,6 @@ class ConfiguracoesFragment : Fragment() {
         alertDialog = dialogBuilder.create();
         alertDialog.show()
     }
+
+
 }

@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.list_pager_ranking.view.*
 
 class RankingAdapter(private val context : Context, private val listRanking : ArrayList<ArrayList<Jogador>>) : PagerAdapter(), JogadorRankingAdapter.OnClickJogadorListener {
 
-
+    var listTitles = arrayListOf("SOBREVIVÊNCIA", "TIME LIMIT")
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
         var view = LayoutInflater.from(context).inflate(R.layout.list_pager_ranking, container, false)
         var ranking = listRanking[position]
@@ -33,6 +33,7 @@ class RankingAdapter(private val context : Context, private val listRanking : Ar
 
     override fun getCount(): Int = listRanking.size
 
+
     override fun isViewFromObject(view: View, `object`: Any): Boolean {
         return `object` == view
     }
@@ -49,7 +50,7 @@ class RankingAdapter(private val context : Context, private val listRanking : Ar
     }
 
     override fun getPageTitle(position: Int): CharSequence {
-        return "MODO ${(position + 1)}"
+        return listTitles[position]
     }
 
 }
