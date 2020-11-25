@@ -1594,6 +1594,7 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable capa_killbill
 drawable circle
 drawable circulo
 drawable corpo_pergunta_arredondar
@@ -1730,8 +1731,8 @@ id action_bar_title
 id action_container
 id action_context_bar
 id action_divider
-id action_homeFragment_to_rankingFragment
-id action_homeVPFragment_to_homeFragment
+id action_homeVPFragment_to_rankingFragment
+id action_homeVPFragment_to_sinopseFragment
 id action_image
 id action_menu_divider
 id action_menu_presenter
@@ -1739,6 +1740,7 @@ id action_mode_bar
 id action_mode_bar_stub
 id action_mode_close_button
 id action_rankingFragment_to_homeVPFragment
+id action_sinopseFragment_to_homeVPFragment
 id action_text
 id actions
 id activity_chooser_view_content
@@ -1810,6 +1812,7 @@ id cos
 id custom
 id customPanel
 id cut
+id cvSinopse
 id date_picker_actions
 id decelerate
 id decelerateAndComplete
@@ -1853,11 +1856,9 @@ id fill_vertical
 id filled
 id fitToContents
 id fixed
-id flHome
 id flip
 id floating
 id forever
-id frag_recebe
 id fragment_container_view_tag
 id frameLayout
 id ghost_view
@@ -1892,6 +1893,7 @@ id invisible
 id italic
 id item_touch_helper_previous_elevation
 id ivAppName
+id ivCapaSinopse
 id ivCardHome
 id ivTrofeu
 id jumpToEnd
@@ -2012,6 +2014,8 @@ id showCustom
 id showHome
 id showTitle
 id sin
+id sinopse
+id sinopseFragment
 id skipCollapsed
 id slide
 id smallLabel
@@ -2060,6 +2064,7 @@ id textSpacerNoTitle
 id textStart
 id textView
 id textView2
+id textView8
 id text_input_end_icon
 id text_input_start_icon
 id textinput_counter
@@ -2072,6 +2077,7 @@ id time
 id timer_icone
 id title
 id titleDividerNoCustom
+id titleSinopse
 id title_template
 id tlHome
 id tl_item_mod1
@@ -2079,6 +2085,7 @@ id tl_item_mod2
 id tl_ranking
 id toggle
 id toolbarRank
+id toolbarSinopse
 id toolbar_quiz
 id top
 id topPanel
@@ -2181,7 +2188,6 @@ layout activity_main
 layout activity_splash
 layout card_genero
 layout card_sugestion
-layout container_fragments_home
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -2206,6 +2212,7 @@ layout fragment_perfil_terceiro
 layout fragment_pergunta
 layout fragment_ranking
 layout fragment_resultado
+layout fragment_sinopse
 layout icon_plus_appname
 layout item_jogador
 layout list_pager_ranking
@@ -2312,6 +2319,8 @@ string abc_toolbar_collapse_description
 string acao
 string app_name
 string appbar_scrolling_view_behavior
+string avaliacaoDosUsuarios
+string avaliacao_KB
 string black_mamba
 string bottom_sheet_behavior
 string character_counter_content_description
@@ -2323,13 +2332,17 @@ string compartilhar
 string contas_conectadas
 string cottonmouth
 string dados_pessoais
+string data_lançamentoKB
 string desafiar
+string diretos_KB
+string duracao_KB
 string editar
 string error_icon_content_description
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
 string facebook
+string generos_KB
 string geral
 string google
 string hello_blank_fragment
@@ -2380,6 +2393,7 @@ string mtrl_picker_toggle_to_year_selection
 string mudar_senha
 string nav_app_bar_navigate_up_description
 string nav_app_bar_open_drawer_description
+string nome_filmeKB
 string notificacoes
 string password_toggle_content_description
 string path_password_eye
@@ -2398,6 +2412,7 @@ string respostas_corretas
 string search_menu_title
 string seguidores
 string seguir
+string sinopse_killBill
 string snake_charmer
 string sons
 string status_bar_notification_info_overflow

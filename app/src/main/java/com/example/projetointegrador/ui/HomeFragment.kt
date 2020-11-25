@@ -26,10 +26,12 @@ class HomeFragment : Fragment() {
         // Inflate the layout for this fragment
         val view : View = inflater!!.inflate(R.layout.fragment_home, container, false)
         view.btn_ranking.setOnClickListener {
-            findNavController().navigate(R.id.action_homeVPFragment_to_homeFragment)
-            findNavController().navigate(R.id.action_homeFragment_to_rankingFragment)
+            findNavController().navigate(R.id.action_homeVPFragment_to_rankingFragment)
         }
         view.ivCardHome.setImageResource(R.drawable.img_card)
+        view.ivCardHome.setOnClickListener {
+            findNavController().navigate(R.id.action_homeVPFragment_to_sinopseFragment)
+        }
         view.ivAppName.setImageResource(R.drawable.icon_cinefilos)
         return view
     }
