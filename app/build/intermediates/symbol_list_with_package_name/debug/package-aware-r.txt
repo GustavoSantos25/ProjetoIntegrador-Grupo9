@@ -2064,6 +2064,8 @@ id textSpacerNoTitle
 id textStart
 id textView
 id textView2
+id textView4
+id textView5
 id textView8
 id text_input_end_icon
 id text_input_start_icon
@@ -2084,6 +2086,7 @@ id tl_item_mod1
 id tl_item_mod2
 id tl_ranking
 id toggle
+id toolbarAjuda
 id toolbarRank
 id toolbarSinopse
 id toolbar_quiz
@@ -2100,6 +2103,8 @@ id transition_transform
 id triangle
 id tvAcertosRanking
 id tvBio
+id tvMod1
+id tvModJogo
 id tvNomePerfil
 id tvNomeRanking
 id tvPergunta
@@ -2204,6 +2209,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout fragment_ajuda
 layout fragment_configuracoes
 layout fragment_home
 layout fragment_home_v_p
@@ -2338,6 +2344,8 @@ string diretos_KB
 string duracao_KB
 string editar
 string error_icon_content_description
+string explicacao_modo1
+string explicacao_modo2
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
@@ -2355,6 +2363,9 @@ string large_text
 string lorem_perfil
 string material_slider_range_end
 string material_slider_range_start
+string modo1
+string modo2
+string modos_de_jogo
 string mtrl_badge_numberless_content_description
 string mtrl_chip_close_icon_content_description
 string mtrl_exceed_max_badge_number_content_description
