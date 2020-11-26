@@ -29,7 +29,7 @@ class HomeVPFragment : Fragment() {
 
         adapter.addFragment(PerfilFragment(), "Perfil")
         adapter.addFragment(HomeFragment(), "Play")
-        adapter.addFragment(ConfiguracoesFragment(), "Configurações")
+        adapter.addFragment(ConfiguracoesFragment(), "Config")
         view.vpHome.adapter = adapter
         view.tlHome.setupWithViewPager(view.vpHome)
 

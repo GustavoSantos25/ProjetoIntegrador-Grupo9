@@ -24,11 +24,11 @@
                 android:scaleType="fitXY"
                 android:src="@drawable/placeholder_genero"/>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:alpha="0.1"
-                android:background="@drawable/gradient_amarelo" />
+<!--            <View-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:alpha="0.1"-->
+<!--                android:background="@drawable/gradient_amarelo" />-->
 
             <TextView
                 android:id="@+id/tvNomeGenero"

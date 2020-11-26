@@ -15,28 +15,25 @@ import kotlinx.android.synthetic.main.fragment_ranking.view.*
 
 
 class RankingFragment : Fragment() {
+
     private val listRankings  : ArrayList<ArrayList<Jogador>> = arrayListOf(getAllJogadoresRank1(), getAllJogadoresRank2())
     lateinit var adapter : RankingAdapter
-
-
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
+
         // Inflate the layout for this fragment
         val view: View = inflater!!.inflate(R.layout.fragment_ranking, container, false)
         view.toolbarRank.setNavigationOnClickListener {
             findNavController().navigate(R.id.action_rankingFragment_to_homeVPFragment)
         }
-        view.toolbarRank.setTitle("Ranking")
+
+        view.toolbarRank.title = "Ranking"
         view.toolbarRank.setTitleTextColor(resources.getColor(R.color.black))
         adapter = RankingAdapter(view.context, listRankings)
+
         view.vpRanking.adapter = adapter
         view.vpRanking.addOnPageChangeListener(object  : ViewPager.OnPageChangeListener{
             override fun onPageScrolled(
@@ -54,9 +51,8 @@ class RankingFragment : Fragment() {
             override fun onPageScrollStateChanged(state: Int) {
 
             }
-
-
         })
+
         view.tl_ranking.setupWithViewPager(view.vpRanking)
         return view
     }
