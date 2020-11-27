@@ -4,14 +4,13 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager.widget.PagerAdapter
 import com.example.projetointegrador.R
 import com.example.projetointegrador.domain.Jogador
 import kotlinx.android.synthetic.main.list_pager_ranking.view.*
 
-class RankingAdapter(private val context : Context, private val listRanking : ArrayList<ArrayList<Jogador>>) : PagerAdapter(), JogadorRankingAdapter.OnClickJogadorListener {
+class RankingAdapter(private val context : Context, private val listRanking : ArrayList<ArrayList<Jogador>>) : PagerAdapter() {
 
     var listTitles = arrayListOf("SOBREVIVÊNCIA", "TIME LIMIT")
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
@@ -20,7 +19,7 @@ class RankingAdapter(private val context : Context, private val listRanking : Ar
 
 
 
-        val adapter = JogadorRankingAdapter(ranking, this)
+        val adapter = JogadorRankingAdapter(ranking, context)
 
         view.rvRanking.adapter = adapter
         view.rvRanking.layoutManager = LinearLayoutManager(context)
@@ -42,12 +41,6 @@ class RankingAdapter(private val context : Context, private val listRanking : Ar
         container.removeView(`object` as View)
     }
 
-
-
-
-    override fun onClickJogador(position: Int) {
-        Toast.makeText(context, "RANKING $position", Toast.LENGTH_SHORT).show()
-    }
 
     override fun getPageTitle(position: Int): CharSequence {
         return listTitles[position]

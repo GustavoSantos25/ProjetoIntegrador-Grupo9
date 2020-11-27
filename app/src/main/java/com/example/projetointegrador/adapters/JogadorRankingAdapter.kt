@@ -1,6 +1,6 @@
 package com.example.projetointegrador.adapters
 
-import android.media.Image
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.projetointegrador.R
 import com.example.projetointegrador.domain.Jogador
 
-class JogadorRankingAdapter(private val listJogadores : ArrayList<Jogador>, val listener : OnClickJogadorListener) : RecyclerView.Adapter<JogadorRankingAdapter.JogadorViewHolder>() {
+class JogadorRankingAdapter(private val listJogadores: ArrayList<Jogador>, val listener: OnClickJogadorListener) : RecyclerView.Adapter<JogadorRankingAdapter.JogadorViewHolder>() {
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int

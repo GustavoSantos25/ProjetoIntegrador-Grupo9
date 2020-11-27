@@ -5,9 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager.widget.ViewPager
 import com.example.projetointegrador.R
+import com.example.projetointegrador.adapters.JogadorRankingAdapter
 import com.example.projetointegrador.adapters.RankingAdapter
 import com.example.projetointegrador.domain.Jogador
 import kotlinx.android.synthetic.main.fragment_pergunta.view.*
@@ -86,6 +88,7 @@ class RankingFragment : Fragment() {
         Jogador("Jogador 9", "2 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
         Jogador("Jogador 10", "1 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
     )
+
 
 
 }
