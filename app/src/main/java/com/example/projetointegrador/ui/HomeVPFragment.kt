@@ -8,6 +8,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
 import com.example.projetointegrador.R
+import com.example.projetointegrador.ui.config.ConfiguracoesFragment
+import com.example.projetointegrador.ui.home.HomeFragment
+import com.example.projetointegrador.ui.perfil.PerfilFragment
 import kotlinx.android.synthetic.main.fragment_home_v_p.view.*
 
 
@@ -29,7 +32,7 @@ class HomeVPFragment : Fragment() {
 
         adapter.addFragment(PerfilFragment(), "Perfil")
         adapter.addFragment(HomeFragment(), "Play")
-        adapter.addFragment(ConfiguracoesFragment(), "Configurações")
+        adapter.addFragment(ConfiguracoesFragment(), "Config")
         view.vpHome.adapter = adapter
         view.tlHome.setupWithViewPager(view.vpHome)
 

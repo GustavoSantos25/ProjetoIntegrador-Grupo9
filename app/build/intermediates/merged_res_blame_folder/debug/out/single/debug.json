@@ -200,6 +200,10 @@
         "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_icons8_instagram.png"
     },
     {
+        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_teste.xml.flat",
+        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\teste.xml"
+    },
+    {
         "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_timer_24.xml.flat",
         "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\ic_baseline_timer_24.xml"
     },
@@ -340,12 +344,12 @@
         "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\ic_play_home.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_outline_email_24.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\ic_outline_email_24.xml"
-    },
-    {
         "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_card_sugestion.xml.flat",
         "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\card_sugestion.xml"
+    },
+    {
+        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_outline_email_24.xml.flat",
+        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\ic_outline_email_24.xml"
     },
     {
         "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
@@ -394,6 +398,10 @@
     {
         "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_undraw_male_avatar_323b.xml.flat",
         "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\ic_undraw_male_avatar_323b.xml"
+    },
+    {
+        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_login.xml.flat",
+        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\activity_login.xml"
     },
     {
         "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_img_card.jpg.flat",

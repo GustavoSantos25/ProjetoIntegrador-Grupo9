@@ -166,5 +166,6 @@
     <string name="sci_fi">Sci-Fi</string>
     <string name="terror">Terror</string>
     <string name="jogador">Jogador</string>
+    <string name="sobre">Sobre</string>
 
 </resources>

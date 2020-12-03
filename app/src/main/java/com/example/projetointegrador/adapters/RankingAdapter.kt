@@ -10,16 +10,21 @@ import com.example.projetointegrador.R
 import com.example.projetointegrador.domain.Jogador
 import kotlinx.android.synthetic.main.list_pager_ranking.view.*
 
-class RankingAdapter(private val context : Context, private val listRanking : ArrayList<ArrayList<Jogador>>) : PagerAdapter() {
+class RankingAdapter(
+    private val context: Context,
+    private val listRanking: ArrayList<ArrayList<Jogador>>
+) :
+    PagerAdapter(), JogadorRankingAdapter.OnClickJogadorListener {
 
     var listTitles = arrayListOf("SOBREVIVÊNCIA", "TIME LIMIT")
+
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
-        var view = LayoutInflater.from(context).inflate(R.layout.list_pager_ranking, container, false)
+
+        var view =
+            LayoutInflater.from(context).inflate(R.layout.list_pager_ranking, container, false)
         var ranking = listRanking[position]
 
-
-
-        val adapter = JogadorRankingAdapter(ranking, context)
+        val adapter = JogadorRankingAdapter(ranking, this)
 
         view.rvRanking.adapter = adapter
         view.rvRanking.layoutManager = LinearLayoutManager(context)
@@ -41,6 +46,10 @@ class RankingAdapter(private val context : Context, private val listRanking : Ar
         container.removeView(`object` as View)
     }
 
+    override fun onClickJogador(position: Int) {
+
+//        Toast.makeText(context, "RANKING $position", Toast.LENGTH_SHORT).show()
+    }
 
     override fun getPageTitle(position: Int): CharSequence {
         return listTitles[position]

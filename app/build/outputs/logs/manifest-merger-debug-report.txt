@@ -101,28 +101,28 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\De
 		ADDED from C:\Users\Desktop\Desktop\CODERS MOBILE\PI\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:6:9-35
 	android:theme
 		ADDED from C:\Users\Desktop\Desktop\CODERS MOBILE\PI\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:11:9-55
+activity#com.example.projetointegrador.ui.LoginActivity
+ADDED from C:\Users\Desktop\Desktop\CODERS MOBILE\PI\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:12:9-63
+	android:name
+		ADDED from C:\Users\Desktop\Desktop\CODERS MOBILE\PI\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:12:19-51
 activity#com.example.projetointegrador.ui.HomeActivity
-ADDED from C:\Users\Desktop\Desktop\CODERS MOBILE\PI\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:12:9-53
+ADDED from C:\Users\Desktop\Desktop\CODERS MOBILE\PI\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:13:9-53
 	android:name
-		ADDED from C:\Users\Desktop\Desktop\CODERS MOBILE\PI\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:12:19-50
+		ADDED from C:\Users\Desktop\Desktop\CODERS MOBILE\PI\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:13:19-50
 activity#com.example.projetointegrador.ui.SplashActivity
-ADDED from C:\Users\Desktop\Desktop\CODERS MOBILE\PI\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:13:9-19:20
+ADDED from C:\Users\Desktop\Desktop\CODERS MOBILE\PI\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:14:9-20:20
 	android:name
-		ADDED from C:\Users\Desktop\Desktop\CODERS MOBILE\PI\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:13:19-52
+		ADDED from C:\Users\Desktop\Desktop\CODERS MOBILE\PI\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:14:19-52
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\Desktop\Desktop\CODERS MOBILE\PI\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:14:13-18:29
+ADDED from C:\Users\Desktop\Desktop\CODERS MOBILE\PI\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:15:13-19:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\Desktop\Desktop\CODERS MOBILE\PI\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:15:17-69
+ADDED from C:\Users\Desktop\Desktop\CODERS MOBILE\PI\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:16:17-69
 	android:name
-		ADDED from C:\Users\Desktop\Desktop\CODERS MOBILE\PI\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:15:25-66
+		ADDED from C:\Users\Desktop\Desktop\CODERS MOBILE\PI\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:16:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\Desktop\Desktop\CODERS MOBILE\PI\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:17:17-77
+ADDED from C:\Users\Desktop\Desktop\CODERS MOBILE\PI\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:18:17-77
 	android:name
-		ADDED from C:\Users\Desktop\Desktop\CODERS MOBILE\PI\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:17:27-74
-activity#com.example.projetointegrador.ui.MainActivity
-ADDED from C:\Users\Desktop\Desktop\CODERS MOBILE\PI\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:20:9-53
-	android:name
-		ADDED from C:\Users\Desktop\Desktop\CODERS MOBILE\PI\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:20:19-50
+		ADDED from C:\Users\Desktop\Desktop\CODERS MOBILE\PI\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:18:27-74
 uses-sdk
 INJECTED from C:\Users\Desktop\Desktop\CODERS MOBILE\PI\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Desktop\Desktop\CODERS MOBILE\PI\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml

@@ -7,17 +7,19 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.projetointegrador.ui.HomeFragment"
+        android:name="com.example.projetointegrador.ui.home.HomeFragment"
         android:label="HomeFragment">
-
     </fragment>
     <fragment
         android:id="@+id/rankingFragment"
-        android:name="com.example.projetointegrador.ui.RankingFragment"
+        android:name="com.example.projetointegrador.ui.home.RankingFragment"
         android:label="RankingFragment">
         <action
             android:id="@+id/action_rankingFragment_to_homeVPFragment"
             app:destination="@id/homeVPFragment" />
+        <action
+            android:id="@+id/action_rankingFragment_to_perfilTerceiroFragment"
+            app:destination="@id/perfilTerceiroFragment" />
     </fragment>
     <fragment
         android:id="@+id/homeVPFragment"
@@ -42,7 +44,7 @@
     </fragment>
     <fragment
         android:id="@+id/sinopseFragment"
-        android:name="com.example.projetointegrador.ui.SinopseFragment"
+        android:name="com.example.projetointegrador.ui.home.SinopseFragment"
         android:label="fragment_sinopse"
         tools:layout="@layout/fragment_sinopse">
         <action
@@ -51,7 +53,7 @@
     </fragment>
     <fragment
         android:id="@+id/perguntaFragment"
-        android:name="com.example.projetointegrador.ui.PerguntaFragment"
+        android:name="com.example.projetointegrador.ui.perguntas.PerguntaFragment"
         android:label="PerguntaFragment">
         <action
             android:id="@+id/action_perguntaFragment_to_resultadoFragment"
@@ -62,7 +64,7 @@
     </fragment>
     <fragment
         android:id="@+id/resultadoFragment"
-        android:name="com.example.projetointegrador.ui.ResultadoFragment"
+        android:name="com.example.projetointegrador.ui.perguntas.ResultadoFragment"
         android:label="ResultadoFragment">
         <action
             android:id="@+id/action_resultadoFragment_to_homeVPFragment"
@@ -70,7 +72,7 @@
     </fragment>
     <fragment
         android:id="@+id/resultadoNegativo"
-        android:name="com.example.projetointegrador.ResultadoNegativoFragment"
+        android:name="com.example.projetointegrador.ui.perguntas.ResultadoNegativoFragment"
         android:label="fragment_resultado_negativo"
         tools:layout="@layout/fragment_resultado_negativo">
         <action
@@ -79,18 +81,18 @@
     </fragment>
     <fragment
         android:id="@+id/ajudaFragment"
-        android:name="com.example.projetointegrador.ui.AjudaFragment"
+        android:name="com.example.projetointegrador.ui.home.AjudaFragment"
         android:label="fragment_ajuda"
-        tools:layout="@layout/fragment_ajuda" >
+        tools:layout="@layout/fragment_ajuda">
         <action
             android:id="@+id/action_ajudaFragment_to_homeVPFragment"
             app:destination="@id/homeVPFragment" />
     </fragment>
     <fragment
         android:id="@+id/modosFragment"
-        android:name="com.example.projetointegrador.ui.ModosFragment"
+        android:name="com.example.projetointegrador.ui.home.ModosFragment"
         android:label="fragment_modos"
-        tools:layout="@layout/fragment_modos" >
+        tools:layout="@layout/fragment_modos">
         <action
             android:id="@+id/action_modosFragment_to_perguntaFragment"
             app:destination="@id/perguntaFragment" />
@@ -98,5 +100,9 @@
             android:id="@+id/action_modosFragment_to_homeVPFragment"
             app:destination="@id/homeVPFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/perfilTerceiroFragment"
+        android:name="com.example.projetointegrador.ui.perfil.PerfilTerceiroFragment"
+        android:label="PerfilTerceiroFragment" />
 
 </navigation>

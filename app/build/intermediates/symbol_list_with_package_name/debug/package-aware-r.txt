@@ -1676,6 +1676,7 @@ drawable scifi
 drawable shape_sugestion
 drawable terror
 drawable test_custom_background
+drawable teste
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 font abril_fatface
@@ -1756,6 +1757,7 @@ id action_modosFragment_to_perguntaFragment
 id action_perguntaFragment_to_resultadoFragment
 id action_perguntaFragment_to_resultadoNegativo
 id action_rankingFragment_to_homeVPFragment
+id action_rankingFragment_to_perfilTerceiroFragment
 id action_resultadoFragment_to_homeVPFragment
 id action_resultadoNegativo_to_homeVPFragment
 id action_sinopseFragment_to_homeVPFragment
@@ -1785,6 +1787,7 @@ id bottom
 id bounce
 id btnCompartilharVitoria
 id btnJogar
+id btnLogin
 id btnPrimeiraResposta
 id btnQuartaResposta
 id btnSalvarBio
@@ -1899,6 +1902,7 @@ id ghost_view_holder
 id gone
 id graph
 id graph_wrap
+id grid
 id gridLayout
 id group_divider
 id grouping
@@ -1947,6 +1951,7 @@ id list_item
 id llLogo
 id llSurvival
 id llTimeLimit
+id loading
 id masked
 id media_actions
 id message
@@ -2003,11 +2008,13 @@ id parent
 id parentPanel
 id parentRelative
 id parent_matrix
+id password
 id password_toggle
 id path
 id pathRelative
 id peekHeight
 id percent
+id perfilTerceiroFragment
 id perguntaFragment
 id pin
 id position
@@ -2169,6 +2176,7 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id username
 id view
 id view_offset_helper
 id visible
@@ -2242,6 +2250,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_home
+layout activity_login
 layout activity_main
 layout activity_splash
 layout card_genero
@@ -2500,6 +2509,7 @@ string seguir
 string sinopse
 string sinopse_killBill
 string snake_charmer
+string sobre
 string sons
 string status_bar_notification_info_overflow
 string sugest_o_do_dia
