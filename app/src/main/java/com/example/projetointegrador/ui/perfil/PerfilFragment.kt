@@ -13,17 +13,20 @@ import android.widget.PopupWindow
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatButton
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projetointegrador.R
 import com.example.projetointegrador.adapters.GenerosAdapter
 import com.example.projetointegrador.domain.Genero
+import com.example.projetointegrador.ui.MainViewModel
 import kotlinx.android.synthetic.main.fragment_perfil_pessoal.view.*
 
 class PerfilFragment : Fragment() {
 
-    val listaGeneros = getAllGeneros()
-    var adapter = GenerosAdapter(listaGeneros)
+    var listGeneros = ArrayList<Genero>()
+    var adapter = GenerosAdapter(listGeneros)
+    val viewModel : MainViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,6 +36,10 @@ class PerfilFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_perfil_pessoal, container, false)
 
         val recyclerView = view.findViewById<RecyclerView>(R.id.rvGenerosPessoal)
+        viewModel.popListGeneros()
+        viewModel.listGeneros.observe(viewLifecycleOwner, {
+            adapter.addAll(it)
+        })
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         recyclerView.setHasFixedSize(true)
@@ -63,10 +70,4 @@ class PerfilFragment : Fragment() {
         alertDialog.show()
     }
 
-    private fun getAllGeneros() = arrayListOf(
-        Genero("Ação", R.drawable.placeholder_genero),
-        Genero("Sci-Fi", R.drawable.scifi),
-        Genero("Comédia", R.drawable.comedia),
-        Genero("Terror", R.drawable.terror)
-    )
 }

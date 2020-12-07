@@ -3,6 +3,7 @@ package com.example.projetointegrador.ui
 import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentActivity
 import androidx.navigation.NavController
@@ -16,40 +17,20 @@ import kotlinx.android.synthetic.main.fragment_ranking.*
 
 class HomeActivity : AppCompatActivity() {
 
-//    private lateinit var navController: NavController
-//    private lateinit var appBarConfiguration: AppBarConfiguration
+      private lateinit var navController: NavController
+      val viewModel : MainViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-//        setSupportActionBar(toolbarRank)
-//
-//        navController = findNavController(R.id.navHostFragmentHome)
-//
-//        navController.addOnDestinationChangedListener { _, destination, arguments ->
-//            when (destination.id) {
-//                R.id.homeFragment -> {
-//                    mudarCorDaToolbar(R.color.transparent)
-//                }
-//            }
-//        }
-//
-//        setupActionBarWithNavController(navController)
+
+
+        navController = findNavController(R.id.navHostFragmentHome)
+
+
+
     }
 
-//    override fun onSupportNavigateUp(): Boolean {
-//        return navController.navigateUp() || super.onSupportNavigateUp()
-//    }
-//
-//    fun mudarCorDaToolbar(colorId: Int) {
-//        supportActionBar!!.setBackgroundDrawable(
-//            ColorDrawable(
-//                ContextCompat.getColor(
-//                    this,
-//                    colorId
-//                )
-//            )
-//        )
-//    }
+
 }
