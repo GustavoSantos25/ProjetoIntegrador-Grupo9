@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/blackFundo"
     android:padding="10dp"
-    tools:context=".ui.ModosFragment"
+    tools:context=".ui.home.ModosFragment"
     android:orientation="vertical">
 
 

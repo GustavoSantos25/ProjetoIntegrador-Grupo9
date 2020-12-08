@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/darkGreyBackground"
     android:orientation="vertical"
-    tools:context=".ui.AjudaFragment">
+    tools:context=".ui.home.AjudaFragment">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarAjuda"

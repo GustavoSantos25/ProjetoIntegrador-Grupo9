@@ -41,4 +41,6 @@ class GenerosAdapter(
     }
 
     override fun getItemCount() = listaGeneros.size
+
+    fun addAll(list : ArrayList<Genero>) = listaGeneros.addAll(list)
 }
