@@ -14,11 +14,15 @@ import android.widget.TextView
 import androidx.appcompat.widget.AppCompatButton
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projetointegrador.R
 import com.example.projetointegrador.adapters.GenerosAdapter
 import com.example.projetointegrador.domain.Genero
+import com.example.projetointegrador.services.repository
 import com.example.projetointegrador.ui.MainViewModel
 import kotlinx.android.synthetic.main.fragment_perfil_pessoal.view.*
 
@@ -26,7 +30,13 @@ class PerfilFragment : Fragment() {
 
     var listGeneros = ArrayList<Genero>()
     var adapter = GenerosAdapter(listGeneros)
-    val viewModel : MainViewModel by activityViewModels()
+    val viewModel by activityViewModels<MainViewModel>{
+        object : ViewModelProvider.Factory{
+            override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+                return MainViewModel(repository) as T
+            }
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

@@ -1,3 +1,3 @@
 package com.example.projetointegrador.domain
 
-data class Jogador(val nome : String, val acertos: String, val imgAvatar : Int)
+data class Jogador(var nome : String, var acertos: String, var imgAvatar : Int)

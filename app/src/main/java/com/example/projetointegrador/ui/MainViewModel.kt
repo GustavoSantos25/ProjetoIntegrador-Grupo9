@@ -4,13 +4,19 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.projetointegrador.R
+import com.example.projetointegrador.domain.Filme
 import com.example.projetointegrador.domain.Genero
+import com.example.projetointegrador.domain.Genres
 import com.example.projetointegrador.domain.Jogador
+import com.example.projetointegrador.services.Repository
+import com.example.projetointegrador.services.repository
 import kotlinx.coroutines.launch
 
-class MainViewModel() : ViewModel() {
+class MainViewModel(repository: Repository) : ViewModel() {
     val listGeneros = MutableLiveData<ArrayList<Genero>>()
     val pagesRanking = MutableLiveData<ArrayList<ArrayList<Jogador>>>()
+    val listGenres = MutableLiveData<Genres>()
+    val filmeSugestion = MutableLiveData<Filme>()
 
     fun popListGeneros(){
         viewModelScope.launch {
@@ -24,15 +30,24 @@ class MainViewModel() : ViewModel() {
         }
     }
 
+    fun popListGenres(){
+        viewModelScope.launch {
+            listGenres.value = repository.getGenerosRepo("2ae684da617a0a9eb2d4bd28815050e8")
+        }
+    }
 
-
+    fun getFilmeSugestion(){
+        viewModelScope.launch {
+            filmeSugestion.value = repository.getFilmeSugestionRepo("2ae684da617a0a9eb2d4bd28815050e8", "pt-BR")
+        }
+    }
 
 
     private fun getAllGeneros() = arrayListOf(
-        Genero("Ação", R.drawable.placeholder_genero),
-        Genero("Sci-Fi", R.drawable.scifi),
-        Genero("Comédia", R.drawable.comedia),
-        Genero("Terror", R.drawable.terror)
+        Genero(1, "Ação", R.drawable.placeholder_genero),
+        Genero(2, "Sci-Fi", R.drawable.scifi),
+        Genero(3, "Comédia", R.drawable.comedia),
+        Genero(4, "Terror", R.drawable.terror)
     )
 
     private fun getAllJogadoresRank1() = arrayListOf(

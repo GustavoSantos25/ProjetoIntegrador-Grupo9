@@ -97,6 +97,7 @@
                 app:layout_constraintVertical_bias="1.0">
 
                 <TextView
+                    android:id="@+id/tvTitleFilmeSus"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
@@ -107,6 +108,7 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/tvNomeDir"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"

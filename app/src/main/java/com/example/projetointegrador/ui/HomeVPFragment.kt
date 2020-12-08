@@ -5,8 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.addCallback
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
+import androidx.navigation.fragment.findNavController
 import com.example.projetointegrador.R
 import com.example.projetointegrador.ui.config.ConfiguracoesFragment
 import com.example.projetointegrador.ui.home.HomeFragment
@@ -19,7 +21,9 @@ class HomeVPFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        requireActivity().onBackPressedDispatcher.addCallback(this){
+            findNavController().navigate(R.id.action_homeVPFragment_to_loginActivity)
+        }
     }
 
     override fun onCreateView(

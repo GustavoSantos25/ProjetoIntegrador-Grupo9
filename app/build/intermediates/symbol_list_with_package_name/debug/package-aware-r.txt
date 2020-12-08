@@ -1742,6 +1742,7 @@ id action_container
 id action_context_bar
 id action_divider
 id action_homeVPFragment_to_ajudaFragment
+id action_homeVPFragment_to_loginActivity
 id action_homeVPFragment_to_modosFragment
 id action_homeVPFragment_to_perguntaFragment
 id action_homeVPFragment_to_rankingFragment
@@ -1754,6 +1755,7 @@ id action_mode_bar_stub
 id action_mode_close_button
 id action_modosFragment_to_homeVPFragment
 id action_modosFragment_to_perguntaFragment
+id action_perfilTerceiroFragment_to_rankingFragment
 id action_perguntaFragment_to_resultadoFragment
 id action_perguntaFragment_to_resultadoNegativo
 id action_rankingFragment_to_homeVPFragment
@@ -1953,6 +1955,7 @@ id llLogo
 id llSurvival
 id llTimeLimit
 id loading
+id loginActivity
 id masked
 id media_actions
 id message
@@ -2118,7 +2121,6 @@ id textView2
 id textView3
 id textView4
 id textView5
-id textView8
 id text_input_end_icon
 id text_input_start_icon
 id textinput_counter
@@ -2131,7 +2133,6 @@ id time
 id timer_icone
 id title
 id titleDividerNoCustom
-id titleSinopse
 id title_template
 id tlHome
 id tl_item_mod1
@@ -2156,11 +2157,13 @@ id triangle
 id tvAcertosRanking
 id tvBio
 id tvBioTerceiro
+id tvDirSinopse
 id tvEditarBio
 id tvGenerosFavoritos
 id tvMod1
 id tvModJogo
 id tvModsJogo
+id tvNomeDir
 id tvNomeGenero
 id tvNomePerfil
 id tvNomeRanking
@@ -2168,8 +2171,11 @@ id tvPergunta
 id tvQtdePerguntas
 id tvQtdeSeguidores
 id tvQtdeVitorias
+id tvSinopse
 id tvSuvivalTitle
 id tvTLTitle
+id tvTitleFilmeSus
+id tvTitleSinopse
 id tvlabel_TL
 id tvlabel_surival
 id unchecked

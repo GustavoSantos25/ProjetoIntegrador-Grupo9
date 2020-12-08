@@ -45,7 +45,7 @@
                 tools:layout_editor_absoluteX="16dp">
 
                 <TextView
-                    android:id="@+id/textView8"
+                    android:id="@+id/tvTitleSinopse"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
@@ -59,6 +59,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
+                    android:id="@+id/tvDirSinopse"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
@@ -68,7 +69,7 @@
                     android:textSize="20sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView8" />
+                    app:layout_constraintTop_toBottomOf="@+id/tvTitleSinopse" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -77,7 +78,7 @@
     </androidx.cardview.widget.CardView>
 
     <TextView
-        android:id="@+id/titleSinopse"
+        android:id="@+id/sinopse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -89,14 +90,14 @@
         app:layout_constraintTop_toBottomOf="@+id/cvSinopse" />
 
     <TextView
-        android:id="@+id/sinopse"
+        android:id="@+id/tvSinopse"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
         android:text="@string/sinopse_killBill"
         android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@+id/titleSinopse" />
+        app:layout_constraintTop_toBottomOf="@+id/sinopse" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

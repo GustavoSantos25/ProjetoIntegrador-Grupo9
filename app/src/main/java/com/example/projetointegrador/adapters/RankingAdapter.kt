@@ -55,7 +55,10 @@ class RankingAdapter(
         return listTitles[position]
     }
 
-    fun addAll(list : ArrayList<ArrayList<Jogador>>) = listRanking.addAll(list)
+    fun addAll(list : ArrayList<ArrayList<Jogador>>){
+        listRanking.addAll(list)
+        notifyDataSetChanged()
+    }
 
 
 }

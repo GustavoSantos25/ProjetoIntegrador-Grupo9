@@ -41,6 +41,9 @@
         <action
             android:id="@+id/action_homeVPFragment_to_modosFragment"
             app:destination="@id/modosFragment" />
+        <action
+            android:id="@+id/action_homeVPFragment_to_loginActivity"
+            app:destination="@id/loginActivity" />
     </fragment>
     <fragment
         android:id="@+id/sinopseFragment"
@@ -103,6 +106,15 @@
     <fragment
         android:id="@+id/perfilTerceiroFragment"
         android:name="com.example.projetointegrador.ui.perfil.PerfilTerceiroFragment"
-        android:label="PerfilTerceiroFragment" />
+        android:label="PerfilTerceiroFragment" >
+        <action
+            android:id="@+id/action_perfilTerceiroFragment_to_rankingFragment"
+            app:destination="@id/rankingFragment" />
+    </fragment>
+    <activity
+        android:id="@+id/loginActivity"
+        android:name="com.example.projetointegrador.ui.LoginActivity"
+        android:label="activity_login"
+        tools:layout="@layout/activity_login" />
 
 </navigation>
