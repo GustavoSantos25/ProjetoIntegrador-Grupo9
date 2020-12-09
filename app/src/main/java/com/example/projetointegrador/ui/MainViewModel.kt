@@ -4,10 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.projetointegrador.R
-import com.example.projetointegrador.domain.Filme
-import com.example.projetointegrador.domain.Genero
-import com.example.projetointegrador.domain.Genres
-import com.example.projetointegrador.domain.Jogador
+import com.example.projetointegrador.domain.*
 import com.example.projetointegrador.services.Repository
 import com.example.projetointegrador.services.repository
 import kotlinx.coroutines.launch
@@ -17,31 +14,105 @@ class MainViewModel(repository: Repository) : ViewModel() {
     val pagesRanking = MutableLiveData<ArrayList<ArrayList<Jogador>>>()
     val listGenres = MutableLiveData<Genres>()
     val filmeSugestion = MutableLiveData<Filme>()
+    val crewSugestion = MutableLiveData<Crew>()
+    val lastMovieId = MutableLiveData<Int>()
+    val listTemplates = popTemplates()
+    val pergunta = MutableLiveData<Pergunta>()
+    private val apiKey = "2ae684da617a0a9eb2d4bd28815050e8"
 
-    fun popListGeneros(){
+    fun popListGeneros() {
         viewModelScope.launch {
             listGeneros.value = getAllGeneros()
         }
     }
 
-    fun popPagesRanking(){
+    fun popPagesRanking() {
         viewModelScope.launch {
             pagesRanking.value = arrayListOf(getAllJogadoresRank1(), getAllJogadoresRank2())
         }
     }
 
-    fun popListGenres(){
+    fun updateLastMovieId() {
         viewModelScope.launch {
-            listGenres.value = repository.getGenerosRepo("2ae684da617a0a9eb2d4bd28815050e8")
+            lastMovieId.value = repository.getLastMovieInApi(apiKey).id
         }
     }
 
-    fun getFilmeSugestion(){
+    fun popListGenres() {
         viewModelScope.launch {
-            filmeSugestion.value = repository.getFilmeSugestionRepo("2ae684da617a0a9eb2d4bd28815050e8", "pt-BR")
+            listGenres.value = repository.getGenerosRepo(apiKey)
         }
     }
 
+    fun getFilmeSugestion() {
+        viewModelScope.launch {
+            filmeSugestion.value = repository.getFilmeSugestionRepo(apiKey, "pt-BR")
+            crewSugestion.value = repository.getCrewSugestionRepo(apiKey, "pt-BR")
+        }
+    }
+
+    fun generateRandomQuestion() {
+
+        viewModelScope.launch {
+
+            val indiceEnunciado = (0 until 2).random()
+            pergunta.value?.enunciado = listTemplates[indiceEnunciado]
+
+            lastMovieId.value = 700000
+
+            var idFilme = (0..lastMovieId.value!!).random()
+
+            var alternativas = 0
+            var filme: Filme = repository.getMovieById(idFilme, apiKey)
+
+            if (indiceEnunciado == 0) {
+
+                while (alternativas < 4) {
+                    if (filme.release_date.isNotEmpty()) {
+
+                        alternativas++
+
+                        val anoDeLancamento = filme.release_date.substring(0, 4)
+
+                        when (alternativas) {
+                            1 -> {
+                                pergunta.value?.enunciado?.replace("REPLACE", filme.title)
+                                pergunta.value?.alternativaCerta = anoDeLancamento
+                            }
+                            2 -> pergunta.value?.segundaAlternativa = anoDeLancamento
+                            3 -> pergunta.value?.terceiraAlternativa = anoDeLancamento
+                            4 -> pergunta.value?.quartaAlternativa = anoDeLancamento
+                        }
+
+                        idFilme = (0 until lastMovieId.value!!).random()
+                        filme = repository.getMovieById(idFilme, apiKey)
+                    }
+                }
+            } else if (indiceEnunciado == 1) {
+                while (alternativas < 4) {
+                    if (filme.production_countries.size != 0) {
+
+                        alternativas++
+
+                        val paisDeProducao = filme.production_countries[0].name
+
+                        when (alternativas) {
+                            1 -> {
+                                pergunta.value?.enunciado?.replace("REPLACE", filme.title)
+                                pergunta.value?.alternativaCerta = paisDeProducao
+                            }
+                            2 -> pergunta.value?.segundaAlternativa = paisDeProducao
+                            3 -> pergunta.value?.terceiraAlternativa = paisDeProducao
+                            4 -> pergunta.value?.quartaAlternativa = paisDeProducao
+                        }
+
+                        idFilme = (0 until lastMovieId.value!!).random()
+                        filme = repository.getMovieById(idFilme, apiKey)
+                    }
+                }
+            }
+        }
+    }
 
     private fun getAllGeneros() = arrayListOf(
         Genero(1, "Ação", R.drawable.placeholder_genero),
@@ -76,5 +147,8 @@ class MainViewModel(repository: Repository) : ViewModel() {
         Jogador("Jogador 10", "1 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
     )
 
-
+    private fun popTemplates() = arrayListOf(
+        "Em que ano o filme REPLACE foi lançado?",
+        "Qual o país de produção do filme REPLACE?"
+    )
 }
