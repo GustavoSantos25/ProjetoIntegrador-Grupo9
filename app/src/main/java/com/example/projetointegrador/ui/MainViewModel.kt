@@ -4,10 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.projetointegrador.R
-import com.example.projetointegrador.domain.Filme
-import com.example.projetointegrador.domain.Genero
-import com.example.projetointegrador.domain.Genres
-import com.example.projetointegrador.domain.Jogador
+import com.example.projetointegrador.domain.*
 import com.example.projetointegrador.services.Repository
 import com.example.projetointegrador.services.repository
 import kotlinx.coroutines.launch
@@ -17,6 +14,7 @@ class MainViewModel(repository: Repository) : ViewModel() {
     val pagesRanking = MutableLiveData<ArrayList<ArrayList<Jogador>>>()
     val listGenres = MutableLiveData<Genres>()
     val filmeSugestion = MutableLiveData<Filme>()
+    val crewSugestion = MutableLiveData<Crew>()
 
     fun popListGeneros(){
         viewModelScope.launch {
@@ -39,6 +37,7 @@ class MainViewModel(repository: Repository) : ViewModel() {
     fun getFilmeSugestion(){
         viewModelScope.launch {
             filmeSugestion.value = repository.getFilmeSugestionRepo("2ae684da617a0a9eb2d4bd28815050e8", "pt-BR")
+            crewSugestion.value = repository.getCrewSugestionRepo("2ae684da617a0a9eb2d4bd28815050e8", "pt-BR")
         }
     }
 

@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModel
@@ -13,6 +14,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.example.projetointegrador.R
+import com.example.projetointegrador.domain.Crew
 import com.example.projetointegrador.domain.Filme
 import com.example.projetointegrador.services.repository
 import com.example.projetointegrador.ui.MainViewModel
@@ -33,6 +35,7 @@ class HomeFragment : Fragment() {
     }
 
     lateinit var filmeCard : Filme
+    lateinit var crewCard : Crew
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -49,14 +52,17 @@ class HomeFragment : Fragment() {
             findNavController().navigate(R.id.action_homeVPFragment_to_rankingFragment)
         }
 
-        viewModel.getFilmeSugestion()
-        viewModel.filmeSugestion.observe(viewLifecycleOwner, {
+        viewModel.filmeSugestion.observe(viewLifecycleOwner, { it ->
             filmeCard = it
             Glide.with(view.context).asBitmap()
-                .load("https://image.tmdb.org/t/p/w500/"+ filmeCard.poster_path)
+                .load("https://image.tmdb.org/t/p/w500/"+ filmeCard.backdrop_path)
                 .into(view.ivCardHome)
 
             view.tvTitleFilmeSus.text = filmeCard.title
+            viewModel.crewSugestion.observe(viewLifecycleOwner, { it ->
+                crewCard = it
+                view.tvNomeDir.text = "Diretor: ${crewCard.crew.find { it.job == "Director" }?.name}"
+            })
         })
 
 

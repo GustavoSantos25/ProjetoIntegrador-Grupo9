@@ -37,7 +37,7 @@ class HomeActivity : AppCompatActivity() {
 
         navController = findNavController(R.id.navHostFragmentHome)
 
-
+        viewModel.getFilmeSugestion()
 
     }
 

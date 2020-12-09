@@ -1,4 +1,4 @@
-#Mon Dec 07 22:27:32 BRT 2020
+#Wed Dec 09 14:49:56 BRT 2020
 base.0=C\:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 path.1=classes.dex
 renamed.1=classes2.dex
