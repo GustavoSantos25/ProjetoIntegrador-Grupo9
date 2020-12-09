@@ -1,5 +1,6 @@
 package com.example.projetointegrador.services
 
+import com.example.projetointegrador.domain.Crew
 import com.example.projetointegrador.domain.Filme
 import com.example.projetointegrador.domain.Genres
 import retrofit2.Retrofit
@@ -22,6 +23,12 @@ interface Repository {
         @Query("api_key") api_key: String,
         @Query("language") language: String
     ): Filme
+
+    @GET("movie/24/credits")
+    suspend fun getCrewSugestionRepo(
+        @Query("api_key") api_key : String,
+        @Query("language") language: String
+    ) : Crew
 
     @GET("movie/latest")
     suspend fun getLastMovieInApi(

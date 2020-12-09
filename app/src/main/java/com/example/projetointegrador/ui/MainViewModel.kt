@@ -14,6 +14,7 @@ class MainViewModel(repository: Repository) : ViewModel() {
     val pagesRanking = MutableLiveData<ArrayList<ArrayList<Jogador>>>()
     val listGenres = MutableLiveData<Genres>()
     val filmeSugestion = MutableLiveData<Filme>()
+    val crewSugestion = MutableLiveData<Crew>()
     val lastMovieId = MutableLiveData<Int>()
     val listTemplates = popTemplates()
     val pergunta = MutableLiveData<Pergunta>()
@@ -46,6 +47,7 @@ class MainViewModel(repository: Repository) : ViewModel() {
     fun getFilmeSugestion() {
         viewModelScope.launch {
             filmeSugestion.value = repository.getFilmeSugestionRepo(apiKey, "pt-BR")
+            crewSugestion.value = repository.getCrewSugestionRepo(apiKey, "pt-BR")
         }
     }
 

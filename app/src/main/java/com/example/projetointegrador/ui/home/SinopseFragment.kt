@@ -28,8 +28,6 @@ class SinopseFragment : Fragment() {
         }
     }
 
-    lateinit var filmeSinopse : Filme
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,16 +46,17 @@ class SinopseFragment : Fragment() {
 
         view.toolbarSinopse.title = "Sugestão do dia"
         view.toolbarSinopse.setTitleTextColor(resources.getColor(R.color.black))
-        viewModel.getFilmeSugestion()
-        viewModel.filmeSugestion.observe(viewLifecycleOwner, {
-            filmeSinopse = it
-            Glide.with(view.context).asBitmap()
-                .load("https://image.tmdb.org/t/p/w500/"+ filmeSinopse.poster_path)
-                .into(view.ivCapaSinopse)
 
-            view.tvTitleSinopse.text = filmeSinopse.title
-            view.tvSinopse.text = filmeSinopse.overview
-        })
+        val filmeSinopse = viewModel.filmeSugestion.value!!
+        val crewSinopse = viewModel.crewSugestion.value
+        Glide.with(view.context).asBitmap()
+            .load("https://image.tmdb.org/t/p/w500/"+ filmeSinopse.poster_path)
+            .into(view.ivCapaSinopse)
+
+        view.tvTitleSinopse.text = filmeSinopse.title
+        view.tvDirSinopse.text = "Diretor: ${crewSinopse!!.crew.find { it.job == "Director" }!!.name}"
+        view.tvSinopse.text = filmeSinopse.overview
+
 
 
         view.toolbarSinopse.setNavigationOnClickListener {
