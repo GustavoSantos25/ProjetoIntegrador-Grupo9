@@ -33,13 +33,14 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-
+        viewModel.updateLastMovieId()
 
         navController = findNavController(R.id.navHostFragmentHome)
+<<<<<<< HEAD
 
         viewModel.getFilmeSugestion()
 
+=======
+>>>>>>> 34aaadc6037df4981967cb4bb0f51085aefed579
     }
-
-
 }

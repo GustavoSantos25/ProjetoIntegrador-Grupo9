@@ -2,13 +2,15 @@ package com.example.projetointegrador.ui.home
 
 import android.app.AlertDialog
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+<<<<<<< HEAD
 import androidx.core.os.bundleOf
+=======
+import androidx.fragment.app.Fragment
+>>>>>>> 34aaadc6037df4981967cb4bb0f51085aefed579
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -18,7 +20,6 @@ import com.example.projetointegrador.domain.Crew
 import com.example.projetointegrador.domain.Filme
 import com.example.projetointegrador.services.repository
 import com.example.projetointegrador.ui.MainViewModel
-import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_home.view.*
 import kotlinx.android.synthetic.main.fragment_modos.view.*
 import kotlinx.android.synthetic.main.icon_plus_appname.view.*
@@ -26,17 +27,21 @@ import kotlinx.android.synthetic.main.icon_plus_appname.view.*
 
 class HomeFragment : Fragment() {
 
-    val viewModel by activityViewModels<MainViewModel>{
-        object : ViewModelProvider.Factory{
+    val viewModel by activityViewModels<MainViewModel> {
+        object : ViewModelProvider.Factory {
             override fun <T : ViewModel?> create(modelClass: Class<T>): T {
                 return MainViewModel(repository) as T
             }
         }
     }
 
+<<<<<<< HEAD
     lateinit var filmeCard : Filme
     lateinit var crewCard : Crew
 
+=======
+    lateinit var filmeCard: Filme
+>>>>>>> 34aaadc6037df4981967cb4bb0f51085aefed579
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,7 +52,7 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        val view : View = inflater.inflate(R.layout.fragment_home, container, false)
+        val view: View = inflater.inflate(R.layout.fragment_home, container, false)
         view.btn_ranking.setOnClickListener {
             findNavController().navigate(R.id.action_homeVPFragment_to_rankingFragment)
         }
@@ -55,7 +60,11 @@ class HomeFragment : Fragment() {
         viewModel.filmeSugestion.observe(viewLifecycleOwner, { it ->
             filmeCard = it
             Glide.with(view.context).asBitmap()
+<<<<<<< HEAD
                 .load("https://image.tmdb.org/t/p/w500/"+ filmeCard.backdrop_path)
+=======
+                .load("https://image.tmdb.org/t/p/w500/" + filmeCard.poster_path)
+>>>>>>> 34aaadc6037df4981967cb4bb0f51085aefed579
                 .into(view.ivCardHome)
 
             view.tvTitleFilmeSus.text = filmeCard.title
@@ -65,7 +74,6 @@ class HomeFragment : Fragment() {
             })
         })
 
-
         view.ivCardHome.setOnClickListener {
             findNavController().navigate(R.id.action_homeVPFragment_to_sinopseFragment)
         }
@@ -74,9 +82,11 @@ class HomeFragment : Fragment() {
         view.btnJogar.setOnClickListener {
             generosDialog()
         }
-        view.btn_help.setOnClickListener{
+        view.btn_help.setOnClickListener {
             findNavController().navigate(R.id.action_homeVPFragment_to_ajudaFragment)
         }
+
+        viewModel.generateRandomQuestion()
 
         return view
     }

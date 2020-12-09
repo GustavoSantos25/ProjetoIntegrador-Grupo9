@@ -2,7 +2,6 @@ package com.example.projetointegrador.services
 
 import com.example.projetointegrador.domain.Crew
 import com.example.projetointegrador.domain.Filme
-import com.example.projetointegrador.domain.Genre
 import com.example.projetointegrador.domain.Genres
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -10,11 +9,14 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
 
-interface Repository{
+interface Repository {
+
+    var idMovie: String
+
     @GET("genre/movie/list")
     suspend fun getGenerosRepo(
-        @Query("api_key") api_key : String
-    ) : Genres
+        @Query("api_key") api_key: String
+    ): Genres
 
     @GET("movie/24")
     suspend fun getFilmeSugestionRepo(
@@ -27,9 +29,21 @@ interface Repository{
         @Query("api_key") api_key : String,
         @Query("language") language: String
     ) : Crew
+
+    @GET("movie/latest")
+    suspend fun getLastMovieInApi(
+        @Query("api_key") api_key: String
+    ): Filme
+
+    @GET("movie/{movie_id}")
+    suspend fun getMovieById(
+        @Path("movie_id") movieId: Int,
+        @Query("api_key") api_key: String
+    ): Filme
+
 }
 
-val url = "https://api.themoviedb.org/3/"
+const val url = "https://api.themoviedb.org/3/"
 
 
 
