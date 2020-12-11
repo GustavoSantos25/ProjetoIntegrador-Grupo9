@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="ui.RankingFragment"
+    tools:context=".ui.home.RankingFragment"
     android:background="@color/darkGreyBackground">
 
     <androidx.appcompat.widget.Toolbar
@@ -47,13 +47,13 @@
                 android:id="@+id/tl_item_mod1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="MODO 1" />
+                android:text="SOBREVIVÊNCIA" />
 
             <com.google.android.material.tabs.TabItem
                 android:id="@+id/tl_item_mod2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="MODO 2" />
+                android:text="TIME LIMIT" />
 
         </com.google.android.material.tabs.TabLayout>
     </androidx.viewpager.widget.ViewPager>
