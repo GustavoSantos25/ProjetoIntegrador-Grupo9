@@ -1,5 +1,6 @@
 package com.example.projetointegrador.ui
 
+import android.os.CountDownTimer
 import android.widget.TextView
 import android.widget.Toolbar
 import androidx.appcompat.widget.AppCompatButton
@@ -23,6 +24,7 @@ class MainViewModel(repository: Repository) : ViewModel() {
     val lastMovieId = MutableLiveData<Int>()
     val listTemplates = popTemplates()
     val pergunta = MutableLiveData<Pergunta>()
+    val timer = MutableLiveData<String>()
     private val apiKey = "2ae684da617a0a9eb2d4bd28815050e8"
 
     fun popListGeneros() {
@@ -39,7 +41,7 @@ class MainViewModel(repository: Repository) : ViewModel() {
 
     fun updateLastMovieId() {
         viewModelScope.launch {
-            lastMovieId.value = repository.getLastMovieInApi(apiKey).id
+            lastMovieId.value = repository.getLastMovieInApi(apiKey, "pt-BR").id
         }
     }
 
@@ -77,7 +79,7 @@ class MainViewModel(repository: Repository) : ViewModel() {
                         while (alternativas < 4) {
 
                             idFilme = (0..lastMovieId.value!!).random()
-                            val filme: Filme = repository.getMovieById(idFilme, apiKey)
+                            val filme: Filme = repository.getMovieById(idFilme, apiKey, "pt-BR")
 
                             if (filme.release_date.isNotEmpty()) {
 
@@ -107,7 +109,8 @@ class MainViewModel(repository: Repository) : ViewModel() {
                         while (alternativas < 4) {
 
                             idFilme = (0..lastMovieId.value!!).random()
-                            val filme: Filme = repository.getMovieById(idFilme, apiKey)
+                            val filme: Filme = repository.getMovieById(idFilme, apiKey, "pt-BR")
+
 
                             if (filme.production_countries.size != 0) {
 
@@ -223,5 +226,31 @@ class MainViewModel(repository: Repository) : ViewModel() {
                 }
             }
         }
+    }
+
+    fun updateTimer(){
+        timer.value = "00:31"
+        var newTime : Long = 31000
+        var clock = object : CountDownTimer(newTime, 1000){
+            override fun onTick(p0: Long) {
+                newTime = p0
+                updateStringTimer(newTime)
+            }
+
+            override fun onFinish() {
+                cancel()
+            }
+
+        }.start()
+    }
+
+    private fun updateStringTimer(timeRemaining : Long){
+        val minutes = timeRemaining / 60000
+        val seconds = timeRemaining % 60000 / 1000
+        var newString = "$minutes"
+        newString += ":"
+        if(seconds < 10) newString += "0"
+        newString += "$seconds"
+        timer.value = newString
     }
 }
