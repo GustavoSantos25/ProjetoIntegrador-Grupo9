@@ -1794,7 +1794,6 @@ id btnLogin
 id btnPrimeiraResposta
 id btnQuartaResposta
 id btnSalvarBio
-id btnSeguir
 id btnSegundaResposta
 id btnTelaInicialResultado
 id btnTerceiraResposta
