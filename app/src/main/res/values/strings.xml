@@ -166,5 +166,6 @@
     <string name="terror">Terror</string>
     <string name="jogador">Jogador</string>
     <string name="sobre">Sobre</string>
+    <string name="TimeOut">ACABOU O TEMPO!</string>
 
 </resources>

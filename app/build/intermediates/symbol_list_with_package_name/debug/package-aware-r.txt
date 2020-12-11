@@ -1756,6 +1756,7 @@ id action_mode_close_button
 id action_modosFragment_to_homeVPFragment
 id action_modosFragment_to_perguntaFragment
 id action_perfilTerceiroFragment_to_rankingFragment
+id action_perguntaFragment_to_homeVPFragment
 id action_perguntaFragment_to_resultadoFragment
 id action_perguntaFragment_to_resultadoNegativo
 id action_rankingFragment_to_homeVPFragment
@@ -2130,6 +2131,7 @@ id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
 id time
+id timerQuestion
 id timer_icone
 id title
 id titleDividerNoCustom
@@ -2364,6 +2366,7 @@ mipmap ic_launcher_round
 navigation nav_graph_home
 plurals mtrl_badge_content_description
 string RANKING
+string TimeOut
 string _007
 string _1
 string _201
