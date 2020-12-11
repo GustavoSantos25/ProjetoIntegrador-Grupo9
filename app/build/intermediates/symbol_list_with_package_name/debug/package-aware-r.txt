@@ -2159,6 +2159,7 @@ id tvBio
 id tvBioTerceiro
 id tvDirSinopse
 id tvEditarBio
+id tvGeneroPergunta
 id tvGenerosFavoritos
 id tvMod1
 id tvModJogo

@@ -27,42 +27,41 @@
             android:background="@drawable/corpo_pergunta_arredondar"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/tvPergunta"
-            android:layout_width="380dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="20dp"
-            android:text="@string/placeholder_pergunta"
-            android:textAlignment="center"
-            android:textColor="@color/yellow"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toTopOf="@+id/frameLayout"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.228" />
 
         <FrameLayout
             android:id="@+id/frameLayout"
             android:layout_width="380dp"
             android:layout_height="200dp"
-            android:layout_marginTop="10dp"
             app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="70dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvPergunta">
+            app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/frame"
-                android:padding="6dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/img_card" />
+            <TextView
+                android:id="@+id/tvPergunta"
+                android:layout_width="380dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="80dp"
+                android:text="@string/placeholder_pergunta"
+                android:textAlignment="center"
+                android:textColor="@color/yellow"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/frame" />
+            <!--            <ImageView-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="match_parent"-->
+            <!--                android:background="@drawable/frame"-->
+            <!--                android:padding="6dp"-->
+            <!--                android:scaleType="fitXY"-->
+            <!--                android:src="@drawable/img_card" />-->
+
+            <!--            <ImageView-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="match_parent"-->
+            <!--                android:src="@drawable/frame" />-->
 
         </FrameLayout>
 

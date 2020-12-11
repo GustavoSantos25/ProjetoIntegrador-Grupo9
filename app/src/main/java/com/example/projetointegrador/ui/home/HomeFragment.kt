@@ -75,8 +75,6 @@ class HomeFragment : Fragment() {
             findNavController().navigate(R.id.action_homeVPFragment_to_ajudaFragment)
         }
 
-        //viewModel.generateRandomQuestion()
-
         return view
     }
 

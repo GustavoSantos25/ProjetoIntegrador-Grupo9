@@ -92,7 +92,6 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="john_doe">John Doe</string>
     <string name="lorem_perfil">Sed augue velit, vehicula eu euismod vitae. Curabitur hendrerit, felis lobortis tempor auctor.</string>
@@ -124,7 +123,7 @@
     <string name="snake_charmer">Snake Charmer</string>
     <string name="cottonmouth">Cottonmouth</string>
     <string name="black_mamba">Black Mamba</string>
-    <string name="placeholder_acerto">1\nAcerto</string>
+    <string name="placeholder_acerto">0\nAcertos</string>
     <string name="_007">007</string>
     <string name="respostas_corretas">Respostas corretas</string>
     <string name="_8_10">8/10</string>
