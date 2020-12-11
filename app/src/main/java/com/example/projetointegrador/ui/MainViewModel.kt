@@ -41,7 +41,7 @@ class MainViewModel(repository: Repository) : ViewModel() {
 
     fun updateLastMovieId() {
         viewModelScope.launch {
-            lastMovieId.value = repository.getLastMovieInApi(apiKey).id
+            lastMovieId.value = repository.getLastMovieInApi(apiKey, "pt-BR").id
         }
     }
 
@@ -79,7 +79,7 @@ class MainViewModel(repository: Repository) : ViewModel() {
                         while (alternativas < 4) {
 
                             idFilme = (0..lastMovieId.value!!).random()
-                            val filme: Filme = repository.getMovieById(idFilme, apiKey)
+                            val filme: Filme = repository.getMovieById(idFilme, apiKey, "pt-BR")
 
                             if (filme.release_date.isNotEmpty()) {
 
@@ -109,7 +109,8 @@ class MainViewModel(repository: Repository) : ViewModel() {
                         while (alternativas < 4) {
 
                             idFilme = (0..lastMovieId.value!!).random()
-                            val filme: Filme = repository.getMovieById(idFilme, apiKey)
+                            val filme: Filme = repository.getMovieById(idFilme, apiKey, "pt-BR")
+
 
                             if (filme.production_countries.size != 0) {
 

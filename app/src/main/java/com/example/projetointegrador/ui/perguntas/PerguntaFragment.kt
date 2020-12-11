@@ -1,6 +1,7 @@
 package com.example.projetointegrador.ui.perguntas
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -44,7 +45,7 @@ class PerguntaFragment : Fragment() {
             val pergunta: Pergunta? = model.pergunta.value
             view.tvPergunta.text = pergunta?.enunciado
 
-            view.toolbar_quiz.tvGeneroPergunta.text = it.genero
+           view.includeToolbarQuiz.tvGeneroPergunta.text = it.genero
 
             model.popAlternativas(
                 arrayOf(
