@@ -12,7 +12,8 @@ import com.example.projetointegrador.services.Repository
 import com.example.projetointegrador.services.repository
 import kotlinx.android.synthetic.main.toolbar_quiz.view.*
 import kotlinx.coroutines.launch
-import java.lang.Exception
+import java.util.*
+import kotlin.collections.ArrayList
 
 class MainViewModel(repository: Repository) : ViewModel() {
     val listGeneros = MutableLiveData<ArrayList<Genero>>()
@@ -23,7 +24,9 @@ class MainViewModel(repository: Repository) : ViewModel() {
     val lastMovieId = MutableLiveData<Int>()
     val listTemplates = popTemplates()
     val pergunta = MutableLiveData<Pergunta>()
+    val acertos = MutableLiveData<Int>()
     private val apiKey = "2ae684da617a0a9eb2d4bd28815050e8"
+    private val IDIOMA = "pt-BR"
 
     fun popListGeneros() {
         viewModelScope.launch {
@@ -51,92 +54,230 @@ class MainViewModel(repository: Repository) : ViewModel() {
 
     fun getFilmeSugestion() {
         viewModelScope.launch {
-            filmeSugestion.value = repository.getFilmeSugestionRepo(apiKey, "pt-BR")
-            crewSugestion.value = repository.getCrewSugestionRepo(apiKey, "pt-BR")
+            filmeSugestion.value = repository.getFilmeSugestionRepo(apiKey, IDIOMA)
+            crewSugestion.value = repository.getCrewSugestionRepo(apiKey, IDIOMA)
         }
     }
 
-    fun generateRandomQuestion() {
+    fun gerarPerguntaAleatoria() {
 
         viewModelScope.launch {
 
-            var idFilme = 0
-            var alternativas = 0
-            var sucesso = false
-            val indiceEnunciado = (0 until 2).random()
+            var indiceEnunciado = (0 until 4).random()
+            val perguntaGerada = Pergunta()
 
-            var perguntaGerada = Pergunta()
+//            indiceEnunciado = 3
 
             perguntaGerada.enunciado = listTemplates[indiceEnunciado]
             lastMovieId.value = 700000
 
-            while (!sucesso) {
-                try {
-                    if (indiceEnunciado == 0) {
-                        val anos = ArrayList<String>()
-                        while (alternativas < 4) {
+            when (indiceEnunciado) {
+                0 -> primeiroTemplate(perguntaGerada)
+                1 -> segundoTemplate(perguntaGerada)
+                2 -> terceiroTemplate(perguntaGerada)
+                3 -> quartoTemplate(perguntaGerada)
+            }
 
-                            idFilme = (0..lastMovieId.value!!).random()
-                            val filme: Filme = repository.getMovieById(idFilme, apiKey)
+            pergunta.value = perguntaGerada
+        }
+    }
 
-                            if (filme.release_date.isNotEmpty()) {
+    //Template de ano de lançamento
+    private suspend fun primeiroTemplate(perguntaGerada: Pergunta) {
 
-                                val anoDeLancamento = filme.release_date.substring(0, 4)
-                                //Verificar se o ano já está nas alternativas
-                                if (anos.contains(anoDeLancamento)) {
-                                    continue
-                                }
+        var idFilme: Int
+        var alternativas = 0
+        var sucesso = false
 
-                                alternativas++
-                                anos.add(anoDeLancamento)
+        while (!sucesso) {
+            try {
+                val anos = ArrayList<String>()
+                while (alternativas < 4) {
 
-                                when (alternativas) {
-                                    1 -> {
-                                        perguntaGerada.enunciado = perguntaGerada.enunciado.replace("REPLACE", filme.title)
-                                        perguntaGerada.alternativaCerta = anoDeLancamento
-                                        perguntaGerada.genero = filme.genres[0].name
-                                    }
-                                    2 -> perguntaGerada.segundaAlternativa = anoDeLancamento
-                                    3 -> perguntaGerada.terceiraAlternativa = anoDeLancamento
-                                    4 -> perguntaGerada.quartaAlternativa = anoDeLancamento
-                                }
-                            }
+                    idFilme = (0..lastMovieId.value!!).random()
+                    val filme: Filme = repository.getMovieById(idFilme, apiKey, IDIOMA)
+
+                    if (filme.popularity < 7.0 && alternativas == 0) continue
+
+                    if (filme.release_date.isNotEmpty() && filme.popularity >= 7.0) {
+
+                        val anoDeLancamento = filme.release_date.trim().substring(0, 4)
+                        //Verificar se o ano já está nas alternativas
+                        if (anos.contains(anoDeLancamento)) {
+                            continue
                         }
-                    } else if (indiceEnunciado == 1) {
-                        val paises = ArrayList<String>()
-                        while (alternativas < 4) {
 
-                            idFilme = (0..lastMovieId.value!!).random()
-                            val filme: Filme = repository.getMovieById(idFilme, apiKey)
+                        alternativas++
+                        anos.add(anoDeLancamento)
 
-                            if (filme.production_countries.size != 0) {
-
-                                val paisDeProducao = filme.production_countries[0].name
-                                //Verificar se o país já está nas alternativas
-                                if (paises.contains(paisDeProducao)) {
-                                    continue
-                                }
-
-                                alternativas++
-                                paises.add(paisDeProducao)
-
-                                when (alternativas) {
-                                    1 -> {
-                                        perguntaGerada.enunciado = perguntaGerada.enunciado.replace("REPLACE", filme.title)
-                                        perguntaGerada.alternativaCerta = paisDeProducao
-                                    }
-                                    2 -> perguntaGerada.segundaAlternativa = paisDeProducao
-                                    3 -> perguntaGerada.terceiraAlternativa = paisDeProducao
-                                    4 -> perguntaGerada.quartaAlternativa = paisDeProducao
-                                }
+                        when (alternativas) {
+                            1 -> {
+                                perguntaGerada.enunciado =
+                                    perguntaGerada.enunciado.replace("REPLACE", filme.title)
+                                perguntaGerada.alternativaCerta = anoDeLancamento
+                                perguntaGerada.genero = filme.genres[0].name
                             }
+                            2 -> perguntaGerada.segundaAlternativa = anoDeLancamento
+                            3 -> perguntaGerada.terceiraAlternativa = anoDeLancamento
+                            4 -> perguntaGerada.quartaAlternativa = anoDeLancamento
                         }
                     }
-                    sucesso = true
-                    pergunta.value = perguntaGerada
-                } catch (ignored: Exception) {
-
                 }
+                sucesso = true
+            } catch (ignored: Exception) {
+
+            }
+        }
+
+    }
+
+    //Template de país de produção
+    private suspend fun segundoTemplate(perguntaGerada: Pergunta) {
+
+        var idFilme: Int
+        var alternativas = 0
+        var sucesso = false
+
+        while (!sucesso) {
+            try {
+                val paises = ArrayList<String>()
+                while (alternativas < 4) {
+
+                    idFilme = (0..lastMovieId.value!!).random()
+                    val filme: Filme = repository.getMovieById(idFilme, apiKey, IDIOMA)
+
+                    if (filme.popularity < 7.0 && alternativas == 0) continue
+
+                    if (filme.production_countries.size != 0) {
+
+                        val paisDeProducao =
+                            filme.production_countries[0].name.toUpperCase(Locale.ROOT).trim()
+                        //Verificar se o país já está nas alternativas
+                        if (paises.contains(paisDeProducao)) {
+                            continue
+                        }
+
+                        alternativas++
+                        paises.add(paisDeProducao)
+
+                        when (alternativas) {
+                            1 -> {
+                                perguntaGerada.enunciado =
+                                    perguntaGerada.enunciado.replace("REPLACE", filme.title)
+                                perguntaGerada.alternativaCerta = paisDeProducao
+                            }
+                            2 -> perguntaGerada.segundaAlternativa = paisDeProducao
+                            3 -> perguntaGerada.terceiraAlternativa = paisDeProducao
+                            4 -> perguntaGerada.quartaAlternativa = paisDeProducao
+                        }
+                    }
+                }
+                sucesso = true
+            } catch (ignored: Exception) {
+
+            }
+        }
+    }
+
+    //Template de diretor
+    private suspend fun terceiroTemplate(perguntaGerada: Pergunta) {
+
+        var idFilme: Int
+        var alternativas = 0
+        var sucesso = false
+
+        while (!sucesso) {
+            try {
+                val diretores = ArrayList<String>()
+                while (alternativas < 4) {
+
+                    idFilme = (0..lastMovieId.value!!).random()
+                    val filme: Filme = repository.getMovieById(idFilme, apiKey, IDIOMA)
+
+                    if (filme.popularity < 7.0 && alternativas == 0) continue
+
+                    val credits = repository.getMovieCredits(idFilme, apiKey, IDIOMA)
+                    var diretor = ""
+
+                    //Pega o diretor do filme
+                    credits.crew.forEach {
+                        if (it.job == "Director") diretor = it.name.trim().toUpperCase(Locale.ROOT)
+                    }
+
+                    if (diretor.isNotEmpty() ) {
+
+                        //Verificar se o diretor já está nas alternativas
+                        if (diretores.contains(diretor)) {
+                            continue
+                        }
+
+                        alternativas++
+                        diretores.add(diretor)
+
+                        when (alternativas) {
+                            1 -> {
+                                perguntaGerada.enunciado =
+                                    perguntaGerada.enunciado.replace("REPLACE", filme.title)
+                                perguntaGerada.alternativaCerta = diretor
+                            }
+                            2 -> perguntaGerada.segundaAlternativa = diretor
+                            3 -> perguntaGerada.terceiraAlternativa = diretor
+                            4 -> perguntaGerada.quartaAlternativa = diretor
+                        }
+                    }
+                }
+                sucesso = true
+            } catch (ignored: Exception) {
+
+            }
+        }
+    }
+
+    //Template de sinopse
+    private suspend fun quartoTemplate(perguntaGerada: Pergunta) {
+
+        var idFilme: Int
+        var alternativas = 0
+        var sucesso = false
+
+        while (!sucesso) {
+            try {
+                val filmes = ArrayList<String>()
+                while (alternativas < 4) {
+
+                    idFilme = (0..lastMovieId.value!!).random()
+                    val filme: Filme = repository.getMovieById(idFilme, apiKey, IDIOMA)
+
+                    if ((filme.popularity < 5.0 && alternativas == 0) || filme.popularity < 3.0) continue
+
+                    val nomeFilme = filme.title.trim().toUpperCase(Locale.ROOT)
+                    val sinopse = filme.overview.trim()
+
+                    if ((sinopse.isNotEmpty() && alternativas == 0) || alternativas > 0) {
+
+                        //Verificar se o diretor já está nas alternativas
+                        if (filmes.contains(nomeFilme)) {
+                            continue
+                        }
+
+                        alternativas++
+                        filmes.add(nomeFilme)
+
+                        when (alternativas) {
+                            1 -> {
+                                perguntaGerada.enunciado =
+                                    perguntaGerada.enunciado.replace("REPLACE", sinopse)
+                                perguntaGerada.alternativaCerta = nomeFilme
+                            }
+                            2 -> perguntaGerada.segundaAlternativa = nomeFilme
+                            3 -> perguntaGerada.terceiraAlternativa = nomeFilme
+                            4 -> perguntaGerada.quartaAlternativa = nomeFilme
+                        }
+                    }
+                }
+                sucesso = true
+            } catch (ignored: Exception) {
+
             }
         }
     }
@@ -176,7 +317,9 @@ class MainViewModel(repository: Repository) : ViewModel() {
 
     private fun popTemplates() = arrayListOf(
         "Em que ano o filme REPLACE foi lançado?",
-        "Qual o país de produção do filme REPLACE?"
+        "Qual o país de produção do filme REPLACE?",
+        "Qual o diretor do filme REPLACE?",
+        "A a qual filme se refere a sinopse \"REPLACE\"?"
     )
 
     fun atualizarAcertos(textView: TextView, acertos: Int) {
@@ -188,6 +331,7 @@ class MainViewModel(repository: Repository) : ViewModel() {
         toolbar.tvGeneroPergunta.text = pergunta.value?.genero
     }
 
+    //Método para popular as alternativas
     fun popAlternativas(listBotoes: Array<AppCompatButton>) {
         val indicesPopulados = arrayListOf<Int>()
         val alternativasUsadas = arrayListOf<Int>()
@@ -209,19 +353,15 @@ class MainViewModel(repository: Repository) : ViewModel() {
             alternativasUsadas.add(alternativa)
 
             when (alternativa) {
-                0 -> {
-                    listBotoes[indice].text = pergunta.value?.alternativaCerta
-                }
-                1 -> {
-                    listBotoes[indice].text = pergunta.value?.segundaAlternativa
-                }
-                2 -> {
-                    listBotoes[indice].text = pergunta.value?.terceiraAlternativa
-                }
-                3 -> {
-                    listBotoes[indice].text = pergunta.value?.quartaAlternativa
-                }
+                0 -> listBotoes[indice].text = pergunta.value?.alternativaCerta
+                1 -> listBotoes[indice].text = pergunta.value?.segundaAlternativa
+                2 -> listBotoes[indice].text = pergunta.value?.terceiraAlternativa
+                3 -> listBotoes[indice].text = pergunta.value?.quartaAlternativa
             }
         }
+    }
+
+    fun onProximaPergunta() {
+
     }
 }

@@ -1848,6 +1848,7 @@ id custom
 id customPanel
 id cut
 id cvSinopse
+id dataBinding
 id date_picker_actions
 id decelerate
 id decelerateAndComplete
@@ -2005,6 +2006,8 @@ id notification_main_column
 id notification_main_column_container
 id off
 id on
+id onAttachStateChangeListener
+id onDateChanged
 id outline
 id packed
 id parallax
@@ -2121,6 +2124,7 @@ id textView2
 id textView3
 id textView4
 id textView5
+id textWatcher
 id text_input_end_icon
 id text_input_start_icon
 id textinput_counter
