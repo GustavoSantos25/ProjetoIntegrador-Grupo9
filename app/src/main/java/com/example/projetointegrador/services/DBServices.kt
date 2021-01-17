@@ -8,7 +8,7 @@ import com.example.projetointegrador.domain.Template
 interface DBRepository {
     //inserts
     suspend fun addTemplateTask(template: Template): List<Template>
-    //suspend fun addFilmeReplaceTask(filmeReplace: FilmeReplace): List<FilmeReplace>
+    suspend fun addFilmesReplaceTask(filmeReplace: FilmeReplace): List<FilmeReplace>
 
     //selects
     suspend fun getAllTemplatesTask(): List<Template>

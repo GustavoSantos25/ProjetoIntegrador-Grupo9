@@ -6,7 +6,8 @@ plugins {
 }
 
 android {
-    compileSdkVersion 29
+    //compileSdkVersion 29
+    compileSdkVersion 30
     buildToolsVersion "29.0.3"
 
     defaultConfig {
@@ -67,4 +68,9 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.6'
 
     implementation 'com.github.bumptech.glide:glide:4.9.0'
+
+    //Dependência Room
+    def room_version = "2.2.5"
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
 }
