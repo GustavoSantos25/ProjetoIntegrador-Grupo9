@@ -1,5 +1,6 @@
 package com.example.projetointegrador.services
 
+import com.example.projetointegrador.domain.Credits
 import com.example.projetointegrador.domain.Crew
 import com.example.projetointegrador.domain.Filme
 import com.example.projetointegrador.domain.Genres
@@ -26,9 +27,9 @@ interface Repository {
 
     @GET("movie/24/credits")
     suspend fun getCrewSugestionRepo(
-        @Query("api_key") api_key : String,
+        @Query("api_key") api_key: String,
         @Query("language") language: String
-    ) : Crew
+    ): Crew
 
     @GET("movie/latest")
     suspend fun getLastMovieInApi(
@@ -38,8 +39,16 @@ interface Repository {
     @GET("movie/{movie_id}")
     suspend fun getMovieById(
         @Path("movie_id") movieId: Int,
-        @Query("api_key") api_key: String
+        @Query("api_key") api_key: String,
+        @Query("language") language: String
     ): Filme
+
+    @GET("movie/{movie_id}/credits")
+    suspend fun getMovieCredits(
+        @Path("movie_id") movieId: Int,
+        @Query("api_key") api_key: String,
+        @Query("language") language: String
+    ): Credits
 }
 
 const val url = "https://api.themoviedb.org/3/"
