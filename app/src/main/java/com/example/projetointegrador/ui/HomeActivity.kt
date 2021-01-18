@@ -14,7 +14,10 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.projetointegrador.R
+import com.example.projetointegrador.dao.TemplateDAO
 import com.example.projetointegrador.services.repository
+import com.example.projetointegrador.services.DBRepository
+import com.example.projetointegrador.services.DBRepositoryImplementation
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.fragment_ranking.*
 

@@ -8,6 +8,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.projetointegrador.R
 import com.example.projetointegrador.domain.*
+import com.example.projetointegrador.services.DBRepository
+import com.example.projetointegrador.services.DBRepositoryImplementation
 import com.example.projetointegrador.services.Repository
 import com.example.projetointegrador.services.repository
 import kotlinx.android.synthetic.main.toolbar_quiz.view.*
@@ -27,6 +29,8 @@ class MainViewModel(repository: Repository) : ViewModel() {
     val acertos = MutableLiveData<Int>()
     private val apiKey = "2ae684da617a0a9eb2d4bd28815050e8"
     private val IDIOMA = "pt-BR"
+    //val dbRepository: DBRepository
+    val listaConfiguracoes = MutableLiveData<List<Configuracoes>>()
 
     fun popListGeneros() {
         viewModelScope.launch {
@@ -364,4 +368,13 @@ class MainViewModel(repository: Repository) : ViewModel() {
     fun onProximaPergunta() {
 
     }
+
+    /*
+    fun alterConfiguracoesDB(configuracoes: Configuracoes) {
+        viewModelScope.launch {
+            listaConfiguracoes.value = listOf(dbRepository.updateConfiguracoesTask(configuracoes))
+        }
+    }
+    *
+     */
 }
