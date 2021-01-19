@@ -3,6 +3,7 @@ package com.example.projetointegrador.services
 import com.example.projetointegrador.dao.ConfiguracoesDAO
 import com.example.projetointegrador.dao.FilmeReplaceDAO
 import com.example.projetointegrador.dao.TemplateDAO
+import com.example.projetointegrador.database.AppDataBase
 import com.example.projetointegrador.domain.Configuracoes
 import com.example.projetointegrador.domain.FilmeReplace
 import com.example.projetointegrador.domain.Template
@@ -51,3 +52,6 @@ class DBRepositoryImplementation(val templateDAO: TemplateDAO, val filmeReplaceD
         return configuracoesDAO.getConfiguracoesForUser(configuracoes.email)
     }
 }
+
+private lateinit var dbApp: AppDataBase
+val dbRepository = DBRepositoryImplementation(dbApp.TemplateDAO(), dbApp.FilmeReplaceDAO(), dbApp.ConfiguracoesDAO())

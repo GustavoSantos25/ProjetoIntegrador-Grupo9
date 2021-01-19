@@ -8,16 +8,13 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.projetointegrador.R
 import com.example.projetointegrador.domain.*
-import com.example.projetointegrador.services.DBRepository
-import com.example.projetointegrador.services.DBRepositoryImplementation
-import com.example.projetointegrador.services.Repository
-import com.example.projetointegrador.services.repository
+import com.example.projetointegrador.services.*
 import kotlinx.android.synthetic.main.toolbar_quiz.view.*
 import kotlinx.coroutines.launch
 import java.util.*
 import kotlin.collections.ArrayList
 
-class MainViewModel(repository: Repository) : ViewModel() {
+class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewModel() {
     val listGeneros = MutableLiveData<ArrayList<Genero>>()
     val pagesRanking = MutableLiveData<ArrayList<ArrayList<Jogador>>>()
     val listGenres = MutableLiveData<Genres>()
@@ -368,6 +365,23 @@ class MainViewModel(repository: Repository) : ViewModel() {
     fun onProximaPergunta() {
 
     }
+
+    fun initializeOfflineTemplates() {
+        viewModelScope.launch {
+            if (dbRepository.getAllTemplatesTask() == null) {
+                dbRepository.addTemplateTask(Template(1, "Em que ano o filme",
+                    "foi lançado?", "filme_name"))
+                dbRepository.addTemplateTask(Template(1, "Qual o país de produção do filme",
+                    "", "country"))
+                dbRepository.addTemplateTask(Template(1, "Qual o diretor do filme REPLACE?",
+                    "", "director"))
+                dbRepository.addTemplateTask(Template(1, "A a qual filme se refere a sinopse",
+                    "", "filme_name"))
+            }
+
+        }
+    }
+
 
     /*
     fun alterConfiguracoesDB(configuracoes: Configuracoes) {

@@ -8,7 +8,7 @@ data class Template(
     @PrimaryKey(autoGenerate = true)
     val id: Int,
     val perguntaPrimeiraMetade: String,
-    val perguntaSegundaMetade: String
-    //val tipoDePergunta: Int,
+    val perguntaSegundaMetade: String,
+    val tipoDePergunta: String,
     //val tipoDeResposta: Int
 )
