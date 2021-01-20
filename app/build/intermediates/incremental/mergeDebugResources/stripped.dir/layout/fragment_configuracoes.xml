@@ -106,31 +106,6 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:drawablePadding="10dp"
-            android:gravity="start|center_vertical"
-            android:text="@string/sons"
-            android:textSize="18sp"
-            app:drawableStartCompat="@drawable/ic_outline_music_note_24" />
-
-        <androidx.appcompat.widget.SwitchCompat
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:layout_weight="1"
-            android:checked="true" />
-
-
-    </LinearLayout>
-
     <TextView
         android:id="@+id/tvGenerosFavoritos"
         android:layout_width="wrap_content"

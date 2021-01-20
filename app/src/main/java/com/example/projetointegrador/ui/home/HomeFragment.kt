@@ -14,6 +14,7 @@ import com.bumptech.glide.Glide
 import com.example.projetointegrador.R
 import com.example.projetointegrador.domain.Crew
 import com.example.projetointegrador.domain.Filme
+import com.example.projetointegrador.services.dbRepository
 import com.example.projetointegrador.services.repository
 import com.example.projetointegrador.ui.MainViewModel
 import kotlinx.android.synthetic.main.fragment_home.view.*
@@ -23,18 +24,9 @@ import kotlinx.android.synthetic.main.icon_plus_appname.view.*
 
 class HomeFragment : Fragment() {
 
-    val viewModel by activityViewModels<MainViewModel> {
-        object : ViewModelProvider.Factory {
-            override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-                return MainViewModel(repository) as T
-            }
-        }
-    }
-
     lateinit var filmeCard : Filme
     lateinit var crewCard : Crew
-
-
+    private lateinit var viewModel: MainViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,6 +41,8 @@ class HomeFragment : Fragment() {
         view.btn_ranking.setOnClickListener {
             findNavController().navigate(R.id.action_homeVPFragment_to_rankingFragment)
         }
+
+        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
 
         viewModel.filmeSugestion.observe(viewLifecycleOwner, { it ->
             filmeCard = it

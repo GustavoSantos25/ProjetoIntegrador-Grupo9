@@ -55,18 +55,5 @@ class HomeActivity : AppCompatActivity() {
         dbApp = AppDataBase.invoke(this)
     }
 
-    /*
-    suspend fun initializeOfflineTemplates() {
-        if (dbRepository.getAllTemplatesTask() == null) {
-            dbRepository.addTemplateTask(Template(1, "Em que ano o filme",
-                "foi lançado?", "filme_name"))
-            dbRepository.addTemplateTask(Template(1, "Qual o país de produção do filme",
-                "", "country"))
-            dbRepository.addTemplateTask(Template(1, "Qual o diretor do filme REPLACE?",
-                "", "director"))
-            dbRepository.addTemplateTask(Template(1, "A a qual filme se refere a sinopse",
-                "", "filme_name"))
-        }
-    }
-    */
+
 }

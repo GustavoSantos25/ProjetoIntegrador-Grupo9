@@ -1,6 +1,10 @@
 [
     {
-        "merged": "C:\\Users\\alexp\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_pergunta.xml",
-        "source": "C:\\Users\\alexp\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\fragment_pergunta.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_login.xml",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_pergunta.xml",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\fragment_pergunta.xml"
     }
 ]

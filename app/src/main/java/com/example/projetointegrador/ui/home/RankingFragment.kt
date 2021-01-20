@@ -17,6 +17,7 @@ import com.example.projetointegrador.R
 import com.example.projetointegrador.adapters.JogadorRankingAdapter
 import com.example.projetointegrador.adapters.RankingAdapter
 import com.example.projetointegrador.domain.Jogador
+import com.example.projetointegrador.services.dbRepository
 import com.example.projetointegrador.services.repository
 import com.example.projetointegrador.ui.MainViewModel
 import kotlinx.android.synthetic.main.fragment_pergunta.view.*
@@ -30,7 +31,7 @@ class RankingFragment : Fragment() {
     val viewModel by activityViewModels<MainViewModel>{
         object : ViewModelProvider.Factory{
             override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-                return MainViewModel(repository) as T
+                return MainViewModel(repository, dbRepository) as T
             }
         }
     }
