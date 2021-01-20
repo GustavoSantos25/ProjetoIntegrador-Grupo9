@@ -1,5 +1,6 @@
 package com.example.projetointegrador.ui
 
+import android.util.Log
 import android.widget.TextView
 import android.widget.Toolbar
 import androidx.appcompat.widget.AppCompatButton
@@ -8,14 +9,13 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.projetointegrador.R
 import com.example.projetointegrador.domain.*
-import com.example.projetointegrador.services.Repository
-import com.example.projetointegrador.services.repository
+import com.example.projetointegrador.services.*
 import kotlinx.android.synthetic.main.toolbar_quiz.view.*
 import kotlinx.coroutines.launch
 import java.util.*
 import kotlin.collections.ArrayList
 
-class MainViewModel(repository: Repository) : ViewModel() {
+class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewModel() {
     val listGeneros = MutableLiveData<ArrayList<Genero>>()
     val pagesRanking = MutableLiveData<ArrayList<ArrayList<Jogador>>>()
     val listGenres = MutableLiveData<Genres>()
@@ -27,6 +27,9 @@ class MainViewModel(repository: Repository) : ViewModel() {
     val acertos = MutableLiveData<Int>()
     private val apiKey = "2ae684da617a0a9eb2d4bd28815050e8"
     private val IDIOMA = "pt-BR"
+    //val dbRepository: DBRepository
+    val configuracoes = MutableLiveData<Configuracoes>()
+    val emailUser = MutableLiveData<String>()
 
     fun popListGeneros() {
         viewModelScope.launch {
@@ -42,7 +45,7 @@ class MainViewModel(repository: Repository) : ViewModel() {
 
     fun updateLastMovieId() {
         viewModelScope.launch {
-            lastMovieId.value = repository.getLastMovieInApi(apiKey).id
+            lastMovieId.value = repository.getLastMovieInApi(apiKey, "pt-BR").id
         }
     }
 
@@ -364,4 +367,71 @@ class MainViewModel(repository: Repository) : ViewModel() {
     fun onProximaPergunta() {
 
     }
+
+    fun initializeOfflineTemplates() {
+        viewModelScope.launch {
+            if (dbRepository.getAllTemplatesTask() == null) {
+                dbRepository.addTemplateTask(Template(1, "Em que ano o filme",
+                    "foi lançado?", "filme_name"))
+                dbRepository.addTemplateTask(Template(1, "Qual o país de produção do filme",
+                    "", "country"))
+                dbRepository.addTemplateTask(Template(1, "Qual o diretor do filme REPLACE?",
+                    "", "director"))
+                dbRepository.addTemplateTask(Template(1, "A a qual filme se refere a sinopse",
+                    "", "filme_name"))
+            }
+        }
+    }
+
+    fun carregarConfiguracoes(email: String) {
+        viewModelScope.launch {
+
+        }
+    }
+
+    // ARRUMAR INSTANCIAÇÃO
+    fun getConfigurationForUser(email : String){
+        viewModelScope.launch {
+            var config = dbRepository.getConfiguracoesForUserTask(email)
+            if(config == null){
+                config = Configuracoes(email = email, vibrar = true, notificacoes = true)
+                dbRepository.addConfiguracoesTask(config)
+                configuracoes.value = config
+            }
+            configuracoes.value = config
+        }
+    }
+
+    fun atualizarEmailUser(email: String){
+        emailUser.value = email
+    }
+
+
+
+
+
+
+    /*
+    fun alterConfiguracoesDB(configuracoes: Configuracoes) {
+        viewModelScope.launch {
+            listaConfiguracoes.value = listOf(dbRepository.updateConfiguracoesTask(configuracoes))
+        }
+    }
+    *
+     */
+
+    /*
+    suspend fun initializeOfflineTemplates() {
+        if (dbRepository.getAllTemplatesTask() == null) {
+            dbRepository.addTemplateTask(Template(1, "Em que ano o filme",
+                "foi lançado?", "filme_name"))
+            dbRepository.addTemplateTask(Template(1, "Qual o país de produção do filme",
+                "", "country"))
+            dbRepository.addTemplateTask(Template(1, "Qual o diretor do filme REPLACE?",
+                "", "director"))
+            dbRepository.addTemplateTask(Template(1, "A a qual filme se refere a sinopse",
+                "", "filme_name"))
+        }
+    }
+    */
 }

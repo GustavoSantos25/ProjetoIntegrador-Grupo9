@@ -1,20 +1,49 @@
-com/example/projetointegrador/DataBindingTriggerClass.java
- com.example.projetointegrador.DataBindingTriggerClass
 com/example/projetointegrador/BR.java
  com.example.projetointegrador.BR
-com/example/projetointegrador/databinding/FragmentPerguntaBindingImpl.java
- com.example.projetointegrador.databinding.FragmentPerguntaBindingImpl
 androidx/databinding/DataBinderMapperImpl.java
  androidx.databinding.DataBinderMapperImpl
-com/example/projetointegrador/BuildConfig.java
- com.example.projetointegrador.BuildConfig
+com/example/projetointegrador/databinding/ActivityLoginBindingImpl.java
+ com.example.projetointegrador.databinding.ActivityLoginBindingImpl
+com/example/projetointegrador/databinding/FragmentConfiguracoesBindingImpl.java
+ com.example.projetointegrador.databinding.FragmentConfiguracoesBindingImpl
 androidx/databinding/library/baseAdapters/BR.java
  androidx.databinding.library.baseAdapters.BR
 com/example/projetointegrador/databinding/FragmentPerguntaBinding.java
  com.example.projetointegrador.databinding.FragmentPerguntaBinding
-androidx/databinding/DataBindingComponent.java
- androidx.databinding.DataBindingComponent
 com/example/projetointegrador/DataBinderMapperImpl.java
  com.example.projetointegrador.DataBinderMapperImpl
  com.example.projetointegrador.DataBinderMapperImpl$InnerBrLookup
  com.example.projetointegrador.DataBinderMapperImpl$InnerLayoutIdLookup
+com/example/projetointegrador/databinding/FragmentConfiguracoesBinding.java
+ com.example.projetointegrador.databinding.FragmentConfiguracoesBinding
+com/example/projetointegrador/database/AppDataBase_Impl.java
+ com.example.projetointegrador.database.AppDataBase_Impl
+ com.example.projetointegrador.database.AppDataBase_Impl$1
+com/example/projetointegrador/DataBindingTriggerClass.java
+ com.example.projetointegrador.DataBindingTriggerClass
+com/example/projetointegrador/databinding/FragmentPerguntaBindingImpl.java
+ com.example.projetointegrador.databinding.FragmentPerguntaBindingImpl
+com/example/projetointegrador/dao/TemplateDAO_Impl.java
+ com.example.projetointegrador.dao.TemplateDAO_Impl
+ com.example.projetointegrador.dao.TemplateDAO_Impl$1
+ com.example.projetointegrador.dao.TemplateDAO_Impl$2
+ com.example.projetointegrador.dao.TemplateDAO_Impl$3
+com/example/projetointegrador/dao/ConfiguracoesDAO_Impl.java
+ com.example.projetointegrador.dao.ConfiguracoesDAO_Impl
+ com.example.projetointegrador.dao.ConfiguracoesDAO_Impl$1
+ com.example.projetointegrador.dao.ConfiguracoesDAO_Impl$2
+ com.example.projetointegrador.dao.ConfiguracoesDAO_Impl$3
+ com.example.projetointegrador.dao.ConfiguracoesDAO_Impl$4
+ com.example.projetointegrador.dao.ConfiguracoesDAO_Impl$5
+ com.example.projetointegrador.dao.ConfiguracoesDAO_Impl$6
+com/example/projetointegrador/databinding/ActivityLoginBinding.java
+ com.example.projetointegrador.databinding.ActivityLoginBinding
+com/example/projetointegrador/dao/FilmeReplaceDAO_Impl.java
+ com.example.projetointegrador.dao.FilmeReplaceDAO_Impl
+ com.example.projetointegrador.dao.FilmeReplaceDAO_Impl$1
+ com.example.projetointegrador.dao.FilmeReplaceDAO_Impl$2
+ com.example.projetointegrador.dao.FilmeReplaceDAO_Impl$3
+com/example/projetointegrador/BuildConfig.java
+ com.example.projetointegrador.BuildConfig
+androidx/databinding/DataBindingComponent.java
+ androidx.databinding.DataBindingComponent

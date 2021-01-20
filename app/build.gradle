@@ -7,6 +7,7 @@ plugins {
 
 android {
     compileSdkVersion 29
+    //compileSdkVersion 30
     buildToolsVersion "29.0.3"
 
     defaultConfig {
@@ -51,8 +52,8 @@ dependencies {
 
     implementation 'de.hdodenhof:circleimageview:3.1.0'
 
-    implementation "androidx.navigation:navigation-fragment-ktx:2.3.1"
-    implementation "androidx.navigation:navigation-ui-ktx:2.3.1"
+    implementation "androidx.navigation:navigation-fragment-ktx:2.3.2"
+    implementation "androidx.navigation:navigation-ui-ktx:2.3.2"
 
     //Dependência Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
@@ -67,4 +68,12 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.6'
 
     implementation 'com.github.bumptech.glide:glide:4.9.0'
+
+    //Dependência Room
+    def room_version = "2.2.5"
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+
+    //Coroutines Support Room
+    implementation "androidx.room:room-ktx:$room_version"
 }
