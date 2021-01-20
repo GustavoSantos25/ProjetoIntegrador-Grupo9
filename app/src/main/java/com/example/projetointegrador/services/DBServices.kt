@@ -59,9 +59,5 @@ class DBRepositoryImplementation(
     }
 }
 
-private lateinit var dbApp: AppDataBase
-val dbRepository = DBRepositoryImplementation(
-    dbApp.TemplateDAO(),
-    dbApp.FilmeReplaceDAO(),
-    dbApp.ConfiguracoesDAO()
-)
+lateinit var dbApp: AppDataBase
+lateinit var dbRepository: DBRepository

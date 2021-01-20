@@ -33,7 +33,8 @@ interface Repository {
 
     @GET("movie/latest")
     suspend fun getLastMovieInApi(
-        @Query("api_key") api_key: String
+        @Query("api_key") api_key: String,
+        @Query("languge") language: String
     ): Filme
 
     @GET("movie/{movie_id}")

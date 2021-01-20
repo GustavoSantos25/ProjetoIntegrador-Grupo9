@@ -7,6 +7,7 @@ import androidx.databinding.DataBinderMapper;
 import androidx.databinding.DataBindingComponent;
 import androidx.databinding.ViewDataBinding;
 import com.example.projetointegrador.databinding.ActivityLoginBindingImpl;
+import com.example.projetointegrador.databinding.FragmentConfiguracoesBindingImpl;
 import com.example.projetointegrador.databinding.FragmentPerguntaBindingImpl;
 import java.lang.IllegalArgumentException;
 import java.lang.Integer;
@@ -21,12 +22,15 @@ import java.util.List;
 public class DataBinderMapperImpl extends DataBinderMapper {
   private static final int LAYOUT_ACTIVITYLOGIN = 1;
 
-  private static final int LAYOUT_FRAGMENTPERGUNTA = 2;
+  private static final int LAYOUT_FRAGMENTCONFIGURACOES = 2;
 
-  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(2);
+  private static final int LAYOUT_FRAGMENTPERGUNTA = 3;
+
+  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(3);
 
   static {
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.projetointegrador.R.layout.activity_login, LAYOUT_ACTIVITYLOGIN);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.projetointegrador.R.layout.fragment_configuracoes, LAYOUT_FRAGMENTCONFIGURACOES);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.projetointegrador.R.layout.fragment_pergunta, LAYOUT_FRAGMENTPERGUNTA);
   }
 
@@ -44,6 +48,12 @@ public class DataBinderMapperImpl extends DataBinderMapper {
             return new ActivityLoginBindingImpl(component, view);
           }
           throw new IllegalArgumentException("The tag for activity_login is invalid. Received: " + tag);
+        }
+        case  LAYOUT_FRAGMENTCONFIGURACOES: {
+          if ("layout/fragment_configuracoes_0".equals(tag)) {
+            return new FragmentConfiguracoesBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for fragment_configuracoes is invalid. Received: " + tag);
         }
         case  LAYOUT_FRAGMENTPERGUNTA: {
           if ("layout/fragment_pergunta_0".equals(tag)) {
@@ -104,10 +114,11 @@ public class DataBinderMapperImpl extends DataBinderMapper {
   }
 
   private static class InnerLayoutIdLookup {
-    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(2);
+    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(3);
 
     static {
       sKeys.put("layout/activity_login_0", com.example.projetointegrador.R.layout.activity_login);
+      sKeys.put("layout/fragment_configuracoes_0", com.example.projetointegrador.R.layout.fragment_configuracoes);
       sKeys.put("layout/fragment_pergunta_0", com.example.projetointegrador.R.layout.fragment_pergunta);
     }
   }

@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "configuracoes")
 data class Configuracoes(
     @PrimaryKey(autoGenerate = true)
-    val id: Int,
+    val id: Int = 0,
     val email: String,
     val vibrar: Boolean,
     val notificacoes: Boolean

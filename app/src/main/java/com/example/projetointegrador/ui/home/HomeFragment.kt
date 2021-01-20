@@ -11,6 +11,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
+import com.example.projetointegrador.MainViewModelFactory
 import com.example.projetointegrador.R
 import com.example.projetointegrador.domain.Crew
 import com.example.projetointegrador.domain.Filme
@@ -26,10 +27,15 @@ class HomeFragment : Fragment() {
 
     lateinit var filmeCard : Filme
     lateinit var crewCard : Crew
-    private lateinit var viewModel: MainViewModel
+
+    private val viewModel by activityViewModels<MainViewModel>{
+        MainViewModelFactory(repository, dbRepository)
+    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        viewModel.getFilmeSugestion()
     }
 
     override fun onCreateView(
@@ -38,24 +44,24 @@ class HomeFragment : Fragment() {
     ): View {
         // Inflate the layout for this fragment
         val view: View = inflater.inflate(R.layout.fragment_home, container, false)
+
         view.btn_ranking.setOnClickListener {
             findNavController().navigate(R.id.action_homeVPFragment_to_rankingFragment)
         }
 
-        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
-
         viewModel.filmeSugestion.observe(viewLifecycleOwner, { it ->
             filmeCard = it
             Glide.with(view.context).asBitmap()
-            .load("https://image.tmdb.org/t/p/w500/"+ filmeCard.backdrop_path)
-            .into(view.ivCardHome)
-
+                .load("https://image.tmdb.org/t/p/w500/"+ filmeCard.backdrop_path)
+                .into(view.ivCardHome)
             view.tvTitleFilmeSus.text = filmeCard.title
-            viewModel.crewSugestion.observe(viewLifecycleOwner, { it ->
+            viewModel.crewSugestion.observe(viewLifecycleOwner, {
                 crewCard = it
                 view.tvNomeDir.text = "Diretor: ${crewCard.crew.find { it.job == "Director" }?.name}"
             })
         })
+
+
 
         view.ivCardHome.setOnClickListener {
             findNavController().navigate(R.id.action_homeVPFragment_to_sinopseFragment)

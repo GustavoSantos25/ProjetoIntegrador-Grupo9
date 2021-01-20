@@ -12,7 +12,7 @@ interface ConfiguracoesDAO {
     @Query ("SELECT * FROM configuracoes")
     suspend fun getAllConfiguracoes(): List<Configuracoes>
 
-    @Query ("SELECT * FROM configuracoes WHERE email = :aEmail")
+    @Query ("SELECT * FROM configuracoes WHERE email like :aEmail")
     suspend fun getConfiguracoesForUser(aEmail: String): Configuracoes
 
     @Update

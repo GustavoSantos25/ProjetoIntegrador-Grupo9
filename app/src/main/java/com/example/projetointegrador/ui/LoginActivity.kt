@@ -3,6 +3,7 @@ package com.example.projetointegrador.ui
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.addCallback
 import com.example.projetointegrador.R
 import com.example.projetointegrador.databinding.ActivityLoginBinding
@@ -14,7 +15,8 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        binding = ActivityLoginBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         onBackPressedDispatcher.addCallback(this){
             finish()
@@ -23,7 +25,7 @@ class LoginActivity : AppCompatActivity() {
 
         binding.btnLogin.setOnClickListener {
             val intent = Intent(this, HomeActivity::class.java)
-            intent.putExtra("email", binding.username.text)
+            intent.putExtra("email", binding.username.text.toString())
             startActivity(intent)
         }
     }

@@ -18,7 +18,7 @@ public abstract interface ConfiguracoesDAO {
     kotlin.coroutines.Continuation<? super java.util.List<com.example.projetointegrador.domain.Configuracoes>> p0);
     
     @org.jetbrains.annotations.Nullable()
-    @androidx.room.Query(value = "SELECT * FROM configuracoes WHERE email = :aEmail")
+    @androidx.room.Query(value = "SELECT * FROM configuracoes WHERE email like :aEmail")
     public abstract java.lang.Object getConfiguracoesForUser(@org.jetbrains.annotations.NotNull()
     java.lang.String aEmail, @org.jetbrains.annotations.NotNull()
     kotlin.coroutines.Continuation<? super com.example.projetointegrador.domain.Configuracoes> p1);

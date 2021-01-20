@@ -157,7 +157,7 @@ public final class ConfiguracoesDAO_Impl implements ConfiguracoesDAO {
   @Override
   public Object getConfiguracoesForUser(final String aEmail,
       final Continuation<? super Configuracoes> p1) {
-    final String _sql = "SELECT * FROM configuracoes WHERE email = ?";
+    final String _sql = "SELECT * FROM configuracoes WHERE email like ?";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
     int _argIndex = 1;
     if (aEmail == null) {

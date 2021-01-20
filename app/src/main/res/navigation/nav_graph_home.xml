@@ -64,6 +64,9 @@
         <action
             android:id="@+id/action_perguntaFragment_to_resultadoNegativo"
             app:destination="@id/resultadoNegativo" />
+        <action
+            android:id="@+id/action_perguntaFragment_to_homeVPFragment"
+            app:destination="@id/homeVPFragment" />
     </fragment>
     <fragment
         android:id="@+id/resultadoFragment"
