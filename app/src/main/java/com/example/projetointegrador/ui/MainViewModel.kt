@@ -402,6 +402,16 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
         }
     }
 
+    fun updateConfigurações(isChecked : Boolean, campo : String){
+        viewModelScope.launch {
+            when(campo){
+                "vibrar" -> configuracoes.value!!.vibrar = isChecked
+                "notificação" -> configuracoes.value!!.notificacoes = isChecked
+            }
+            dbRepository.updateConfiguracoesTask(configuracoes.value!!)
+        }
+    }
+
     fun atualizarEmailUser(email: String){
         emailUser.value = email
     }

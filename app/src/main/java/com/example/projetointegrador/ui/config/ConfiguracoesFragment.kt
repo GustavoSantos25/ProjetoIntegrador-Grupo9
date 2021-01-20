@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CompoundButton
 import androidx.appcompat.widget.AppCompatButton
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -48,13 +49,20 @@ class ConfiguracoesFragment : Fragment() {
 
         viewModel.configuracoes.observe(viewLifecycleOwner, {
             val config = it
-            //if(config == null) Log.i("FRAG_CONFIG", "deu ruim")
 
             bind.scNotificacao.isChecked = config.notificacoes
             bind.scVibrar.isChecked = config.vibrar
             bind.tvEmailConfig.text = config.email
 
         })
+
+        bind.scVibrar.setOnClickListener{
+            viewModel.updateConfigurações(bind.scVibrar.isChecked, "vibrar")
+        }
+
+        bind.scNotificacao.setOnClickListener {
+            viewModel.updateConfigurações(bind.scNotificacao.isChecked, "notificação")
+        }
 
 
 
