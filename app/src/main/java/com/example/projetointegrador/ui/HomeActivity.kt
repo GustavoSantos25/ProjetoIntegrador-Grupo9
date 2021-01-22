@@ -30,12 +30,8 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
-        initDB()
-        dbRepository = DBRepositoryImplementation(
-            dbApp.TemplateDAO(),
-            dbApp.FilmeReplaceDAO(),
-            dbApp.ConfiguracoesDAO()
-        )
+
+
 
 
 
@@ -50,16 +46,13 @@ class HomeActivity : AppCompatActivity() {
             email = extras.getString("email")!!
         }
 
-        viewModel.atualizarEmailUser(email)
         viewModel.getConfigurationForUser(email)
 
         navController = findNavController(R.id.navHostFragmentHome)
 
     }
 
-    fun initDB() {
-        dbApp = AppDataBase.invoke(this)
-    }
+
 
 
 }
