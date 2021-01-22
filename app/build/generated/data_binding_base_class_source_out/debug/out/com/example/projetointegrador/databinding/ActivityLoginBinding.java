@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.GridLayout;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatButton;
@@ -38,11 +39,15 @@ public abstract class ActivityLoginBinding extends ViewDataBinding {
   public final EditText password;
 
   @NonNull
+  public final TextView tvCadastreSe;
+
+  @NonNull
   public final EditText username;
 
   protected ActivityLoginBinding(Object _bindingComponent, View _root, int _localFieldCount,
       AppCompatButton btnLogin, ConstraintLayout container, GridLayout grid,
-      LinearLayout linearLayout3, ProgressBar loading, EditText password, EditText username) {
+      LinearLayout linearLayout3, ProgressBar loading, EditText password, TextView tvCadastreSe,
+      EditText username) {
     super(_bindingComponent, _root, _localFieldCount);
     this.btnLogin = btnLogin;
     this.container = container;
@@ -50,6 +55,7 @@ public abstract class ActivityLoginBinding extends ViewDataBinding {
     this.linearLayout3 = linearLayout3;
     this.loading = loading;
     this.password = password;
+    this.tvCadastreSe = tvCadastreSe;
     this.username = username;
   }
 
