@@ -6,13 +6,13 @@ import com.example.projetointegrador.domain.Configuracoes
 @Dao
 interface ConfiguracoesDAO {
 
-    //@Insert
-    //suspend fun addConfiguracoes(configuracoes: Configuracoes)
+    @Insert
+    suspend fun addConfiguracoes(configuracoes: Configuracoes)
 
     @Query ("SELECT * FROM configuracoes")
     suspend fun getAllConfiguracoes(): List<Configuracoes>
 
-    @Query ("SELECT * FROM configuracoes WHERE email = :aEmail")
+    @Query ("SELECT * FROM configuracoes WHERE email like :aEmail")
     suspend fun getConfiguracoesForUser(aEmail: String): Configuracoes
 
     @Update

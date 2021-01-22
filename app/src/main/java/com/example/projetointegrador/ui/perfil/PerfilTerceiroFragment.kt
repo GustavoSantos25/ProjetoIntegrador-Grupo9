@@ -20,9 +20,11 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.projetointegrador.MainViewModelFactory
 import com.example.projetointegrador.R
 import com.example.projetointegrador.adapters.GenerosAdapter
 import com.example.projetointegrador.domain.Genero
+import com.example.projetointegrador.services.dbRepository
 import com.example.projetointegrador.services.repository
 import com.example.projetointegrador.ui.MainViewModel
 import kotlinx.android.synthetic.main.fragment_perfil_pessoal.view.*
@@ -32,11 +34,7 @@ class PerfilTerceiroFragment : Fragment() {
     val listaGeneros = ArrayList<Genero>()
     var adapter = GenerosAdapter(listaGeneros)
     val viewModel by viewModels<MainViewModel>{
-        object : ViewModelProvider.Factory{
-            override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-                return MainViewModel(repository) as T
-            }
-        }
+        MainViewModelFactory(repository, dbRepository)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

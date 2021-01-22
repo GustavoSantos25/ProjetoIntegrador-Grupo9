@@ -17,7 +17,6 @@ data class Filme(
     val tagline: String
 )
 
-
 data class Producer(val name : String, val profile_path : String, val job : String)
 
 data class Crew(val crew : ArrayList<Producer>)

@@ -3,6 +3,7 @@ package com.example.projetointegrador.dao;
 import android.database.Cursor;
 import androidx.room.CoroutinesRoom;
 import androidx.room.EntityDeletionOrUpdateAdapter;
+import androidx.room.EntityInsertionAdapter;
 import androidx.room.RoomDatabase;
 import androidx.room.RoomSQLiteQuery;
 import androidx.room.util.CursorUtil;
@@ -24,10 +25,34 @@ import kotlin.coroutines.Continuation;
 public final class ConfiguracoesDAO_Impl implements ConfiguracoesDAO {
   private final RoomDatabase __db;
 
+  private final EntityInsertionAdapter<Configuracoes> __insertionAdapterOfConfiguracoes;
+
   private final EntityDeletionOrUpdateAdapter<Configuracoes> __updateAdapterOfConfiguracoes;
 
   public ConfiguracoesDAO_Impl(RoomDatabase __db) {
     this.__db = __db;
+    this.__insertionAdapterOfConfiguracoes = new EntityInsertionAdapter<Configuracoes>(__db) {
+      @Override
+      public String createQuery() {
+        return "INSERT OR ABORT INTO `configuracoes` (`id`,`email`,`vibrar`,`notificacoes`) VALUES (nullif(?, 0),?,?,?)";
+      }
+
+      @Override
+      public void bind(SupportSQLiteStatement stmt, Configuracoes value) {
+        stmt.bindLong(1, value.getId());
+        if (value.getEmail() == null) {
+          stmt.bindNull(2);
+        } else {
+          stmt.bindString(2, value.getEmail());
+        }
+        final int _tmp;
+        _tmp = value.getVibrar() ? 1 : 0;
+        stmt.bindLong(3, _tmp);
+        final int _tmp_1;
+        _tmp_1 = value.getNotificacoes() ? 1 : 0;
+        stmt.bindLong(4, _tmp_1);
+      }
+    };
     this.__updateAdapterOfConfiguracoes = new EntityDeletionOrUpdateAdapter<Configuracoes>(__db) {
       @Override
       public String createQuery() {
@@ -51,6 +76,24 @@ public final class ConfiguracoesDAO_Impl implements ConfiguracoesDAO {
         stmt.bindLong(5, value.getId());
       }
     };
+  }
+
+  @Override
+  public Object addConfiguracoes(final Configuracoes configuracoes,
+      final Continuation<? super Unit> p1) {
+    return CoroutinesRoom.execute(__db, true, new Callable<Unit>() {
+      @Override
+      public Unit call() throws Exception {
+        __db.beginTransaction();
+        try {
+          __insertionAdapterOfConfiguracoes.insert(configuracoes);
+          __db.setTransactionSuccessful();
+          return Unit.INSTANCE;
+        } finally {
+          __db.endTransaction();
+        }
+      }
+    }, p1);
   }
 
   @Override
@@ -114,7 +157,7 @@ public final class ConfiguracoesDAO_Impl implements ConfiguracoesDAO {
   @Override
   public Object getConfiguracoesForUser(final String aEmail,
       final Continuation<? super Configuracoes> p1) {
-    final String _sql = "SELECT * FROM configuracoes WHERE email = ?";
+    final String _sql = "SELECT * FROM configuracoes WHERE email like ?";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
     int _argIndex = 1;
     if (aEmail == null) {

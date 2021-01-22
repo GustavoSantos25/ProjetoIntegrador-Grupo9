@@ -9,9 +9,11 @@ import com.example.projetointegrador.domain.FilmeReplace
 import com.example.projetointegrador.domain.Template
 
 interface DBRepository {
+
     //inserts
     suspend fun addTemplateTask(template: Template): List<Template>
     suspend fun addFilmesReplaceTask(filmeReplace: FilmeReplace): List<FilmeReplace>
+    suspend fun addConfiguracoesTask(configuracoes: Configuracoes)
 
     //selects
     suspend fun getAllTemplatesTask(): List<Template>
@@ -25,8 +27,10 @@ interface DBRepository {
     //deletes
 }
 
-class DBRepositoryImplementation(val templateDAO: TemplateDAO, val filmeReplaceDAO: FilmeReplaceDAO,
-                               val configuracoesDAO: ConfiguracoesDAO): DBRepository{
+class DBRepositoryImplementation(
+    val templateDAO: TemplateDAO, val filmeReplaceDAO: FilmeReplaceDAO,
+    val configuracoesDAO: ConfiguracoesDAO
+) : DBRepository {
 
     override suspend fun addTemplateTask(template: Template): List<Template> {
         templateDAO.addTemplateQuestion(template)
@@ -37,6 +41,8 @@ class DBRepositoryImplementation(val templateDAO: TemplateDAO, val filmeReplaceD
         filmeReplaceDAO.addFilmeReplace(filmeReplace)
         return filmeReplaceDAO.getAllFilmesReplace()
     }
+
+    override suspend fun addConfiguracoesTask(configuracoes: Configuracoes) = configuracoesDAO.addConfiguracoes(configuracoes)
 
     override suspend fun getAllTemplatesTask() = templateDAO.getAllTemplates()
 
@@ -53,5 +59,5 @@ class DBRepositoryImplementation(val templateDAO: TemplateDAO, val filmeReplaceD
     }
 }
 
-private lateinit var dbApp: AppDataBase
-val dbRepository = DBRepositoryImplementation(dbApp.TemplateDAO(), dbApp.FilmeReplaceDAO(), dbApp.ConfiguracoesDAO())
+lateinit var dbApp: AppDataBase
+lateinit var dbRepository: DBRepository

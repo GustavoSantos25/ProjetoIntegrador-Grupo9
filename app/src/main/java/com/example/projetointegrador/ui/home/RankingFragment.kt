@@ -13,10 +13,12 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager.widget.ViewPager
+import com.example.projetointegrador.MainViewModelFactory
 import com.example.projetointegrador.R
 import com.example.projetointegrador.adapters.JogadorRankingAdapter
 import com.example.projetointegrador.adapters.RankingAdapter
 import com.example.projetointegrador.domain.Jogador
+import com.example.projetointegrador.services.dbRepository
 import com.example.projetointegrador.services.repository
 import com.example.projetointegrador.ui.MainViewModel
 import kotlinx.android.synthetic.main.fragment_pergunta.view.*
@@ -28,11 +30,7 @@ class RankingFragment : Fragment() {
     private val listRankings = ArrayList<ArrayList<Jogador>>()
     lateinit var adapter : RankingAdapter
     val viewModel by activityViewModels<MainViewModel>{
-        object : ViewModelProvider.Factory{
-            override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-                return MainViewModel(repository) as T
-            }
-        }
+        MainViewModelFactory(repository, dbRepository)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

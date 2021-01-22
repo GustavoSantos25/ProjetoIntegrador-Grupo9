@@ -31,7 +31,7 @@ public final class TemplateDAO_Impl implements TemplateDAO {
     this.__insertionAdapterOfTemplate = new EntityInsertionAdapter<Template>(__db) {
       @Override
       public String createQuery() {
-        return "INSERT OR ABORT INTO `template` (`id`,`perguntaPrimeiraMetade`,`perguntaSegundaMetade`) VALUES (nullif(?, 0),?,?)";
+        return "INSERT OR ABORT INTO `template` (`id`,`perguntaPrimeiraMetade`,`perguntaSegundaMetade`,`tipoDePergunta`) VALUES (nullif(?, 0),?,?,?)";
       }
 
       @Override
@@ -46,6 +46,11 @@ public final class TemplateDAO_Impl implements TemplateDAO {
           stmt.bindNull(3);
         } else {
           stmt.bindString(3, value.getPerguntaSegundaMetade());
+        }
+        if (value.getTipoDePergunta() == null) {
+          stmt.bindNull(4);
+        } else {
+          stmt.bindString(4, value.getTipoDePergunta());
         }
       }
     };
@@ -80,6 +85,7 @@ public final class TemplateDAO_Impl implements TemplateDAO {
           final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
           final int _cursorIndexOfPerguntaPrimeiraMetade = CursorUtil.getColumnIndexOrThrow(_cursor, "perguntaPrimeiraMetade");
           final int _cursorIndexOfPerguntaSegundaMetade = CursorUtil.getColumnIndexOrThrow(_cursor, "perguntaSegundaMetade");
+          final int _cursorIndexOfTipoDePergunta = CursorUtil.getColumnIndexOrThrow(_cursor, "tipoDePergunta");
           final List<Template> _result = new ArrayList<Template>(_cursor.getCount());
           while(_cursor.moveToNext()) {
             final Template _item;
@@ -89,7 +95,9 @@ public final class TemplateDAO_Impl implements TemplateDAO {
             _tmpPerguntaPrimeiraMetade = _cursor.getString(_cursorIndexOfPerguntaPrimeiraMetade);
             final String _tmpPerguntaSegundaMetade;
             _tmpPerguntaSegundaMetade = _cursor.getString(_cursorIndexOfPerguntaSegundaMetade);
-            _item = new Template(_tmpId,_tmpPerguntaPrimeiraMetade,_tmpPerguntaSegundaMetade);
+            final String _tmpTipoDePergunta;
+            _tmpTipoDePergunta = _cursor.getString(_cursorIndexOfTipoDePergunta);
+            _item = new Template(_tmpId,_tmpPerguntaPrimeiraMetade,_tmpPerguntaSegundaMetade,_tmpTipoDePergunta);
             _result.add(_item);
           }
           return _result;

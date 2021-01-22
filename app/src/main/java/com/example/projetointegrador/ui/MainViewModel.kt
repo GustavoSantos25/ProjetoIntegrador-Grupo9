@@ -1,5 +1,6 @@
 package com.example.projetointegrador.ui
 
+import android.util.Log
 import android.widget.TextView
 import android.widget.Toolbar
 import androidx.appcompat.widget.AppCompatButton
@@ -27,7 +28,8 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
     private val apiKey = "2ae684da617a0a9eb2d4bd28815050e8"
     private val IDIOMA = "pt-BR"
     //val dbRepository: DBRepository
-    val listaConfiguracoes = MutableLiveData<List<Configuracoes>>()
+    val configuracoes = MutableLiveData<Configuracoes>()
+    val emailUser = MutableLiveData<String>()
 
     fun popListGeneros() {
         viewModelScope.launch {
@@ -43,7 +45,7 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
 
     fun updateLastMovieId() {
         viewModelScope.launch {
-            lastMovieId.value = repository.getLastMovieInApi(apiKey).id
+            lastMovieId.value = repository.getLastMovieInApi(apiKey, "pt-BR").id
         }
     }
 
@@ -378,9 +380,45 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
                 dbRepository.addTemplateTask(Template(1, "A a qual filme se refere a sinopse",
                     "", "filme_name"))
             }
+        }
+    }
+
+    fun carregarConfiguracoes(email: String) {
+        viewModelScope.launch {
 
         }
     }
+
+    // ARRUMAR INSTANCIAÇÃO
+    fun getConfigurationForUser(email : String){
+        viewModelScope.launch {
+            var config = dbRepository.getConfiguracoesForUserTask(email)
+            if(config == null){
+                config = Configuracoes(email = email, vibrar = true, notificacoes = true)
+                dbRepository.addConfiguracoesTask(config)
+                configuracoes.value = config
+            }
+            configuracoes.value = config
+        }
+    }
+
+    fun updateConfigurações(isChecked : Boolean, campo : String){
+        viewModelScope.launch {
+            when(campo){
+                "vibrar" -> configuracoes.value!!.vibrar = isChecked
+                "notificação" -> configuracoes.value!!.notificacoes = isChecked
+            }
+            dbRepository.updateConfiguracoesTask(configuracoes.value!!)
+        }
+    }
+
+    fun atualizarEmailUser(email: String){
+        emailUser.value = email
+    }
+
+
+
+
 
 
     /*
@@ -391,4 +429,19 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
     }
     *
      */
+
+    /*
+    suspend fun initializeOfflineTemplates() {
+        if (dbRepository.getAllTemplatesTask() == null) {
+            dbRepository.addTemplateTask(Template(1, "Em que ano o filme",
+                "foi lançado?", "filme_name"))
+            dbRepository.addTemplateTask(Template(1, "Qual o país de produção do filme",
+                "", "country"))
+            dbRepository.addTemplateTask(Template(1, "Qual o diretor do filme REPLACE?",
+                "", "director"))
+            dbRepository.addTemplateTask(Template(1, "A a qual filme se refere a sinopse",
+                "", "filme_name"))
+        }
+    }
+    */
 }
