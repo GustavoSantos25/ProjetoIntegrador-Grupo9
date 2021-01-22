@@ -389,15 +389,19 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
         }
     }
 
-    // ARRUMAR INSTANCIAÇÃO
+
     fun getConfigurationForUser(email : String){
         viewModelScope.launch {
-            var config = dbRepository.getConfiguracoesForUserTask(email)
-            if(config == null){
-                config = Configuracoes(email = email, vibrar = true, notificacoes = true)
-                dbRepository.addConfiguracoesTask(config)
-                configuracoes.value = config
-            }
+            val config = dbRepository.getConfiguracoesForUserTask(email)
+            configuracoes.value = config
+            if(config == null) Log.i("NULL", "deu ruim")
+        }
+    }
+
+    fun createConfigurationForUser(email : String){
+        viewModelScope.launch {
+            val config = Configuracoes(email = email, vibrar = true, notificacoes = true)
+            dbRepository.addConfiguracoesTask(config)
             configuracoes.value = config
         }
     }

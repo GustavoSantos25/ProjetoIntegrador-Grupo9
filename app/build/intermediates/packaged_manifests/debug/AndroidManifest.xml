@@ -21,6 +21,7 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.ProjetoIntegrador" >
+        <activity android:name="com.example.projetointegrador.ui.CadastroActivity" />
         <activity android:name="com.example.projetointegrador.ui.LoginActivity" />
         <activity android:name="com.example.projetointegrador.ui.HomeActivity" />
         <activity android:name="com.example.projetointegrador.ui.SplashActivity" >
