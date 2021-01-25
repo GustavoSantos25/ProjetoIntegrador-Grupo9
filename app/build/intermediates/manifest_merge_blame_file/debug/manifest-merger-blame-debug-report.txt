@@ -15,7 +15,11 @@
 11-->C:\Users\alexp\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:5:22-64
 12
 13    <application
+<<<<<<< HEAD
 13-->C:\Users\alexp\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:7:5-23:19
+=======
+13-->C:\Users\Desktop\Desktop\CODERS MOBILE\PI\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:7:5-24:19
+>>>>>>> 1f25c599df29a962de7bb2765ceb1be3841c063a
 14        android:allowBackup="true"
 14-->C:\Users\alexp\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:8:9-35
 15        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -32,6 +36,7 @@
 21-->C:\Users\alexp\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:12:9-35
 22        android:testOnly="true"
 23        android:theme="@style/Theme.ProjetoIntegrador" >
+<<<<<<< HEAD
 23-->C:\Users\alexp\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:13:9-55
 24        <activity android:name="com.example.projetointegrador.ui.LoginActivity" />
 24-->C:\Users\alexp\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:14:9-63
@@ -65,3 +70,41 @@
 38    </application>
 39
 40</manifest>
+=======
+23-->C:\Users\Desktop\Desktop\CODERS MOBILE\PI\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:13:9-55
+24        <activity android:name="com.example.projetointegrador.ui.CadastroActivity" />
+24-->C:\Users\Desktop\Desktop\CODERS MOBILE\PI\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:14:9-66
+24-->C:\Users\Desktop\Desktop\CODERS MOBILE\PI\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:14:19-54
+25        <activity android:name="com.example.projetointegrador.ui.LoginActivity" />
+25-->C:\Users\Desktop\Desktop\CODERS MOBILE\PI\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:15:9-54
+25-->C:\Users\Desktop\Desktop\CODERS MOBILE\PI\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:15:19-51
+26        <activity android:name="com.example.projetointegrador.ui.HomeActivity" />
+26-->C:\Users\Desktop\Desktop\CODERS MOBILE\PI\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:16:9-53
+26-->C:\Users\Desktop\Desktop\CODERS MOBILE\PI\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:16:19-50
+27        <activity android:name="com.example.projetointegrador.ui.SplashActivity" >
+27-->C:\Users\Desktop\Desktop\CODERS MOBILE\PI\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:17:9-23:20
+27-->C:\Users\Desktop\Desktop\CODERS MOBILE\PI\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:17:19-52
+28            <intent-filter>
+28-->C:\Users\Desktop\Desktop\CODERS MOBILE\PI\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:18:13-22:29
+29                <action android:name="android.intent.action.MAIN" />
+29-->C:\Users\Desktop\Desktop\CODERS MOBILE\PI\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:19:17-69
+29-->C:\Users\Desktop\Desktop\CODERS MOBILE\PI\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:19:25-66
+30
+31                <category android:name="android.intent.category.LAUNCHER" />
+31-->C:\Users\Desktop\Desktop\CODERS MOBILE\PI\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:21:17-77
+31-->C:\Users\Desktop\Desktop\CODERS MOBILE\PI\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:21:27-74
+32            </intent-filter>
+33        </activity>
+34
+35        <service
+35-->[androidx.room:room-runtime:2.2.5] C:\Users\Desktop\.gradle\caches\transforms-2\files-2.1\faf71f5e4305fd7a279c7b07271df173\room-runtime-2.2.5\AndroidManifest.xml:25:9-28:40
+36            android:name="androidx.room.MultiInstanceInvalidationService"
+36-->[androidx.room:room-runtime:2.2.5] C:\Users\Desktop\.gradle\caches\transforms-2\files-2.1\faf71f5e4305fd7a279c7b07271df173\room-runtime-2.2.5\AndroidManifest.xml:26:13-74
+37            android:directBootAware="true"
+37-->[androidx.room:room-runtime:2.2.5] C:\Users\Desktop\.gradle\caches\transforms-2\files-2.1\faf71f5e4305fd7a279c7b07271df173\room-runtime-2.2.5\AndroidManifest.xml:27:13-43
+38            android:exported="false" />
+38-->[androidx.room:room-runtime:2.2.5] C:\Users\Desktop\.gradle\caches\transforms-2\files-2.1\faf71f5e4305fd7a279c7b07271df173\room-runtime-2.2.5\AndroidManifest.xml:28:13-37
+39    </application>
+40
+41</manifest>
+>>>>>>> 1f25c599df29a962de7bb2765ceb1be3841c063a

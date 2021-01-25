@@ -8,7 +8,16 @@
         "source": "C:\\Users\\alexp\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\fragment_configuracoes.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "C:\\Users\\alexp\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_login.xml",
         "source": "C:\\Users\\alexp\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\activity_login.xml"
+=======
+        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_configuracoes.xml",
+        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\fragment_configuracoes.xml"
+    },
+    {
+        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_cadastro.xml",
+        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\activity_cadastro.xml"
+>>>>>>> 1f25c599df29a962de7bb2765ceb1be3841c063a
     }
 ]

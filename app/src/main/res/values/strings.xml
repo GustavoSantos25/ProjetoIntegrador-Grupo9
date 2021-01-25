@@ -167,5 +167,9 @@
     <string name="jogador">Jogador</string>
     <string name="sobre">Sobre</string>
     <string name="TimeOut">ACABOU O TEMPO!</string>
+    <string name="email_hint">Email</string>
+    <string name="user_hint">Username</string>
+    <string name="password_hint">Senha</string>
+    <string name="cadastre_se">Não tem uma conta? Cadastra-se!</string>
 
 </resources>

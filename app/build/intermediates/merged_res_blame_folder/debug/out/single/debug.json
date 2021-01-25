@@ -100,8 +100,17 @@
         "source": "C:\\Users\\alexp\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\activity_login.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "C:\\Users\\alexp\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
         "source": "C:\\Users\\alexp\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
+=======
+        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_cadastro.xml.flat",
+        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\activity_cadastro.xml"
+    },
+    {
+        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_ajuda.xml.flat",
+        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\fragment_ajuda.xml"
+>>>>>>> 1f25c599df29a962de7bb2765ceb1be3841c063a
     },
     {
         "merged": "C:\\Users\\alexp\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_teste.xml.flat",
