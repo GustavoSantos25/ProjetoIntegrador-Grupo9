@@ -15,11 +15,7 @@
 11-->C:\Users\alexp\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:5:22-64
 12
 13    <application
-<<<<<<< HEAD
-13-->C:\Users\alexp\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:7:5-23:19
-=======
-13-->C:\Users\Desktop\Desktop\CODERS MOBILE\PI\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:7:5-24:19
->>>>>>> 1f25c599df29a962de7bb2765ceb1be3841c063a
+13-->C:\Users\alexp\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:7:5-24:19
 14        android:allowBackup="true"
 14-->C:\Users\alexp\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:8:9-35
 15        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -36,75 +32,80 @@
 21-->C:\Users\alexp\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:12:9-35
 22        android:testOnly="true"
 23        android:theme="@style/Theme.ProjetoIntegrador" >
-<<<<<<< HEAD
 23-->C:\Users\alexp\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:13:9-55
-24        <activity android:name="com.example.projetointegrador.ui.LoginActivity" />
-24-->C:\Users\alexp\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:14:9-63
-24-->C:\Users\alexp\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:14:19-51
-25        <activity android:name="com.example.projetointegrador.ui.HomeActivity" />
-25-->C:\Users\alexp\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:15:9-53
-25-->C:\Users\alexp\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:15:19-50
-26        <activity android:name="com.example.projetointegrador.ui.SplashActivity" >
-26-->C:\Users\alexp\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:16:9-22:20
-26-->C:\Users\alexp\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:16:19-52
-27            <intent-filter>
-27-->C:\Users\alexp\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:17:13-21:29
-28                <action android:name="android.intent.action.MAIN" />
-28-->C:\Users\alexp\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:18:17-69
-28-->C:\Users\alexp\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:18:25-66
-29
-30                <category android:name="android.intent.category.LAUNCHER" />
-30-->C:\Users\alexp\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:20:17-77
-30-->C:\Users\alexp\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:20:27-74
-31            </intent-filter>
-32        </activity>
-33
-34        <service
-34-->[androidx.room:room-runtime:2.2.5] C:\Users\alexp\.gradle\caches\transforms-2\files-2.1\faf71f5e4305fd7a279c7b07271df173\room-runtime-2.2.5\AndroidManifest.xml:25:9-28:40
-35            android:name="androidx.room.MultiInstanceInvalidationService"
-35-->[androidx.room:room-runtime:2.2.5] C:\Users\alexp\.gradle\caches\transforms-2\files-2.1\faf71f5e4305fd7a279c7b07271df173\room-runtime-2.2.5\AndroidManifest.xml:26:13-74
-36            android:directBootAware="true"
-36-->[androidx.room:room-runtime:2.2.5] C:\Users\alexp\.gradle\caches\transforms-2\files-2.1\faf71f5e4305fd7a279c7b07271df173\room-runtime-2.2.5\AndroidManifest.xml:27:13-43
-37            android:exported="false" />
-37-->[androidx.room:room-runtime:2.2.5] C:\Users\alexp\.gradle\caches\transforms-2\files-2.1\faf71f5e4305fd7a279c7b07271df173\room-runtime-2.2.5\AndroidManifest.xml:28:13-37
-38    </application>
-39
-40</manifest>
-=======
-23-->C:\Users\Desktop\Desktop\CODERS MOBILE\PI\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:13:9-55
 24        <activity android:name="com.example.projetointegrador.ui.CadastroActivity" />
-24-->C:\Users\Desktop\Desktop\CODERS MOBILE\PI\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:14:9-66
-24-->C:\Users\Desktop\Desktop\CODERS MOBILE\PI\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:14:19-54
+24-->C:\Users\alexp\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:14:9-66
+24-->C:\Users\alexp\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:14:19-54
 25        <activity android:name="com.example.projetointegrador.ui.LoginActivity" />
-25-->C:\Users\Desktop\Desktop\CODERS MOBILE\PI\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:15:9-54
-25-->C:\Users\Desktop\Desktop\CODERS MOBILE\PI\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:15:19-51
+25-->C:\Users\alexp\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:15:9-54
+25-->C:\Users\alexp\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:15:19-51
 26        <activity android:name="com.example.projetointegrador.ui.HomeActivity" />
-26-->C:\Users\Desktop\Desktop\CODERS MOBILE\PI\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:16:9-53
-26-->C:\Users\Desktop\Desktop\CODERS MOBILE\PI\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:16:19-50
+26-->C:\Users\alexp\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:16:9-53
+26-->C:\Users\alexp\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:16:19-50
 27        <activity android:name="com.example.projetointegrador.ui.SplashActivity" >
-27-->C:\Users\Desktop\Desktop\CODERS MOBILE\PI\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:17:9-23:20
-27-->C:\Users\Desktop\Desktop\CODERS MOBILE\PI\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:17:19-52
+27-->C:\Users\alexp\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:17:9-23:20
+27-->C:\Users\alexp\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:17:19-52
 28            <intent-filter>
-28-->C:\Users\Desktop\Desktop\CODERS MOBILE\PI\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:18:13-22:29
+28-->C:\Users\alexp\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:18:13-22:29
 29                <action android:name="android.intent.action.MAIN" />
-29-->C:\Users\Desktop\Desktop\CODERS MOBILE\PI\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:19:17-69
-29-->C:\Users\Desktop\Desktop\CODERS MOBILE\PI\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:19:25-66
+29-->C:\Users\alexp\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:19:17-69
+29-->C:\Users\alexp\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:19:25-66
 30
 31                <category android:name="android.intent.category.LAUNCHER" />
-31-->C:\Users\Desktop\Desktop\CODERS MOBILE\PI\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:21:17-77
-31-->C:\Users\Desktop\Desktop\CODERS MOBILE\PI\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:21:27-74
+31-->C:\Users\alexp\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:21:17-77
+31-->C:\Users\alexp\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:21:27-74
 32            </intent-filter>
 33        </activity>
 34
 35        <service
-35-->[androidx.room:room-runtime:2.2.5] C:\Users\Desktop\.gradle\caches\transforms-2\files-2.1\faf71f5e4305fd7a279c7b07271df173\room-runtime-2.2.5\AndroidManifest.xml:25:9-28:40
+35-->[androidx.room:room-runtime:2.2.5] C:\Users\alexp\.gradle\caches\transforms-2\files-2.1\faf71f5e4305fd7a279c7b07271df173\room-runtime-2.2.5\AndroidManifest.xml:25:9-28:40
 36            android:name="androidx.room.MultiInstanceInvalidationService"
-36-->[androidx.room:room-runtime:2.2.5] C:\Users\Desktop\.gradle\caches\transforms-2\files-2.1\faf71f5e4305fd7a279c7b07271df173\room-runtime-2.2.5\AndroidManifest.xml:26:13-74
+36-->[androidx.room:room-runtime:2.2.5] C:\Users\alexp\.gradle\caches\transforms-2\files-2.1\faf71f5e4305fd7a279c7b07271df173\room-runtime-2.2.5\AndroidManifest.xml:26:13-74
 37            android:directBootAware="true"
-37-->[androidx.room:room-runtime:2.2.5] C:\Users\Desktop\.gradle\caches\transforms-2\files-2.1\faf71f5e4305fd7a279c7b07271df173\room-runtime-2.2.5\AndroidManifest.xml:27:13-43
+37-->[androidx.room:room-runtime:2.2.5] C:\Users\alexp\.gradle\caches\transforms-2\files-2.1\faf71f5e4305fd7a279c7b07271df173\room-runtime-2.2.5\AndroidManifest.xml:27:13-43
 38            android:exported="false" />
-38-->[androidx.room:room-runtime:2.2.5] C:\Users\Desktop\.gradle\caches\transforms-2\files-2.1\faf71f5e4305fd7a279c7b07271df173\room-runtime-2.2.5\AndroidManifest.xml:28:13-37
-39    </application>
-40
-41</manifest>
->>>>>>> 1f25c599df29a962de7bb2765ceb1be3841c063a
+38-->[androidx.room:room-runtime:2.2.5] C:\Users\alexp\.gradle\caches\transforms-2\files-2.1\faf71f5e4305fd7a279c7b07271df173\room-runtime-2.2.5\AndroidManifest.xml:28:13-37
+39
+40        <activity
+40-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\alexp\.gradle\caches\transforms-2\files-2.1\349de136701a63a652cd9cc66eeb335c\jetified-play-services-auth-19.0.0\AndroidManifest.xml:23:9-27:75
+41            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+41-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\alexp\.gradle\caches\transforms-2\files-2.1\349de136701a63a652cd9cc66eeb335c\jetified-play-services-auth-19.0.0\AndroidManifest.xml:24:13-93
+42            android:excludeFromRecents="true"
+42-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\alexp\.gradle\caches\transforms-2\files-2.1\349de136701a63a652cd9cc66eeb335c\jetified-play-services-auth-19.0.0\AndroidManifest.xml:25:13-46
+43            android:exported="false"
+43-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\alexp\.gradle\caches\transforms-2\files-2.1\349de136701a63a652cd9cc66eeb335c\jetified-play-services-auth-19.0.0\AndroidManifest.xml:26:13-37
+44            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+44-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\alexp\.gradle\caches\transforms-2\files-2.1\349de136701a63a652cd9cc66eeb335c\jetified-play-services-auth-19.0.0\AndroidManifest.xml:27:13-72
+45        <!--
+46            Service handling Google Sign-In user revocation. For apps that do not integrate with
+47            Google Sign-In, this service will never be started.
+48        -->
+49        <service
+49-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\alexp\.gradle\caches\transforms-2\files-2.1\349de136701a63a652cd9cc66eeb335c\jetified-play-services-auth-19.0.0\AndroidManifest.xml:33:9-37:51
+50            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+50-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\alexp\.gradle\caches\transforms-2\files-2.1\349de136701a63a652cd9cc66eeb335c\jetified-play-services-auth-19.0.0\AndroidManifest.xml:34:13-89
+51            android:exported="true"
+51-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\alexp\.gradle\caches\transforms-2\files-2.1\349de136701a63a652cd9cc66eeb335c\jetified-play-services-auth-19.0.0\AndroidManifest.xml:35:13-36
+52            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+52-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\alexp\.gradle\caches\transforms-2\files-2.1\349de136701a63a652cd9cc66eeb335c\jetified-play-services-auth-19.0.0\AndroidManifest.xml:36:13-107
+53            android:visibleToInstantApps="true" />
+53-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\alexp\.gradle\caches\transforms-2\files-2.1\349de136701a63a652cd9cc66eeb335c\jetified-play-services-auth-19.0.0\AndroidManifest.xml:37:13-48
+54
+55        <activity
+55-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\alexp\.gradle\caches\transforms-2\files-2.1\317ec3acfb3a8c87bb0a0f5b78cc515e\jetified-play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
+56            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+56-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\alexp\.gradle\caches\transforms-2\files-2.1\317ec3acfb3a8c87bb0a0f5b78cc515e\jetified-play-services-base-17.1.0\AndroidManifest.xml:24:13-79
+57            android:exported="false"
+57-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\alexp\.gradle\caches\transforms-2\files-2.1\317ec3acfb3a8c87bb0a0f5b78cc515e\jetified-play-services-base-17.1.0\AndroidManifest.xml:25:13-37
+58            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+58-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\alexp\.gradle\caches\transforms-2\files-2.1\317ec3acfb3a8c87bb0a0f5b78cc515e\jetified-play-services-base-17.1.0\AndroidManifest.xml:26:13-72
+59
+60        <meta-data
+60-->[com.google.android.gms:play-services-basement:17.1.1] C:\Users\alexp\.gradle\caches\transforms-2\files-2.1\474e448f969e99843f2e220c2336e3bf\jetified-play-services-basement-17.1.1\AndroidManifest.xml:23:9-25:69
+61            android:name="com.google.android.gms.version"
+61-->[com.google.android.gms:play-services-basement:17.1.1] C:\Users\alexp\.gradle\caches\transforms-2\files-2.1\474e448f969e99843f2e220c2336e3bf\jetified-play-services-basement-17.1.1\AndroidManifest.xml:24:13-58
+62            android:value="@integer/google_play_services_version" />
+62-->[com.google.android.gms:play-services-basement:17.1.1] C:\Users\alexp\.gradle\caches\transforms-2\files-2.1\474e448f969e99843f2e220c2336e3bf\jetified-play-services-basement-17.1.1\AndroidManifest.xml:25:13-66
+63    </application>
+64
+65</manifest>

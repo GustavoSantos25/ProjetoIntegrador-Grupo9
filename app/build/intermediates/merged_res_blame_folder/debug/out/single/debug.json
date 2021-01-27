@@ -92,29 +92,24 @@
         "source": "C:\\Users\\alexp\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\scifi.jpg"
     },
     {
-        "merged": "C:\\Users\\alexp\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_perfil.xml.flat",
-        "source": "C:\\Users\\alexp\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\ic_perfil.xml"
-    },
-    {
         "merged": "C:\\Users\\alexp\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_login.xml.flat",
         "source": "C:\\Users\\alexp\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\activity_login.xml"
     },
     {
-<<<<<<< HEAD
-        "merged": "C:\\Users\\alexp\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
-        "source": "C:\\Users\\alexp\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
-=======
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_cadastro.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\activity_cadastro.xml"
+        "merged": "C:\\Users\\alexp\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_perfil.xml.flat",
+        "source": "C:\\Users\\alexp\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\ic_perfil.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_ajuda.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\fragment_ajuda.xml"
->>>>>>> 1f25c599df29a962de7bb2765ceb1be3841c063a
+        "merged": "C:\\Users\\alexp\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\alexp\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
     },
     {
         "merged": "C:\\Users\\alexp\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_teste.xml.flat",
         "source": "C:\\Users\\alexp\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\teste.xml"
+    },
+    {
+        "merged": "C:\\Users\\alexp\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_cadastro.xml.flat",
+        "source": "C:\\Users\\alexp\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\activity_cadastro.xml"
     },
     {
         "merged": "C:\\Users\\alexp\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_icons8_google.png.flat",
@@ -225,12 +220,12 @@
         "source": "C:\\Users\\alexp\\ProjetoIntegrador-Grupo9\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_icons8_google.png"
     },
     {
-        "merged": "C:\\Users\\alexp\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\menu_menu_items.xml.flat",
-        "source": "C:\\Users\\alexp\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\menu\\menu_items.xml"
-    },
-    {
         "merged": "C:\\Users\\alexp\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_resultado.xml.flat",
         "source": "C:\\Users\\alexp\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\fragment_resultado.xml"
+    },
+    {
+        "merged": "C:\\Users\\alexp\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\menu_menu_items.xml.flat",
+        "source": "C:\\Users\\alexp\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\menu\\menu_items.xml"
     },
     {
         "merged": "C:\\Users\\alexp\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_toolbar_quiz.xml.flat",
@@ -361,20 +356,20 @@
         "source": "C:\\Users\\alexp\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\fragment_sinopse.xml"
     },
     {
-        "merged": "C:\\Users\\alexp\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_winner.png.flat",
-        "source": "C:\\Users\\alexp\\ProjetoIntegrador-Grupo9\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_winner.png"
-    },
-    {
         "merged": "C:\\Users\\alexp\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_winner.png.flat",
         "source": "C:\\Users\\alexp\\ProjetoIntegrador-Grupo9\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_winner.png"
     },
     {
-        "merged": "C:\\Users\\alexp\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_comedia.jpg.flat",
-        "source": "C:\\Users\\alexp\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\comedia.jpg"
+        "merged": "C:\\Users\\alexp\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_winner.png.flat",
+        "source": "C:\\Users\\alexp\\ProjetoIntegrador-Grupo9\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_winner.png"
     },
     {
         "merged": "C:\\Users\\alexp\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_perfil_terceiro.xml.flat",
         "source": "C:\\Users\\alexp\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\fragment_perfil_terceiro.xml"
+    },
+    {
+        "merged": "C:\\Users\\alexp\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_comedia.jpg.flat",
+        "source": "C:\\Users\\alexp\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\comedia.jpg"
     },
     {
         "merged": "C:\\Users\\alexp\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_card_genero.xml.flat",

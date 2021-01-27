@@ -1,10 +1,5 @@
-<<<<<<< HEAD
-#Fri Jan 22 18:32:41 BRT 2021
+#Tue Jan 26 01:33:41 BRT 2021
 base.0=C\:\\Users\\alexp\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
-=======
-#Fri Jan 22 17:56:32 BRT 2021
-base.0=C\:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
->>>>>>> 1f25c599df29a962de7bb2765ceb1be3841c063a
 path.1=classes.dex
 renamed.1=classes2.dex
 path.0=classes.dex

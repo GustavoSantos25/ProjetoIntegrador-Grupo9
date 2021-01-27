@@ -75,6 +75,18 @@
             app:layout_constraintTop_toBottomOf="@+id/password"
             app:layout_constraintVertical_bias="0.05" />
 
+        <TextView
+            android:id="@+id/tvCadastre_se"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cadastre_se"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/grid"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnLogin"
+            app:layout_constraintVertical_bias="0.149" />
+
         <GridLayout
             android:id="@+id/grid"
             android:layout_width="match_parent"
@@ -102,6 +114,7 @@
                 android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/ivLoginGoogle"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:src="@drawable/ic_icons8_google" />
