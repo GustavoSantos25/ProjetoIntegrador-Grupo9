@@ -19,7 +19,8 @@ public class ActivityLoginBindingImpl extends ActivityLoginBinding  {
         sViewsWithIds.put(R.id.btnLogin, 4);
         sViewsWithIds.put(R.id.tvCadastre_se, 5);
         sViewsWithIds.put(R.id.grid, 6);
-        sViewsWithIds.put(R.id.loading, 7);
+        sViewsWithIds.put(R.id.ivLoginGoogle, 7);
+        sViewsWithIds.put(R.id.loading, 8);
     }
     // views
     // variables
@@ -28,15 +29,16 @@ public class ActivityLoginBindingImpl extends ActivityLoginBinding  {
     // Inverse Binding Event Handlers
 
     public ActivityLoginBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 8, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 9, sIncludes, sViewsWithIds));
     }
     private ActivityLoginBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
             , (androidx.appcompat.widget.AppCompatButton) bindings[4]
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[0]
             , (android.widget.GridLayout) bindings[6]
+            , (android.widget.ImageView) bindings[7]
             , (android.widget.LinearLayout) bindings[1]
-            , (android.widget.ProgressBar) bindings[7]
+            , (android.widget.ProgressBar) bindings[8]
             , (android.widget.EditText) bindings[3]
             , (android.widget.TextView) bindings[5]
             , (android.widget.EditText) bindings[2]
