@@ -422,9 +422,6 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
 
 
 
-
-
-
     /*
     fun alterConfiguracoesDB(configuracoes: Configuracoes) {
         viewModelScope.launch {

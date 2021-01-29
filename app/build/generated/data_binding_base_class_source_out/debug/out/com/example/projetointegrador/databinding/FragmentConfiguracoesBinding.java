@@ -22,17 +22,21 @@ public abstract class FragmentConfiguracoesBinding extends ViewDataBinding {
   public final SwitchCompat scVibrar;
 
   @NonNull
+  public final SwitchCompat swGoogleAccountConnection;
+
+  @NonNull
   public final TextView tvEmailConfig;
 
   @NonNull
   public final TextView tvGenerosFavoritos;
 
   protected FragmentConfiguracoesBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      SwitchCompat scNotificacao, SwitchCompat scVibrar, TextView tvEmailConfig,
-      TextView tvGenerosFavoritos) {
+      SwitchCompat scNotificacao, SwitchCompat scVibrar, SwitchCompat swGoogleAccountConnection,
+      TextView tvEmailConfig, TextView tvGenerosFavoritos) {
     super(_bindingComponent, _root, _localFieldCount);
     this.scNotificacao = scNotificacao;
     this.scVibrar = scVibrar;
+    this.swGoogleAccountConnection = swGoogleAccountConnection;
     this.tvEmailConfig = tvEmailConfig;
     this.tvGenerosFavoritos = tvGenerosFavoritos;
   }

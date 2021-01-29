@@ -1,24 +1,27 @@
 package com.example.projetointegrador.ui.config
 
 import android.app.AlertDialog
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.CompoundButton
-import androidx.appcompat.widget.AppCompatButton
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.ViewModelProvider
 import com.example.projetointegrador.MainViewModelFactory
 import com.example.projetointegrador.R
 import com.example.projetointegrador.databinding.FragmentConfiguracoesBinding
 import com.example.projetointegrador.services.dbRepository
 import com.example.projetointegrador.services.repository
+import com.example.projetointegrador.ui.LoginActivity
 import com.example.projetointegrador.ui.MainViewModel
-import kotlinx.android.synthetic.main.fragment_configuracoes.view.*
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.tasks.OnCompleteListener
+
 
 class ConfiguracoesFragment : Fragment() {
 
@@ -26,6 +29,7 @@ class ConfiguracoesFragment : Fragment() {
         MainViewModelFactory(repository, dbRepository)
     }
     private lateinit var bind: FragmentConfiguracoesBinding
+    private lateinit var googleSignInClient: GoogleSignInClient
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -64,9 +68,33 @@ class ConfiguracoesFragment : Fragment() {
             viewModel.updateConfigurações(bind.scNotificacao.isChecked, "notificação")
         }
 
-
+        bind.swGoogleAccountConnection.setOnCheckedChangeListener { _, isChecked ->
+            if (!isChecked) {
+                revokeAccess()
+                val intent = Intent(this.requireActivity(), LoginActivity::class.java)
+                startActivity(intent)
+            }
+        }
 
         return bind.root
+    }
+
+    private fun revokeAccess() {
+
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestEmail()
+            .build()
+
+        googleSignInClient = GoogleSignIn.getClient(this.requireActivity(), gso)
+        googleSignInClient.revokeAccess()
+        /*
+        googleSignInClient.revokeAccess().addOnCompleteListener(this, OnCompleteListener<Void?> {
+                // ...
+            })
+        googleSignInClient.revokeAccess().addOnCompleteListener(this, OnCompleteListener<Void?>{
+
+        })
+         */
     }
 
     private lateinit var alertDialog: AlertDialog
@@ -81,6 +109,7 @@ class ConfiguracoesFragment : Fragment() {
         alertDialog = dialogBuilder.create();
         alertDialog.show()
     }
+
 
 
 }

@@ -86,24 +86,23 @@ class LoginActivity : AppCompatActivity() {
     fun signIn() {
         val signInIntent: Intent = googleSignInClient.getSignInIntent()
         startActivityForResult(signInIntent, RC_SIGN_IN)
+        Log.i("Intent", signInIntent.toString())
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        // Result returned from launching the Intent from GoogleSignInClient.getSignInIntent(...);
         if (requestCode == RC_SIGN_IN) {
-            // The Task returned from this call is always completed, no need to attach
-            // a listener.
             val task = GoogleSignIn.getSignedInAccountFromIntent(data)
             handleSignInResult(task)
         }
     }
-    /*
+
     private fun handleSignInResult(completedTask: Task<GoogleSignInAccount>) {
         try {
-            val account = completedTask.getResult(ApiException::class.java)
-            val acct = GoogleSignIn.getLastSignedInAccount(this)
+            val acct = completedTask.getResult(ApiException::class.java)
+            //val acct = GoogleSignIn.getLastSignedInAccount(this)
+            Log.i("acct", "is null")
             if (acct != null) {
                 val personName = acct.displayName
                 val personGivenName = acct.givenName
@@ -111,37 +110,18 @@ class LoginActivity : AppCompatActivity() {
                 val personEmail = acct.email
                 val personId = acct.id
                 val personPhoto: Uri? = acct.photoUrl
-
-                Toast.makeText(this, "user: $personName", Toast.LENGTH_SHORT).show()
-                //personName?.let { openHome(it) }
-                personEmail?.let { openHome(it) }
-            }
-        } catch (e: ApiException) {
-            Log.d("signInResult: ", e.toString())
-        }
-    }
-     */
-
-    private fun handleSignInResult(completedTask: Task<GoogleSignInAccount>) {
-        try {
-            val account = completedTask.getResult(ApiException::class.java)
-            val acct = GoogleSignIn.getLastSignedInAccount(this)
-            if (acct != null) {
-                val personName = acct.displayName
-                val personGivenName = acct.givenName
-                val personFamilyName = acct.familyName
-                val personEmail = acct.email
-                val personId = acct.id
-                val personPhoto: Uri? = acct.photoUrl
+                Log.i(" person email = ", personEmail!!)
 
                 viewModel.getConfigurationForUser(personEmail!!)
                 viewModel.configuracoes.observe(this, {
-                    if(it == null) Toast.makeText(this, "EMAIL INEXISTENTE, POR FAVOR CADASTRE-SE ANTES DE FAZER LOGIN!", Toast.LENGTH_LONG).show()
-                    else{
-                        Toast.makeText(this, "user: $personName", Toast.LENGTH_SHORT).show()
-                        //personName?.let { openHome(it) }
-                        personEmail?.let { openHome(it) }
+                    if(it == null) {
+                        //Toast.makeText(this, "EMAIL INEXISTENTE, POR FAVOR CADASTRE-SE ANTES DE FAZER LOGIN!", Toast.LENGTH_LONG).show()
+                        viewModel.createConfigurationForUser(personEmail!!)
                     }
+
+                    personEmail?.let { openHome(it) }
+                    Log.i("email", personEmail)
+                    //openHome(personEmail)
                 })
             }
         } catch (e: ApiException) {

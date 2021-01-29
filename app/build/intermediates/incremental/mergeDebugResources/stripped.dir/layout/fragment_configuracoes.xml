@@ -199,6 +199,7 @@
                 app:drawableStartCompat="@drawable/ic_icons8_google" />
 
             <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/swGoogleAccountConnection"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
