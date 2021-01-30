@@ -4,6 +4,7 @@ import com.example.projetointegrador.domain.Credits
 import com.example.projetointegrador.domain.Crew
 import com.example.projetointegrador.domain.Filme
 import com.example.projetointegrador.domain.Genres
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
@@ -53,6 +54,10 @@ interface Repository {
 }
 
 const val url = "https://api.themoviedb.org/3/"
+
+val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+    .requestEmail()
+    .build()
 
 val retrofit = Retrofit.Builder()
     .baseUrl(url)

@@ -16,6 +16,12 @@ import java.lang.Object;
 
 public abstract class FragmentConfiguracoesBinding extends ViewDataBinding {
   @NonNull
+  public final SwitchCompat scFacebook;
+
+  @NonNull
+  public final SwitchCompat scGoogle;
+
+  @NonNull
   public final SwitchCompat scNotificacao;
 
   @NonNull
@@ -28,9 +34,11 @@ public abstract class FragmentConfiguracoesBinding extends ViewDataBinding {
   public final TextView tvGenerosFavoritos;
 
   protected FragmentConfiguracoesBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      SwitchCompat scNotificacao, SwitchCompat scVibrar, TextView tvEmailConfig,
-      TextView tvGenerosFavoritos) {
+      SwitchCompat scFacebook, SwitchCompat scGoogle, SwitchCompat scNotificacao,
+      SwitchCompat scVibrar, TextView tvEmailConfig, TextView tvGenerosFavoritos) {
     super(_bindingComponent, _root, _localFieldCount);
+    this.scFacebook = scFacebook;
+    this.scGoogle = scGoogle;
     this.scNotificacao = scNotificacao;
     this.scVibrar = scVibrar;
     this.tvEmailConfig = tvEmailConfig;

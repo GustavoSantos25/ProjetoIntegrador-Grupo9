@@ -44,6 +44,12 @@
         <action
             android:id="@+id/action_homeVPFragment_to_loginActivity"
             app:destination="@id/loginActivity" />
+        <action
+            android:id="@+id/action_homeVPFragment_self"
+            app:destination="@id/homeVPFragment" />
+        <action
+            android:id="@+id/action_homeVPFragment_to_loginActivity2"
+            app:destination="@id/loginActivity" />
     </fragment>
     <fragment
         android:id="@+id/sinopseFragment"

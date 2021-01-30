@@ -99,12 +99,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:layout_columnWeight="1"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <com.facebook.login.widget.LoginButton
+                    android:id="@+id/lbtn_Facebook"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" />
 
                 <ImageView
+                    android:id="@+id/ivFacebook"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@drawable/ic_baseline_facebook_24" />
+                    android:src="@drawable/ic_baseline_facebook_24"/>
             </LinearLayout>
 
             <LinearLayout

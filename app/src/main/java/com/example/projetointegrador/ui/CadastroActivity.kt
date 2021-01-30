@@ -3,6 +3,8 @@ package com.example.projetointegrador.ui
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.widget.TextView
 import androidx.activity.addCallback
 import androidx.activity.viewModels
 import com.example.projetointegrador.MainViewModelFactory
@@ -27,6 +29,14 @@ class CadastroActivity : AppCompatActivity() {
 
         onBackPressedDispatcher.addCallback(this){
             finish()
+        }
+
+        val extras = intent.extras
+        var email = ""
+        if(extras != null){
+            email = extras.getString("Email").toString()
+            bind.edEmailCad.setText(email, TextView.BufferType.EDITABLE)
+            bind.edEmailCad.isEnabled = false
         }
 
 
