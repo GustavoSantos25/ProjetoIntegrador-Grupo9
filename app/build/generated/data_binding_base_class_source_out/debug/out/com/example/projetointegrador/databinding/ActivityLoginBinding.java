@@ -17,6 +17,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import com.example.projetointegrador.R;
+import com.facebook.login.widget.LoginButton;
 import java.lang.Deprecated;
 import java.lang.Object;
 
@@ -31,7 +32,13 @@ public abstract class ActivityLoginBinding extends ViewDataBinding {
   public final GridLayout grid;
 
   @NonNull
+  public final ImageView ivFacebook;
+
+  @NonNull
   public final ImageView ivLoginGoogle;
+
+  @NonNull
+  public final LoginButton lbtnFacebook;
 
   @NonNull
   public final LinearLayout linearLayout3;
@@ -49,14 +56,16 @@ public abstract class ActivityLoginBinding extends ViewDataBinding {
   public final EditText username;
 
   protected ActivityLoginBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      AppCompatButton btnLogin, ConstraintLayout container, GridLayout grid,
-      ImageView ivLoginGoogle, LinearLayout linearLayout3, ProgressBar loading, EditText password,
-      TextView tvCadastreSe, EditText username) {
+      AppCompatButton btnLogin, ConstraintLayout container, GridLayout grid, ImageView ivFacebook,
+      ImageView ivLoginGoogle, LoginButton lbtnFacebook, LinearLayout linearLayout3,
+      ProgressBar loading, EditText password, TextView tvCadastreSe, EditText username) {
     super(_bindingComponent, _root, _localFieldCount);
     this.btnLogin = btnLogin;
     this.container = container;
     this.grid = grid;
+    this.ivFacebook = ivFacebook;
     this.ivLoginGoogle = ivLoginGoogle;
+    this.lbtnFacebook = lbtnFacebook;
     this.linearLayout3 = linearLayout3;
     this.loading = loading;
     this.password = password;

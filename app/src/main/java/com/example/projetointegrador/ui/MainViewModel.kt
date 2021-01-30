@@ -10,6 +10,8 @@ import androidx.lifecycle.viewModelScope
 import com.example.projetointegrador.R
 import com.example.projetointegrador.domain.*
 import com.example.projetointegrador.services.*
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.toolbar_quiz.view.*
 import kotlinx.coroutines.launch
 import java.util.*
@@ -30,6 +32,10 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
     //val dbRepository: DBRepository
     val configuracoes = MutableLiveData<Configuracoes>()
     val emailUser = MutableLiveData<String>()
+    val facebookIsLogged = MutableLiveData<Boolean>()
+    val googleIsLogged = MutableLiveData<Boolean>()
+    val auth = MutableLiveData<FirebaseAuth>()
+    val googleSignInClient = MutableLiveData<GoogleSignInClient>()
 
     fun popListGeneros() {
         viewModelScope.launch {
@@ -419,6 +425,25 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
     fun atualizarEmailUser(email: String){
         emailUser.value = email
     }
+
+    fun updateFacebookLogIn(isLogged : Boolean){
+        facebookIsLogged.value = isLogged
+    }
+
+    fun updateGoogleLogIn(isLogged : Boolean){
+        googleIsLogged.value = isLogged
+    }
+
+    fun configFacebook(fauth : FirebaseAuth){
+        auth.value = fauth
+    }
+
+    fun configGoogle(gclient : GoogleSignInClient){
+        googleSignInClient.value = gclient
+    }
+
+
+
 
 
 

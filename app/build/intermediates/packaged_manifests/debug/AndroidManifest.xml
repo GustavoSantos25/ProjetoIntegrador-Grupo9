@@ -9,6 +9,8 @@
         android:targetSdkVersion="30" />
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
 
     <application
         android:allowBackup="true"
@@ -22,7 +24,11 @@
         android:testOnly="true"
         android:theme="@style/Theme.ProjetoIntegrador" >
         <activity android:name="com.example.projetointegrador.ui.CadastroActivity" />
-        <activity android:name="com.example.projetointegrador.ui.LoginActivity" />
+        <activity
+            android:name="com.example.projetointegrador.ui.LoginActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" >
+        </activity>
         <activity android:name="com.example.projetointegrador.ui.HomeActivity" />
         <activity android:name="com.example.projetointegrador.ui.SplashActivity" >
             <intent-filter>
@@ -32,6 +38,98 @@
             </intent-filter>
         </activity>
 
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <service
+            android:name="com.google.firebase.components.ComponentDiscoveryService"
+            android:directBootAware="true"
+            android:exported="false" >
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.auth.ktx.FirebaseAuthKtxRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonKtxRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <!--
+                This registrar is not defined in the dynamic-module-support sdk itself to allow non-firebase
+                clients to use it as well, by defining this registrar in their own core/common library.
+            -->
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.dynamicloading.DynamicLoadingRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+        </service>
+
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:theme="@style/com_facebook_activity_theme" />
+        <activity android:name="com.facebook.CustomTabMainActivity" />
+        <activity
+            android:name="com.facebook.CustomTabActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="cct.com.example.projetointegrador"
+                    android:scheme="fbconnect" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="firebase.auth"
+                    android:path="/"
+                    android:scheme="genericidp" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="firebase.auth"
+                    android:path="/"
+                    android:scheme="recaptcha" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name="com.google.firebase.auth.api.fallback.service.FirebaseAuthFallbackService"
+            android:enabled="true"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.google.firebase.auth.api.gms.service.START" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
         <service
             android:name="androidx.room.MultiInstanceInvalidationService"
             android:directBootAware="true"
@@ -51,6 +149,34 @@
             android:exported="true"
             android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
             android:visibleToInstantApps="true" />
+
+        <provider
+            android:name="com.google.firebase.provider.FirebaseInitProvider"
+            android:authorities="com.example.projetointegrador.firebaseinitprovider"
+            android:directBootAware="true"
+            android:exported="false"
+            android:initOrder="100" />
+        <!--
+         The initialization ContentProvider will call FacebookSdk.sdkInitialize automatically
+         with the application context. This config is merged in with the host app's manifest,
+         but there can only be one provider with the same authority activated at any given
+         point; so if the end user has two or more different apps that use Facebook SDK, only the
+         first one will be able to use the provider. To work around this problem, we use the
+         following placeholder in the authority to identify each host application as if it was
+         a completely different provider.
+        -->
+        <provider
+            android:name="com.facebook.internal.FacebookInitProvider"
+            android:authorities="com.example.projetointegrador.FacebookInitProvider"
+            android:exported="false" />
+
+        <receiver
+            android:name="com.facebook.CurrentAccessTokenExpirationBroadcastReceiver"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.facebook.sdk.ACTION_CURRENT_ACCESS_TOKEN_CHANGED" />
+            </intent-filter>
+        </receiver>
 
         <activity
             android:name="com.google.android.gms.common.api.GoogleApiActivity"

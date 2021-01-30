@@ -152,6 +152,7 @@
                 app:drawableStartCompat="@drawable/ic_baseline_facebook_24" />
 
             <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/scFacebook"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
@@ -176,6 +177,7 @@
                 app:drawableStartCompat="@drawable/ic_icons8_instagram" />
 
             <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/scGoogle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\alexp\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-port\\values-port.xml",
+            "outputFile": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-port\\values-port.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\alexp\\.gradle\\caches\\transforms-2\\files-2.1\\39382bae5113f155e1aee98ba8c5dcd4\\appcompat-1.2.0\\res\\values-port\\values-port.xml",
+                    "source": "C:\\Users\\Desktop\\.gradle\\caches\\transforms-2\\files-2.1\\86b8749d2645f9d56b72c10bf64a434b\\appcompat-1.2.0\\res\\values-port\\values-port.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

@@ -18,6 +18,8 @@ public class FragmentConfiguracoesBindingImpl extends FragmentConfiguracoesBindi
         sViewsWithIds.put(R.id.sc_vibrar, 2);
         sViewsWithIds.put(R.id.sc_notificacao, 3);
         sViewsWithIds.put(R.id.tvGenerosFavoritos, 4);
+        sViewsWithIds.put(R.id.scFacebook, 5);
+        sViewsWithIds.put(R.id.scGoogle, 6);
     }
     // views
     @NonNull
@@ -28,10 +30,12 @@ public class FragmentConfiguracoesBindingImpl extends FragmentConfiguracoesBindi
     // Inverse Binding Event Handlers
 
     public FragmentConfiguracoesBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 5, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 7, sIncludes, sViewsWithIds));
     }
     private FragmentConfiguracoesBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
+            , (androidx.appcompat.widget.SwitchCompat) bindings[5]
+            , (androidx.appcompat.widget.SwitchCompat) bindings[6]
             , (androidx.appcompat.widget.SwitchCompat) bindings[3]
             , (androidx.appcompat.widget.SwitchCompat) bindings[2]
             , (android.widget.TextView) bindings[1]
