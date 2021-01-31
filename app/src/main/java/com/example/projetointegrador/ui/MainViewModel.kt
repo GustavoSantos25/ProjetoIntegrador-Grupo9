@@ -2,17 +2,18 @@ package com.example.projetointegrador.ui
 
 import android.util.Log
 import android.widget.TextView
-import android.widget.Toolbar
 import androidx.appcompat.widget.AppCompatButton
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.projetointegrador.R
 import com.example.projetointegrador.domain.*
-import com.example.projetointegrador.services.*
+import com.example.projetointegrador.services.DBRepository
+import com.example.projetointegrador.services.Repository
+import com.example.projetointegrador.services.dbRepository
+import com.example.projetointegrador.services.repository
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.firebase.auth.FirebaseAuth
-import kotlinx.android.synthetic.main.toolbar_quiz.view.*
 import kotlinx.coroutines.launch
 import java.util.*
 import kotlin.collections.ArrayList
@@ -26,9 +27,10 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
     val lastMovieId = MutableLiveData<Int>()
     val listTemplates = popTemplates()
     val pergunta = MutableLiveData<Pergunta>()
-    val acertos = MutableLiveData<Int>()
+    var acertos = 0
     private val apiKey = "2ae684da617a0a9eb2d4bd28815050e8"
     private val IDIOMA = "pt-BR"
+
     //val dbRepository: DBRepository
     val configuracoes = MutableLiveData<Configuracoes>()
     val emailUser = MutableLiveData<String>()
@@ -37,17 +39,20 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
     val auth = MutableLiveData<FirebaseAuth>()
     val googleSignInClient = MutableLiveData<GoogleSignInClient>()
 
+    //Variável para ver qual modo de jogo foi escolhido
+    var modoSobrevivencia = false
+
     fun popListGeneros() {
         viewModelScope.launch {
             listGeneros.value = getAllGeneros()
         }
     }
 
-    fun popPagesRanking() {
-        viewModelScope.launch {
-            pagesRanking.value = arrayListOf(getAllJogadoresRank1(), getAllJogadoresRank2())
-        }
-    }
+//    fun popPagesRanking() {
+//        viewModelScope.launch {
+//            pagesRanking.value = arrayListOf(getAllJogadoresRank1(), getAllJogadoresRank2())
+//        }
+//    }
 
     fun updateLastMovieId() {
         viewModelScope.launch {
@@ -72,13 +77,11 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
 
         viewModelScope.launch {
 
-            var indiceEnunciado = (0 until 4).random()
+            val indiceEnunciado = (0 until 4).random()
             val perguntaGerada = Pergunta()
 
-//            indiceEnunciado = 3
-
             perguntaGerada.enunciado = listTemplates[indiceEnunciado]
-            lastMovieId.value = 700000
+//            lastMovieId.value = 700000
 
             when (indiceEnunciado) {
                 0 -> primeiroTemplate(perguntaGerada)
@@ -97,22 +100,23 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
         var idFilme: Int
         var alternativas = 0
         var sucesso = false
+        val anos = ArrayList<Int>()
+        val anoAtual: Int = Calendar.getInstance().get(Calendar.YEAR)
 
         while (!sucesso) {
             try {
-                val anos = ArrayList<String>()
                 while (alternativas < 4) {
 
                     idFilme = (0..lastMovieId.value!!).random()
                     val filme: Filme = repository.getMovieById(idFilme, apiKey, IDIOMA)
 
-                    if (filme.popularity < 7.0 && alternativas == 0) continue
+                    if (filme.popularity < 4.0 && alternativas == 0) continue
 
-                    if (filme.release_date.isNotEmpty() && filme.popularity >= 7.0) {
+                    if (filme.release_date.isNotEmpty() && filme.popularity >= 4.0) {
 
-                        val anoDeLancamento = filme.release_date.trim().substring(0, 4)
+                        val anoDeLancamento: Int = Integer.parseInt(filme.release_date.trim().substring(0, 4))
                         //Verificar se o ano já está nas alternativas
-                        if (anos.contains(anoDeLancamento)) {
+                        if (anos.contains(anoDeLancamento) || anoDeLancamento > anoAtual) {
                             continue
                         }
 
@@ -123,12 +127,12 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
                             1 -> {
                                 perguntaGerada.enunciado =
                                     perguntaGerada.enunciado.replace("REPLACE", filme.title)
-                                perguntaGerada.alternativaCerta = anoDeLancamento
+                                perguntaGerada.alternativaCerta = anoDeLancamento.toString()
                                 perguntaGerada.genero = filme.genres[0].name
                             }
-                            2 -> perguntaGerada.segundaAlternativa = anoDeLancamento
-                            3 -> perguntaGerada.terceiraAlternativa = anoDeLancamento
-                            4 -> perguntaGerada.quartaAlternativa = anoDeLancamento
+                            2 -> perguntaGerada.segundaAlternativa = anoDeLancamento.toString()
+                            3 -> perguntaGerada.terceiraAlternativa = anoDeLancamento.toString()
+                            4 -> perguntaGerada.quartaAlternativa = anoDeLancamento.toString()
                         }
                     }
                 }
@@ -137,7 +141,6 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
 
             }
         }
-
     }
 
     //Template de país de produção
@@ -146,23 +149,23 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
         var idFilme: Int
         var alternativas = 0
         var sucesso = false
+        val paises = ArrayList<String>()
 
         while (!sucesso) {
             try {
-                val paises = ArrayList<String>()
                 while (alternativas < 4) {
 
                     idFilme = (0..lastMovieId.value!!).random()
                     val filme: Filme = repository.getMovieById(idFilme, apiKey, IDIOMA)
 
-                    if (filme.popularity < 7.0 && alternativas == 0) continue
+                    if (filme.popularity < 4.0 && alternativas == 0) continue
 
                     if (filme.production_countries.size != 0) {
 
                         val paisDeProducao =
                             filme.production_countries[0].name.toUpperCase(Locale.ROOT).trim()
                         //Verificar se o país já está nas alternativas
-                        if (paises.contains(paisDeProducao)) {
+                        if (paises.contains(paisDeProducao) || paisDeProducao.isEmpty()) {
                             continue
                         }
 
@@ -194,16 +197,16 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
         var idFilme: Int
         var alternativas = 0
         var sucesso = false
+        val diretores = ArrayList<String>()
 
         while (!sucesso) {
             try {
-                val diretores = ArrayList<String>()
                 while (alternativas < 4) {
 
                     idFilme = (0..lastMovieId.value!!).random()
                     val filme: Filme = repository.getMovieById(idFilme, apiKey, IDIOMA)
 
-                    if (filme.popularity < 7.0 && alternativas == 0) continue
+                    if (filme.popularity < 4.0 && alternativas == 0) continue
 
                     val credits = repository.getMovieCredits(idFilme, apiKey, IDIOMA)
                     var diretor = ""
@@ -213,7 +216,7 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
                         if (it.job == "Director") diretor = it.name.trim().toUpperCase(Locale.ROOT)
                     }
 
-                    if (diretor.isNotEmpty() ) {
+                    if (diretor.isNotEmpty()) {
 
                         //Verificar se o diretor já está nas alternativas
                         if (diretores.contains(diretor)) {
@@ -248,16 +251,16 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
         var idFilme: Int
         var alternativas = 0
         var sucesso = false
+        val filmes = ArrayList<String>()
 
         while (!sucesso) {
             try {
-                val filmes = ArrayList<String>()
                 while (alternativas < 4) {
 
                     idFilme = (0..lastMovieId.value!!).random()
                     val filme: Filme = repository.getMovieById(idFilme, apiKey, IDIOMA)
 
-                    if ((filme.popularity < 5.0 && alternativas == 0) || filme.popularity < 3.0) continue
+                    if ((filme.popularity < 4.0 && alternativas == 0) || filme.popularity < 3.0) continue
 
                     val nomeFilme = filme.title.trim().toUpperCase(Locale.ROOT)
                     val sinopse = filme.overview.trim()
@@ -298,36 +301,36 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
         Genero(4, "Terror", R.drawable.terror)
     )
 
-    private fun getAllJogadoresRank1() = arrayListOf(
-        Jogador("Jogador 1", "10 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
-        Jogador("Jogador 2", "9 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
-        Jogador("Jogador 3", "8 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
-        Jogador("Jogador 4", "7 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
-        Jogador("Jogador 5", "6 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
-        Jogador("Jogador 6", "5 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
-        Jogador("Jogador 7", "4 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
-        Jogador("Jogador 8", "3 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
-        Jogador("Jogador 9", "2 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
-        Jogador("Jogador 10", "1 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
-    )
+//    private fun getAllJogadoresRank1() = arrayListOf(
+//        Jogador("Jogador 1", "10 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
+//        Jogador("Jogador 2", "9 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
+//        Jogador("Jogador 3", "8 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
+//        Jogador("Jogador 4", "7 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
+//        Jogador("Jogador 5", "6 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
+//        Jogador("Jogador 6", "5 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
+//        Jogador("Jogador 7", "4 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
+//        Jogador("Jogador 8", "3 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
+//        Jogador("Jogador 9", "2 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
+//        Jogador("Jogador 10", "1 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
+//    )
 
-    private fun getAllJogadoresRank2() = arrayListOf(
-        Jogador("Jogador 1", "10 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
-        Jogador("Jogador 2", "9 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
-        Jogador("Jogador 3", "8 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
-        Jogador("Jogador 4", "7 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
-        Jogador("Jogador 5", "6 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
-        Jogador("Jogador 6", "5 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
-        Jogador("Jogador 7", "4 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
-        Jogador("Jogador 8", "3 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
-        Jogador("Jogador 9", "2 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
-        Jogador("Jogador 10", "1 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
-    )
+//    private fun getAllJogadoresRank2() = arrayListOf(
+//        Jogador("Jogador 1", "10 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
+//        Jogador("Jogador 2", "9 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
+//        Jogador("Jogador 3", "8 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
+//        Jogador("Jogador 4", "7 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
+//        Jogador("Jogador 5", "6 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
+//        Jogador("Jogador 6", "5 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
+//        Jogador("Jogador 7", "4 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
+//        Jogador("Jogador 8", "3 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
+//        Jogador("Jogador 9", "2 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
+//        Jogador("Jogador 10", "1 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
+//    )
 
     private fun popTemplates() = arrayListOf(
-        "Em que ano o filme REPLACE foi lançado?",
-        "Qual o país de produção do filme REPLACE?",
-        "Qual o diretor do filme REPLACE?",
+        "Em que ano o filme \"REPLACE\" foi lançado?",
+        "Qual o país de produção do filme \"REPLACE\"?",
+        "Qual o diretor do filme \"REPLACE\"?",
         "A a qual filme se refere a sinopse \"REPLACE\"?"
     )
 
@@ -336,9 +339,9 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
         textView.text = texto
     }
 
-    fun atualizarGeneroToolbar(toolbar: Toolbar) {
-        toolbar.tvGeneroPergunta.text = pergunta.value?.genero
-    }
+//    fun atualizarGeneroToolbar(toolbar: Toolbar) {
+//        toolbar.tvGeneroPergunta.text = pergunta.value?.genero
+//    }
 
     //Método para popular as alternativas
     fun popAlternativas(listBotoes: Array<AppCompatButton>) {
@@ -370,21 +373,33 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
         }
     }
 
-    fun onProximaPergunta() {
-
-    }
-
     fun initializeOfflineTemplates() {
         viewModelScope.launch {
             if (dbRepository.getAllTemplatesTask() == null) {
-                dbRepository.addTemplateTask(Template(1, "Em que ano o filme",
-                    "foi lançado?", "filme_name"))
-                dbRepository.addTemplateTask(Template(1, "Qual o país de produção do filme",
-                    "", "country"))
-                dbRepository.addTemplateTask(Template(1, "Qual o diretor do filme REPLACE?",
-                    "", "director"))
-                dbRepository.addTemplateTask(Template(1, "A a qual filme se refere a sinopse",
-                    "", "filme_name"))
+                dbRepository.addTemplateTask(
+                    Template(
+                        1, "Em que ano o filme",
+                        "foi lançado?", "filme_name"
+                    )
+                )
+                dbRepository.addTemplateTask(
+                    Template(
+                        1, "Qual o país de produção do filme",
+                        "", "country"
+                    )
+                )
+                dbRepository.addTemplateTask(
+                    Template(
+                        1, "Qual o diretor do filme REPLACE?",
+                        "", "director"
+                    )
+                )
+                dbRepository.addTemplateTask(
+                    Template(
+                        1, "A a qual filme se refere a sinopse",
+                        "", "filme_name"
+                    )
+                )
             }
         }
     }
@@ -395,16 +410,15 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
         }
     }
 
-
-    fun getConfigurationForUser(email : String){
+    fun getConfigurationForUser(email: String) {
         viewModelScope.launch {
             val config = dbRepository.getConfiguracoesForUserTask(email)
             configuracoes.value = config
-            if(config == null) Log.i("NULL", "deu ruim")
+            if (config == null) Log.i("NULL", "deu ruim")
         }
     }
 
-    fun createConfigurationForUser(email : String){
+    fun createConfigurationForUser(email: String) {
         viewModelScope.launch {
             val config = Configuracoes(email = email, vibrar = true, notificacoes = true)
             dbRepository.addConfiguracoesTask(config)
@@ -412,9 +426,9 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
         }
     }
 
-    fun updateConfigurações(isChecked : Boolean, campo : String){
+    fun updateConfigurações(isChecked: Boolean, campo: String) {
         viewModelScope.launch {
-            when(campo){
+            when (campo) {
                 "vibrar" -> configuracoes.value!!.vibrar = isChecked
                 "notificação" -> configuracoes.value!!.notificacoes = isChecked
             }
@@ -422,33 +436,34 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
         }
     }
 
-    fun atualizarEmailUser(email: String){
+    fun atualizarEmailUser(email: String) {
         emailUser.value = email
     }
 
-    fun updateFacebookLogIn(isLogged : Boolean){
+    fun updateFacebookLogIn(isLogged: Boolean) {
         facebookIsLogged.value = isLogged
     }
 
-    fun updateGoogleLogIn(isLogged : Boolean){
+    fun updateGoogleLogIn(isLogged: Boolean) {
         googleIsLogged.value = isLogged
     }
 
-    fun configFacebook(fauth : FirebaseAuth){
+    fun configFacebook(fauth: FirebaseAuth) {
         auth.value = fauth
     }
 
-    fun configGoogle(gclient : GoogleSignInClient){
+    fun configGoogle(gclient: GoogleSignInClient) {
         googleSignInClient.value = gclient
     }
 
+    fun onAcerto(): String {
+        acertos++
 
-
-
-
-
-
-
+        return when (acertos) {
+            1 -> "${acertos}\nacerto"
+            else -> "${acertos}\nacertos"
+        }
+    }
 
     /*
     fun alterConfiguracoesDB(configuracoes: Configuracoes) {

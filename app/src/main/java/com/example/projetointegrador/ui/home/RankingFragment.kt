@@ -51,7 +51,7 @@ class RankingFragment : Fragment() {
             findNavController().navigate(R.id.action_rankingFragment_to_homeVPFragment)
         }
         adapter = RankingAdapter(view.context, listRankings)
-        viewModel.popPagesRanking()
+//        viewModel.popPagesRanking()
         viewModel.pagesRanking.observe(viewLifecycleOwner, {
             adapter.addAll(it)
         })

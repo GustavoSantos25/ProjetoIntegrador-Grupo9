@@ -39,18 +39,26 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-                <TextView
-                    android:id="@+id/tvPergunta"
-                    android:layout_width="380dp"
-                    android:layout_height="250dp"
-                    android:gravity="center"
-                    android:text="@string/placeholder_pergunta"
-                    android:textAlignment="center"
-                    android:textColor="@color/yellow"
-                    android:textSize="18sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:scrollbars="vertical">
+
+                    <TextView
+                        android:id="@+id/tvPergunta"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/placeholder_pergunta"
+                        android:textAlignment="center"
+                        android:textColor="@color/yellow"
+                        android:textSize="18sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </ScrollView>
 
             </FrameLayout>
 
@@ -91,6 +99,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
 
             <TextView
+                android:id="@+id/tvQtdeAcertos"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/placeholder_acerto"
@@ -118,6 +127,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/placeholder_perguntas_feitas"
+                android:textAlignment="center"
                 android:textColor="@color/yellow"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@+id/civPerguntas"
@@ -136,7 +146,7 @@
             android:background="@drawable/botao_redondo_amarelo"
             android:text="@string/snake_charmer"
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textSize="17sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
@@ -151,7 +161,7 @@
             android:background="@drawable/botao_redondo_amarelo"
             android:text="@string/cottonmouth"
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textSize="17sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btnPrimeiraResposta" />
@@ -166,7 +176,7 @@
             android:background="@drawable/botao_redondo_amarelo"
             android:text="@string/black_mamba"
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textSize="17sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btnSegundaResposta" />
@@ -181,7 +191,7 @@
             android:background="@drawable/botao_redondo_amarelo"
             android:text="@string/_007"
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textSize="17sp"
             app:layout_constraintTop_toBottomOf="@+id/btnTerceiraResposta" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

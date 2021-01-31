@@ -118,12 +118,12 @@
     <string name="sons">Sons</string>
     <string name="placeholder_pergunta">Qual o codinome de Beatrix Kiddo, em Kill Bill?</string>
     <string name="placeholder_tempo">00:30</string>
-    <string name="placeholder_perguntas_feitas">2/10</string>
+    <string name="placeholder_perguntas_feitas">0\nRecorde</string>
     <string name="editar">Editar</string>
     <string name="snake_charmer">Snake Charmer</string>
     <string name="cottonmouth">Cottonmouth</string>
     <string name="black_mamba">Black Mamba</string>
-    <string name="placeholder_acerto">2\nAcertos</string>
+    <string name="placeholder_acerto">0\nAcertos</string>
     <string name="_007">007</string>
     <string name="respostas_corretas">Respostas corretas</string>
     <string name="_8_10">8/10</string>
@@ -173,7 +173,12 @@
     <string name="cadastre_se">Não tem uma conta? Cadastra-se!</string>
     <string name="facebook_app_id">340763303680578</string>
     <string name="fb_login_protocol_scheme">fb340763303680578</string>
-
+    <string name="time_limit">Time limit</string>
+    <string name="sobreviv_ncia">Sobrevivência</string>
+    <string name="correto_parab_ns">Correto! Parabéns!!</string>
+    <string name="ok">Ok</string>
+    <string name="_6">6</string>
+    <string name="voce_errou">Você errou :(</string>
 
 
 </resources>

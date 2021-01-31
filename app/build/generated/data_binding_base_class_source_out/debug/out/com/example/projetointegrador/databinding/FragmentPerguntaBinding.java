@@ -52,6 +52,9 @@ public abstract class FragmentPerguntaBinding extends ViewDataBinding {
   public final TextView tvPergunta;
 
   @NonNull
+  public final TextView tvQtdeAcertos;
+
+  @NonNull
   public final View view;
 
   protected FragmentPerguntaBinding(Object _bindingComponent, View _root, int _localFieldCount,
@@ -59,7 +62,7 @@ public abstract class FragmentPerguntaBinding extends ViewDataBinding {
       AppCompatButton btnSegundaResposta, AppCompatButton btnTerceiraResposta,
       CircleImageView civPerguntas, CircleImageView civPontos, CircleImageView civTempo,
       ConstraintLayout constraintLayout, FrameLayout frameLayout, View includeToolbarQuiz,
-      TextView tvPergunta, View view) {
+      TextView tvPergunta, TextView tvQtdeAcertos, View view) {
     super(_bindingComponent, _root, _localFieldCount);
     this.btnPrimeiraResposta = btnPrimeiraResposta;
     this.btnQuartaResposta = btnQuartaResposta;
@@ -72,6 +75,7 @@ public abstract class FragmentPerguntaBinding extends ViewDataBinding {
     this.frameLayout = frameLayout;
     this.includeToolbarQuiz = includeToolbarQuiz;
     this.tvPergunta = tvPergunta;
+    this.tvQtdeAcertos = tvQtdeAcertos;
     this.view = view;
   }
 

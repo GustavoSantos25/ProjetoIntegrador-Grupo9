@@ -1,3 +1,7 @@
+com/example/projetointegrador/databinding/FragmentResultadoBinding.java
+ com.example.projetointegrador.databinding.FragmentResultadoBinding
+com/example/projetointegrador/databinding/FragmentSobrevivenciaBinding.java
+ com.example.projetointegrador.databinding.FragmentSobrevivenciaBinding
 com/example/projetointegrador/BR.java
  com.example.projetointegrador.BR
 androidx/databinding/DataBinderMapperImpl.java
@@ -40,6 +44,8 @@ com/example/projetointegrador/dao/ConfiguracoesDAO_Impl.java
  com.example.projetointegrador.dao.ConfiguracoesDAO_Impl$6
 com/example/projetointegrador/databinding/ActivityLoginBinding.java
  com.example.projetointegrador.databinding.ActivityLoginBinding
+com/example/projetointegrador/databinding/FragmentSobrevivenciaBindingImpl.java
+ com.example.projetointegrador.databinding.FragmentSobrevivenciaBindingImpl
 com/example/projetointegrador/dao/FilmeReplaceDAO_Impl.java
  com.example.projetointegrador.dao.FilmeReplaceDAO_Impl
  com.example.projetointegrador.dao.FilmeReplaceDAO_Impl$1
@@ -49,5 +55,7 @@ com/example/projetointegrador/databinding/ActivityCadastroBindingImpl.java
  com.example.projetointegrador.databinding.ActivityCadastroBindingImpl
 com/example/projetointegrador/BuildConfig.java
  com.example.projetointegrador.BuildConfig
+com/example/projetointegrador/databinding/FragmentResultadoBindingImpl.java
+ com.example.projetointegrador.databinding.FragmentResultadoBindingImpl
 androidx/databinding/DataBindingComponent.java
  androidx.databinding.DataBindingComponent
