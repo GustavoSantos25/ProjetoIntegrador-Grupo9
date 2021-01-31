@@ -37,7 +37,7 @@ class ConfiguracoesFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         binding = DataBindingUtil.inflate(
             inflater,
@@ -57,8 +57,6 @@ class ConfiguracoesFragment : Fragment() {
 
             binding.scNotificacao.isChecked = config.notificacoes
             binding.scVibrar.isChecked = config.vibrar
-            binding.tvEmailConfig.text = config.email
-
         })
 
         binding.scVibrar.setOnClickListener{

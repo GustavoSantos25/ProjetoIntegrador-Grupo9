@@ -15,10 +15,9 @@ class HomeActivity : AppCompatActivity() {
 
     private lateinit var navController: NavController
 
-    val viewModel by viewModels<MainViewModel> {
+    private val viewModel by viewModels<MainViewModel> {
         MainViewModelFactory(repository, dbRepository)
     }
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
