@@ -1,6 +1,5 @@
 package com.example.projetointegrador.ui
 
-import android.util.Log
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatButton
 import androidx.lifecycle.MutableLiveData
@@ -14,6 +13,11 @@ import com.example.projetointegrador.services.dbRepository
 import com.example.projetointegrador.services.repository
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.firebase.auth.FirebaseAuth
+import com.google.mlkit.common.model.DownloadConditions
+import com.google.mlkit.nl.translate.TranslateLanguage
+import com.google.mlkit.nl.translate.Translation
+import com.google.mlkit.nl.translate.Translator
+import com.google.mlkit.nl.translate.TranslatorOptions
 import kotlinx.coroutines.launch
 import java.util.*
 import kotlin.collections.ArrayList
@@ -28,8 +32,13 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
     val listTemplates = popTemplates()
     val pergunta = MutableLiveData<Pergunta>()
     var acertos = 0
+
+    //Variável para ver se a pergunta está sendo carregada
+    var carregandoPergunta = MutableLiveData<Boolean>()
+
     private val apiKey = "2ae684da617a0a9eb2d4bd28815050e8"
     private val IDIOMA = "pt-BR"
+    private val POPULARIDADE_MINIMA = 2.0
 
     //val dbRepository: DBRepository
     val configuracoes = MutableLiveData<Configuracoes>()
@@ -75,9 +84,12 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
 
     fun gerarPerguntaAleatoria() {
 
+        carregandoPergunta.value = true
+
         viewModelScope.launch {
 
             val indiceEnunciado = (0 until 4).random()
+//            val indiceEnunciado = 1
             val perguntaGerada = Pergunta()
 
             perguntaGerada.enunciado = listTemplates[indiceEnunciado]
@@ -89,6 +101,7 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
                 3 -> quartoTemplate(perguntaGerada)
             }
 
+            carregandoPergunta.value = false
             pergunta.value = perguntaGerada
         }
     }
@@ -109,11 +122,12 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
                     idFilme = (0..lastMovieId.value!!).random()
                     val filme: Filme = repository.getMovieById(idFilme, apiKey, IDIOMA)
 
-                    if (filme.popularity < 4.0 && alternativas == 0) continue
+                    if (filme.popularity < POPULARIDADE_MINIMA && alternativas == 0) continue
 
-                    if (filme.release_date.isNotEmpty() && filme.popularity >= 4.0) {
+                    if (filme.release_date.isNotEmpty() && filme.popularity >= POPULARIDADE_MINIMA) {
 
-                        val anoDeLancamento: Int = Integer.parseInt(filme.release_date.trim().substring(0, 4))
+                        val anoDeLancamento: Int =
+                            Integer.parseInt(filme.release_date.trim().substring(0, 4))
                         //Verificar se o ano já está nas alternativas
                         if (anos.contains(anoDeLancamento) || anoDeLancamento > anoAtual) {
                             continue
@@ -157,9 +171,9 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
                     idFilme = (0..lastMovieId.value!!).random()
                     val filme: Filme = repository.getMovieById(idFilme, apiKey, IDIOMA)
 
-                    if (filme.popularity < 4.0 && alternativas == 0) continue
+                    if (filme.popularity < POPULARIDADE_MINIMA && alternativas == 0) continue
 
-                    if (filme.production_countries.size != 0) {
+                     if (filme.production_countries.size != 0) {
 
                         val paisDeProducao =
                             filme.production_countries[0].name.toUpperCase(Locale.ROOT).trim()
@@ -183,6 +197,7 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
                         }
                     }
                 }
+
                 sucesso = true
             } catch (ignored: Exception) {
 
@@ -205,7 +220,7 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
                     idFilme = (0..lastMovieId.value!!).random()
                     val filme: Filme = repository.getMovieById(idFilme, apiKey, IDIOMA)
 
-                    if (filme.popularity < 4.0 && alternativas == 0) continue
+                    if (filme.popularity < POPULARIDADE_MINIMA && alternativas == 0) continue
 
                     val credits = repository.getMovieCredits(idFilme, apiKey, IDIOMA)
                     var diretor = ""
@@ -259,12 +274,12 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
                     idFilme = (0..lastMovieId.value!!).random()
                     val filme: Filme = repository.getMovieById(idFilme, apiKey, IDIOMA)
 
-                    if ((filme.popularity < 4.0 && alternativas == 0) || filme.popularity < 3.0) continue
+                    if ((filme.popularity < POPULARIDADE_MINIMA && alternativas == 0) || filme.popularity < POPULARIDADE_MINIMA) continue
 
                     val nomeFilme = filme.title.trim().toUpperCase(Locale.ROOT)
                     val sinopse = filme.overview.trim()
 
-                    if ((sinopse.isNotEmpty() && alternativas == 0) || alternativas > 0) {
+                    if ((sinopse.isNotEmpty() && sinopse.count() < 450 && alternativas == 0) || alternativas > 0) {
 
                         //Verificar se o diretor já está nas alternativas
                         if (filmes.contains(nomeFilme)) {
@@ -330,7 +345,7 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
         "Em que ano o filme \"REPLACE\" foi lançado?",
         "Qual o país de produção do filme \"REPLACE\"?",
         "Qual o diretor do filme \"REPLACE\"?",
-        "A a qual filme se refere a sinopse \"REPLACE\"?"
+        "A qual filme se refere a sinopse \"REPLACE\"?"
     )
 
     fun atualizarAcertos(textView: TextView, acertos: Int) {
@@ -413,7 +428,6 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
         viewModelScope.launch {
             val config = dbRepository.getConfiguracoesForUserTask(email)
             configuracoes.value = config
-            if (config == null) Log.i("NULL", "deu ruim")
         }
     }
 

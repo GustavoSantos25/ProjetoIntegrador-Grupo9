@@ -44,7 +44,7 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     private lateinit var progressView: ViewGroup
     private var progressoVisivel = false
-    val callbackManager = CallbackManager.Factory.create()
+    private lateinit var callbackManager: CallbackManager
     val TAG = "LOGIN ACTIVITY"
 
     //    private var RC_SIGN_IN = 100
@@ -87,12 +87,12 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        binding.ivLoginGoogle.setOnClickListener {
-            signInWithGoogle()
+        binding.ivFacebook.setOnClickListener {
+            binding.lbtnFacebook.performClick()
         }
 
-        binding.ivFacebook.setOnClickListener {
-            onClickFacebook(binding.ivFacebook)
+        binding.ivLoginGoogle.setOnClickListener {
+            signInWithGoogle()
         }
 
         //Configurar google sign in
@@ -105,6 +105,25 @@ class LoginActivity : AppCompatActivity() {
 
         //Inicializar Firebase auth
         auth = Firebase.auth
+
+        //Inicializar botao de login do facebook
+        callbackManager = CallbackManager.Factory.create()
+
+        binding.lbtnFacebook.setReadPermissions("email", "public_profile")
+        binding.lbtnFacebook.registerCallback(
+            callbackManager,
+            object : FacebookCallback<LoginResult> {
+
+                override fun onSuccess(result: LoginResult?) {
+                    handleFacebookAccessToken(result!!.accessToken)
+                }
+
+                override fun onCancel() {
+                }
+
+                override fun onError(error: FacebookException?) {
+                }
+            })
     }
 
     override fun onStart() {
@@ -114,11 +133,6 @@ class LoginActivity : AppCompatActivity() {
             val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
         }
-    }
-
-    override fun onStop() {
-        super.onStop()
-        hideProgressBar()
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -131,6 +145,8 @@ class LoginActivity : AppCompatActivity() {
                 firebaseAuthWithGoogle(account.idToken!!)
             } catch (ignored: Exception) {
             }
+        } else {
+            callbackManager.onActivityResult(requestCode, resultCode, data)
         }
     }
 
@@ -149,7 +165,7 @@ class LoginActivity : AppCompatActivity() {
                 if (task.isSuccessful) {
                     startActivity(Intent(this, HomeActivity::class.java))
                 } else {
-                    Toast.makeText(this, "Login falhou", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Login falhou :(", Toast.LENGTH_SHORT).show()
                 }
 
                 hideProgressBar()
@@ -182,35 +198,14 @@ class LoginActivity : AppCompatActivity() {
         dbApp = AppDataBase.invoke(this)
     }
 
-    private fun configFacebookButton() {
-        binding.lbtnFacebook.setReadPermissions("email", "public_profile")
-        binding.lbtnFacebook.registerCallback(
-            callbackManager,
-            object : FacebookCallback<LoginResult> {
-                override fun onSuccess(result: LoginResult?) {
-                    handleFacebookAccessToken(result!!.accessToken)
-                }
-
-                override fun onCancel() {
-                    TODO("Not yet implemented")
-                }
-
-                override fun onError(error: FacebookException?) {
-                    TODO("Not yet implemented")
-                }
-
-            })
-    }
-
-
     private fun handleFacebookAccessToken(token: AccessToken) {
-        Log.d(TAG, "handleFacebookAccessToken:$token")
+
+        showProgressBar()
 
         val credential = FacebookAuthProvider.getCredential(token.token)
         auth.signInWithCredential(credential)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    // Sign in success, update UI with the signed-in user's information
                     val user = auth.currentUser
                     viewModel.getConfigurationForUser(user!!.email.toString())
                     viewModel.configuracoes.observe(this, {
@@ -224,20 +219,13 @@ class LoginActivity : AppCompatActivity() {
                     // If sign in fails, display a message to the user.
                     Log.w("Não deu bom", "signInWithCredential:failure", task.exception)
                     Toast.makeText(
-                        baseContext, "Authentication failed.",
+                        baseContext, "Login falhou",
                         Toast.LENGTH_SHORT
                     ).show()
                 }
 
-                // ...
+                hideProgressBar()
             }
-    }
-
-    fun onClickFacebook(v: View) {
-        if (v == binding.ivFacebook) {
-            binding.lbtnFacebook.performClick()
-            configFacebookButton()
-        }
     }
 
     companion object {

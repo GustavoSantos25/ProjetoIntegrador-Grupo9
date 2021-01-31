@@ -23,6 +23,8 @@ class PerguntaFragment : Fragment() {
 
     private lateinit var binding: FragmentPerguntaBinding
     private lateinit var alertDialog: AlertDialog
+    private lateinit var progressView: ViewGroup
+    private var progressoVisivel = false
 
     private val model by activityViewModels<MainViewModel> {
         MainViewModelFactory(repository, dbRepository)
@@ -49,6 +51,14 @@ class PerguntaFragment : Fragment() {
         )
 
         model.gerarPerguntaAleatoria()
+
+        model.carregandoPergunta.observe(viewLifecycleOwner, {
+            if (model.carregandoPergunta.value == true) {
+                showProgressBar()
+            } else {
+                hideProgressBar()
+            }
+        })
 
         model.pergunta.observe(viewLifecycleOwner, {
             binding.tvPergunta.text = model.pergunta.value?.enunciado
@@ -137,5 +147,27 @@ class PerguntaFragment : Fragment() {
                 binding.btnQuartaResposta
             )
         )
+    }
+
+    private fun showProgressBar() {
+        if (!progressoVisivel) {
+            progressoVisivel = true
+            progressView = layoutInflater.inflate(R.layout.progressbar_layout, null) as ViewGroup
+            //Centralizar progress bar
+            progressView.layoutParams = ViewGroup.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.MATCH_PARENT
+            )
+            val view = binding.root
+            val viewGroup: ViewGroup = view as ViewGroup
+            viewGroup.addView(progressView)
+        }
+    }
+
+    private fun hideProgressBar() {
+        val view = binding.root
+        val viewGroup: ViewGroup = view as ViewGroup
+        viewGroup.removeView(progressView)
+        progressoVisivel = false
     }
 }

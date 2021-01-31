@@ -88,6 +88,6 @@ dependencies {
     implementation 'com.facebook.android:facebook-login:5.15.3'
     implementation 'com.facebook.android:facebook-android-sdk:5.15.3'
 
-    //Material dialogs
-    implementation 'com.afollestad.material-dialogs:core:3.3.0'
+    //API para tradução
+    implementation 'com.google.mlkit:translate:16.1.1'
 }
