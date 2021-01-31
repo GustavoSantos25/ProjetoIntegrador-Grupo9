@@ -180,5 +180,6 @@
     <string name="_6">6</string>
     <string name="voce_errou">Você errou :(</string>
     <string name="logout">Logout</string>
+    <string name="entrar">Entrar</string>
 
 </resources>

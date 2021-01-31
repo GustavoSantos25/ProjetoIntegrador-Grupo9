@@ -12,6 +12,7 @@ import com.example.projetointegrador.databinding.FragmentConfiguracoesBindingImp
 import com.example.projetointegrador.databinding.FragmentPerguntaBindingImpl;
 import com.example.projetointegrador.databinding.FragmentResultadoBindingImpl;
 import com.example.projetointegrador.databinding.FragmentSobrevivenciaBindingImpl;
+import com.example.projetointegrador.databinding.ProgressbarLayoutBindingImpl;
 import java.lang.IllegalArgumentException;
 import java.lang.Integer;
 import java.lang.Object;
@@ -35,7 +36,9 @@ public class DataBinderMapperImpl extends DataBinderMapper {
 
   private static final int LAYOUT_FRAGMENTSOBREVIVENCIA = 6;
 
-  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(6);
+  private static final int LAYOUT_PROGRESSBARLAYOUT = 7;
+
+  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(7);
 
   static {
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.projetointegrador.R.layout.activity_cadastro, LAYOUT_ACTIVITYCADASTRO);
@@ -44,6 +47,7 @@ public class DataBinderMapperImpl extends DataBinderMapper {
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.projetointegrador.R.layout.fragment_pergunta, LAYOUT_FRAGMENTPERGUNTA);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.projetointegrador.R.layout.fragment_resultado, LAYOUT_FRAGMENTRESULTADO);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.projetointegrador.R.layout.fragment_sobrevivencia, LAYOUT_FRAGMENTSOBREVIVENCIA);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.projetointegrador.R.layout.progressbar_layout, LAYOUT_PROGRESSBARLAYOUT);
   }
 
   @Override
@@ -90,6 +94,12 @@ public class DataBinderMapperImpl extends DataBinderMapper {
             return new FragmentSobrevivenciaBindingImpl(component, view);
           }
           throw new IllegalArgumentException("The tag for fragment_sobrevivencia is invalid. Received: " + tag);
+        }
+        case  LAYOUT_PROGRESSBARLAYOUT: {
+          if ("layout/progressbar_layout_0".equals(tag)) {
+            return new ProgressbarLayoutBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for progressbar_layout is invalid. Received: " + tag);
         }
       }
     }
@@ -144,7 +154,7 @@ public class DataBinderMapperImpl extends DataBinderMapper {
   }
 
   private static class InnerLayoutIdLookup {
-    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(6);
+    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(7);
 
     static {
       sKeys.put("layout/activity_cadastro_0", com.example.projetointegrador.R.layout.activity_cadastro);
@@ -153,6 +163,7 @@ public class DataBinderMapperImpl extends DataBinderMapper {
       sKeys.put("layout/fragment_pergunta_0", com.example.projetointegrador.R.layout.fragment_pergunta);
       sKeys.put("layout/fragment_resultado_0", com.example.projetointegrador.R.layout.fragment_resultado);
       sKeys.put("layout/fragment_sobrevivencia_0", com.example.projetointegrador.R.layout.fragment_sobrevivencia);
+      sKeys.put("layout/progressbar_layout_0", com.example.projetointegrador.R.layout.progressbar_layout);
     }
   }
 }
