@@ -16,6 +16,7 @@ MERGED from [androidx.core:core-ktx:1.3.2] C:\Users\Lucas\.gradle\caches\transfo
 MERGED from [androidx.room:room-ktx:2.2.6] C:\Users\Lucas\.gradle\caches\transforms-2\files-2.1\6a5e89402590d8ac611b63f90c8a0e59\jetified-room-ktx-2.2.6\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0] C:\Users\Lucas\.gradle\caches\transforms-2\files-2.1\91ee1db802a8ef2f9859458cea87dab0\jetified-lifecycle-viewmodel-ktx-2.2.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.2.0] C:\Users\Lucas\.gradle\caches\transforms-2\files-2.1\ee6cf8b86c7caf8acd71a26159625012\jetified-lifecycle-runtime-ktx-2.2.0\AndroidManifest.xml:17:1-24:12
+MERGED from [com.afollestad.material-dialogs:core:3.3.0] C:\Users\Lucas\.gradle\caches\transforms-2\files-2.1\38fd328e369ee5a7369b18ecd3c08e88\jetified-core-3.3.0\AndroidManifest.xml:2:1-13:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.2.0] C:\Users\Lucas\.gradle\caches\transforms-2\files-2.1\d21e15741fe9d75e8af3da822eaa451b\jetified-lifecycle-livedata-core-ktx-2.2.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.firebase:firebase-auth-ktx:20.0.1] C:\Users\Lucas\.gradle\caches\transforms-2\files-2.1\89c21da6da9074f52f94df27baad545a\jetified-firebase-auth-ktx-20.0.1\AndroidManifest.xml:2:1-17:12
 MERGED from [com.google.firebase:firebase-common-ktx:19.5.0] C:\Users\Lucas\.gradle\caches\transforms-2\files-2.1\e0d0f75196be49bf0f6a79b06e8d0b97\jetified-firebase-common-ktx-19.5.0\AndroidManifest.xml:2:1-21:12
@@ -58,8 +59,8 @@ MERGED from [com.google.android.gms:play-services-basement:17.1.1] C:\Users\Luca
 MERGED from [androidx.navigation:navigation-fragment:2.3.3] C:\Users\Lucas\.gradle\caches\transforms-2\files-2.1\de812d14488afd0566414347a766f509\navigation-fragment-2.3.3\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.fragment:fragment:1.2.4] C:\Users\Lucas\.gradle\caches\transforms-2\files-2.1\b6e1a530ef00a0fb6b73e12f5b317943\fragment-1.2.4\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\Lucas\.gradle\caches\transforms-2\files-2.1\f24e733ef0f13909d54fb04b008739a4\loader-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Lucas\.gradle\caches\transforms-2\files-2.1\512bba1fae280bf9e18d780eec077f94\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\Lucas\.gradle\caches\transforms-2\files-2.1\ff8708025141d30ac3478d09abf59799\recyclerview-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Lucas\.gradle\caches\transforms-2\files-2.1\512bba1fae280bf9e18d780eec077f94\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\Lucas\.gradle\caches\transforms-2\files-2.1\546722c4408b8b21b1eb228d40e33a01\slidingpanelayout-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\Lucas\.gradle\caches\transforms-2\files-2.1\f36868218680543b636032bb09e9939a\swiperefreshlayout-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\Lucas\.gradle\caches\transforms-2\files-2.1\b76b8d710f3c78215bf1a9034e841806\asynclayoutinflater-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -116,6 +117,8 @@ MERGED from [com.google.firebase:firebase-auth:20.0.2] C:\Users\Lucas\.gradle\ca
 		ADDED from C:\Users\Lucas\AndroidStudioProjects\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:5:22-64
 application
 ADDED from C:\Users\Lucas\AndroidStudioProjects\ProjetoIntegrador-Grupo9\app\src\main\AndroidManifest.xml:7:5-31:19
+MERGED from [com.afollestad.material-dialogs:core:3.3.0] C:\Users\Lucas\.gradle\caches\transforms-2\files-2.1\38fd328e369ee5a7369b18ecd3c08e88\jetified-core-3.3.0\AndroidManifest.xml:11:5-47
+MERGED from [com.afollestad.material-dialogs:core:3.3.0] C:\Users\Lucas\.gradle\caches\transforms-2\files-2.1\38fd328e369ee5a7369b18ecd3c08e88\jetified-core-3.3.0\AndroidManifest.xml:11:5-47
 MERGED from [com.google.firebase:firebase-auth-ktx:20.0.1] C:\Users\Lucas\.gradle\caches\transforms-2\files-2.1\89c21da6da9074f52f94df27baad545a\jetified-firebase-auth-ktx-20.0.1\AndroidManifest.xml:7:5-15:19
 MERGED from [com.google.firebase:firebase-auth-ktx:20.0.1] C:\Users\Lucas\.gradle\caches\transforms-2\files-2.1\89c21da6da9074f52f94df27baad545a\jetified-firebase-auth-ktx-20.0.1\AndroidManifest.xml:7:5-15:19
 MERGED from [com.google.firebase:firebase-common-ktx:19.5.0] C:\Users\Lucas\.gradle\caches\transforms-2\files-2.1\e0d0f75196be49bf0f6a79b06e8d0b97\jetified-firebase-common-ktx-19.5.0\AndroidManifest.xml:11:5-19:19
@@ -248,6 +251,8 @@ MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0] C:\Users\Lucas\.g
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0] C:\Users\Lucas\.gradle\caches\transforms-2\files-2.1\91ee1db802a8ef2f9859458cea87dab0\jetified-lifecycle-viewmodel-ktx-2.2.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.2.0] C:\Users\Lucas\.gradle\caches\transforms-2\files-2.1\ee6cf8b86c7caf8acd71a26159625012\jetified-lifecycle-runtime-ktx-2.2.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.2.0] C:\Users\Lucas\.gradle\caches\transforms-2\files-2.1\ee6cf8b86c7caf8acd71a26159625012\jetified-lifecycle-runtime-ktx-2.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [com.afollestad.material-dialogs:core:3.3.0] C:\Users\Lucas\.gradle\caches\transforms-2\files-2.1\38fd328e369ee5a7369b18ecd3c08e88\jetified-core-3.3.0\AndroidManifest.xml:7:5-9:41
+MERGED from [com.afollestad.material-dialogs:core:3.3.0] C:\Users\Lucas\.gradle\caches\transforms-2\files-2.1\38fd328e369ee5a7369b18ecd3c08e88\jetified-core-3.3.0\AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.2.0] C:\Users\Lucas\.gradle\caches\transforms-2\files-2.1\d21e15741fe9d75e8af3da822eaa451b\jetified-lifecycle-livedata-core-ktx-2.2.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.2.0] C:\Users\Lucas\.gradle\caches\transforms-2\files-2.1\d21e15741fe9d75e8af3da822eaa451b\jetified-lifecycle-livedata-core-ktx-2.2.0\AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.firebase:firebase-auth-ktx:20.0.1] C:\Users\Lucas\.gradle\caches\transforms-2\files-2.1\89c21da6da9074f52f94df27baad545a\jetified-firebase-auth-ktx-20.0.1\AndroidManifest.xml:5:5-44
@@ -332,10 +337,10 @@ MERGED from [androidx.fragment:fragment:1.2.4] C:\Users\Lucas\.gradle\caches\tra
 MERGED from [androidx.fragment:fragment:1.2.4] C:\Users\Lucas\.gradle\caches\transforms-2\files-2.1\b6e1a530ef00a0fb6b73e12f5b317943\fragment-1.2.4\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\Lucas\.gradle\caches\transforms-2\files-2.1\f24e733ef0f13909d54fb04b008739a4\loader-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\Lucas\.gradle\caches\transforms-2\files-2.1\f24e733ef0f13909d54fb04b008739a4\loader-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Lucas\.gradle\caches\transforms-2\files-2.1\512bba1fae280bf9e18d780eec077f94\viewpager-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Lucas\.gradle\caches\transforms-2\files-2.1\512bba1fae280bf9e18d780eec077f94\viewpager-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\Lucas\.gradle\caches\transforms-2\files-2.1\ff8708025141d30ac3478d09abf59799\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\Lucas\.gradle\caches\transforms-2\files-2.1\ff8708025141d30ac3478d09abf59799\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Lucas\.gradle\caches\transforms-2\files-2.1\512bba1fae280bf9e18d780eec077f94\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Lucas\.gradle\caches\transforms-2\files-2.1\512bba1fae280bf9e18d780eec077f94\viewpager-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\Lucas\.gradle\caches\transforms-2\files-2.1\546722c4408b8b21b1eb228d40e33a01\slidingpanelayout-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\Lucas\.gradle\caches\transforms-2\files-2.1\546722c4408b8b21b1eb228d40e33a01\slidingpanelayout-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\Lucas\.gradle\caches\transforms-2\files-2.1\f36868218680543b636032bb09e9939a\swiperefreshlayout-1.0.0\AndroidManifest.xml:20:5-44

@@ -8,6 +8,10 @@
         "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\fragment_configuracoes.xml"
     },
     {
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\progressbar_layout.xml",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\progressbar_layout.xml"
+    },
+    {
         "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_sobrevivencia.xml",
         "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\fragment_sobrevivencia.xml"
     },

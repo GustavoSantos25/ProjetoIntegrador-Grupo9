@@ -1,10 +1,10 @@
 package com.example.projetointegrador.ui
 
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.addCallback
 import androidx.activity.viewModels
@@ -13,24 +13,24 @@ import com.example.projetointegrador.MainViewModelFactory
 import com.example.projetointegrador.R
 import com.example.projetointegrador.database.AppDataBase
 import com.example.projetointegrador.databinding.ActivityLoginBinding
-import com.example.projetointegrador.services.*
+import com.example.projetointegrador.services.DBRepositoryImplementation
+import com.example.projetointegrador.services.dbApp
+import com.example.projetointegrador.services.dbRepository
+import com.example.projetointegrador.services.repository
 import com.facebook.AccessToken
 import com.facebook.CallbackManager
 import com.facebook.FacebookCallback
 import com.facebook.FacebookException
 import com.facebook.login.LoginResult
 import com.google.android.gms.auth.api.signin.GoogleSignIn
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
-import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FacebookAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-import java.lang.Exception
 import kotlin.system.exitProcess
 
 //keytool -keystore path-to-debug-or-production-keystore -list -v
@@ -42,6 +42,8 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var googleSignInClient: GoogleSignInClient
     private lateinit var googleSignOptions: GoogleSignInOptions
     private lateinit var auth: FirebaseAuth
+    private lateinit var progressView: ViewGroup
+    private var progressoVisivel = false
     val callbackManager = CallbackManager.Factory.create()
     val TAG = "LOGIN ACTIVITY"
 
@@ -114,6 +116,11 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
+    override fun onStop() {
+        super.onStop()
+        hideProgressBar()
+    }
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
@@ -133,6 +140,9 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun firebaseAuthWithGoogle(idToken: String) {
+
+        showProgressBar()
+
         val credential = GoogleAuthProvider.getCredential(idToken, null)
         auth.signInWithCredential(credential)
             .addOnCompleteListener(this) { task ->
@@ -141,14 +151,38 @@ class LoginActivity : AppCompatActivity() {
                 } else {
                     Toast.makeText(this, "Login falhou", Toast.LENGTH_SHORT).show()
                 }
+
+                hideProgressBar()
             }
     }
 
-    fun initDB() {
+    private fun showProgressBar() {
+        if (!progressoVisivel) {
+            progressoVisivel = true
+            progressView = layoutInflater.inflate(R.layout.progressbar_layout, null) as ViewGroup
+            //Centralizar progress bar
+            progressView.layoutParams = ViewGroup.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.MATCH_PARENT
+            )
+            val view = binding.root
+            val viewGroup: ViewGroup = view as ViewGroup
+            viewGroup.addView(progressView)
+        }
+    }
+
+    private fun hideProgressBar() {
+        val view = binding.root
+        val viewGroup: ViewGroup = view as ViewGroup
+        viewGroup.removeView(progressView)
+        progressoVisivel = false
+    }
+
+    private fun initDB() {
         dbApp = AppDataBase.invoke(this)
     }
 
-    fun configFacebookButton() {
+    private fun configFacebookButton() {
         binding.lbtnFacebook.setReadPermissions("email", "public_profile")
         binding.lbtnFacebook.registerCallback(
             callbackManager,
