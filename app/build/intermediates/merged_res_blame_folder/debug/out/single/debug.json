@@ -48,12 +48,12 @@
         "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_icons8_google.png"
     },
     {
-        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v24_ic_icons8_instagram.xml.flat",
-        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v24\\ic_icons8_instagram.xml"
-    },
-    {
         "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_card_genero.xml.flat",
         "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\card_genero.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v24_ic_icons8_instagram.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v24\\ic_icons8_instagram.xml"
     },
     {
         "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_card_sugestion.xml.flat",
@@ -362,6 +362,10 @@
     {
         "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_resultado_negativo.xml.flat",
         "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\fragment_resultado_negativo.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_exit_to_app_24.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\ic_baseline_exit_to_app_24.xml"
     },
     {
         "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_icons8_instagram.png.flat",

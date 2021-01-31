@@ -241,13 +241,13 @@
 131            </intent-filter>
 132        </service>
 133        <service
-133-->[androidx.room:room-runtime:2.2.5] C:\Users\Lucas\.gradle\caches\transforms-2\files-2.1\d0f4682b4945296ee034eac6244de5b3\room-runtime-2.2.5\AndroidManifest.xml:25:9-28:40
+133-->[androidx.room:room-runtime:2.2.6] C:\Users\Lucas\.gradle\caches\transforms-2\files-2.1\9e736f43695cfabc4ce803042bdcd690\room-runtime-2.2.6\AndroidManifest.xml:25:9-28:40
 134            android:name="androidx.room.MultiInstanceInvalidationService"
-134-->[androidx.room:room-runtime:2.2.5] C:\Users\Lucas\.gradle\caches\transforms-2\files-2.1\d0f4682b4945296ee034eac6244de5b3\room-runtime-2.2.5\AndroidManifest.xml:26:13-74
+134-->[androidx.room:room-runtime:2.2.6] C:\Users\Lucas\.gradle\caches\transforms-2\files-2.1\9e736f43695cfabc4ce803042bdcd690\room-runtime-2.2.6\AndroidManifest.xml:26:13-74
 135            android:directBootAware="true"
-135-->[androidx.room:room-runtime:2.2.5] C:\Users\Lucas\.gradle\caches\transforms-2\files-2.1\d0f4682b4945296ee034eac6244de5b3\room-runtime-2.2.5\AndroidManifest.xml:27:13-43
+135-->[androidx.room:room-runtime:2.2.6] C:\Users\Lucas\.gradle\caches\transforms-2\files-2.1\9e736f43695cfabc4ce803042bdcd690\room-runtime-2.2.6\AndroidManifest.xml:27:13-43
 136            android:exported="false" />
-136-->[androidx.room:room-runtime:2.2.5] C:\Users\Lucas\.gradle\caches\transforms-2\files-2.1\d0f4682b4945296ee034eac6244de5b3\room-runtime-2.2.5\AndroidManifest.xml:28:13-37
+136-->[androidx.room:room-runtime:2.2.6] C:\Users\Lucas\.gradle\caches\transforms-2\files-2.1\9e736f43695cfabc4ce803042bdcd690\room-runtime-2.2.6\AndroidManifest.xml:28:13-37
 137
 138        <activity
 138-->[com.google.android.gms:play-services-auth:19.0.0] C:\Users\Lucas\.gradle\caches\transforms-2\files-2.1\10b0606da8dff4c63763672c2f681d2f\jetified-play-services-auth-19.0.0\AndroidManifest.xml:23:9-27:75

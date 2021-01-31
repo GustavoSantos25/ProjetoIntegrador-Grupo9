@@ -10,6 +10,7 @@ import androidx.activity.addCallback
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.example.projetointegrador.MainViewModelFactory
+import com.example.projetointegrador.R
 import com.example.projetointegrador.database.AppDataBase
 import com.example.projetointegrador.databinding.ActivityLoginBinding
 import com.example.projetointegrador.services.*
@@ -21,11 +22,15 @@ import com.facebook.login.LoginResult
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FacebookAuthProvider
 import com.google.firebase.auth.FirebaseAuth
-import kotlinx.android.synthetic.main.activity_login.*
+import com.google.firebase.auth.GoogleAuthProvider
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
+import java.lang.Exception
 import kotlin.system.exitProcess
 
 //keytool -keystore path-to-debug-or-production-keystore -list -v
@@ -35,11 +40,12 @@ class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
     private lateinit var googleSignInClient: GoogleSignInClient
+    private lateinit var googleSignOptions: GoogleSignInOptions
     private lateinit var auth: FirebaseAuth
     val callbackManager = CallbackManager.Factory.create()
     val TAG = "LOGIN ACTIVITY"
 
-    private var RC_SIGN_IN = 100
+    //    private var RC_SIGN_IN = 100
     val viewModel by viewModels<MainViewModel> {
         MainViewModelFactory(repository, dbRepository)
     }
@@ -51,15 +57,6 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         initDB()
-        auth = FirebaseAuth.getInstance()
-
-        googleSignInClient = GoogleSignIn.getClient(this, gso)
-//        viewModel.configFacebook(auth)
-//        viewModel.configGoogle(googleSignInClient)
-
-        binding.ivFacebook.setOnClickListener {
-            onClickFacebook(binding.ivFacebook)
-        }
 
         dbRepository = DBRepositoryImplementation(
             dbApp.TemplateDAO(),
@@ -88,9 +85,24 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        ivLoginGoogle.setOnClickListener {
-            signIn()
+        binding.ivLoginGoogle.setOnClickListener {
+            signInWithGoogle()
         }
+
+        binding.ivFacebook.setOnClickListener {
+            onClickFacebook(binding.ivFacebook)
+        }
+
+        //Configurar google sign in
+        googleSignOptions = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestIdToken(getString(R.string.default_web_client_id))
+            .requestEmail()
+            .build()
+
+        googleSignInClient = GoogleSignIn.getClient(this, googleSignOptions)
+
+        //Inicializar Firebase auth
+        auth = Firebase.auth
     }
 
     override fun onStart() {
@@ -98,64 +110,38 @@ class LoginActivity : AppCompatActivity() {
         val currentUser = auth.currentUser
         if (currentUser != null) {
             val intent = Intent(this, HomeActivity::class.java)
-            intent.putExtra("email", currentUser.email)
             startActivity(intent)
         }
-    }
-
-    fun signIn() {
-        val signInIntent: Intent = googleSignInClient.getSignInIntent()
-        startActivityForResult(signInIntent, RC_SIGN_IN)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-
-        // Result returned from launching the Intent from GoogleSignInClient.getSignInIntent(...);
         if (requestCode == RC_SIGN_IN) {
-            // The Task returned from this call is always completed, no need to attach
-            // a listener.
             val task = GoogleSignIn.getSignedInAccountFromIntent(data)
-            handleSignInResult(task)
-        }
-        callbackManager.onActivityResult(requestCode, resultCode, data)
-    }
-
-
-    private fun handleSignInResult(completedTask: Task<GoogleSignInAccount>) {
-        try {
-            val acct = completedTask.getResult(ApiException::class.java)
-            //val acct = GoogleSignIn.getLastSignedInAccount(this)
-            if (acct != null) {
-                val personName = acct.displayName
-                val personGivenName = acct.givenName
-                val personFamilyName = acct.familyName
-                val personEmail = acct.email
-                val personId = acct.id
-                val personPhoto: Uri? = acct.photoUrl
-
-                viewModel.getConfigurationForUser(personEmail!!)
-                viewModel.configuracoes.observe(this, {
-                    if (it == null) viewModel.createConfigurationForUser(personEmail)
-                    Log.i(TAG, "logou no google")
-                    viewModel.updateGoogleLogIn(true)
-                    val intent = Intent(this, HomeActivity::class.java)
-                    intent.putExtra("email", personEmail)
-                    startActivity(intent)
-                })
+            try {
+                val account = task.getResult(ApiException::class.java)!!
+                firebaseAuthWithGoogle(account.idToken!!)
+            } catch (ignored: Exception) {
             }
-        } catch (e: ApiException) {
-            Log.d("signInResult: ", e.toString())
         }
     }
 
-    fun openHome(msg: String) {
-        val intent = Intent(this, HomeActivity::class.java).apply {
-            //putExtra("name",msg)
-            putExtra("email", msg)
-        }
-        startActivity(intent)
+    fun signInWithGoogle() {
+        val signInIntent: Intent = googleSignInClient.signInIntent
+        startActivityForResult(signInIntent, RC_SIGN_IN)
+    }
+
+    private fun firebaseAuthWithGoogle(idToken: String) {
+        val credential = GoogleAuthProvider.getCredential(idToken, null)
+        auth.signInWithCredential(credential)
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    startActivity(Intent(this, HomeActivity::class.java))
+                } else {
+                    Toast.makeText(this, "Login falhou", Toast.LENGTH_SHORT).show()
+                }
+            }
     }
 
     fun initDB() {
@@ -218,5 +204,10 @@ class LoginActivity : AppCompatActivity() {
             binding.lbtnFacebook.performClick()
             configFacebookButton()
         }
+    }
+
+    companion object {
+        private const val TAG = "GoogleActivity"
+        private const val RC_SIGN_IN = 9001
     }
 }

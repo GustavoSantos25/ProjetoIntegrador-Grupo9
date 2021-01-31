@@ -1724,6 +1724,7 @@ drawable googleg_standard_color_18
 drawable gradient_amarelo
 drawable gradient_preto
 drawable ic_back_arrow
+drawable ic_baseline_exit_to_app_24
 drawable ic_baseline_facebook_24
 drawable ic_baseline_timer_24
 drawable ic_clock_timelimit
@@ -2121,6 +2122,7 @@ id linearLayout3
 id listMode
 id list_item
 id llLogo
+id llLogout
 id llSurvival
 id llTimeLimit
 id loading
@@ -2220,8 +2222,6 @@ id rvRanking
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
-id scFacebook
-id scGoogle
 id sc_notificacao
 id sc_vibrar
 id scale
@@ -2711,6 +2711,7 @@ string kill_bill_volume_1_2003
 string label_mod1
 string label_mod2
 string large_text
+string logout
 string lorem_perfil
 string material_slider_range_end
 string material_slider_range_start

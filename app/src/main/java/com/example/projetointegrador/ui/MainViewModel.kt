@@ -81,7 +81,6 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
             val perguntaGerada = Pergunta()
 
             perguntaGerada.enunciado = listTemplates[indiceEnunciado]
-//            lastMovieId.value = 700000
 
             when (indiceEnunciado) {
                 0 -> primeiroTemplate(perguntaGerada)
