@@ -1870,6 +1870,7 @@ id action_homeVPFragment_to_modosFragment
 id action_homeVPFragment_to_perguntaFragment
 id action_homeVPFragment_to_rankingFragment
 id action_homeVPFragment_to_sinopseFragment
+id action_homeVPFragment_to_sobrevivenciaFragment
 id action_image
 id action_menu_divider
 id action_menu_presenter
@@ -1887,6 +1888,8 @@ id action_rankingFragment_to_perfilTerceiroFragment
 id action_resultadoFragment_to_homeVPFragment
 id action_resultadoNegativo_to_homeVPFragment
 id action_sinopseFragment_to_homeVPFragment
+id action_sobrevivenciaFragment_to_homeVPFragment
+id action_sobrevivenciaFragment_to_resultadoFragment
 id action_text
 id actions
 id activity_chooser_view_content
@@ -1923,12 +1926,18 @@ id browser_actions_menu_view
 id btnCompartilharVitoria
 id btnJogar
 id btnLogin
+id btnOkAcerto
+id btnOkErro
 id btnPrimeiraResposta
+id btnPrimeiraRespostaSobrevivencia
 id btnQuartaResposta
+id btnQuartaRespostaSobrevivencia
 id btnSalvarBio
 id btnSegundaResposta
+id btnSegundaRespostaSobrevivencia
 id btnTelaInicialResultado
 id btnTerceiraResposta
+id btnTerceiraRespostaSobrevivencia
 id btn_cadastrar
 id btn_help
 id btn_ranking
@@ -1966,6 +1975,7 @@ id civAvatar
 id civAvatarRanking
 id civPerguntas
 id civPontos
+id civPontosSobrevivencia
 id civTempo
 id clear_text
 id clip_horizontal
@@ -2079,6 +2089,7 @@ id imageView
 id imageView3
 id imageView4
 id includeToolbarQuiz
+id includeToolbarQuizSobrevivencia
 id info
 id inline
 id invisible
@@ -2247,6 +2258,7 @@ id snackbar_action
 id snackbar_text
 id snap
 id snapMargins
+id sobrevivenciaFragment
 id spacer
 id spline
 id split_action_bar
@@ -2286,7 +2298,6 @@ id textEnd
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
-id textView
 id textView2
 id textView3
 id textView4
@@ -2331,16 +2342,20 @@ id tvBioTerceiro
 id tvCadastre_se
 id tvDirSinopse
 id tvEditarBio
-id tvGeneroPergunta
 id tvGenerosFavoritos
 id tvMod1
 id tvModJogo
 id tvModsJogo
+id tvMsgAcerto
 id tvNomeDir
 id tvNomeGenero
 id tvNomePerfil
 id tvNomeRanking
 id tvPergunta
+id tvPerguntaSobrevivencia
+id tvQtdeAcertos
+id tvQtdeAcertosResultado
+id tvQtdeAcertosSobrevivencia
 id tvQtdePerguntas
 id tvQtdeSeguidores
 id tvQtdeVitorias
@@ -2349,6 +2364,7 @@ id tvSuvivalTitle
 id tvTLTitle
 id tvTitleFilmeSus
 id tvTitleSinopse
+id tvVoceErrou
 id tv_email_config
 id tvlabel_TL
 id tvlabel_surival
@@ -2448,6 +2464,8 @@ layout com_facebook_login_fragment
 layout com_facebook_smart_device_dialog_fragment
 layout com_facebook_tooltip_bubble
 layout custom_dialog
+layout custom_dialog_acerto
+layout custom_dialog_erro
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
@@ -2477,6 +2495,7 @@ layout fragment_ranking
 layout fragment_resultado
 layout fragment_resultado_negativo
 layout fragment_sinopse
+layout fragment_sobrevivencia
 layout icon_plus_appname
 layout item_jogador
 layout list_pager_ranking
@@ -2559,6 +2578,7 @@ string _007
 string _1
 string _201
 string _589
+string _6
 string _8_10
 string abc_action_bar_home_description
 string abc_action_bar_up_description
@@ -2646,6 +2666,7 @@ string common_signin_button_text
 string common_signin_button_text_long
 string compartilhar
 string contas_conectadas
+string correto_parab_ns
 string cottonmouth
 string crime
 string dados_pessoais
@@ -2737,6 +2758,7 @@ string nav_app_bar_navigate_up_description
 string nav_app_bar_open_drawer_description
 string nome_filmeKB
 string notificacoes
+string ok
 string password_hint
 string password_toggle_content_description
 string path_password_eye
@@ -2763,14 +2785,17 @@ string sinopse
 string sinopse_killBill
 string snake_charmer
 string sobre
+string sobreviv_ncia
 string sons
 string status_bar_notification_info_overflow
 string sugest_o_do_dia
 string tela_inicial
 string terror
+string time_limit
 string user_hint
 string vibrar
 string vitoria
+string voce_errou
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style AndroidThemeColorAccentYellow
