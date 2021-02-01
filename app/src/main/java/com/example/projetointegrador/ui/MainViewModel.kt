@@ -1,5 +1,6 @@
 package com.example.projetointegrador.ui
 
+import android.os.CountDownTimer
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatButton
 import androidx.lifecycle.MutableLiveData
@@ -32,6 +33,10 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
     val listTemplates = popTemplates()
     val pergunta = MutableLiveData<Pergunta>()
     var acertos = 0
+
+    //Variáveis para o timer do modo Time Limit
+    val timer = MutableLiveData<String>()
+    var timeLeftInMili : Long = 31000
 
     //Variável para ver se a pergunta está sendo carregada
     var carregandoPergunta = MutableLiveData<Boolean>()
@@ -477,6 +482,37 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
             else -> "${acertos}\nacertos"
         }
     }
+
+    fun updateTimer(){
+        timer.value = "00:31"
+        var newTime : Long = 31000
+        var clock = object : CountDownTimer(newTime, 1000){
+            override fun onTick(p0: Long) {
+                newTime = p0
+                updateStringTimer(newTime)
+            }
+
+            override fun onFinish() {
+                cancel()
+            }
+
+        }.start()
+    }
+
+    fun stopTimer(){
+
+    }
+
+    private fun updateStringTimer(timeRemaining : Long){
+        val minutes = timeRemaining / 60000
+        val seconds = timeRemaining % 60000 / 1000
+        var newString = "$minutes"
+        newString += ":"
+        if(seconds < 10) newString += "0"
+        newString += "$seconds"
+        timer.value = newString
+    }
+
 
     /*
     fun alterConfiguracoesDB(configuracoes: Configuracoes) {

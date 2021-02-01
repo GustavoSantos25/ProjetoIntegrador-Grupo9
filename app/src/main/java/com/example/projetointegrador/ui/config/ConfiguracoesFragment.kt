@@ -68,7 +68,8 @@ class ConfiguracoesFragment : Fragment() {
         }
 
         binding.llLogout.setOnClickListener {
-            Firebase.auth.signOut()
+            LoginManager.getInstance().logOut()
+            FirebaseAuth.getInstance().signOut()
             startActivity(Intent(activity, LoginActivity::class.java))
         }
 

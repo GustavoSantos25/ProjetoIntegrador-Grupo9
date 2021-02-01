@@ -97,6 +97,12 @@ class PerguntaFragment : Fragment() {
             }
         }
 
+        model.updateTimer()
+        model.timer.observe(viewLifecycleOwner, {
+            binding.timerQuestion.text = it
+            if(it == "0:00") findNavController().navigate(R.id.action_perguntaFragment_to_resultadoFragment)
+        })
+
         return binding.root
     }
 
@@ -129,7 +135,7 @@ class PerguntaFragment : Fragment() {
         alertDialog.show()
         dialogView.btnOkErro.setOnClickListener {
             alertDialog.cancel()
-            findNavController().navigate(R.id.action_perguntaFragment_to_resultadoFragment)
+            onFecharDialogAcerto()
         }
     }
 
