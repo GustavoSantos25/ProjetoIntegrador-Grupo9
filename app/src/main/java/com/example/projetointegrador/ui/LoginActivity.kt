@@ -55,10 +55,12 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         initDB()
+        connect()
 
         dbRepository = DBRepositoryImplementation(
             dbApp.TemplateDAO(),
@@ -95,19 +97,7 @@ class LoginActivity : AppCompatActivity() {
             signInWithGoogle()
         }
 
-        //Configurar google sign in
-        googleSignOptions = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken(getString(R.string.default_web_client_id))
-            .requestEmail()
-            .build()
 
-        googleSignInClient = GoogleSignIn.getClient(this, googleSignOptions)
-
-        //Inicializar Firebase auth
-        auth = Firebase.auth
-
-        //Inicializar botao de login do facebook
-        callbackManager = CallbackManager.Factory.create()
 
         binding.lbtnFacebook.setReadPermissions("email", "public_profile")
         binding.lbtnFacebook.registerCallback(
@@ -126,11 +116,29 @@ class LoginActivity : AppCompatActivity() {
             })
     }
 
+    fun connect(){
+        //Inicializar Firebase auth
+        auth = FirebaseAuth.getInstance()
+
+        //Configurar google sign in
+        googleSignOptions = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestIdToken(getString(R.string.default_web_client_id))
+            .requestEmail()
+            .build()
+
+        googleSignInClient = GoogleSignIn.getClient(this, googleSignOptions)
+
+
+        //Inicializar botao de login do facebook
+        callbackManager = CallbackManager.Factory.create()
+    }
+
     override fun onStart() {
         super.onStart()
         val currentUser = auth.currentUser
         if (currentUser != null) {
             val intent = Intent(this, HomeActivity::class.java)
+            intent.putExtra("email", currentUser.email)
             startActivity(intent)
         }
     }
@@ -144,6 +152,7 @@ class LoginActivity : AppCompatActivity() {
                 val account = task.getResult(ApiException::class.java)!!
                 firebaseAuthWithGoogle(account.idToken!!)
             } catch (ignored: Exception) {
+                Log.i(TAG, ignored.toString())
             }
         } else {
             callbackManager.onActivityResult(requestCode, resultCode, data)
@@ -163,7 +172,9 @@ class LoginActivity : AppCompatActivity() {
         auth.signInWithCredential(credential)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    startActivity(Intent(this, HomeActivity::class.java))
+                    val intent = Intent(this, HomeActivity::class.java)
+                    intent.putExtra("email", task.result!!.user!!.email)
+                    startActivity(intent)
                 } else {
                     Toast.makeText(this, "Login falhou :(", Toast.LENGTH_SHORT).show()
                 }
