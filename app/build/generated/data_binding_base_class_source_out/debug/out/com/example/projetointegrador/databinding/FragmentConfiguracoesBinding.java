@@ -4,6 +4,7 @@ package com.example.projetointegrador.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -16,10 +17,7 @@ import java.lang.Object;
 
 public abstract class FragmentConfiguracoesBinding extends ViewDataBinding {
   @NonNull
-  public final SwitchCompat scFacebook;
-
-  @NonNull
-  public final SwitchCompat scGoogle;
+  public final LinearLayout llLogout;
 
   @NonNull
   public final SwitchCompat scNotificacao;
@@ -34,11 +32,10 @@ public abstract class FragmentConfiguracoesBinding extends ViewDataBinding {
   public final TextView tvGenerosFavoritos;
 
   protected FragmentConfiguracoesBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      SwitchCompat scFacebook, SwitchCompat scGoogle, SwitchCompat scNotificacao,
-      SwitchCompat scVibrar, TextView tvEmailConfig, TextView tvGenerosFavoritos) {
+      LinearLayout llLogout, SwitchCompat scNotificacao, SwitchCompat scVibrar,
+      TextView tvEmailConfig, TextView tvGenerosFavoritos) {
     super(_bindingComponent, _root, _localFieldCount);
-    this.scFacebook = scFacebook;
-    this.scGoogle = scGoogle;
+    this.llLogout = llLogout;
     this.scNotificacao = scNotificacao;
     this.scVibrar = scVibrar;
     this.tvEmailConfig = tvEmailConfig;

@@ -1724,6 +1724,7 @@ drawable googleg_standard_color_18
 drawable gradient_amarelo
 drawable gradient_preto
 drawable ic_back_arrow
+drawable ic_baseline_exit_to_app_24
 drawable ic_baseline_facebook_24
 drawable ic_baseline_timer_24
 drawable ic_clock_timelimit
@@ -1870,6 +1871,7 @@ id action_homeVPFragment_to_modosFragment
 id action_homeVPFragment_to_perguntaFragment
 id action_homeVPFragment_to_rankingFragment
 id action_homeVPFragment_to_sinopseFragment
+id action_homeVPFragment_to_sobrevivenciaFragment
 id action_image
 id action_menu_divider
 id action_menu_presenter
@@ -1887,6 +1889,8 @@ id action_rankingFragment_to_perfilTerceiroFragment
 id action_resultadoFragment_to_homeVPFragment
 id action_resultadoNegativo_to_homeVPFragment
 id action_sinopseFragment_to_homeVPFragment
+id action_sobrevivenciaFragment_to_homeVPFragment
+id action_sobrevivenciaFragment_to_resultadoFragment
 id action_text
 id actions
 id activity_chooser_view_content
@@ -1923,12 +1927,18 @@ id browser_actions_menu_view
 id btnCompartilharVitoria
 id btnJogar
 id btnLogin
+id btnOkAcerto
+id btnOkErro
 id btnPrimeiraResposta
+id btnPrimeiraRespostaSobrevivencia
 id btnQuartaResposta
+id btnQuartaRespostaSobrevivencia
 id btnSalvarBio
 id btnSegundaResposta
+id btnSegundaRespostaSobrevivencia
 id btnTelaInicialResultado
 id btnTerceiraResposta
+id btnTerceiraRespostaSobrevivencia
 id btn_cadastrar
 id btn_help
 id btn_ranking
@@ -1966,6 +1976,7 @@ id civAvatar
 id civAvatarRanking
 id civPerguntas
 id civPontos
+id civPontosSobrevivencia
 id civTempo
 id clear_text
 id clip_horizontal
@@ -2079,6 +2090,7 @@ id imageView
 id imageView3
 id imageView4
 id includeToolbarQuiz
+id includeToolbarQuizSobrevivencia
 id info
 id inline
 id invisible
@@ -2110,6 +2122,7 @@ id linearLayout3
 id listMode
 id list_item
 id llLogo
+id llLogout
 id llSurvival
 id llTimeLimit
 id loading
@@ -2180,6 +2193,7 @@ id password
 id password_toggle
 id path
 id pathRelative
+id pb
 id peekHeight
 id percent
 id perfilTerceiroFragment
@@ -2209,8 +2223,6 @@ id rvRanking
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
-id scFacebook
-id scGoogle
 id sc_notificacao
 id sc_vibrar
 id scale
@@ -2247,6 +2259,7 @@ id snackbar_action
 id snackbar_text
 id snap
 id snapMargins
+id sobrevivenciaFragment
 id spacer
 id spline
 id split_action_bar
@@ -2286,7 +2299,6 @@ id textEnd
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
-id textView
 id textView2
 id textView3
 id textView4
@@ -2331,16 +2343,20 @@ id tvBioTerceiro
 id tvCadastre_se
 id tvDirSinopse
 id tvEditarBio
-id tvGeneroPergunta
 id tvGenerosFavoritos
 id tvMod1
 id tvModJogo
 id tvModsJogo
+id tvMsgAcerto
 id tvNomeDir
 id tvNomeGenero
 id tvNomePerfil
 id tvNomeRanking
 id tvPergunta
+id tvPerguntaSobrevivencia
+id tvQtdeAcertos
+id tvQtdeAcertosResultado
+id tvQtdeAcertosSobrevivencia
 id tvQtdePerguntas
 id tvQtdeSeguidores
 id tvQtdeVitorias
@@ -2349,6 +2365,7 @@ id tvSuvivalTitle
 id tvTLTitle
 id tvTitleFilmeSus
 id tvTitleSinopse
+id tvVoceErrou
 id tv_email_config
 id tvlabel_TL
 id tvlabel_surival
@@ -2448,6 +2465,8 @@ layout com_facebook_login_fragment
 layout com_facebook_smart_device_dialog_fragment
 layout com_facebook_tooltip_bubble
 layout custom_dialog
+layout custom_dialog_acerto
+layout custom_dialog_erro
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
@@ -2477,6 +2496,7 @@ layout fragment_ranking
 layout fragment_resultado
 layout fragment_resultado_negativo
 layout fragment_sinopse
+layout fragment_sobrevivencia
 layout icon_plus_appname
 layout item_jogador
 layout list_pager_ranking
@@ -2529,6 +2549,7 @@ layout notification_template_media
 layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout progressbar_layout
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
@@ -2553,12 +2574,14 @@ mipmap ic_launcher
 mipmap ic_launcher_round
 navigation nav_graph_home
 plurals mtrl_badge_content_description
+raw translate_models_metadata
 string RANKING
 string TimeOut
 string _007
 string _1
 string _201
 string _589
+string _6
 string _8_10
 string abc_action_bar_home_description
 string abc_action_bar_up_description
@@ -2646,6 +2669,7 @@ string common_signin_button_text
 string common_signin_button_text_long
 string compartilhar
 string contas_conectadas
+string correto_parab_ns
 string cottonmouth
 string crime
 string dados_pessoais
@@ -2659,6 +2683,7 @@ string duracao_KB
 string editar
 string editar_bio
 string email_hint
+string entrar
 string error_icon_content_description
 string explicacao_modo1
 string explicacao_modo2
@@ -2690,6 +2715,7 @@ string kill_bill_volume_1_2003
 string label_mod1
 string label_mod2
 string large_text
+string logout
 string lorem_perfil
 string material_slider_range_end
 string material_slider_range_start
@@ -2737,6 +2763,7 @@ string nav_app_bar_navigate_up_description
 string nav_app_bar_open_drawer_description
 string nome_filmeKB
 string notificacoes
+string ok
 string password_hint
 string password_toggle_content_description
 string path_password_eye
@@ -2763,14 +2790,17 @@ string sinopse
 string sinopse_killBill
 string snake_charmer
 string sobre
+string sobreviv_ncia
 string sons
 string status_bar_notification_info_overflow
 string sugest_o_do_dia
 string tela_inicial
 string terror
+string time_limit
 string user_hint
 string vibrar
 string vitoria
+string voce_errou
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style AndroidThemeColorAccentYellow
@@ -3635,6 +3665,7 @@ styleable ViewStubCompat android_id android_layout android_inflatedId
 styleable com_facebook_like_view com_facebook_auxiliary_view_position com_facebook_foreground_color com_facebook_horizontal_alignment com_facebook_object_id com_facebook_object_type com_facebook_style
 styleable com_facebook_login_view com_facebook_confirm_logout com_facebook_login_text com_facebook_logout_text com_facebook_tooltip_mode
 styleable com_facebook_profile_picture_view com_facebook_is_cropped com_facebook_preset_size
+xml rapid_response_client_defaults
 xml standalone_badge
 xml standalone_badge_gravity_bottom_end
 xml standalone_badge_gravity_bottom_start

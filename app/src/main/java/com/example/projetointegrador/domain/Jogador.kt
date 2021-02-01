@@ -1,3 +1,11 @@
 package com.example.projetointegrador.domain
 
-data class Jogador(var nome : String, var acertos: String, var imgAvatar : Int)
+data class Jogador(
+    var uid: String,
+    var userName: String,
+    var recordeTimeLimit: Int,
+    var recordeSobrevivencia: Int,
+    var generosFavoritos: ArrayList<Int>,
+    var urlAvatar: String,
+    var urlCapa: String
+)

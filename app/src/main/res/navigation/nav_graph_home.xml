@@ -8,8 +8,7 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.projetointegrador.ui.home.HomeFragment"
-        android:label="HomeFragment">
-    </fragment>
+        android:label="HomeFragment"></fragment>
     <fragment
         android:id="@+id/rankingFragment"
         android:name="com.example.projetointegrador.ui.home.RankingFragment"
@@ -50,6 +49,9 @@
         <action
             android:id="@+id/action_homeVPFragment_to_loginActivity2"
             app:destination="@id/loginActivity" />
+        <action
+            android:id="@+id/action_homeVPFragment_to_sobrevivenciaFragment"
+            app:destination="@id/sobrevivenciaFragment" />
     </fragment>
     <fragment
         android:id="@+id/sinopseFragment"
@@ -80,7 +82,8 @@
         android:label="ResultadoFragment">
         <action
             android:id="@+id/action_resultadoFragment_to_homeVPFragment"
-            app:destination="@id/homeVPFragment" />
+            app:destination="@id/homeVPFragment"
+            app:popUpTo="@id/resultadoFragment" />
     </fragment>
     <fragment
         android:id="@+id/resultadoNegativo"
@@ -115,7 +118,7 @@
     <fragment
         android:id="@+id/perfilTerceiroFragment"
         android:name="com.example.projetointegrador.ui.perfil.PerfilTerceiroFragment"
-        android:label="PerfilTerceiroFragment" >
+        android:label="PerfilTerceiroFragment">
         <action
             android:id="@+id/action_perfilTerceiroFragment_to_rankingFragment"
             app:destination="@id/rankingFragment" />
@@ -125,5 +128,17 @@
         android:name="com.example.projetointegrador.ui.LoginActivity"
         android:label="activity_login"
         tools:layout="@layout/activity_login" />
+    <fragment
+        android:id="@+id/sobrevivenciaFragment"
+        android:name="com.example.projetointegrador.ui.perguntas.SobrevivenciaFragment"
+        android:label="fragment_sobrevivencia"
+        tools:layout="@layout/fragment_sobrevivencia" >
+        <action
+            android:id="@+id/action_sobrevivenciaFragment_to_resultadoFragment"
+            app:destination="@id/resultadoFragment" />
+        <action
+            android:id="@+id/action_sobrevivenciaFragment_to_homeVPFragment"
+            app:destination="@id/homeVPFragment" />
+    </fragment>
 
 </navigation>

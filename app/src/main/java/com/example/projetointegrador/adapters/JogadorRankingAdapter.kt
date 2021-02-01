@@ -25,9 +25,9 @@ class JogadorRankingAdapter(
 
     override fun onBindViewHolder(holder: JogadorRankingAdapter.JogadorViewHolder, position: Int) {
         var jogador = listJogadores[position]
-        holder.civAvatarRanking.setImageResource(jogador.imgAvatar)
-        holder.tvNomeJogador.text = jogador.nome
-        holder.tvAcertosRanking.text = jogador.acertos
+//        holder.civAvatarRanking.setImageResource(jogador.imgAvatar)
+        holder.tvNomeJogador.text = jogador.userName
+//        holder.tvAcertosRanking.text = jogador.acertos
 
         holder.itemView.setOnClickListener { view ->
             view.findNavController().navigate(R.id.perfilTerceiroFragment)

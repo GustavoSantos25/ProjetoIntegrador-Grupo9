@@ -2,7 +2,7 @@ package com.example.projetointegrador.ui;
 
 import java.lang.System;
 
-@kotlin.Metadata(mv = {1, 4, 0}, bv = {1, 0, 3}, k = 1, d1 = {"\u0000\u00a0\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u000f\n\u0002\u0010\u0011\n\u0002\u0018\u0002\n\u0002\b\u0013\u0018\u00002\u00020\u0001B\u0015\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u00a2\u0006\u0002\u0010\u0006J\u0016\u00107\u001a\u0002082\u0006\u00109\u001a\u00020:2\u0006\u0010\t\u001a\u00020\u000bJ\u000e\u0010;\u001a\u0002082\u0006\u0010<\u001a\u00020\bJ\u000e\u0010=\u001a\u0002082\u0006\u0010>\u001a\u00020?J\u000e\u0010@\u001a\u0002082\u0006\u0010<\u001a\u00020\bJ\u000e\u0010A\u001a\u0002082\u0006\u0010B\u001a\u00020\u0010J\u000e\u0010C\u001a\u0002082\u0006\u0010D\u001a\u00020#J\u000e\u0010E\u001a\u0002082\u0006\u0010<\u001a\u00020\bJ\u0006\u0010F\u001a\u000208J\u000e\u0010G\u001a\b\u0012\u0004\u0012\u00020)0(H\u0002J\u000e\u0010H\u001a\b\u0012\u0004\u0012\u0002020(H\u0002J\u000e\u0010I\u001a\b\u0012\u0004\u0012\u0002020(H\u0002J\u000e\u0010J\u001a\u0002082\u0006\u0010<\u001a\u00020\bJ\u0006\u0010\u001f\u001a\u000208J\u0006\u0010K\u001a\u000208J\u0006\u0010L\u001a\u000208J\u0019\u0010M\u001a\u0002082\f\u0010N\u001a\b\u0012\u0004\u0012\u00020P0O\u00a2\u0006\u0002\u0010QJ\u0006\u0010R\u001a\u000208J\u0006\u0010S\u001a\u000208J\u0006\u0010T\u001a\u000208J\u000e\u0010U\u001a\b\u0012\u0004\u0012\u00020\b0(H\u0002J\u0019\u0010V\u001a\u0002082\u0006\u0010W\u001a\u000205H\u0082@\u00f8\u0001\u0000\u00a2\u0006\u0002\u0010XJ\u0019\u0010Y\u001a\u0002082\u0006\u0010W\u001a\u000205H\u0082@\u00f8\u0001\u0000\u00a2\u0006\u0002\u0010XJ\u0019\u0010Z\u001a\u0002082\u0006\u0010W\u001a\u000205H\u0082@\u00f8\u0001\u0000\u00a2\u0006\u0002\u0010XJ\u0019\u0010[\u001a\u0002082\u0006\u0010W\u001a\u000205H\u0082@\u00f8\u0001\u0000\u00a2\u0006\u0002\u0010XJ\u0016\u0010\\\u001a\u0002082\u0006\u0010]\u001a\u00020\u001b2\u0006\u0010^\u001a\u00020\bJ\u000e\u0010_\u001a\u0002082\u0006\u0010`\u001a\u00020\u001bJ\u000e\u0010a\u001a\u0002082\u0006\u0010`\u001a\u00020\u001bJ\u0006\u0010b\u001a\u000208R\u000e\u0010\u0007\u001a\u00020\bX\u0082D\u00a2\u0006\u0002\n\u0000R\u0017\u0010\t\u001a\b\u0012\u0004\u0012\u00020\u000b0\n\u00a2\u0006\b\n\u0000\u001a\u0004\b\f\u0010\rR\u000e\u0010\u000e\u001a\u00020\bX\u0082D\u00a2\u0006\u0002\n\u0000R\u0017\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00100\n\u00a2\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\rR\u0017\u0010\u0012\u001a\b\u0012\u0004\u0012\u00020\u00130\n\u00a2\u0006\b\n\u0000\u001a\u0004\b\u0014\u0010\rR\u0017\u0010\u0015\u001a\b\u0012\u0004\u0012\u00020\u00160\n\u00a2\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\rR\u0017\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\b0\n\u00a2\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\rR\u0017\u0010\u001a\u001a\b\u0012\u0004\u0012\u00020\u001b0\n\u00a2\u0006\b\n\u0000\u001a\u0004\b\u001c\u0010\rR\u0017\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\u001e0\n\u00a2\u0006\b\n\u0000\u001a\u0004\b\u001f\u0010\rR\u0017\u0010 \u001a\b\u0012\u0004\u0012\u00020\u001b0\n\u00a2\u0006\b\n\u0000\u001a\u0004\b!\u0010\rR\u0017\u0010\"\u001a\b\u0012\u0004\u0012\u00020#0\n\u00a2\u0006\b\n\u0000\u001a\u0004\b$\u0010\rR\u0017\u0010%\u001a\b\u0012\u0004\u0012\u00020\u000b0\n\u00a2\u0006\b\n\u0000\u001a\u0004\b&\u0010\rR\u001d\u0010\'\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020)0(0\n\u00a2\u0006\b\n\u0000\u001a\u0004\b*\u0010\rR\u0017\u0010+\u001a\b\u0012\u0004\u0012\u00020,0\n\u00a2\u0006\b\n\u0000\u001a\u0004\b-\u0010\rR\u0017\u0010.\u001a\b\u0012\u0004\u0012\u00020\b0(\u00a2\u0006\b\n\u0000\u001a\u0004\b/\u00100R#\u00101\u001a\u0014\u0012\u0010\u0012\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u0002020(0(0\n\u00a2\u0006\b\n\u0000\u001a\u0004\b3\u0010\rR\u0017\u00104\u001a\b\u0012\u0004\u0012\u0002050\n\u00a2\u0006\b\n\u0000\u001a\u0004\b6\u0010\r\u0082\u0002\u0004\n\u0002\b\u0019\u00a8\u0006c"}, d2 = {"Lcom/example/projetointegrador/ui/MainViewModel;", "Landroidx/lifecycle/ViewModel;", "repositorys", "Lcom/example/projetointegrador/services/Repository;", "dbRepository", "Lcom/example/projetointegrador/services/DBRepository;", "(Lcom/example/projetointegrador/services/Repository;Lcom/example/projetointegrador/services/DBRepository;)V", "IDIOMA", "", "acertos", "Landroidx/lifecycle/MutableLiveData;", "", "getAcertos", "()Landroidx/lifecycle/MutableLiveData;", "apiKey", "auth", "Lcom/google/firebase/auth/FirebaseAuth;", "getAuth", "configuracoes", "Lcom/example/projetointegrador/domain/Configuracoes;", "getConfiguracoes", "crewSugestion", "Lcom/example/projetointegrador/domain/Crew;", "getCrewSugestion", "emailUser", "getEmailUser", "facebookIsLogged", "", "getFacebookIsLogged", "filmeSugestion", "Lcom/example/projetointegrador/domain/Filme;", "getFilmeSugestion", "googleIsLogged", "getGoogleIsLogged", "googleSignInClient", "Lcom/google/android/gms/auth/api/signin/GoogleSignInClient;", "getGoogleSignInClient", "lastMovieId", "getLastMovieId", "listGeneros", "Ljava/util/ArrayList;", "Lcom/example/projetointegrador/domain/Genero;", "getListGeneros", "listGenres", "Lcom/example/projetointegrador/domain/Genres;", "getListGenres", "listTemplates", "getListTemplates", "()Ljava/util/ArrayList;", "pagesRanking", "Lcom/example/projetointegrador/domain/Jogador;", "getPagesRanking", "pergunta", "Lcom/example/projetointegrador/domain/Pergunta;", "getPergunta", "atualizarAcertos", "", "textView", "Landroid/widget/TextView;", "atualizarEmailUser", "email", "atualizarGeneroToolbar", "toolbar", "Landroid/widget/Toolbar;", "carregarConfiguracoes", "configFacebook", "fauth", "configGoogle", "gclient", "createConfigurationForUser", "gerarPerguntaAleatoria", "getAllGeneros", "getAllJogadoresRank1", "getAllJogadoresRank2", "getConfigurationForUser", "initializeOfflineTemplates", "onProximaPergunta", "popAlternativas", "listBotoes", "", "Landroidx/appcompat/widget/AppCompatButton;", "([Landroidx/appcompat/widget/AppCompatButton;)V", "popListGeneros", "popListGenres", "popPagesRanking", "popTemplates", "primeiroTemplate", "perguntaGerada", "(Lcom/example/projetointegrador/domain/Pergunta;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "quartoTemplate", "segundoTemplate", "terceiroTemplate", "updateConfigura\u00e7\u00f5es", "isChecked", "campo", "updateFacebookLogIn", "isLogged", "updateGoogleLogIn", "updateLastMovieId", "app_debug"})
+@kotlin.Metadata(mv = {1, 4, 0}, bv = {1, 0, 3}, k = 1, d1 = {"\u0000\u009e\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u0006\n\u0000\n\u0002\u0010\b\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u000f\n\u0002\u0010\u0011\n\u0002\u0018\u0002\n\u0002\b\u0012\u0018\u00002\u00020\u0001B\u0015\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u00a2\u0006\u0002\u0010\u0006J\u0016\u0010E\u001a\u00020F2\u0006\u0010G\u001a\u00020H2\u0006\u0010\u000b\u001a\u00020\fJ\u000e\u0010I\u001a\u00020F2\u0006\u0010J\u001a\u00020\bJ\u000e\u0010K\u001a\u00020F2\u0006\u0010J\u001a\u00020\bJ\u000e\u0010L\u001a\u00020F2\u0006\u0010M\u001a\u00020\u0014J\u000e\u0010N\u001a\u00020F2\u0006\u0010O\u001a\u00020,J\u000e\u0010P\u001a\u00020F2\u0006\u0010J\u001a\u00020\bJ\u0006\u0010Q\u001a\u00020FJ\u000e\u0010R\u001a\b\u0012\u0004\u0012\u00020201H\u0002J\u000e\u0010S\u001a\u00020F2\u0006\u0010J\u001a\u00020\bJ\u0006\u0010(\u001a\u00020FJ\u0006\u0010T\u001a\u00020FJ\u0006\u0010U\u001a\u00020\bJ\u0019\u0010V\u001a\u00020F2\f\u0010W\u001a\b\u0012\u0004\u0012\u00020Y0X\u00a2\u0006\u0002\u0010ZJ\u0006\u0010[\u001a\u00020FJ\u0006\u0010\\\u001a\u00020FJ\u000e\u0010]\u001a\b\u0012\u0004\u0012\u00020\b01H\u0002J\u0019\u0010^\u001a\u00020F2\u0006\u0010_\u001a\u00020CH\u0082@\u00f8\u0001\u0000\u00a2\u0006\u0002\u0010`J\u0019\u0010a\u001a\u00020F2\u0006\u0010_\u001a\u00020CH\u0082@\u00f8\u0001\u0000\u00a2\u0006\u0002\u0010`J\u0019\u0010b\u001a\u00020F2\u0006\u0010_\u001a\u00020CH\u0082@\u00f8\u0001\u0000\u00a2\u0006\u0002\u0010`J\u0019\u0010c\u001a\u00020F2\u0006\u0010_\u001a\u00020CH\u0082@\u00f8\u0001\u0000\u00a2\u0006\u0002\u0010`J\u0016\u0010d\u001a\u00020F2\u0006\u0010e\u001a\u00020\u00182\u0006\u0010f\u001a\u00020\bJ\u000e\u0010g\u001a\u00020F2\u0006\u0010h\u001a\u00020\u0018J\u000e\u0010i\u001a\u00020F2\u0006\u0010h\u001a\u00020\u0018J\u0006\u0010j\u001a\u00020FR\u000e\u0010\u0007\u001a\u00020\bX\u0082D\u00a2\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\nX\u0082D\u00a2\u0006\u0002\n\u0000R\u001a\u0010\u000b\u001a\u00020\fX\u0086\u000e\u00a2\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\u000e\"\u0004\b\u000f\u0010\u0010R\u000e\u0010\u0011\u001a\u00020\bX\u0082D\u00a2\u0006\u0002\n\u0000R\u0017\u0010\u0012\u001a\b\u0012\u0004\u0012\u00020\u00140\u0013\u00a2\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0016R \u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u00180\u0013X\u0086\u000e\u00a2\u0006\u000e\n\u0000\u001a\u0004\b\u0019\u0010\u0016\"\u0004\b\u001a\u0010\u001bR\u0017\u0010\u001c\u001a\b\u0012\u0004\u0012\u00020\u001d0\u0013\u00a2\u0006\b\n\u0000\u001a\u0004\b\u001e\u0010\u0016R\u0017\u0010\u001f\u001a\b\u0012\u0004\u0012\u00020 0\u0013\u00a2\u0006\b\n\u0000\u001a\u0004\b!\u0010\u0016R\u0017\u0010\"\u001a\b\u0012\u0004\u0012\u00020\b0\u0013\u00a2\u0006\b\n\u0000\u001a\u0004\b#\u0010\u0016R\u0017\u0010$\u001a\b\u0012\u0004\u0012\u00020\u00180\u0013\u00a2\u0006\b\n\u0000\u001a\u0004\b%\u0010\u0016R\u0017\u0010&\u001a\b\u0012\u0004\u0012\u00020\'0\u0013\u00a2\u0006\b\n\u0000\u001a\u0004\b(\u0010\u0016R\u0017\u0010)\u001a\b\u0012\u0004\u0012\u00020\u00180\u0013\u00a2\u0006\b\n\u0000\u001a\u0004\b*\u0010\u0016R\u0017\u0010+\u001a\b\u0012\u0004\u0012\u00020,0\u0013\u00a2\u0006\b\n\u0000\u001a\u0004\b-\u0010\u0016R\u0017\u0010.\u001a\b\u0012\u0004\u0012\u00020\f0\u0013\u00a2\u0006\b\n\u0000\u001a\u0004\b/\u0010\u0016R\u001d\u00100\u001a\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u000202010\u0013\u00a2\u0006\b\n\u0000\u001a\u0004\b3\u0010\u0016R\u0017\u00104\u001a\b\u0012\u0004\u0012\u0002050\u0013\u00a2\u0006\b\n\u0000\u001a\u0004\b6\u0010\u0016R\u0017\u00107\u001a\b\u0012\u0004\u0012\u00020\b01\u00a2\u0006\b\n\u0000\u001a\u0004\b8\u00109R\u001a\u0010:\u001a\u00020\u0018X\u0086\u000e\u00a2\u0006\u000e\n\u0000\u001a\u0004\b;\u0010<\"\u0004\b=\u0010>R#\u0010?\u001a\u0014\u0012\u0010\u0012\u000e\u0012\n\u0012\b\u0012\u0004\u0012\u00020@01010\u0013\u00a2\u0006\b\n\u0000\u001a\u0004\bA\u0010\u0016R\u0017\u0010B\u001a\b\u0012\u0004\u0012\u00020C0\u0013\u00a2\u0006\b\n\u0000\u001a\u0004\bD\u0010\u0016\u0082\u0002\u0004\n\u0002\b\u0019\u00a8\u0006k"}, d2 = {"Lcom/example/projetointegrador/ui/MainViewModel;", "Landroidx/lifecycle/ViewModel;", "repositorys", "Lcom/example/projetointegrador/services/Repository;", "dbRepository", "Lcom/example/projetointegrador/services/DBRepository;", "(Lcom/example/projetointegrador/services/Repository;Lcom/example/projetointegrador/services/DBRepository;)V", "IDIOMA", "", "POPULARIDADE_MINIMA", "", "acertos", "", "getAcertos", "()I", "setAcertos", "(I)V", "apiKey", "auth", "Landroidx/lifecycle/MutableLiveData;", "Lcom/google/firebase/auth/FirebaseAuth;", "getAuth", "()Landroidx/lifecycle/MutableLiveData;", "carregandoPergunta", "", "getCarregandoPergunta", "setCarregandoPergunta", "(Landroidx/lifecycle/MutableLiveData;)V", "configuracoes", "Lcom/example/projetointegrador/domain/Configuracoes;", "getConfiguracoes", "crewSugestion", "Lcom/example/projetointegrador/domain/Crew;", "getCrewSugestion", "emailUser", "getEmailUser", "facebookIsLogged", "getFacebookIsLogged", "filmeSugestion", "Lcom/example/projetointegrador/domain/Filme;", "getFilmeSugestion", "googleIsLogged", "getGoogleIsLogged", "googleSignInClient", "Lcom/google/android/gms/auth/api/signin/GoogleSignInClient;", "getGoogleSignInClient", "lastMovieId", "getLastMovieId", "listGeneros", "Ljava/util/ArrayList;", "Lcom/example/projetointegrador/domain/Genero;", "getListGeneros", "listGenres", "Lcom/example/projetointegrador/domain/Genres;", "getListGenres", "listTemplates", "getListTemplates", "()Ljava/util/ArrayList;", "modoSobrevivencia", "getModoSobrevivencia", "()Z", "setModoSobrevivencia", "(Z)V", "pagesRanking", "Lcom/example/projetointegrador/domain/Jogador;", "getPagesRanking", "pergunta", "Lcom/example/projetointegrador/domain/Pergunta;", "getPergunta", "atualizarAcertos", "", "textView", "Landroid/widget/TextView;", "atualizarEmailUser", "email", "carregarConfiguracoes", "configFacebook", "fauth", "configGoogle", "gclient", "createConfigurationForUser", "gerarPerguntaAleatoria", "getAllGeneros", "getConfigurationForUser", "initializeOfflineTemplates", "onAcerto", "popAlternativas", "listBotoes", "", "Landroidx/appcompat/widget/AppCompatButton;", "([Landroidx/appcompat/widget/AppCompatButton;)V", "popListGeneros", "popListGenres", "popTemplates", "primeiroTemplate", "perguntaGerada", "(Lcom/example/projetointegrador/domain/Pergunta;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "quartoTemplate", "segundoTemplate", "terceiroTemplate", "updateConfigura\u00e7\u00f5es", "isChecked", "campo", "updateFacebookLogIn", "isLogged", "updateGoogleLogIn", "updateLastMovieId", "app_debug"})
 public final class MainViewModel extends androidx.lifecycle.ViewModel {
     @org.jetbrains.annotations.NotNull()
     private final androidx.lifecycle.MutableLiveData<java.util.ArrayList<com.example.projetointegrador.domain.Genero>> listGeneros = null;
@@ -20,10 +20,12 @@ public final class MainViewModel extends androidx.lifecycle.ViewModel {
     private final java.util.ArrayList<java.lang.String> listTemplates = null;
     @org.jetbrains.annotations.NotNull()
     private final androidx.lifecycle.MutableLiveData<com.example.projetointegrador.domain.Pergunta> pergunta = null;
+    private int acertos = 0;
     @org.jetbrains.annotations.NotNull()
-    private final androidx.lifecycle.MutableLiveData<java.lang.Integer> acertos = null;
+    private androidx.lifecycle.MutableLiveData<java.lang.Boolean> carregandoPergunta;
     private final java.lang.String apiKey = "2ae684da617a0a9eb2d4bd28815050e8";
     private final java.lang.String IDIOMA = "pt-BR";
+    private final double POPULARIDADE_MINIMA = 2.0;
     @org.jetbrains.annotations.NotNull()
     private final androidx.lifecycle.MutableLiveData<com.example.projetointegrador.domain.Configuracoes> configuracoes = null;
     @org.jetbrains.annotations.NotNull()
@@ -36,6 +38,7 @@ public final class MainViewModel extends androidx.lifecycle.ViewModel {
     private final androidx.lifecycle.MutableLiveData<com.google.firebase.auth.FirebaseAuth> auth = null;
     @org.jetbrains.annotations.NotNull()
     private final androidx.lifecycle.MutableLiveData<com.google.android.gms.auth.api.signin.GoogleSignInClient> googleSignInClient = null;
+    private boolean modoSobrevivencia = false;
     
     @org.jetbrains.annotations.NotNull()
     public final androidx.lifecycle.MutableLiveData<java.util.ArrayList<com.example.projetointegrador.domain.Genero>> getListGeneros() {
@@ -77,9 +80,20 @@ public final class MainViewModel extends androidx.lifecycle.ViewModel {
         return null;
     }
     
+    public final int getAcertos() {
+        return 0;
+    }
+    
+    public final void setAcertos(int p0) {
+    }
+    
     @org.jetbrains.annotations.NotNull()
-    public final androidx.lifecycle.MutableLiveData<java.lang.Integer> getAcertos() {
+    public final androidx.lifecycle.MutableLiveData<java.lang.Boolean> getCarregandoPergunta() {
         return null;
+    }
+    
+    public final void setCarregandoPergunta(@org.jetbrains.annotations.NotNull()
+    androidx.lifecycle.MutableLiveData<java.lang.Boolean> p0) {
     }
     
     @org.jetbrains.annotations.NotNull()
@@ -112,10 +126,14 @@ public final class MainViewModel extends androidx.lifecycle.ViewModel {
         return null;
     }
     
-    public final void popListGeneros() {
+    public final boolean getModoSobrevivencia() {
+        return false;
     }
     
-    public final void popPagesRanking() {
+    public final void setModoSobrevivencia(boolean p0) {
+    }
+    
+    public final void popListGeneros() {
     }
     
     public final void updateLastMovieId() {
@@ -134,14 +152,6 @@ public final class MainViewModel extends androidx.lifecycle.ViewModel {
         return null;
     }
     
-    private final java.util.ArrayList<com.example.projetointegrador.domain.Jogador> getAllJogadoresRank1() {
-        return null;
-    }
-    
-    private final java.util.ArrayList<com.example.projetointegrador.domain.Jogador> getAllJogadoresRank2() {
-        return null;
-    }
-    
     private final java.util.ArrayList<java.lang.String> popTemplates() {
         return null;
     }
@@ -150,15 +160,8 @@ public final class MainViewModel extends androidx.lifecycle.ViewModel {
     android.widget.TextView textView, int acertos) {
     }
     
-    public final void atualizarGeneroToolbar(@org.jetbrains.annotations.NotNull()
-    android.widget.Toolbar toolbar) {
-    }
-    
     public final void popAlternativas(@org.jetbrains.annotations.NotNull()
     androidx.appcompat.widget.AppCompatButton[] listBotoes) {
-    }
-    
-    public final void onProximaPergunta() {
     }
     
     public final void initializeOfflineTemplates() {
@@ -196,6 +199,11 @@ public final class MainViewModel extends androidx.lifecycle.ViewModel {
     
     public final void configGoogle(@org.jetbrains.annotations.NotNull()
     com.google.android.gms.auth.api.signin.GoogleSignInClient gclient) {
+    }
+    
+    @org.jetbrains.annotations.NotNull()
+    public final java.lang.String onAcerto() {
+        return null;
     }
     
     public MainViewModel(@org.jetbrains.annotations.NotNull()

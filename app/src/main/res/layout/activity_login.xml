@@ -33,11 +33,11 @@
             android:layout_marginTop="200dp"
             android:layout_marginEnd="24dp"
             android:backgroundTint="@color/white"
-            android:hint="Username ou Email"
+            android:hint="@string/email_hint"
             android:inputType="textEmailAddress"
             android:selectAllOnFocus="true"
             android:textColor="@color/white"
-            android:textColorHint="@color/white"
+            android:textColorHint="@color/grey"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -50,12 +50,12 @@
             android:layout_marginTop="20dp"
             android:layout_marginEnd="24dp"
             android:backgroundTint="@color/white"
-            android:hint="Senha"
+            android:hint="@string/password_hint"
             android:imeOptions="actionDone"
             android:inputType="textPassword"
             android:selectAllOnFocus="true"
             android:textColor="@color/white"
-            android:textColorHint="@color/white"
+            android:textColorHint="@color/grey"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/username" />
@@ -67,13 +67,12 @@
             android:layout_marginTop="30dp"
             android:background="@drawable/botao_redondo_amarelo"
             android:fontFamily="@font/roboto_regular"
-            android:gravity="center"
-            android:text="Entrar"
+            android:stateListAnimator="@null"
+            android:text="@string/entrar"
             android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/password"
-            app:layout_constraintVertical_bias="0.05" />
+            app:layout_constraintTop_toBottomOf="@+id/password" />
 
         <TextView
             android:id="@+id/tvCadastre_se"
@@ -99,8 +98,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:layout_columnWeight="1"
-                android:orientation="vertical"
-                android:gravity="center">
+                android:gravity="center"
+                android:orientation="vertical">
 
                 <com.facebook.login.widget.LoginButton
                     android:id="@+id/lbtn_Facebook"
@@ -112,7 +111,7 @@
                     android:id="@+id/ivFacebook"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@drawable/ic_baseline_facebook_24"/>
+                    android:src="@drawable/ic_baseline_facebook_24" />
             </LinearLayout>
 
             <LinearLayout
@@ -126,19 +125,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:src="@drawable/ic_icons8_google" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_columnWeight="1"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/ic_icons8_instagram" />
 
             </LinearLayout>
 

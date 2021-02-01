@@ -3,16 +3,12 @@ package com.example.projetointegrador.ui.config
 import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.CompoundButton
-import androidx.appcompat.widget.AppCompatButton
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.projetointegrador.MainViewModelFactory
 import com.example.projetointegrador.R
@@ -20,14 +16,14 @@ import com.example.projetointegrador.databinding.FragmentConfiguracoesBinding
 import com.example.projetointegrador.services.dbRepository
 import com.example.projetointegrador.services.gso
 import com.example.projetointegrador.services.repository
+import com.example.projetointegrador.ui.LoginActivity
 import com.example.projetointegrador.ui.MainViewModel
 import com.facebook.login.LoginManager
 import com.google.android.gms.auth.api.signin.GoogleSignIn
-import com.google.android.gms.auth.api.signin.GoogleSignInClient
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
-import kotlinx.android.synthetic.main.fragment_configuracoes.*
-import kotlinx.android.synthetic.main.fragment_configuracoes.view.*
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class ConfiguracoesFragment : Fragment() {
 
@@ -35,68 +31,48 @@ class ConfiguracoesFragment : Fragment() {
     private val viewModel by activityViewModels<MainViewModel>{
         MainViewModelFactory(repository, dbRepository)
     }
-    private lateinit var bind: FragmentConfiguracoesBinding
+    private lateinit var binding: FragmentConfiguracoesBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
-        val view = inflater.inflate(R.layout.fragment_configuracoes, container, false)
-
-
-        bind = DataBindingUtil.inflate(
+        binding = DataBindingUtil.inflate(
             inflater,
             R.layout.fragment_configuracoes,
             container,
             false
         )
 
-        bind.tvGenerosFavoritos.setOnClickListener {
+        binding.tvEmailConfig.text = FirebaseAuth.getInstance().currentUser!!.email.toString()
+
+        binding.tvGenerosFavoritos.setOnClickListener {
             generosDialog()
         }
 
         viewModel.configuracoes.observe(viewLifecycleOwner, {
             val config = it
 
-            bind.scNotificacao.isChecked = config.notificacoes
-            bind.scVibrar.isChecked = config.vibrar
-            bind.tvEmailConfig.text = config.email
-
+            binding.scNotificacao.isChecked = config.notificacoes
+            binding.scVibrar.isChecked = config.vibrar
         })
 
-        bind.scVibrar.setOnClickListener{
-            viewModel.updateConfigurações(bind.scVibrar.isChecked, "vibrar")
+        binding.scVibrar.setOnClickListener{
+            viewModel.updateConfigurações(binding.scVibrar.isChecked, "vibrar")
         }
 
-        bind.scNotificacao.setOnClickListener {
-            viewModel.updateConfigurações(bind.scNotificacao.isChecked, "notificação")
+        binding.scNotificacao.setOnClickListener {
+            viewModel.updateConfigurações(binding.scNotificacao.isChecked, "notificação")
         }
 
-        bind.scFacebook.setOnClickListener {
-            FirebaseAuth.getInstance().signOut()
-            LoginManager.getInstance().logOut()
-            findNavController().navigate(R.id.action_homeVPFragment_to_loginActivity)
+        binding.llLogout.setOnClickListener {
+            Firebase.auth.signOut()
+            startActivity(Intent(activity, LoginActivity::class.java))
         }
 
-        bind.scGoogle.setOnClickListener {
-            val gsic = GoogleSignIn.getClient(this.requireActivity(), gso)
-            gsic.signOut()
-            findNavController().navigate(R.id.action_homeVPFragment_to_loginActivity)
-        }
-
-        viewModel.facebookIsLogged.observe(viewLifecycleOwner, {
-            bind.scFacebook.isChecked = it
-        })
-
-        viewModel.googleIsLogged.observe(viewLifecycleOwner, {
-            bind.scGoogle.isChecked = it
-        })
-
-
-
-        return bind.root
+        return binding.root
     }
 
     private lateinit var alertDialog: AlertDialog
@@ -111,6 +87,4 @@ class ConfiguracoesFragment : Fragment() {
         alertDialog = dialogBuilder.create();
         alertDialog.show()
     }
-
-
 }

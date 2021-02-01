@@ -32,7 +32,6 @@ class HomeFragment : Fragment() {
         MainViewModelFactory(repository, dbRepository)
     }
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewModel.getFilmeSugestion()
@@ -61,11 +60,10 @@ class HomeFragment : Fragment() {
             })
         })
 
-
-
         view.ivCardHome.setOnClickListener {
             findNavController().navigate(R.id.action_homeVPFragment_to_sinopseFragment)
         }
+
         view.ivAppName.setImageResource(R.drawable.icon_cinefilos)
 
         view.btnJogar.setOnClickListener {
@@ -89,8 +87,18 @@ class HomeFragment : Fragment() {
 
         alertDialog = dialogBuilder.create();
         alertDialog.show()
+
         dialogView.llTimeLimit.setOnClickListener {
+            viewModel.acertos = 0
+            viewModel.modoSobrevivencia = false
             findNavController().navigate(R.id.action_homeVPFragment_to_perguntaFragment)
+            alertDialog.cancel()
+        }
+
+        dialogView.llSurvival.setOnClickListener {
+            viewModel.acertos = 0
+            viewModel.modoSobrevivencia = true
+            findNavController().navigate(R.id.action_homeVPFragment_to_sobrevivenciaFragment)
             alertDialog.cancel()
         }
     }

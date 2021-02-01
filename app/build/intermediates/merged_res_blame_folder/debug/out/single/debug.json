@@ -1,426 +1,446 @@
 [
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_resultado_negativo.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\fragment_resultado_negativo.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_outline_email_24.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\ic_outline_email_24.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_icons8_google.png.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_icons8_google.png"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_sobrevivencia.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\fragment_sobrevivencia.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_pergunta.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\fragment_pergunta.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_help.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\ic_help.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_icons8_instagram.png.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_icons8_instagram.png"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_home.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\fragment_home.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_winner.png.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_winner.png"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_capa_killbill.jpg.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\capa_killbill.jpg"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_ajuda.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\fragment_ajuda.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_winner.png.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_winner.png"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_comedia.jpg.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\comedia.jpg"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\font_roboto_regular.ttf.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\font\\roboto_regular.ttf"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_progressbar_layout.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\progressbar_layout.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_ranking.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\fragment_ranking.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_outline_camera_alt_24.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\ic_outline_camera_alt_24.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_botao_redondo_amarelo.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\botao_redondo_amarelo.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_gradient_preto.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\gradient_preto.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_outline_lock_24.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\ic_outline_lock_24.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_outline_vibration_24.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\ic_outline_vibration_24.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_botao_redondo_transparente.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\botao_redondo_transparente.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_icons8_google.png.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_icons8_google.png"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_card_genero.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\card_genero.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_configuracoes.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\fragment_configuracoes.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v24_ic_icons8_instagram.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v24\\ic_icons8_instagram.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_card_sugestion.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\card_sugestion.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_circle.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\circle.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_perfil_terceiro.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\fragment_perfil_terceiro.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_icons8_google.png.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_icons8_google.png"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_help.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\ic_help.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_list_pager_ranking.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\list_pager_ranking.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_icon_plus_appname.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\icon_plus_appname.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_outline_notifications_24.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\ic_outline_notifications_24.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_winner.png.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_winner.png"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v24_ic_icons8_google.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v24\\ic_icons8_google.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_custom_dialog_acerto.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\custom_dialog_acerto.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_outline_person_24.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\ic_outline_person_24.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_home.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\activity_home.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_borda_right.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\borda_right.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_outline_notifications_24.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\ic_outline_notifications_24.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_dialogue_editar_bio.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\dialogue_editar_bio.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_botao_redondo_transparente.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\botao_redondo_transparente.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_survivalmode.png.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\ic_survivalmode.png"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_cadastro.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\activity_cadastro.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_ajuda.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\fragment_ajuda.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_timer_24.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\ic_baseline_timer_24.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_icons8_instagram.png.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_icons8_instagram.png"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_gradient_amarelo.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\gradient_amarelo.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_ranking.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\ic_ranking.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v24_ic_icons8_google.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v24\\ic_icons8_google.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_facebook_24.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\ic_baseline_facebook_24.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_placeholder_genero.jpg.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\placeholder_genero.jpg"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_splash.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\activity_splash.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_icons8_instagram.png.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_icons8_instagram.png"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_jogador.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\item_jogador.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_shape_sugestion.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\shape_sugestion.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_resultado.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\fragment_resultado.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_icons8_instagram.png.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_icons8_instagram.png"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_perfil_terceiro.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\fragment_perfil_terceiro.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_toolbar_quiz.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\toolbar_quiz.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\menu_menu_items.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\menu\\menu_items.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_outline_person_24.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\ic_outline_person_24.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_home_v_p.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\fragment_home_v_p.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_teste.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\teste.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_placeholder_genero.jpg.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\placeholder_genero.jpg"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_icons8_google.png.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_icons8_google.png"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_toolbar_quiz.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\toolbar_quiz.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_circle.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\circle.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_winner.png.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_winner.png"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_placeholder_profile_cover.png.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\placeholder_profile_cover.png"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_outline_music_note_24.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\ic_outline_music_note_24.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_capa_killbill.jpg.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\capa_killbill.jpg"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_corpo_pergunta_arredondar.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\corpo_pergunta_arredondar.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_frame.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\frame.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_resultado.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\fragment_resultado.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_img_card.jpg.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\img_card.jpg"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_perfil_pessoal.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\fragment_perfil_pessoal.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_icons8_instagram.png.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_icons8_instagram.png"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_icons8_google.png.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_icons8_google.png"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_configuracoes.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\fragment_configuracoes.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_icons8_instagram.png.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_icons8_instagram.png"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_gradient_amarelo.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\gradient_amarelo.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v24_ic_winner.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v24\\ic_winner.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_frame.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\frame.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_modos.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\fragment_modos.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_icon_cinefilos.png.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\icon_cinefilos.png"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_icons8_instagram.png.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_icons8_instagram.png"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_teste.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\teste.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\font_abril_fatface.ttf.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\font\\abril_fatface.ttf"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_scifi.jpg.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\scifi.jpg"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_timer_24.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\ic_baseline_timer_24.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_config.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\ic_config.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_winner.png.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_winner.png"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_circulo.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\circulo.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_borda_top_bottom.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\borda_top_bottom.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_winner.png.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_winner.png"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_botao_redondo_preto.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\botao_redondo_preto.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_botao_redondo_amarelo.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\botao_redondo_amarelo.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_pergunta.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\fragment_pergunta.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_terror.jpg.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\terror.jpg"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_corpo_pergunta_arredondar.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\corpo_pergunta_arredondar.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_icons8_google.png.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_icons8_google.png"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_icon_cinefilos.png.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\icon_cinefilos.png"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_sinopse.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\fragment_sinopse.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_icons8_google.png.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_icons8_google.png"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_jogador.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\item_jogador.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_home.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\fragment_home.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_borda_top_bottom.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\borda_top_bottom.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_back_arrow.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\ic_back_arrow.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_modos.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\fragment_modos.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_scifi.jpg.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\scifi.jpg"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\menu_menu_items.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\menu\\menu_items.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_icons8_google.png.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_icons8_google.png"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_home.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\activity_home.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_facebook_24.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\ic_baseline_facebook_24.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_icon_plus_appname.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\icon_plus_appname.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_borda_right.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\borda_right.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_ranking.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\fragment_ranking.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_outline_movie_24.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\ic_outline_movie_24.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_winner.png.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_winner.png"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_custom_dialog_erro.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\custom_dialog_erro.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_dialogue_generos_favoritos.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\dialogue_generos_favoritos.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_circulo.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\circulo.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_back_arrow.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\ic_back_arrow.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_login.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\activity_login.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\font_abril_fatface.ttf.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\font\\abril_fatface.ttf"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_clock_timelimit.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\ic_clock_timelimit.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_icons8_instagram.png.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_icons8_instagram.png"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_cadastro.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\activity_cadastro.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_survivalmode.png.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\ic_survivalmode.png"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_dialogue_editar_bio.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\dialogue_editar_bio.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_outline_lock_24.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\ic_outline_lock_24.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v24_ic_winner.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v24\\ic_winner.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_splash.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\activity_splash.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_config.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\ic_config.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_botao_redondo_preto.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\botao_redondo_preto.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_undraw_male_avatar_323b.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\ic_undraw_male_avatar_323b.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_icons8_instagram.png.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_icons8_instagram.png"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_shape_sugestion.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\shape_sugestion.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_cor_vp.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\cor_vp.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_list_pager_ranking.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\list_pager_ranking.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_clock_timelimit.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\ic_clock_timelimit.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_terror.jpg.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\terror.jpg"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_perfil.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\ic_perfil.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_icons8_google.png.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_icons8_google.png"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_play_home.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\ic_play_home.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_home_v_p.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\fragment_home_v_p.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_card_sugestion.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\card_sugestion.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_sinopse.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\fragment_sinopse.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_outline_email_24.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\ic_outline_email_24.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_gradient_preto.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\gradient_preto.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_comedia.jpg.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\comedia.jpg"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_dialogue_generos_favoritos.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\dialogue_generos_favoritos.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_icons8_google.png.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_icons8_google.png"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\navigation_nav_graph_home.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\navigation\\nav_graph_home.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_resultado_negativo.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\fragment_resultado_negativo.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_icons8_google.png.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_icons8_google.png"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_exit_to_app_24.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\ic_baseline_exit_to_app_24.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_icons8_instagram.png.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_icons8_instagram.png"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_icons8_instagram.png.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_icons8_instagram.png"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_fundo_amarelo_gradiente.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\fundo_amarelo_gradiente.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_fundo_amarelo_gradiente.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\fundo_amarelo_gradiente.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_card_genero.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\card_genero.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_outline_movie_24.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\ic_outline_movie_24.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_winner.png.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\ic_winner.png"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\font_roboto_regular.ttf.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\font\\roboto_regular.ttf"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_ranking.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\ic_ranking.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_winner.png.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_winner.png"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\activity_main.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_outline_vibration_24.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\ic_outline_vibration_24.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_undraw_male_avatar_323b.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\ic_undraw_male_avatar_323b.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\navigation_nav_graph_home.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\navigation\\nav_graph_home.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_login.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\activity_login.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_outline_camera_alt_24.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\ic_outline_camera_alt_24.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_img_card.jpg.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\img_card.jpg"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_winner.png.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_winner.png"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v24_ic_icons8_instagram.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v24\\ic_icons8_instagram.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_outline_music_note_24.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\ic_outline_music_note_24.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_placeholder_profile_cover.png.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\placeholder_profile_cover.png"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_play_home.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\ic_play_home.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_winner.png.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_winner.png"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_winner.png.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_winner.png"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_cor_vp.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\cor_vp.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_icons8_google.png.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_icons8_google.png"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_perfil_pessoal.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\fragment_perfil_pessoal.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_icons8_instagram.png.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_icons8_instagram.png"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_perfil.xml.flat",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\ic_perfil.xml"
     }
 ]

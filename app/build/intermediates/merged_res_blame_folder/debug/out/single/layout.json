@@ -1,18 +1,30 @@
 [
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_login.xml",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\activity_login.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_resultado.xml",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\fragment_resultado.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_pergunta.xml",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\fragment_pergunta.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_configuracoes.xml",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\fragment_configuracoes.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_configuracoes.xml",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\fragment_configuracoes.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\progressbar_layout.xml",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\progressbar_layout.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_cadastro.xml",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\activity_cadastro.xml"
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_sobrevivencia.xml",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\fragment_sobrevivencia.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_cadastro.xml",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\activity_cadastro.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_login.xml",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_pergunta.xml",
+        "source": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\fragment_pergunta.xml"
     }
 ]
