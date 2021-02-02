@@ -3,12 +3,16 @@ package com.example.projetointegrador.ui
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.addCallback
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import com.afollestad.materialdialogs.MaterialDialog
+import com.afollestad.materialdialogs.WhichButton
+import com.afollestad.materialdialogs.actions.setActionButtonEnabled
+import com.afollestad.materialdialogs.input.getInputField
+import com.afollestad.materialdialogs.input.input
 import com.example.projetointegrador.MainViewModelFactory
 import com.example.projetointegrador.R
 import com.example.projetointegrador.database.AppDataBase
@@ -29,8 +33,8 @@ import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FacebookAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlin.system.exitProcess
 
 //keytool -keystore path-to-debug-or-production-keystore -list -v
@@ -44,7 +48,9 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     private lateinit var progressView: ViewGroup
     private var progressoVisivel = false
+    private var usernameSucesso = true
     private lateinit var callbackManager: CallbackManager
+    private val scope = CoroutineScope(Dispatchers.Main)
     val TAG = "LOGIN ACTIVITY"
 
     //    private var RC_SIGN_IN = 100
@@ -54,7 +60,6 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
 
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -71,6 +76,24 @@ class LoginActivity : AppCompatActivity() {
         onBackPressedDispatcher.addCallback(this) {
             exitProcess(0)
         }
+
+        viewModel.jaTemUsername.observe(this, { jaTemUsername ->
+            if (jaTemUsername) {
+                val intent = Intent(this, HomeActivity::class.java)
+                startActivity(intent)
+            } else {
+                solicitarUsername()
+            }
+        })
+
+        viewModel.usernameCriado.observe(this, { usernameCriado ->
+            if (usernameCriado) {
+                val intent = Intent(this, HomeActivity::class.java)
+                startActivity(intent)
+            } else {
+                Toast.makeText(this, "Username indisponível, escolha outro.", Toast.LENGTH_SHORT).show()
+            }
+        })
 
         binding.btnLogin.setOnClickListener {
             viewModel.getConfigurationForUser(binding.username.text.toString())
@@ -97,8 +120,6 @@ class LoginActivity : AppCompatActivity() {
             signInWithGoogle()
         }
 
-
-
         binding.lbtnFacebook.setReadPermissions("email", "public_profile")
         binding.lbtnFacebook.registerCallback(
             callbackManager,
@@ -116,7 +137,7 @@ class LoginActivity : AppCompatActivity() {
             })
     }
 
-    fun connect(){
+    fun connect() {
         //Inicializar Firebase auth
         auth = FirebaseAuth.getInstance()
 
@@ -128,14 +149,13 @@ class LoginActivity : AppCompatActivity() {
 
         googleSignInClient = GoogleSignIn.getClient(this, googleSignOptions)
 
-
         //Inicializar botao de login do facebook
         callbackManager = CallbackManager.Factory.create()
     }
 
     override fun onStart() {
         super.onStart()
-        val currentUser = auth.currentUser
+        val currentUser = viewModel.firebaseAuth.currentUser
         if (currentUser != null) {
             val intent = Intent(this, HomeActivity::class.java)
             intent.putExtra("email", currentUser.email)
@@ -159,28 +179,49 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    fun signInWithGoogle() {
-        val signInIntent: Intent = googleSignInClient.signInIntent
-        startActivityForResult(signInIntent, RC_SIGN_IN)
-    }
-
     private fun firebaseAuthWithGoogle(idToken: String) {
 
         showProgressBar()
 
         val credential = GoogleAuthProvider.getCredential(idToken, null)
-        auth.signInWithCredential(credential)
+        viewModel.firebaseAuth.signInWithCredential(credential)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    val intent = Intent(this, HomeActivity::class.java)
-                    intent.putExtra("email", task.result!!.user!!.email)
-                    startActivity(intent)
-                } else {
-                    Toast.makeText(this, "Login falhou :(", Toast.LENGTH_SHORT).show()
+                    viewModel.verificarSeTemUsername()
                 }
 
                 hideProgressBar()
             }
+    }
+
+
+    fun solicitarUsername() {
+
+        val dialogUsername = MaterialDialog(this)
+
+        dialogUsername.show {
+
+            message(R.string.insira_usuario)
+
+            input(maxLength = 20) { dialog, text ->
+                viewModel.criarUsername(text.toString())
+
+                val inputField = dialog.getInputField()
+                val naoTemUsername = !viewModel.jaTemUsername.value!!
+
+                inputField.error = if (naoTemUsername) null else "Username já existe, escolha outro"
+
+                dialog.setActionButtonEnabled(WhichButton.POSITIVE, !naoTemUsername)
+            }
+
+            positiveButton(R.string.ok)
+        }
+    }
+
+
+    fun signInWithGoogle() {
+        val signInIntent: Intent = googleSignInClient.signInIntent
+        startActivityForResult(signInIntent, RC_SIGN_IN)
     }
 
     private fun showProgressBar() {
@@ -214,10 +255,10 @@ class LoginActivity : AppCompatActivity() {
         showProgressBar()
 
         val credential = FacebookAuthProvider.getCredential(token.token)
-        auth.signInWithCredential(credential)
+        viewModel.firebaseAuth.signInWithCredential(credential)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    val user = auth.currentUser
+                    val user = viewModel.firebaseAuth.currentUser
                     viewModel.getConfigurationForUser(user!!.email.toString())
                     viewModel.configuracoes.observe(this, {
                         if (it == null) viewModel.createConfigurationForUser(user.email.toString())

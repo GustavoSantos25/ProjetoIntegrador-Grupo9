@@ -16,5 +16,6 @@
         <item name="colorAccent">@color/yellow</item>
         <item name="background">@color/darkGreyBackground</item>
         <item name="android:textColor">@color/white</item>
+        <item name="md_corner_radius">16dp</item>
     </style>
 </resources>
