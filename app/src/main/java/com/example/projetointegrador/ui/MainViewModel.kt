@@ -1,6 +1,7 @@
 package com.example.projetointegrador.ui
 
 import android.os.CountDownTimer
+import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatButton
 import androidx.lifecycle.MutableLiveData
@@ -14,14 +15,12 @@ import com.example.projetointegrador.services.dbRepository
 import com.example.projetointegrador.services.repository
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.firebase.auth.FirebaseAuth
-import com.google.mlkit.common.model.DownloadConditions
-import com.google.mlkit.nl.translate.TranslateLanguage
-import com.google.mlkit.nl.translate.Translation
-import com.google.mlkit.nl.translate.Translator
-import com.google.mlkit.nl.translate.TranslatorOptions
+import com.google.firebase.firestore.CollectionReference
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.launch
 import java.util.*
 import kotlin.collections.ArrayList
+import kotlin.collections.HashMap
 
 class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewModel() {
     val listGeneros = MutableLiveData<ArrayList<Genero>>()
@@ -34,9 +33,14 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
     val pergunta = MutableLiveData<Pergunta>()
     var acertos = 0
 
+    //Instancias do firebase
+    lateinit var firebaseAuth: FirebaseAuth
+    lateinit var dbFirestore: FirebaseFirestore
+    lateinit var collectionReference: CollectionReference
+
     //Variáveis para o timer do modo Time Limit
     val timer = MutableLiveData<String>()
-    var timeLeftInMili : Long = 31000
+    var timeLeftInMili: Long = 31000
 
     //Variável para ver se a pergunta está sendo carregada
     var carregandoPergunta = MutableLiveData<Boolean>()
@@ -52,9 +56,96 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
     val googleIsLogged = MutableLiveData<Boolean>()
     val auth = MutableLiveData<FirebaseAuth>()
     val googleSignInClient = MutableLiveData<GoogleSignInClient>()
+    val jaTemUsername = MutableLiveData<Boolean>()
+    val usernameCriado = MutableLiveData<Boolean>()
 
     //Variável para ver qual modo de jogo foi escolhido
     var modoSobrevivencia = false
+
+    init {
+        firebaseAuth = FirebaseAuth.getInstance()
+        dbFirestore = FirebaseFirestore.getInstance()
+        collectionReference = dbFirestore.collection("jogadores")
+    }
+
+    fun verificarSeTemUsername() {
+        val uidUsuario: String = firebaseAuth.currentUser!!.uid
+        val docRef = dbFirestore.collection("jogadores").document(uidUsuario)
+
+        docRef.get()
+            .addOnSuccessListener { document ->
+                if (document == null) {
+                    jaTemUsername.value = false
+                } else if (document["userName"] != null) {
+                    jaTemUsername.value = document["username"].toString().isNotEmpty()
+                } else {
+                    jaTemUsername.value = false
+                }
+            }
+    }
+
+    fun criarUsername(userName: String) {
+
+        var usernameValido: Boolean
+
+        dbFirestore.collection("jogadores")
+            .whereEqualTo("userName", userName)
+            .get()
+            .addOnSuccessListener { documents ->
+
+                usernameValido = documents.isEmpty
+
+                if (usernameValido) {
+                    val jogador = getDadosJogador(
+                        firebaseAuth.currentUser!!.uid,
+                        userName,
+                        0,
+                        0,
+                        ArrayList(),
+                        "",
+                        ""
+                    )
+
+                    sendJogador(jogador)
+
+                    usernameCriado.value = true
+                } else {
+                    usernameCriado.value = false
+                }
+            }
+            .addOnFailureListener {
+                usernameCriado.value = false
+                firebaseAuth.signOut()
+            }
+    }
+
+    fun getDadosJogador(
+        uid: String,
+        userName: String,
+        recordeTimeLimit: Int,
+        recordeSobrevivencia: Int,
+        generosFavoritos: ArrayList<Int>,
+        urlAvatar: String,
+        urlCapa: String
+    ): MutableMap<String, Any> {
+
+        val jogador: MutableMap<String, Any> = HashMap()
+
+        jogador["uid"] = uid
+        jogador["userName"] = userName
+        jogador["recordeTimeLimit"] = recordeTimeLimit
+        jogador["recordeSobrevivencia"] = recordeSobrevivencia
+        jogador["generosFavoritos"] = generosFavoritos
+        jogador["urlAvatar"] = urlAvatar
+        jogador["urlCapa"] = urlCapa
+
+        return jogador
+    }
+
+    fun sendJogador(jogador: MutableMap<String, Any>) {
+        val uid = jogador["uid"].toString()
+        collectionReference.document(uid).set(jogador)
+    }
 
     fun popListGeneros() {
         viewModelScope.launch {
@@ -178,7 +269,7 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
 
                     if (filme.popularity < POPULARIDADE_MINIMA && alternativas == 0) continue
 
-                     if (filme.production_countries.size != 0) {
+                    if (filme.production_countries.size != 0) {
 
                         val paisDeProducao =
                             filme.production_countries[0].name.toUpperCase(Locale.ROOT).trim()
@@ -444,7 +535,7 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
         }
     }
 
-    fun updateConfigurações(isChecked: Boolean, campo: String) {
+    fun updateConfiguracoes(isChecked: Boolean, campo: String) {
         viewModelScope.launch {
             when (campo) {
                 "vibrar" -> configuracoes.value!!.vibrar = isChecked
@@ -483,10 +574,10 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
         }
     }
 
-    fun updateTimer(){
+    fun updateTimer() {
         timer.value = "00:31"
-        var newTime : Long = 31000
-        var clock = object : CountDownTimer(newTime, 1000){
+        var newTime: Long = 31000
+        var clock = object : CountDownTimer(newTime, 1000) {
             override fun onTick(p0: Long) {
                 newTime = p0
                 updateStringTimer(newTime)
@@ -499,42 +590,42 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
         }.start()
     }
 
-    fun stopTimer(){
+    fun stopTimer() {
 
     }
 
-    private fun updateStringTimer(timeRemaining : Long){
+    private fun updateStringTimer(timeRemaining: Long) {
         val minutes = timeRemaining / 60000
         val seconds = timeRemaining % 60000 / 1000
         var newString = "$minutes"
         newString += ":"
-        if(seconds < 10) newString += "0"
+        if (seconds < 10) newString += "0"
         newString += "$seconds"
         timer.value = newString
     }
 
 
-    /*
-    fun alterConfiguracoesDB(configuracoes: Configuracoes) {
-        viewModelScope.launch {
-            listaConfiguracoes.value = listOf(dbRepository.updateConfiguracoesTask(configuracoes))
-        }
+/*
+fun alterConfiguracoesDB(configuracoes: Configuracoes) {
+    viewModelScope.launch {
+        listaConfiguracoes.value = listOf(dbRepository.updateConfiguracoesTask(configuracoes))
     }
-    *
-     */
+}
+*
+ */
 
-    /*
-    suspend fun initializeOfflineTemplates() {
-        if (dbRepository.getAllTemplatesTask() == null) {
-            dbRepository.addTemplateTask(Template(1, "Em que ano o filme",
-                "foi lançado?", "filme_name"))
-            dbRepository.addTemplateTask(Template(1, "Qual o país de produção do filme",
-                "", "country"))
-            dbRepository.addTemplateTask(Template(1, "Qual o diretor do filme REPLACE?",
-                "", "director"))
-            dbRepository.addTemplateTask(Template(1, "A a qual filme se refere a sinopse",
-                "", "filme_name"))
-        }
+/*
+suspend fun initializeOfflineTemplates() {
+    if (dbRepository.getAllTemplatesTask() == null) {
+        dbRepository.addTemplateTask(Template(1, "Em que ano o filme",
+            "foi lançado?", "filme_name"))
+        dbRepository.addTemplateTask(Template(1, "Qual o país de produção do filme",
+            "", "country"))
+        dbRepository.addTemplateTask(Template(1, "Qual o diretor do filme REPLACE?",
+            "", "director"))
+        dbRepository.addTemplateTask(Template(1, "A a qual filme se refere a sinopse",
+            "", "filme_name"))
     }
-    */
+}
+*/
 }

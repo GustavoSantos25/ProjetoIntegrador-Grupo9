@@ -55,16 +55,16 @@ class ConfiguracoesFragment : Fragment() {
         viewModel.configuracoes.observe(viewLifecycleOwner, {
             val config = it
 
-            binding.scNotificacao.isChecked = config.notificacoes
-            binding.scVibrar.isChecked = config.vibrar
+//            binding.scNotificacao.isChecked = config.notificacoes
+//            binding.scVibrar.isChecked = config.vibrar
         })
 
         binding.scVibrar.setOnClickListener{
-            viewModel.updateConfigurações(binding.scVibrar.isChecked, "vibrar")
+            viewModel.updateConfiguracoes(binding.scVibrar.isChecked, "vibrar")
         }
 
         binding.scNotificacao.setOnClickListener {
-            viewModel.updateConfigurações(binding.scNotificacao.isChecked, "notificação")
+            viewModel.updateConfiguracoes(binding.scNotificacao.isChecked, "notificação")
         }
 
         binding.llLogout.setOnClickListener {
