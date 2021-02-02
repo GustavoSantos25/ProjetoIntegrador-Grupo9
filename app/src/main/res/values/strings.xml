@@ -181,5 +181,6 @@
     <string name="voce_errou">Você errou :(</string>
     <string name="logout">Logout</string>
     <string name="entrar">Entrar</string>
+    <string name="insira_usuario">Insira o username desejado</string>
 
 </resources>

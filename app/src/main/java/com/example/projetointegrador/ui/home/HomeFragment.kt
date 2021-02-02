@@ -22,7 +22,6 @@ import kotlinx.android.synthetic.main.fragment_home.view.*
 import kotlinx.android.synthetic.main.fragment_modos.view.*
 import kotlinx.android.synthetic.main.icon_plus_appname.view.*
 
-
 class HomeFragment : Fragment() {
 
     lateinit var filmeCard : Filme
