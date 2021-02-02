@@ -78,7 +78,7 @@ class LoginActivity : AppCompatActivity() {
 
         val account = GoogleSignIn.getLastSignedInAccount(this)
 
-        ivLoginGoogle.setOnClickListener {
+        binding.ivLoginGoogle.setOnClickListener {
             signIn()
         }
     }
