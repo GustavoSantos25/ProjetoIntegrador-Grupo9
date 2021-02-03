@@ -51,12 +51,12 @@ class ConfiguracoesFragment : Fragment() {
             generosDialog()
         }
 
-        viewModel.configuracoes.observe(viewLifecycleOwner, {
-            val config = it
+//        viewModel.configuracoes.observe(viewLifecycleOwner, {
+//            val config = it
 
 //            binding.scNotificacao.isChecked = config.notificacoes
 //            binding.scVibrar.isChecked = config.vibrar
-        })
+//        })
 
         binding.scVibrar.setOnClickListener{
             viewModel.updateConfiguracoes(binding.scVibrar.isChecked, "vibrar")
@@ -65,6 +65,10 @@ class ConfiguracoesFragment : Fragment() {
         binding.scNotificacao.setOnClickListener {
             viewModel.updateConfiguracoes(binding.scNotificacao.isChecked, "notificação")
         }
+
+        viewModel.jogadorLogado.observe(viewLifecycleOwner, { jogadorLogado ->
+            binding.tvUsernameConfig.text = jogadorLogado["userName"].toString()
+        })
 
         binding.llLogout.setOnClickListener {
             LoginManager.getInstance().logOut()

@@ -99,21 +99,40 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
 
-            <TextView
-                android:id="@+id/tvQtdeAcertos"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/placeholder_acerto"
-                android:textAlignment="center"
-                android:textColor="@color/yellow"
-                android:textStyle="bold"
+                android:orientation="vertical"
+                android:gravity="center"
+                app:layout_constraintTop_toTopOf="@+id/civPontos"
                 app:layout_constraintBottom_toBottomOf="@+id/civPontos"
                 app:layout_constraintEnd_toEndOf="@+id/civPontos"
-                app:layout_constraintStart_toStartOf="@+id/civPontos"
-                app:layout_constraintTop_toTopOf="@+id/civPontos" />
+                app:layout_constraintStart_toStartOf="@+id/civPontos">
+
+                <TextView
+                    android:id="@+id/tvQtdeAcertos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/_0"
+                    android:textAlignment="center"
+                    android:textColor="@color/yellow"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvAcertosString"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/acertos"
+                    android:textAlignment="center"
+                    android:textColor="@color/yellow"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/civPerguntas"
+                android:id="@+id/civRecorde"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:background="@drawable/circulo"
@@ -124,17 +143,35 @@
                 app:layout_constraintStart_toEndOf="@+id/civTempo"
                 app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
 
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/placeholder_perguntas_feitas"
-                android:textAlignment="center"
-                android:textColor="@color/yellow"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/civPerguntas"
-                app:layout_constraintEnd_toEndOf="@+id/civPerguntas"
-                app:layout_constraintStart_toStartOf="@+id/civPerguntas"
-                app:layout_constraintTop_toTopOf="@+id/civPerguntas" />
+                android:orientation="vertical"
+                android:gravity="center"
+                app:layout_constraintTop_toTopOf="@+id/civRecorde"
+                app:layout_constraintBottom_toBottomOf="@+id/civRecorde"
+                app:layout_constraintEnd_toEndOf="@+id/civRecorde"
+                app:layout_constraintStart_toStartOf="@+id/civRecorde">
+
+                <TextView
+                    android:id="@+id/tvRecorde"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/_0"
+                    android:textAlignment="center"
+                    android:textColor="@color/yellow"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/tvRecordeString"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/recorde"
+                    android:textAlignment="center"
+                    android:textColor="@color/yellow"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

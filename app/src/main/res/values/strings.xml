@@ -182,5 +182,9 @@
     <string name="logout">Logout</string>
     <string name="entrar">Entrar</string>
     <string name="insira_usuario">Insira o username desejado</string>
+    <string name="clique_aqui_para_editar_sua_bio">Clique aqui para editar sua bio</string>
+    <string name="_0">0</string>
+    <string name="recorde">Recorde</string>
+    <string name="acertos">Acertos</string>
 
 </resources>
