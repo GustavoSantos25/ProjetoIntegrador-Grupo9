@@ -57,6 +57,7 @@ class PerguntaFragment : Fragment() {
                 showProgressBar()
             } else {
                 hideProgressBar()
+                model.startStopTimer()
             }
         })
 
@@ -119,6 +120,7 @@ class PerguntaFragment : Fragment() {
         alertDialog.show()
         dialogView.btnOkAcerto.setOnClickListener {
             alertDialog.cancel()
+            model.startStopTimer()
             onFecharDialogAcerto()
         }
     }
@@ -135,6 +137,7 @@ class PerguntaFragment : Fragment() {
         alertDialog.show()
         dialogView.btnOkErro.setOnClickListener {
             alertDialog.cancel()
+            model.startStopTimer()
             onFecharDialogAcerto()
         }
     }

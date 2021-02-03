@@ -14,7 +14,6 @@ import com.example.projetointegrador.MainViewModelFactory
 import com.example.projetointegrador.R
 import com.example.projetointegrador.databinding.FragmentConfiguracoesBinding
 import com.example.projetointegrador.services.dbRepository
-import com.example.projetointegrador.services.gso
 import com.example.projetointegrador.services.repository
 import com.example.projetointegrador.ui.LoginActivity
 import com.example.projetointegrador.ui.MainViewModel
