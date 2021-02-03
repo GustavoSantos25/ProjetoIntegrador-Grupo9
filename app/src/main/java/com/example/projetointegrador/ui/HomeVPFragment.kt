@@ -12,7 +12,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.projetointegrador.R
 import com.example.projetointegrador.ui.config.ConfiguracoesFragment
 import com.example.projetointegrador.ui.home.HomeFragment
-import com.example.projetointegrador.ui.perfil.PerfilFragment
+import com.example.projetointegrador.ui.perfil.PerfilPessoalFragment
 import kotlinx.android.synthetic.main.fragment_home_v_p.view.*
 
 
@@ -34,7 +34,7 @@ class HomeVPFragment : Fragment() {
         val view =  inflater.inflate(R.layout.fragment_home_v_p, container, false)
         val adapter = HomeFragmentsPagerAdapter(parentFragmentManager)
 
-        adapter.addFragment(PerfilFragment(), "Perfil")
+        adapter.addFragment(PerfilPessoalFragment(), "Perfil")
         adapter.addFragment(HomeFragment(), "Play")
         adapter.addFragment(ConfiguracoesFragment(), "Config")
         view.vpHome.adapter = adapter

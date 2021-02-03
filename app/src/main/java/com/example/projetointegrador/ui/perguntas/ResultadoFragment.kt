@@ -37,7 +37,7 @@ class ResultadoFragment : Fragment() {
             false
         )
 
-        binding.tvQtdeAcertosResultado.text = model.acertos.toString()
+        binding.tvQtdeAcertosResultado.text = model.acertos.value.toString()
 
         binding.btnTelaInicialResultado.setOnClickListener {
             findNavController().navigate(R.id.action_resultadoFragment_to_homeVPFragment)

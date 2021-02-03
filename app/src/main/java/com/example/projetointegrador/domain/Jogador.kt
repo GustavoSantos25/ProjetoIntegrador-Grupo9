@@ -3,6 +3,7 @@ package com.example.projetointegrador.domain
 data class Jogador(
     var uid: String = "",
     var userName: String = "",
+    var bio: String = "",
     var recordeTimeLimit: Int = 0,
     var recordeSobrevivencia: Int = 0,
     var generosFavoritos: ArrayList<Int> = ArrayList(),

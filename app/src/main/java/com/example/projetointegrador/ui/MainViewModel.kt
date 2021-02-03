@@ -3,6 +3,7 @@ package com.example.projetointegrador.ui
 import android.os.CountDownTimer
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -17,6 +18,9 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.toObject
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
 import kotlinx.coroutines.launch
 import java.util.*
 import kotlin.collections.ArrayList
@@ -31,12 +35,16 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
     val lastMovieId = MutableLiveData<Int>()
     val listTemplates = popTemplates()
     val pergunta = MutableLiveData<Pergunta>()
-    var acertos = 0
+    var acertos = MutableLiveData<Int>(0)
+    var jogadorLogado = MutableLiveData<MutableMap<String, Any>>()
 
     //Instancias do firebase
-    lateinit var firebaseAuth: FirebaseAuth
-    lateinit var dbFirestore: FirebaseFirestore
+    var firebaseAuth: FirebaseAuth = FirebaseAuth.getInstance()
+    var dbFirestore: FirebaseFirestore = FirebaseFirestore.getInstance()
     lateinit var collectionReference: CollectionReference
+
+    var urlCapa: String = ""
+    var urlAvatar: String = ""
 
     //Variáveis para o timer do modo Time Limit
     var clock : CountDownTimer = object : CountDownTimer(0, 0){
@@ -73,9 +81,10 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
     //Variável para ver qual modo de jogo foi escolhido
     var modoSobrevivencia = false
 
+    var recordeSobrevivencia = MutableLiveData<Int>()
+    var recordeTimeLimit = MutableLiveData<Int>()
+
     init {
-        firebaseAuth = FirebaseAuth.getInstance()
-        dbFirestore = FirebaseFirestore.getInstance()
         collectionReference = dbFirestore.collection("jogadores")
     }
 
@@ -110,6 +119,7 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
                     val jogador = getDadosJogador(
                         firebaseAuth.currentUser!!.uid,
                         userName,
+                        "",
                         0,
                         0,
                         ArrayList(),
@@ -133,6 +143,7 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
     fun getDadosJogador(
         uid: String,
         userName: String,
+        bio: String,
         recordeTimeLimit: Int,
         recordeSobrevivencia: Int,
         generosFavoritos: ArrayList<Int>,
@@ -144,6 +155,7 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
 
         jogador["uid"] = uid
         jogador["userName"] = userName
+        jogador["bio"] = bio
         jogador["recordeTimeLimit"] = recordeTimeLimit
         jogador["recordeSobrevivencia"] = recordeSobrevivencia
         jogador["generosFavoritos"] = generosFavoritos
@@ -153,9 +165,38 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
         return jogador
     }
 
+    fun getDadosJogadorLogado() {
+        val docRef = dbFirestore.collection("jogadores")
+            .document(firebaseAuth.uid!!)
+        docRef.get()
+            .addOnSuccessListener { document ->
+                if (document != null) {
+                    jogadorLogado.value = document.data
+                    getCurrentRecorde()
+                }
+            }
+    }
+
     fun sendJogador(jogador: MutableMap<String, Any>) {
         val uid = jogador["uid"].toString()
         collectionReference.document(uid).set(jogador)
+    }
+
+    fun updateJogador(jogador: MutableMap<String, Any>) {
+        val uid = jogador["uid"].toString()
+        collectionReference.document(uid).update(jogador)
+    }
+
+    fun updateCapa(urlCapa: String) {
+        dbFirestore.collection("jogadores")
+            .document(firebaseAuth.uid!!)
+            .update("urlCapa", urlCapa)
+    }
+
+    fun updateAvatar(urlAvatar: String) {
+        dbFirestore.collection("jogadores")
+            .document(firebaseAuth.uid!!)
+            .update("urlAvatar", urlAvatar)
     }
 
     fun popListGeneros() {
@@ -163,6 +204,12 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
             listGeneros.value = getAllGeneros()
         }
     }
+
+    fun getCurrentRecorde() {
+        recordeSobrevivencia.value = Integer.parseInt(jogadorLogado.value?.get("recordeSobrevivencia").toString())
+        recordeTimeLimit.value = Integer.parseInt(jogadorLogado.value?.get("recordeTimeLimit").toString())
+    }
+
 
 //    fun popPagesRanking() {
 //        viewModelScope.launch {
@@ -576,12 +623,15 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
 //        googleSignInClient.value = gclient
 //    }
 
-    fun onAcerto(): String {
-        acertos++
+    fun onAcerto(): Int {
+        acertos.value = acertos.value?.plus(1)
+        return acertos.value!!
+    }
 
-        return when (acertos) {
-            1 -> "${acertos}\nacerto"
-            else -> "${acertos}\nacertos"
+    fun acertoSingularOuPlural(): String {
+        return when (acertos.value) {
+            1 -> "Acerto"
+            else -> "Acertos"
         }
     }
 
@@ -620,6 +670,14 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
         if (seconds < 10) newString += "0"
         newString += "$seconds"
         timer.value = newString
+    }
+
+    fun novoRecorde(sobrevivenciaOuTimeLimit: String): Boolean {
+        return if (sobrevivenciaOuTimeLimit == "sobrevivencia") {
+            acertos.value!! > recordeSobrevivencia.value!!
+        } else {
+            acertos.value!! > recordeTimeLimit.value!!
+        }
     }
 
 

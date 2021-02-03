@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.addCallback
+import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -97,11 +98,26 @@ class SobrevivenciaFragment : Fragment() {
             }
         }
 
+        binding.tvRecorde.text = model.recordeSobrevivencia.value.toString()
+
+        model.acertos.observe(viewLifecycleOwner, {
+
+            binding.tvQtdeAcertos.text = it.toString()
+
+            if (model.novoRecorde("sobrevivencia")) {
+                binding.tvRecorde.text = it.toString()
+                binding.tvRecorde.setTextColor(ContextCompat.getColor(requireContext(), R.color.verdePositivo))
+                binding.tvRecordeString.setTextColor(ContextCompat.getColor(requireContext(), R.color.verdePositivo))
+            }
+        })
+
         return binding.root
     }
 
     fun onAcerto() {
-        binding.tvQtdeAcertosSobrevivencia.text = model.onAcerto()
+        val qtdAcertos = model.onAcerto()
+        binding.tvQtdeAcertos.text = qtdAcertos.toString()
+        binding.tvAcertosString.text = model.acertoSingularOuPlural()
 
         val inflater: LayoutInflater = this.layoutInflater
         val dialogView: View = inflater.inflate(R.layout.custom_dialog_acerto, null)
