@@ -31,10 +31,10 @@ public abstract class FragmentPerguntaBinding extends ViewDataBinding {
   public final AppCompatButton btnTerceiraResposta;
 
   @NonNull
-  public final CircleImageView civPerguntas;
+  public final CircleImageView civPontos;
 
   @NonNull
-  public final CircleImageView civPontos;
+  public final CircleImageView civRecorde;
 
   @NonNull
   public final CircleImageView civTempo;
@@ -52,10 +52,19 @@ public abstract class FragmentPerguntaBinding extends ViewDataBinding {
   public final TextView timerQuestion;
 
   @NonNull
+  public final TextView tvAcertosString;
+
+  @NonNull
   public final TextView tvPergunta;
 
   @NonNull
   public final TextView tvQtdeAcertos;
+
+  @NonNull
+  public final TextView tvRecorde;
+
+  @NonNull
+  public final TextView tvRecordeString;
 
   @NonNull
   public final View view;
@@ -63,23 +72,27 @@ public abstract class FragmentPerguntaBinding extends ViewDataBinding {
   protected FragmentPerguntaBinding(Object _bindingComponent, View _root, int _localFieldCount,
       AppCompatButton btnPrimeiraResposta, AppCompatButton btnQuartaResposta,
       AppCompatButton btnSegundaResposta, AppCompatButton btnTerceiraResposta,
-      CircleImageView civPerguntas, CircleImageView civPontos, CircleImageView civTempo,
+      CircleImageView civPontos, CircleImageView civRecorde, CircleImageView civTempo,
       ConstraintLayout constraintLayout, FrameLayout frameLayout, View includeToolbarQuiz,
-      TextView timerQuestion, TextView tvPergunta, TextView tvQtdeAcertos, View view) {
+      TextView timerQuestion, TextView tvAcertosString, TextView tvPergunta, TextView tvQtdeAcertos,
+      TextView tvRecorde, TextView tvRecordeString, View view) {
     super(_bindingComponent, _root, _localFieldCount);
     this.btnPrimeiraResposta = btnPrimeiraResposta;
     this.btnQuartaResposta = btnQuartaResposta;
     this.btnSegundaResposta = btnSegundaResposta;
     this.btnTerceiraResposta = btnTerceiraResposta;
-    this.civPerguntas = civPerguntas;
     this.civPontos = civPontos;
+    this.civRecorde = civRecorde;
     this.civTempo = civTempo;
     this.constraintLayout = constraintLayout;
     this.frameLayout = frameLayout;
     this.includeToolbarQuiz = includeToolbarQuiz;
     this.timerQuestion = timerQuestion;
+    this.tvAcertosString = tvAcertosString;
     this.tvPergunta = tvPergunta;
     this.tvQtdeAcertos = tvQtdeAcertos;
+    this.tvRecorde = tvRecorde;
+    this.tvRecordeString = tvRecordeString;
     this.view = view;
   }
 

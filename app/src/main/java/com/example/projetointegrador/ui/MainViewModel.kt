@@ -1,10 +1,12 @@
 package com.example.projetointegrador.ui
 
 import android.os.CountDownTimer
+import android.util.Log
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
+import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -21,6 +23,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import java.util.*
 import kotlin.collections.ArrayList
@@ -32,6 +35,7 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
     val listGenres = MutableLiveData<Genres>()
     val filmeSugestion = MutableLiveData<Filme>()
     val crewSugestion = MutableLiveData<Crew>()
+    var listSugestion = ArrayList<Filme>()
     val lastMovieId = MutableLiveData<Int>()
     val listTemplates = popTemplates()
     val pergunta = MutableLiveData<Pergunta>()
@@ -231,8 +235,11 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
 
     fun getFilmeSugestion() {
         viewModelScope.launch {
-            filmeSugestion.value = repository.getFilmeSugestionRepo(apiKey, IDIOMA)
-            crewSugestion.value = repository.getCrewSugestionRepo(apiKey, IDIOMA)
+            val generosFavoritos = jogadorLogado.value!!["generosFavoritos"] as ArrayList<Int>
+            //val generoEscolhido  : Int = generosFavoritos.random()
+            listSugestion = repository.getSugestionMovieRepo(apiKey, IDIOMA, "popularity.desc", 80).results
+            filmeSugestion.value = listSugestion.random()
+            crewSugestion.value = repository.getCrewMovieSugestionRepo(filmeSugestion.value!!.id, apiKey, IDIOMA)
         }
     }
 
@@ -705,3 +712,4 @@ suspend fun initializeOfflineTemplates() {
 }
 */
 }
+

@@ -7,6 +7,7 @@ import com.example.projetointegrador.database.AppDataBase
 import com.example.projetointegrador.domain.Configuracoes
 import com.example.projetointegrador.domain.FilmeReplace
 import com.example.projetointegrador.domain.Template
+import com.example.projetointegrador.ui.LoginActivity
 
 interface DBRepository {
 
@@ -58,6 +59,7 @@ class DBRepositoryImplementation(
         return configuracoesDAO.getConfiguracoesForUser(configuracoes.email)
     }
 }
+
 
 lateinit var dbApp: AppDataBase
 lateinit var dbRepository: DBRepository

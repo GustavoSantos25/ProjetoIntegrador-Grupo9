@@ -31,15 +31,19 @@ public abstract class FragmentConfiguracoesBinding extends ViewDataBinding {
   @NonNull
   public final TextView tvGenerosFavoritos;
 
+  @NonNull
+  public final TextView tvUsernameConfig;
+
   protected FragmentConfiguracoesBinding(Object _bindingComponent, View _root, int _localFieldCount,
       LinearLayout llLogout, SwitchCompat scNotificacao, SwitchCompat scVibrar,
-      TextView tvEmailConfig, TextView tvGenerosFavoritos) {
+      TextView tvEmailConfig, TextView tvGenerosFavoritos, TextView tvUsernameConfig) {
     super(_bindingComponent, _root, _localFieldCount);
     this.llLogout = llLogout;
     this.scNotificacao = scNotificacao;
     this.scVibrar = scVibrar;
     this.tvEmailConfig = tvEmailConfig;
     this.tvGenerosFavoritos = tvGenerosFavoritos;
+    this.tvUsernameConfig = tvUsernameConfig;
   }
 
   @NonNull

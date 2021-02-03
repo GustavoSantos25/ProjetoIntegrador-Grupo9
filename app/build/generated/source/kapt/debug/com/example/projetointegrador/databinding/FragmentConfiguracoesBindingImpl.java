@@ -15,10 +15,11 @@ public class FragmentConfiguracoesBindingImpl extends FragmentConfiguracoesBindi
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
         sViewsWithIds.put(R.id.tv_email_config, 1);
-        sViewsWithIds.put(R.id.sc_vibrar, 2);
-        sViewsWithIds.put(R.id.sc_notificacao, 3);
-        sViewsWithIds.put(R.id.tvGenerosFavoritos, 4);
-        sViewsWithIds.put(R.id.llLogout, 5);
+        sViewsWithIds.put(R.id.tvUsernameConfig, 2);
+        sViewsWithIds.put(R.id.sc_vibrar, 3);
+        sViewsWithIds.put(R.id.sc_notificacao, 4);
+        sViewsWithIds.put(R.id.tvGenerosFavoritos, 5);
+        sViewsWithIds.put(R.id.llLogout, 6);
     }
     // views
     @NonNull
@@ -29,15 +30,16 @@ public class FragmentConfiguracoesBindingImpl extends FragmentConfiguracoesBindi
     // Inverse Binding Event Handlers
 
     public FragmentConfiguracoesBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 6, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 7, sIncludes, sViewsWithIds));
     }
     private FragmentConfiguracoesBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (android.widget.LinearLayout) bindings[5]
+            , (android.widget.LinearLayout) bindings[6]
+            , (androidx.appcompat.widget.SwitchCompat) bindings[4]
             , (androidx.appcompat.widget.SwitchCompat) bindings[3]
-            , (androidx.appcompat.widget.SwitchCompat) bindings[2]
             , (android.widget.TextView) bindings[1]
-            , (android.widget.TextView) bindings[4]
+            , (android.widget.TextView) bindings[5]
+            , (android.widget.TextView) bindings[2]
             );
         this.mboundView0 = (android.widget.LinearLayout) bindings[0];
         this.mboundView0.setTag(null);

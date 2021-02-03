@@ -546,6 +546,7 @@
     <color name="secondary_text_default_material_light">#8a000000</color>
     <color name="secondary_text_disabled_material_dark">#36ffffff</color>
     <color name="secondary_text_disabled_material_light">#24000000</color>
+    <color name="spots_dialog_color">@android:color/holo_blue_dark</color>
     <color name="switch_thumb_disabled_material_dark">#ff616161</color>
     <color name="switch_thumb_disabled_material_light">#ffbdbdbd</color>
     <color name="switch_thumb_normal_material_dark">#ffbdbdbd</color>
@@ -555,6 +556,7 @@
     <color name="tooltip_background_dark">#e6616161</color>
     <color name="tooltip_background_light">#e6FFFFFF</color>
     <color name="transparent">#00000000</color>
+    <color name="verdePositivo">#28FC03</color>
     <color name="white">#FFFFFFFF</color>
     <color name="yellow">#fbff00</color>
     <dimen name="abc_action_bar_content_inset_material">16dp</dimen>
@@ -944,12 +946,17 @@
     <dimen name="notification_subtext_size">13sp</dimen>
     <dimen name="notification_top_pad">10dp</dimen>
     <dimen name="notification_top_pad_large_text">5dp</dimen>
+    <dimen name="progress_margin">24dp</dimen>
+    <dimen name="progress_width">250dp</dimen>
+    <dimen name="spot_size">6dp</dimen>
     <dimen name="subtitle_corner_radius">2dp</dimen>
     <dimen name="subtitle_outline_width">2dp</dimen>
     <dimen name="subtitle_shadow_offset">2dp</dimen>
     <dimen name="subtitle_shadow_radius">2dp</dimen>
     <dimen name="test_mtrl_calendar_day_cornerSize">52dp</dimen>
     <dimen name="text_margin">16dp</dimen>
+    <dimen name="title_margin">10dp</dimen>
+    <dimen name="title_padding">6dp</dimen>
     <dimen name="tooltip_corner_radius">2dp</dimen>
     <dimen name="tooltip_horizontal_padding">16dp</dimen>
     <dimen name="tooltip_margin">8dp</dimen>
@@ -1079,6 +1086,7 @@
   </plurals>
     <string name="RANKING">RANKING</string>
     <string name="TimeOut">ACABOU O TEMPO!</string>
+    <string name="_0">0</string>
     <string name="_007">007</string>
     <string name="_1">1</string>
     <string name="_201">201</string>
@@ -1113,6 +1121,7 @@
     <string name="abc_shareactionprovider_share_with_application">Share with <ns1:g example="Mail" id="application_name">%s</ns1:g></string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
     <string name="acao">Ação</string>
+    <string name="acertos">Acertos</string>
     <string name="anima_o">Animação</string>
     <string name="app_name">Cinéfilos</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
@@ -1127,6 +1136,7 @@
     <string name="character_counter_pattern" translatable="false">%1$d/%2$d</string>
     <string name="chip_text">Chip text</string>
     <string name="clear_text_end_icon_content_description">Clear text</string>
+    <string name="clique_aqui_para_editar_sua_bio">Clique aqui para editar sua bio</string>
     <string name="com_facebook_device_auth_instructions">Visit &lt;b>facebook.com/device&lt;/b> and enter the code shown above.</string>
     <string name="com_facebook_image_download_unknown_error">Unexpected error while downloading an image.</string>
     <string name="com_facebook_internet_permission_error_message">WebView login requires INTERNET permission</string>
@@ -1372,6 +1382,7 @@
     <string name="placeholder_username">JohnDoe200</string>
     <string name="proj_name">Projeto Integrador</string>
     <string name="project_id" translatable="false">projeto-integrador-7f56d</string>
+    <string name="recorde">Recorde</string>
     <string name="respostas_corretas">Respostas corretas</string>
     <string name="resumoApp">Cinéfilos é um aplicativo onde fãs da sétima arte podem testar conhecimentos sobre seus filmes e séries favoritas.</string>
     <string name="salvar">Salvar</string>
@@ -3811,6 +3822,11 @@
     <style name="ShapeAppearanceOverlay.TopRightDifferentCornerSize">
     <item name="cornerSizeTopRight">20px</item>
   </style>
+    <style name="SpotsDialogDefault" parent="android:Theme.DeviceDefault.Light.Dialog">
+        <item name="DialogTitleAppearance">@android:style/TextAppearance.Medium</item>
+        <item name="DialogTitleText">Loading…</item>
+        <item name="DialogSpotCount">5</item>
+    </style>
     <style name="Test.ShapeAppearanceOverlay.MaterialComponents.MaterialCalendar.Day" parent="">
     <item name="cornerFamily">rounded</item>
     <item name="cornerSize">@dimen/test_mtrl_calendar_day_cornerSize</item>
@@ -6627,6 +6643,7 @@
         </attr>
     </declare-styleable>
     <declare-styleable name="CustomAttribute"><attr format="string" name="attributeName"/><attr format="color" name="customColorValue"/><attr format="color" name="customColorDrawableValue"/><attr format="integer" name="customIntegerValue"/><attr format="float" name="customFloatValue"/><attr format="string" name="customStringValue"/><attr format="dimension" name="customDimension"/><attr format="dimension" name="customPixelDimension"/><attr format="boolean" name="customBoolean"/></declare-styleable>
+    <declare-styleable name="Dialog"><attr format="reference" name="DialogTitleAppearance"/><attr format="reference|string" name="DialogTitleText"/><attr format="reference|color" name="DialogSpotColor"/><attr format="integer" name="DialogSpotCount"/></declare-styleable>
     <declare-styleable name="DialogFragmentNavigator">
         <attr name="android:name"/>
     </declare-styleable>

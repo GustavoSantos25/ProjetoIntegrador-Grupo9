@@ -3,6 +3,7 @@ package com.example.projetointegrador.ui.config
 import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -51,12 +52,12 @@ class ConfiguracoesFragment : Fragment() {
             generosDialog()
         }
 
-//        viewModel.configuracoes.observe(viewLifecycleOwner, {
-//            val config = it
+        viewModel.configuracoes.observe(viewLifecycleOwner, {
+            val config = it
 
-//            binding.scNotificacao.isChecked = config.notificacoes
-//            binding.scVibrar.isChecked = config.vibrar
-//        })
+            binding.scNotificacao.isChecked = config.notificacoes
+            binding.scVibrar.isChecked = config.vibrar
+        })
 
         binding.scVibrar.setOnClickListener{
             viewModel.updateConfiguracoes(binding.scVibrar.isChecked, "vibrar")

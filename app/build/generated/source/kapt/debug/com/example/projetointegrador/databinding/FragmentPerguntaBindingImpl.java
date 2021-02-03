@@ -23,11 +23,14 @@ public class FragmentPerguntaBindingImpl extends FragmentPerguntaBinding  {
         sViewsWithIds.put(R.id.timerQuestion, 7);
         sViewsWithIds.put(R.id.civPontos, 8);
         sViewsWithIds.put(R.id.tvQtdeAcertos, 9);
-        sViewsWithIds.put(R.id.civPerguntas, 10);
-        sViewsWithIds.put(R.id.btnPrimeiraResposta, 11);
-        sViewsWithIds.put(R.id.btnSegundaResposta, 12);
-        sViewsWithIds.put(R.id.btnTerceiraResposta, 13);
-        sViewsWithIds.put(R.id.btnQuartaResposta, 14);
+        sViewsWithIds.put(R.id.tvAcertosString, 10);
+        sViewsWithIds.put(R.id.civRecorde, 11);
+        sViewsWithIds.put(R.id.tvRecorde, 12);
+        sViewsWithIds.put(R.id.tvRecordeString, 13);
+        sViewsWithIds.put(R.id.btnPrimeiraResposta, 14);
+        sViewsWithIds.put(R.id.btnSegundaResposta, 15);
+        sViewsWithIds.put(R.id.btnTerceiraResposta, 16);
+        sViewsWithIds.put(R.id.btnQuartaResposta, 17);
     }
     // views
     @NonNull
@@ -38,23 +41,26 @@ public class FragmentPerguntaBindingImpl extends FragmentPerguntaBinding  {
     // Inverse Binding Event Handlers
 
     public FragmentPerguntaBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 15, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 18, sIncludes, sViewsWithIds));
     }
     private FragmentPerguntaBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (androidx.appcompat.widget.AppCompatButton) bindings[11]
             , (androidx.appcompat.widget.AppCompatButton) bindings[14]
-            , (androidx.appcompat.widget.AppCompatButton) bindings[12]
-            , (androidx.appcompat.widget.AppCompatButton) bindings[13]
-            , (de.hdodenhof.circleimageview.CircleImageView) bindings[10]
+            , (androidx.appcompat.widget.AppCompatButton) bindings[17]
+            , (androidx.appcompat.widget.AppCompatButton) bindings[15]
+            , (androidx.appcompat.widget.AppCompatButton) bindings[16]
             , (de.hdodenhof.circleimageview.CircleImageView) bindings[8]
+            , (de.hdodenhof.circleimageview.CircleImageView) bindings[11]
             , (de.hdodenhof.circleimageview.CircleImageView) bindings[6]
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[2]
             , (android.widget.FrameLayout) bindings[4]
             , (android.view.View) bindings[1]
             , (android.widget.TextView) bindings[7]
+            , (android.widget.TextView) bindings[10]
             , (android.widget.TextView) bindings[5]
             , (android.widget.TextView) bindings[9]
+            , (android.widget.TextView) bindings[12]
+            , (android.widget.TextView) bindings[13]
             , (android.view.View) bindings[3]
             );
         this.mboundView0 = (androidx.constraintlayout.widget.ConstraintLayout) bindings[0];

@@ -9,6 +9,7 @@ import androidx.databinding.ViewDataBinding;
 import com.example.projetointegrador.databinding.ActivityCadastroBindingImpl;
 import com.example.projetointegrador.databinding.ActivityLoginBindingImpl;
 import com.example.projetointegrador.databinding.FragmentConfiguracoesBindingImpl;
+import com.example.projetointegrador.databinding.FragmentPerfilPessoalBindingImpl;
 import com.example.projetointegrador.databinding.FragmentPerguntaBindingImpl;
 import com.example.projetointegrador.databinding.FragmentResultadoBindingImpl;
 import com.example.projetointegrador.databinding.FragmentSobrevivenciaBindingImpl;
@@ -30,20 +31,23 @@ public class DataBinderMapperImpl extends DataBinderMapper {
 
   private static final int LAYOUT_FRAGMENTCONFIGURACOES = 3;
 
-  private static final int LAYOUT_FRAGMENTPERGUNTA = 4;
+  private static final int LAYOUT_FRAGMENTPERFILPESSOAL = 4;
 
-  private static final int LAYOUT_FRAGMENTRESULTADO = 5;
+  private static final int LAYOUT_FRAGMENTPERGUNTA = 5;
 
-  private static final int LAYOUT_FRAGMENTSOBREVIVENCIA = 6;
+  private static final int LAYOUT_FRAGMENTRESULTADO = 6;
 
-  private static final int LAYOUT_PROGRESSBARLAYOUT = 7;
+  private static final int LAYOUT_FRAGMENTSOBREVIVENCIA = 7;
 
-  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(7);
+  private static final int LAYOUT_PROGRESSBARLAYOUT = 8;
+
+  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(8);
 
   static {
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.projetointegrador.R.layout.activity_cadastro, LAYOUT_ACTIVITYCADASTRO);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.projetointegrador.R.layout.activity_login, LAYOUT_ACTIVITYLOGIN);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.projetointegrador.R.layout.fragment_configuracoes, LAYOUT_FRAGMENTCONFIGURACOES);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.projetointegrador.R.layout.fragment_perfil_pessoal, LAYOUT_FRAGMENTPERFILPESSOAL);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.projetointegrador.R.layout.fragment_pergunta, LAYOUT_FRAGMENTPERGUNTA);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.projetointegrador.R.layout.fragment_resultado, LAYOUT_FRAGMENTRESULTADO);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.projetointegrador.R.layout.fragment_sobrevivencia, LAYOUT_FRAGMENTSOBREVIVENCIA);
@@ -76,6 +80,12 @@ public class DataBinderMapperImpl extends DataBinderMapper {
             return new FragmentConfiguracoesBindingImpl(component, view);
           }
           throw new IllegalArgumentException("The tag for fragment_configuracoes is invalid. Received: " + tag);
+        }
+        case  LAYOUT_FRAGMENTPERFILPESSOAL: {
+          if ("layout/fragment_perfil_pessoal_0".equals(tag)) {
+            return new FragmentPerfilPessoalBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for fragment_perfil_pessoal is invalid. Received: " + tag);
         }
         case  LAYOUT_FRAGMENTPERGUNTA: {
           if ("layout/fragment_pergunta_0".equals(tag)) {
@@ -154,12 +164,13 @@ public class DataBinderMapperImpl extends DataBinderMapper {
   }
 
   private static class InnerLayoutIdLookup {
-    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(7);
+    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(8);
 
     static {
       sKeys.put("layout/activity_cadastro_0", com.example.projetointegrador.R.layout.activity_cadastro);
       sKeys.put("layout/activity_login_0", com.example.projetointegrador.R.layout.activity_login);
       sKeys.put("layout/fragment_configuracoes_0", com.example.projetointegrador.R.layout.fragment_configuracoes);
+      sKeys.put("layout/fragment_perfil_pessoal_0", com.example.projetointegrador.R.layout.fragment_perfil_pessoal);
       sKeys.put("layout/fragment_pergunta_0", com.example.projetointegrador.R.layout.fragment_pergunta);
       sKeys.put("layout/fragment_resultado_0", com.example.projetointegrador.R.layout.fragment_resultado);
       sKeys.put("layout/fragment_sobrevivencia_0", com.example.projetointegrador.R.layout.fragment_sobrevivencia);

@@ -1,9 +1,6 @@
 package com.example.projetointegrador.services
 
-import com.example.projetointegrador.domain.Credits
-import com.example.projetointegrador.domain.Crew
-import com.example.projetointegrador.domain.Filme
-import com.example.projetointegrador.domain.Genres
+import com.example.projetointegrador.domain.*
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -32,11 +29,28 @@ interface Repository {
         @Query("language") language: String
     ): Crew
 
+    @GET("discover/movie")
+    suspend fun getSugestionMovieRepo(
+        @Query("api_key") api_key: String,
+        @Query("language") language: String,
+        @Query("sort_by") sort_by: String,
+        @Query("with_genres") with_genres: Int
+    ) : Sugestions
+
+    @GET("movie/{movie_id}/credits")
+    suspend fun getCrewMovieSugestionRepo(
+        @Path("movie_id") movieId : Int,
+        @Query("api_key") api_key: String,
+        @Query("language") language: String
+    ): Crew
+
     @GET("movie/latest")
     suspend fun getLastMovieInApi(
         @Query("api_key") api_key: String,
         @Query("languge") language: String
     ): Filme
+
+
 
     @GET("movie/{movie_id}")
     suspend fun getMovieById(

@@ -1,7 +1,10 @@
 package com.example.projetointegrador.ui.home
 
 import android.app.AlertDialog
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -21,6 +24,7 @@ import com.example.projetointegrador.ui.MainViewModel
 import kotlinx.android.synthetic.main.fragment_home.view.*
 import kotlinx.android.synthetic.main.fragment_modos.view.*
 import kotlinx.android.synthetic.main.icon_plus_appname.view.*
+import java.util.*
 
 class HomeFragment : Fragment() {
 
@@ -33,7 +37,6 @@ class HomeFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel.getFilmeSugestion()
     }
 
     override fun onCreateView(
@@ -47,10 +50,17 @@ class HomeFragment : Fragment() {
             findNavController().navigate(R.id.action_homeVPFragment_to_rankingFragment)
         }
 
+        viewModel.jogadorLogado.observe(viewLifecycleOwner, {
+            val date = Calendar.getInstance().time
+            Log.i("HOME", date.toString())
+            viewModel.getFilmeSugestion()
+        })
+
         viewModel.filmeSugestion.observe(viewLifecycleOwner, { it ->
             filmeCard = it
             Glide.with(view.context).asBitmap()
                 .load("https://image.tmdb.org/t/p/w500/"+ filmeCard.backdrop_path)
+                .placeholder(ColorDrawable(Color.YELLOW))
                 .into(view.ivCardHome)
             view.tvTitleFilmeSus.text = filmeCard.title
             viewModel.crewSugestion.observe(viewLifecycleOwner, {

@@ -63,6 +63,10 @@ animator nav_default_enter_anim
 animator nav_default_exit_anim
 animator nav_default_pop_enter_anim
 animator nav_default_pop_exit_anim
+attr DialogSpotColor
+attr DialogSpotCount
+attr DialogTitleAppearance
+attr DialogTitleText
 attr action
 attr actionBarDivider
 attr actionBarItemBackground
@@ -1206,6 +1210,7 @@ color secondary_text_default_material_dark
 color secondary_text_default_material_light
 color secondary_text_disabled_material_dark
 color secondary_text_disabled_material_light
+color spots_dialog_color
 color switch_thumb_disabled_material_dark
 color switch_thumb_disabled_material_light
 color switch_thumb_material_dark
@@ -1219,6 +1224,7 @@ color test_mtrl_calendar_day_selected
 color tooltip_background_dark
 color tooltip_background_light
 color transparent
+color verdePositivo
 color white
 color yellow
 dimen abc_action_bar_content_inset_material
@@ -1608,12 +1614,17 @@ dimen notification_small_icon_size_as_large
 dimen notification_subtext_size
 dimen notification_top_pad
 dimen notification_top_pad_large_text
+dimen progress_margin
+dimen progress_width
+dimen spot_size
 dimen subtitle_corner_radius
 dimen subtitle_outline_width
 dimen subtitle_shadow_offset
 dimen subtitle_shadow_radius
 dimen test_mtrl_calendar_day_cornerSize
 dimen text_margin
+dimen title_margin
+dimen title_padding
 dimen tooltip_corner_radius
 dimen tooltip_horizontal_padding
 dimen tooltip_margin
@@ -1777,6 +1788,7 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable dmax_spots_spot
 drawable frame
 drawable fundo_amarelo_gradiente
 drawable googleg_disabled_color_18
@@ -2049,6 +2061,7 @@ id civAvatarRanking
 id civPerguntas
 id civPontos
 id civPontosSobrevivencia
+id civRecorde
 id civTempo
 id clear_text
 id clip_horizontal
@@ -2099,6 +2112,8 @@ id disablePostScroll
 id disableScroll
 id display_always
 id divirta_se
+id dmax_spots_progress
+id dmax_spots_title
 id dragDown
 id dragEnd
 id dragLeft
@@ -2169,6 +2184,7 @@ id invisible
 id italic
 id item_touch_helper_previous_elevation
 id ivAppName
+id ivCapa
 id ivCapaSinopse
 id ivCardHome
 id ivFacebook
@@ -2430,6 +2446,9 @@ id transition_scene_layoutid_cache
 id transition_transform
 id triangle
 id tvAcertosRanking
+id tvAcertosSobrevivencia
+id tvAcertosString
+id tvAcertosTimeLimit
 id tvBio
 id tvBioTerceiro
 id tvCadastre_se
@@ -2448,15 +2467,17 @@ id tvPergunta
 id tvPerguntaSobrevivencia
 id tvQtdeAcertos
 id tvQtdeAcertosResultado
-id tvQtdeAcertosSobrevivencia
 id tvQtdePerguntas
 id tvQtdeSeguidores
 id tvQtdeVitorias
+id tvRecorde
+id tvRecordeString
 id tvSinopse
 id tvSuvivalTitle
 id tvTLTitle
 id tvTitleFilmeSus
 id tvTitleSinopse
+id tvUsernameConfig
 id tvVoceErrou
 id tv_email_config
 id tvlabel_TL
@@ -2577,6 +2598,7 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout dialogue_editar_bio
 layout dialogue_generos_favoritos
+layout dmax_spots_dialog
 layout fragment_ajuda
 layout fragment_configuracoes
 layout fragment_home
@@ -2680,6 +2702,7 @@ plurals mtrl_badge_content_description
 raw translate_models_metadata
 string RANKING
 string TimeOut
+string _0
 string _007
 string _1
 string _201
@@ -2714,6 +2737,7 @@ string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
 string acao
+string acertos
 string anima_o
 string app_name
 string appbar_scrolling_view_behavior
@@ -2728,6 +2752,7 @@ string character_counter_overflowed_content_description
 string character_counter_pattern
 string chip_text
 string clear_text_end_icon_content_description
+string clique_aqui_para_editar_sua_bio
 string com_facebook_device_auth_instructions
 string com_facebook_image_download_unknown_error
 string com_facebook_internet_permission_error_message
@@ -2883,6 +2908,7 @@ string placeholder_tempo
 string placeholder_username
 string proj_name
 string project_id
+string recorde
 string respostas_corretas
 string resumoApp
 string salvar
@@ -3223,6 +3249,7 @@ style ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Year
 style ShapeAppearanceOverlay_MaterialComponents_TextInputLayout_FilledBox
 style ShapeAppearanceOverlay_TopLeftCut
 style ShapeAppearanceOverlay_TopRightDifferentCornerSize
+style SpotsDialogDefault
 style Test_ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Day
 style Test_Theme_MaterialComponents_MaterialCalendar
 style Test_Widget_MaterialComponents_MaterialCalendar
@@ -3679,6 +3706,7 @@ styleable ConstraintSet android_orientation android_id android_visibility androi
 styleable CoordinatorLayout keylines statusBarBackground
 styleable CoordinatorLayout_Layout android_layout_gravity layout_anchor layout_anchorGravity layout_behavior layout_dodgeInsetEdges layout_insetEdge layout_keyline
 styleable CustomAttribute attributeName customBoolean customColorDrawableValue customColorValue customDimension customFloatValue customIntegerValue customPixelDimension customStringValue
+styleable Dialog DialogSpotColor DialogSpotCount DialogTitleAppearance DialogTitleText
 styleable DialogFragmentNavigator android_name
 styleable DrawerArrowToggle arrowHeadLength arrowShaftLength barLength color drawableSize gapBetweenBars spinBars thickness
 styleable DrawerLayout elevation
