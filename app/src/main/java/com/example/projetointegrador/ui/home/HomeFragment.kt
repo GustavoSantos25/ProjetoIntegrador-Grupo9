@@ -68,9 +68,12 @@ class HomeFragment : Fragment() {
         view.btnJogar.setOnClickListener {
             generosDialog()
         }
+
         view.btn_help.setOnClickListener {
             findNavController().navigate(R.id.action_homeVPFragment_to_ajudaFragment)
         }
+
+        viewModel.getDadosJogadorLogado()
 
         return view
     }
@@ -88,14 +91,14 @@ class HomeFragment : Fragment() {
         alertDialog.show()
 
         dialogView.llTimeLimit.setOnClickListener {
-            viewModel.acertos = 0
+            viewModel.acertos.value = 0
             viewModel.modoSobrevivencia = false
             findNavController().navigate(R.id.action_homeVPFragment_to_perguntaFragment)
             alertDialog.cancel()
         }
 
         dialogView.llSurvival.setOnClickListener {
-            viewModel.acertos = 0
+            viewModel.acertos.value = 0
             viewModel.modoSobrevivencia = true
             findNavController().navigate(R.id.action_homeVPFragment_to_sobrevivenciaFragment)
             alertDialog.cancel()

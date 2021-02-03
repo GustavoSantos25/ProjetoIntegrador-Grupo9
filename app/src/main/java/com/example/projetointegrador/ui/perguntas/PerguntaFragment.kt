@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.addCallback
+import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -104,11 +105,26 @@ class PerguntaFragment : Fragment() {
             if(it == "0:00") findNavController().navigate(R.id.action_perguntaFragment_to_resultadoFragment)
         })
 
+        binding.tvRecorde.text = model.recordeTimeLimit.value.toString()
+
+        model.acertos.observe(viewLifecycleOwner, {
+
+            binding.tvQtdeAcertos.text = it.toString()
+
+            if (model.novoRecorde("timelimit")) {
+                binding.tvRecorde.text = it.toString()
+                binding.tvRecorde.setTextColor(ContextCompat.getColor(requireContext(), R.color.verdePositivo))
+                binding.tvRecordeString.setTextColor(ContextCompat.getColor(requireContext(), R.color.verdePositivo))
+            }
+        })
+
         return binding.root
     }
 
     fun onAcerto() {
-        binding.tvQtdeAcertos.text = model.onAcerto()
+        val qtdAcertos = model.onAcerto()
+        binding.tvQtdeAcertos.text = qtdAcertos.toString()
+        binding.tvAcertosString.text = model.acertoSingularOuPlural()
 
         val inflater: LayoutInflater = this.layoutInflater
         val dialogView: View = inflater.inflate(R.layout.custom_dialog_acerto, null)

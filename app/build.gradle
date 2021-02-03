@@ -73,6 +73,13 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth-ktx'
     implementation 'com.google.firebase:firebase-firestore:22.0.2'
     implementation 'com.google.firebase:firebase-firestore-ktx:22.0.2'
+    implementation 'com.google.firebase:firebase-storage:19.2.1'
+    implementation 'com.google.firebase:firebase-database:19.6.0'
+    implementation 'com.google.firebase:firebase-core:18.0.2'
+    implementation "com.firebaseui:firebase-ui-firestore:7.1.1"
+
+    //RecyclerView
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
 
     //Dependência Room
     def room_version = "2.2.5"
@@ -97,4 +104,6 @@ dependencies {
     //Material dialog
     implementation 'com.afollestad.material-dialogs:core:3.3.0'
     implementation 'com.afollestad.material-dialogs:input:3.3.0'
+
+    implementation 'com.github.d-max:spots-dialog:1.1@aar'
 }
