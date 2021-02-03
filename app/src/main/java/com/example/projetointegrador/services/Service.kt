@@ -55,9 +55,6 @@ interface Repository {
 
 const val url = "https://api.themoviedb.org/3/"
 
-val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-    .requestEmail()
-    .build()
 
 val retrofit = Retrofit.Builder()
     .baseUrl(url)

@@ -39,8 +39,19 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
     lateinit var collectionReference: CollectionReference
 
     //Variáveis para o timer do modo Time Limit
+    var clock : CountDownTimer = object : CountDownTimer(0, 0){
+        override fun onTick(millisUntilFinished: Long) {
+            TODO("Not yet implemented")
+        }
+
+        override fun onFinish() {
+            TODO("Not yet implemented")
+        }
+
+    }
     val timer = MutableLiveData<String>()
-    var timeLeftInMili: Long = 31000
+    var timeLeftInMili: Long = 150000
+    var timeRunning : Boolean = false
 
     //Variável para ver se a pergunta está sendo carregada
     var carregandoPergunta = MutableLiveData<Boolean>()
@@ -553,17 +564,17 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
         facebookIsLogged.value = isLogged
     }
 
-    fun updateGoogleLogIn(isLogged: Boolean) {
-        googleIsLogged.value = isLogged
-    }
-
-    fun configFacebook(fauth: FirebaseAuth) {
-        auth.value = fauth
-    }
-
-    fun configGoogle(gclient: GoogleSignInClient) {
-        googleSignInClient.value = gclient
-    }
+//    fun updateGoogleLogIn(isLogged: Boolean) {
+//        googleIsLogged.value = isLogged
+//    }
+//
+//    fun configFacebook(fauth: FirebaseAuth) {
+//        auth.value = fauth
+//    }
+//
+//    fun configGoogle(gclient: GoogleSignInClient) {
+//        googleSignInClient.value = gclient
+//    }
 
     fun onAcerto(): String {
         acertos++
@@ -574,13 +585,13 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
         }
     }
 
-    fun updateTimer() {
-        timer.value = "00:31"
-        var newTime: Long = 31000
-        var clock = object : CountDownTimer(newTime, 1000) {
+    fun startTimer() {
+        timer.value = "02:30"
+        var newTime: Long = timeLeftInMili
+        clock = object : CountDownTimer(newTime, 1000) {
             override fun onTick(p0: Long) {
-                newTime = p0
-                updateStringTimer(newTime)
+                timeLeftInMili = p0
+                updateTimer()
             }
 
             override fun onFinish() {
@@ -588,15 +599,22 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
             }
 
         }.start()
+        timeRunning = true
     }
 
     fun stopTimer() {
-
+        clock.cancel()
+        timeRunning = false
     }
 
-    private fun updateStringTimer(timeRemaining: Long) {
-        val minutes = timeRemaining / 60000
-        val seconds = timeRemaining % 60000 / 1000
+    fun startStopTimer(){
+        if(timeRunning) stopTimer()
+        else startTimer()
+    }
+
+    fun updateTimer() {
+        val minutes = timeLeftInMili / 60000
+        val seconds = timeLeftInMili % 60000 / 1000
         var newString = "$minutes"
         newString += ":"
         if (seconds < 10) newString += "0"
