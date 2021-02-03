@@ -26,15 +26,10 @@ class HomeActivity : AppCompatActivity() {
         viewModel.updateLastMovieId()
 
         viewModel.initializeOfflineTemplates()
+        viewModel.getDadosJogadorLogado()
 
-        val extras = intent.extras
-        var email = ""
 
-        if (extras != null) {
-            email = extras.getString("email")!!
-        }
-
-        viewModel.getConfigurationForUser(email)
+        viewModel.getConfigurationForUser(viewModel.firebaseAuth.currentUser!!.email.toString())
 
         navController = findNavController(R.id.navHostFragmentHome)
 

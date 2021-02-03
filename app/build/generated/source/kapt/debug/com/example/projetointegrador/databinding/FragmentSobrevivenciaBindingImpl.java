@@ -20,12 +20,15 @@ public class FragmentSobrevivenciaBindingImpl extends FragmentSobrevivenciaBindi
         sViewsWithIds.put(R.id.frameLayout, 4);
         sViewsWithIds.put(R.id.tvPerguntaSobrevivencia, 5);
         sViewsWithIds.put(R.id.civPontosSobrevivencia, 6);
-        sViewsWithIds.put(R.id.tvQtdeAcertosSobrevivencia, 7);
-        sViewsWithIds.put(R.id.civPerguntas, 8);
-        sViewsWithIds.put(R.id.btnPrimeiraRespostaSobrevivencia, 9);
-        sViewsWithIds.put(R.id.btnSegundaRespostaSobrevivencia, 10);
-        sViewsWithIds.put(R.id.btnTerceiraRespostaSobrevivencia, 11);
-        sViewsWithIds.put(R.id.btnQuartaRespostaSobrevivencia, 12);
+        sViewsWithIds.put(R.id.tvQtdeAcertos, 7);
+        sViewsWithIds.put(R.id.tvAcertosString, 8);
+        sViewsWithIds.put(R.id.civPerguntas, 9);
+        sViewsWithIds.put(R.id.tvRecorde, 10);
+        sViewsWithIds.put(R.id.tvRecordeString, 11);
+        sViewsWithIds.put(R.id.btnPrimeiraRespostaSobrevivencia, 12);
+        sViewsWithIds.put(R.id.btnSegundaRespostaSobrevivencia, 13);
+        sViewsWithIds.put(R.id.btnTerceiraRespostaSobrevivencia, 14);
+        sViewsWithIds.put(R.id.btnQuartaRespostaSobrevivencia, 15);
     }
     // views
     @NonNull
@@ -36,21 +39,24 @@ public class FragmentSobrevivenciaBindingImpl extends FragmentSobrevivenciaBindi
     // Inverse Binding Event Handlers
 
     public FragmentSobrevivenciaBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 13, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 16, sIncludes, sViewsWithIds));
     }
     private FragmentSobrevivenciaBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (androidx.appcompat.widget.AppCompatButton) bindings[9]
             , (androidx.appcompat.widget.AppCompatButton) bindings[12]
-            , (androidx.appcompat.widget.AppCompatButton) bindings[10]
-            , (androidx.appcompat.widget.AppCompatButton) bindings[11]
-            , (de.hdodenhof.circleimageview.CircleImageView) bindings[8]
+            , (androidx.appcompat.widget.AppCompatButton) bindings[15]
+            , (androidx.appcompat.widget.AppCompatButton) bindings[13]
+            , (androidx.appcompat.widget.AppCompatButton) bindings[14]
+            , (de.hdodenhof.circleimageview.CircleImageView) bindings[9]
             , (de.hdodenhof.circleimageview.CircleImageView) bindings[6]
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[2]
             , (android.widget.FrameLayout) bindings[4]
             , (android.view.View) bindings[1]
+            , (android.widget.TextView) bindings[8]
             , (android.widget.TextView) bindings[5]
             , (android.widget.TextView) bindings[7]
+            , (android.widget.TextView) bindings[10]
+            , (android.widget.TextView) bindings[11]
             , (android.view.View) bindings[3]
             );
         this.mboundView0 = (androidx.constraintlayout.widget.ConstraintLayout) bindings[0];

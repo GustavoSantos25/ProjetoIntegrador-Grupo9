@@ -46,10 +46,19 @@ public abstract class FragmentSobrevivenciaBinding extends ViewDataBinding {
   public final View includeToolbarQuizSobrevivencia;
 
   @NonNull
+  public final TextView tvAcertosString;
+
+  @NonNull
   public final TextView tvPerguntaSobrevivencia;
 
   @NonNull
-  public final TextView tvQtdeAcertosSobrevivencia;
+  public final TextView tvQtdeAcertos;
+
+  @NonNull
+  public final TextView tvRecorde;
+
+  @NonNull
+  public final TextView tvRecordeString;
 
   @NonNull
   public final View view;
@@ -60,8 +69,9 @@ public abstract class FragmentSobrevivenciaBinding extends ViewDataBinding {
       AppCompatButton btnSegundaRespostaSobrevivencia,
       AppCompatButton btnTerceiraRespostaSobrevivencia, CircleImageView civPerguntas,
       CircleImageView civPontosSobrevivencia, ConstraintLayout constraintLayout,
-      FrameLayout frameLayout, View includeToolbarQuizSobrevivencia,
-      TextView tvPerguntaSobrevivencia, TextView tvQtdeAcertosSobrevivencia, View view) {
+      FrameLayout frameLayout, View includeToolbarQuizSobrevivencia, TextView tvAcertosString,
+      TextView tvPerguntaSobrevivencia, TextView tvQtdeAcertos, TextView tvRecorde,
+      TextView tvRecordeString, View view) {
     super(_bindingComponent, _root, _localFieldCount);
     this.btnPrimeiraRespostaSobrevivencia = btnPrimeiraRespostaSobrevivencia;
     this.btnQuartaRespostaSobrevivencia = btnQuartaRespostaSobrevivencia;
@@ -72,8 +82,11 @@ public abstract class FragmentSobrevivenciaBinding extends ViewDataBinding {
     this.constraintLayout = constraintLayout;
     this.frameLayout = frameLayout;
     this.includeToolbarQuizSobrevivencia = includeToolbarQuizSobrevivencia;
+    this.tvAcertosString = tvAcertosString;
     this.tvPerguntaSobrevivencia = tvPerguntaSobrevivencia;
-    this.tvQtdeAcertosSobrevivencia = tvQtdeAcertosSobrevivencia;
+    this.tvQtdeAcertos = tvQtdeAcertos;
+    this.tvRecorde = tvRecorde;
+    this.tvRecordeString = tvRecordeString;
     this.view = view;
   }
 

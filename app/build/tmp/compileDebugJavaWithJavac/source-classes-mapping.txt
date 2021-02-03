@@ -1,3 +1,5 @@
+com/example/projetointegrador/databinding/FragmentPerfilPessoalBindingImpl.java
+ com.example.projetointegrador.databinding.FragmentPerfilPessoalBindingImpl
 androidx/databinding/DataBinderMapperImpl.java
  androidx.databinding.DataBinderMapperImpl
 com/example/projetointegrador/databinding/ActivityLoginBindingImpl.java
@@ -53,6 +55,8 @@ com/example/projetointegrador/DataBinderMapperImpl.java
  com.example.projetointegrador.DataBinderMapperImpl
  com.example.projetointegrador.DataBinderMapperImpl$InnerBrLookup
  com.example.projetointegrador.DataBinderMapperImpl$InnerLayoutIdLookup
+com/example/projetointegrador/databinding/FragmentPerfilPessoalBinding.java
+ com.example.projetointegrador.databinding.FragmentPerfilPessoalBinding
 com/example/projetointegrador/databinding/FragmentPerguntaBindingImpl.java
  com.example.projetointegrador.databinding.FragmentPerguntaBindingImpl
 com/example/projetointegrador/databinding/ActivityLoginBinding.java

@@ -64,14 +64,14 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        initDB()
-        connect()
-
+        dbApp = AppDataBase.invoke(this)
         dbRepository = DBRepositoryImplementation(
             dbApp.TemplateDAO(),
             dbApp.FilmeReplaceDAO(),
             dbApp.ConfiguracoesDAO()
         )
+        connect()
+
 
         onBackPressedDispatcher.addCallback(this) {
             exitProcess(0)
@@ -155,10 +155,9 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        val currentUser = viewModel.firebaseAuth.currentUser
+        val currentUser = auth.currentUser
         if (currentUser != null) {
             val intent = Intent(this, HomeActivity::class.java)
-            intent.putExtra("email", currentUser.email)
             startActivity(intent)
         }
     }
@@ -184,10 +183,16 @@ class LoginActivity : AppCompatActivity() {
         showProgressBar()
 
         val credential = GoogleAuthProvider.getCredential(idToken, null)
-        viewModel.firebaseAuth.signInWithCredential(credential)
+        auth.signInWithCredential(credential)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    viewModel.verificarSeTemUsername()
+                    val user = auth.currentUser
+                    viewModel.getConfigurationForUser(user!!.email.toString())
+                    viewModel.configuracoes.observe(this, {
+                        if (it == null) viewModel.createConfigurationForUser(user.email.toString())
+                        viewModel.updateFacebookLogIn(true)
+                        viewModel.verificarSeTemUsername()
+                    })
                 }
 
                 hideProgressBar()
@@ -246,26 +251,21 @@ class LoginActivity : AppCompatActivity() {
         progressoVisivel = false
     }
 
-    private fun initDB() {
-        dbApp = AppDataBase.invoke(this)
-    }
 
     private fun handleFacebookAccessToken(token: AccessToken) {
 
         showProgressBar()
 
         val credential = FacebookAuthProvider.getCredential(token.token)
-        viewModel.firebaseAuth.signInWithCredential(credential)
+        auth.signInWithCredential(credential)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    val user = viewModel.firebaseAuth.currentUser
+                    val user = auth.currentUser
                     viewModel.getConfigurationForUser(user!!.email.toString())
                     viewModel.configuracoes.observe(this, {
                         if (it == null) viewModel.createConfigurationForUser(user.email.toString())
                         viewModel.updateFacebookLogIn(true)
-                        val intent = Intent(this, HomeActivity::class.java)
-                        intent.putExtra("email", user.email)
-                        startActivity(intent)
+                        viewModel.verificarSeTemUsername()
                     })
                 } else {
                     // If sign in fails, display a message to the user.

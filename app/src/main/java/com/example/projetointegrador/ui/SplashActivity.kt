@@ -6,6 +6,10 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import com.example.projetointegrador.R
+import com.example.projetointegrador.database.AppDataBase
+import com.example.projetointegrador.services.DBRepositoryImplementation
+import com.example.projetointegrador.services.dbApp
+import com.example.projetointegrador.services.dbRepository
 
 
 class SplashActivity : AppCompatActivity() {
