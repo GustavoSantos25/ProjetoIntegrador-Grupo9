@@ -1,12 +1,8 @@
 package com.example.projetointegrador.ui
 
 import android.os.CountDownTimer
-import android.util.Log
-import android.widget.EditText
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
-import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -20,10 +16,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.storage.FirebaseStorage
-import com.google.firebase.storage.StorageReference
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import java.util.*
 import kotlin.collections.ArrayList
@@ -39,7 +32,7 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
     val lastMovieId = MutableLiveData<Int>()
     val listTemplates = popTemplates()
     val pergunta = MutableLiveData<Pergunta>()
-    var acertos = MutableLiveData<Int>(0)
+    var acertos = MutableLiveData(0)
     var jogadorLogado = MutableLiveData<MutableMap<String, Any>>()
 
     //Instancias do firebase
@@ -51,7 +44,7 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
     var urlAvatar: String = ""
 
     //Variáveis para o timer do modo Time Limit
-    var clock : CountDownTimer = object : CountDownTimer(0, 0){
+    var clock: CountDownTimer = object : CountDownTimer(0, 0) {
         override fun onTick(millisUntilFinished: Long) {
             TODO("Not yet implemented")
         }
@@ -63,14 +56,14 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
     }
     val timer = MutableLiveData<String>()
     var timeLeftInMili: Long = 150000
-    var timeRunning : Boolean = false
+    var timeRunning: Boolean = false
 
     //Variável para ver se a pergunta está sendo carregada
     var carregandoPergunta = MutableLiveData<Boolean>()
 
     private val apiKey = "2ae684da617a0a9eb2d4bd28815050e8"
     private val IDIOMA = "pt-BR"
-    private val POPULARIDADE_MINIMA = 2.0
+    private val POPULARIDADE_MINIMA = 3.0
 
     //val dbRepository: DBRepository
     val configuracoes = MutableLiveData<Configuracoes>()
@@ -82,8 +75,8 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
     val jaTemUsername = MutableLiveData<Boolean>()
     val usernameCriado = MutableLiveData<Boolean>()
 
-    //Variável para ver qual modo de jogo foi escolhido
-    var modoSobrevivencia = false
+    //Enum para ver qual modo de jogo foi escolhido
+    lateinit var modoDeJogo: ModosDeJogo
 
     var recordeSobrevivencia = MutableLiveData<Int>()
     var recordeTimeLimit = MutableLiveData<Int>()
@@ -144,6 +137,7 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
             }
     }
 
+
     fun getDadosJogador(
         uid: String,
         userName: String,
@@ -191,6 +185,12 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
         collectionReference.document(uid).update(jogador)
     }
 
+    fun updateBio(bio: String) {
+        dbFirestore.collection("jogadores")
+            .document(firebaseAuth.uid!!)
+            .update("bio", bio)
+    }
+
     fun updateCapa(urlCapa: String) {
         dbFirestore.collection("jogadores")
             .document(firebaseAuth.uid!!)
@@ -203,6 +203,26 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
             .update("urlAvatar", urlAvatar)
     }
 
+    fun updateRecorde(field: String) {
+        dbFirestore.collection("jogadores")
+            .document(firebaseAuth.uid!!)
+            .update(field, acertos.value?.toInt())
+    }
+
+    fun deleteCapaAntiga() {
+        val urlCapa: String = jogadorLogado.value?.get("urlCapa").toString()
+        if (urlCapa.isNotEmpty()) {
+            FirebaseStorage.getInstance().getReferenceFromUrl(urlCapa).delete()
+        }
+    }
+
+    fun deleteAvatarAntigo() {
+        val urlAvatar: String = jogadorLogado.value?.get("urlAvatar").toString()
+        if (urlAvatar.isNotEmpty()) {
+            FirebaseStorage.getInstance().getReferenceFromUrl(urlAvatar).delete()
+        }
+    }
+
     fun popListGeneros() {
         viewModelScope.launch {
             listGeneros.value = getAllGeneros()
@@ -210,10 +230,27 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
     }
 
     fun getCurrentRecorde() {
-        recordeSobrevivencia.value = Integer.parseInt(jogadorLogado.value?.get("recordeSobrevivencia").toString())
-        recordeTimeLimit.value = Integer.parseInt(jogadorLogado.value?.get("recordeTimeLimit").toString())
+        recordeSobrevivencia.value =
+            Integer.parseInt(jogadorLogado.value?.get("recordeSobrevivencia").toString())
+        recordeTimeLimit.value =
+            Integer.parseInt(jogadorLogado.value?.get("recordeTimeLimit").toString())
     }
 
+    fun verificarNovoRecorde() {
+        if (novoRecorde()) {
+            val field =
+                if (modoDeJogo == ModosDeJogo.SOBREVIVENCIA) "recordeSobrevivencia" else "recordeTimeLimit"
+            updateRecorde(field)
+        }
+    }
+
+    fun novoRecorde(): Boolean {
+        return if (modoDeJogo == ModosDeJogo.SOBREVIVENCIA) {
+            acertos.value!! > recordeSobrevivencia.value!!
+        } else {
+            acertos.value!! > recordeTimeLimit.value!!
+        }
+    }
 
 //    fun popPagesRanking() {
 //        viewModelScope.launch {
@@ -237,9 +274,11 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
         viewModelScope.launch {
             val generosFavoritos = jogadorLogado.value!!["generosFavoritos"] as ArrayList<Int>
             //val generoEscolhido  : Int = generosFavoritos.random()
-            listSugestion = repository.getSugestionMovieRepo(apiKey, IDIOMA, "popularity.desc", 80).results
+            listSugestion =
+                repository.getSugestionMovieRepo(apiKey, IDIOMA, "popularity.desc", 80).results
             filmeSugestion.value = listSugestion.random()
-            crewSugestion.value = repository.getCrewMovieSugestionRepo(filmeSugestion.value!!.id, apiKey, IDIOMA)
+            crewSugestion.value =
+                repository.getCrewMovieSugestionRepo(filmeSugestion.value!!.id, apiKey, IDIOMA)
         }
     }
 
@@ -664,8 +703,8 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
         timeRunning = false
     }
 
-    fun startStopTimer(){
-        if(timeRunning) stopTimer()
+    fun startStopTimer() {
+        if (timeRunning) stopTimer()
         else startTimer()
     }
 
@@ -677,14 +716,6 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
         if (seconds < 10) newString += "0"
         newString += "$seconds"
         timer.value = newString
-    }
-
-    fun novoRecorde(sobrevivenciaOuTimeLimit: String): Boolean {
-        return if (sobrevivenciaOuTimeLimit == "sobrevivencia") {
-            acertos.value!! > recordeSobrevivencia.value!!
-        } else {
-            acertos.value!! > recordeTimeLimit.value!!
-        }
     }
 
 

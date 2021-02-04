@@ -43,6 +43,8 @@ class ResultadoFragment : Fragment() {
             findNavController().navigate(R.id.action_resultadoFragment_to_homeVPFragment)
         }
 
+        model.verificarNovoRecorde()
+
         return binding.root
     }
 }
