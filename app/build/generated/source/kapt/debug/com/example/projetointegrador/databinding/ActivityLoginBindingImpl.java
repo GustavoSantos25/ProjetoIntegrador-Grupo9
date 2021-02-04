@@ -16,13 +16,14 @@ public class ActivityLoginBindingImpl extends ActivityLoginBinding  {
         sViewsWithIds = new android.util.SparseIntArray();
         sViewsWithIds.put(R.id.username, 2);
         sViewsWithIds.put(R.id.password, 3);
-        sViewsWithIds.put(R.id.btnLogin, 4);
-        sViewsWithIds.put(R.id.tvCadastre_se, 5);
-        sViewsWithIds.put(R.id.grid, 6);
-        sViewsWithIds.put(R.id.lbtn_Facebook, 7);
-        sViewsWithIds.put(R.id.ivFacebook, 8);
-        sViewsWithIds.put(R.id.ivLoginGoogle, 9);
-        sViewsWithIds.put(R.id.loading, 10);
+        sViewsWithIds.put(R.id.tv_esqueciSenha, 4);
+        sViewsWithIds.put(R.id.btnLogin, 5);
+        sViewsWithIds.put(R.id.tvCadastre_se, 6);
+        sViewsWithIds.put(R.id.grid, 7);
+        sViewsWithIds.put(R.id.lbtn_Facebook, 8);
+        sViewsWithIds.put(R.id.ivFacebook, 9);
+        sViewsWithIds.put(R.id.ivLoginGoogle, 10);
+        sViewsWithIds.put(R.id.loading, 11);
     }
     // views
     // variables
@@ -31,20 +32,21 @@ public class ActivityLoginBindingImpl extends ActivityLoginBinding  {
     // Inverse Binding Event Handlers
 
     public ActivityLoginBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 11, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 12, sIncludes, sViewsWithIds));
     }
     private ActivityLoginBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (androidx.appcompat.widget.AppCompatButton) bindings[4]
+            , (androidx.appcompat.widget.AppCompatButton) bindings[5]
             , (androidx.constraintlayout.widget.ConstraintLayout) bindings[0]
-            , (android.widget.GridLayout) bindings[6]
-            , (android.widget.ImageView) bindings[8]
+            , (android.widget.GridLayout) bindings[7]
             , (android.widget.ImageView) bindings[9]
-            , (com.facebook.login.widget.LoginButton) bindings[7]
+            , (android.widget.ImageView) bindings[10]
+            , (com.facebook.login.widget.LoginButton) bindings[8]
             , (android.widget.LinearLayout) bindings[1]
-            , (android.widget.ProgressBar) bindings[10]
+            , (android.widget.ProgressBar) bindings[11]
             , (android.widget.EditText) bindings[3]
-            , (android.widget.TextView) bindings[5]
+            , (android.widget.TextView) bindings[6]
+            , (android.widget.TextView) bindings[4]
             , (android.widget.EditText) bindings[2]
             );
         this.container.setTag(null);

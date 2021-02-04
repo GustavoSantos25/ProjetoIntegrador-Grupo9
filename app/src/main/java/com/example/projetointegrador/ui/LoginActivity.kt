@@ -30,9 +30,8 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
-import com.google.firebase.auth.FacebookAuthProvider
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.GoogleAuthProvider
+import com.google.firebase.auth.*
+import com.google.firebase.internal.InternalTokenProvider
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -97,16 +96,14 @@ class LoginActivity : AppCompatActivity() {
             }
         })
 
+        binding.tvEsqueciSenha.setOnClickListener {
+            val intent = Intent(this, NewPasswordActivity::class.java)
+            startActivity(intent)
+        }
+
+
         binding.btnLogin.setOnClickListener {
-            viewModel.getConfigurationForUser(binding.username.text.toString())
-            viewModel.configuracoes.observe(this, {
-                if (it == null) Toast.makeText(this, "EMAIL INVÁLIDO!", Toast.LENGTH_LONG).show()
-                else {
-                    val intent = Intent(this, HomeActivity::class.java)
-                    intent.putExtra("email", binding.username.text.toString())
-                    startActivity(intent)
-                }
-            })
+            getDataFields()
         }
 
         binding.tvCadastreSe.setOnClickListener {
@@ -138,6 +135,28 @@ class LoginActivity : AppCompatActivity() {
                 }
             })
     }
+
+
+    fun getDataFields(){
+        val email = binding.username.text.toString()
+        val password = binding.password.text.toString()
+        if(!email.isEmpty() && !password.isEmpty()) signInEmailPwd(email, password)
+        else showMsg("Preencha todos os campos!")
+    }
+
+    fun signInEmailPwd(email: String, pwd: String){
+        auth.signInWithEmailAndPassword(email, pwd).addOnCompleteListener {
+            if(it.isSuccessful){
+                val intent = Intent(this, HomeActivity::class.java)
+                startActivity(intent)
+            }else{
+                showMsg("Email ou Senha inválidos!")
+                Log.i(TAG, it.exception.toString())
+            }
+        }
+    }
+
+
 
     fun connect() {
         //Inicializar Firebase auth
@@ -300,6 +319,10 @@ class LoginActivity : AppCompatActivity() {
 
                 hideProgressBar()
             }
+    }
+
+    fun showMsg(msg : String){
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
     }
 
     companion object {
