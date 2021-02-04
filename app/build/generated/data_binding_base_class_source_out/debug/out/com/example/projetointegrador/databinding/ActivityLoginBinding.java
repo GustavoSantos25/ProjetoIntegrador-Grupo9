@@ -53,12 +53,16 @@ public abstract class ActivityLoginBinding extends ViewDataBinding {
   public final TextView tvCadastreSe;
 
   @NonNull
+  public final TextView tvEsqueciSenha;
+
+  @NonNull
   public final EditText username;
 
   protected ActivityLoginBinding(Object _bindingComponent, View _root, int _localFieldCount,
       AppCompatButton btnLogin, ConstraintLayout container, GridLayout grid, ImageView ivFacebook,
       ImageView ivLoginGoogle, LoginButton lbtnFacebook, LinearLayout linearLayout3,
-      ProgressBar loading, EditText password, TextView tvCadastreSe, EditText username) {
+      ProgressBar loading, EditText password, TextView tvCadastreSe, TextView tvEsqueciSenha,
+      EditText username) {
     super(_bindingComponent, _root, _localFieldCount);
     this.btnLogin = btnLogin;
     this.container = container;
@@ -70,6 +74,7 @@ public abstract class ActivityLoginBinding extends ViewDataBinding {
     this.loading = loading;
     this.password = password;
     this.tvCadastreSe = tvCadastreSe;
+    this.tvEsqueciSenha = tvEsqueciSenha;
     this.username = username;
   }
 

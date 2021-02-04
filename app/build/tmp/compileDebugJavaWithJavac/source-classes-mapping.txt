@@ -32,6 +32,8 @@ com/example/projetointegrador/dao/ConfiguracoesDAO_Impl.java
  com.example.projetointegrador.dao.ConfiguracoesDAO_Impl$4
  com.example.projetointegrador.dao.ConfiguracoesDAO_Impl$5
  com.example.projetointegrador.dao.ConfiguracoesDAO_Impl$6
+com/example/projetointegrador/databinding/ActivityNewPasswordBindingImpl.java
+ com.example.projetointegrador.databinding.ActivityNewPasswordBindingImpl
 com/example/projetointegrador/dao/FilmeReplaceDAO_Impl.java
  com.example.projetointegrador.dao.FilmeReplaceDAO_Impl
  com.example.projetointegrador.dao.FilmeReplaceDAO_Impl$1
@@ -51,6 +53,8 @@ com/example/projetointegrador/databinding/ProgressbarLayoutBinding.java
  com.example.projetointegrador.databinding.ProgressbarLayoutBinding
 com/example/projetointegrador/databinding/FragmentConfiguracoesBindingImpl.java
  com.example.projetointegrador.databinding.FragmentConfiguracoesBindingImpl
+com/example/projetointegrador/databinding/ActivityNewPasswordBinding.java
+ com.example.projetointegrador.databinding.ActivityNewPasswordBinding
 com/example/projetointegrador/DataBinderMapperImpl.java
  com.example.projetointegrador.DataBinderMapperImpl
  com.example.projetointegrador.DataBinderMapperImpl$InnerBrLookup

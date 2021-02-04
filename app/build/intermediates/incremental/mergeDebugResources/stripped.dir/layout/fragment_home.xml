@@ -105,6 +105,7 @@
                     android:text="@string/kill_bill_volume_1_2003"
                     android:textColor="@color/white"
                     android:textSize="30dp"
+                    android:autoSizeTextType="uniform"
                     android:textStyle="bold" />
 
                 <TextView

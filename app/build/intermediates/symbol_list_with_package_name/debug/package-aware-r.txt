@@ -2017,6 +2017,7 @@ id btnPrimeiraResposta
 id btnPrimeiraRespostaSobrevivencia
 id btnQuartaResposta
 id btnQuartaRespostaSobrevivencia
+id btnRecoverPwd
 id btnSalvarBio
 id btnSegundaResposta
 id btnSegundaRespostaSobrevivencia
@@ -2126,6 +2127,7 @@ id easeInOut
 id easeOut
 id edEmailCad
 id edPasswordCad
+id edRecoverPwd
 id edUserCad
 id editText
 id edit_query
@@ -2480,6 +2482,7 @@ id tvTitleSinopse
 id tvUsernameConfig
 id tvVoceErrou
 id tv_email_config
+id tv_esqueciSenha
 id tvlabel_TL
 id tvlabel_surival
 id unchecked
@@ -2568,6 +2571,7 @@ layout activity_cadastro
 layout activity_home
 layout activity_login
 layout activity_main
+layout activity_new_password
 layout activity_splash
 layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row
@@ -2812,7 +2816,9 @@ string editar
 string editar_bio
 string email_hint
 string entrar
+string enviarEmail
 string error_icon_content_description
+string esqueciSenha
 string explicacao_modo1
 string explicacao_modo2
 string exposed_dropdown_menu_content_description
@@ -2909,6 +2915,7 @@ string placeholder_username
 string proj_name
 string project_id
 string recorde
+string recoverEmail
 string respostas_corretas
 string resumoApp
 string salvar
