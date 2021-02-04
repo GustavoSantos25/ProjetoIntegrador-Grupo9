@@ -12,6 +12,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.PopupWindow
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.databinding.DataBindingUtil
@@ -21,6 +22,11 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.afollestad.materialdialogs.MaterialDialog
+import com.afollestad.materialdialogs.WhichButton
+import com.afollestad.materialdialogs.actions.setActionButtonEnabled
+import com.afollestad.materialdialogs.input.getInputField
+import com.afollestad.materialdialogs.input.input
 import com.bumptech.glide.Glide
 import com.example.projetointegrador.MainViewModelFactory
 import com.example.projetointegrador.R
@@ -53,7 +59,7 @@ class PerfilPessoalFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         alertImg = SpotsDialog.Builder().setContext(context).build()
 
@@ -103,16 +109,10 @@ class PerfilPessoalFragment : Fragment() {
         }
 
         binding.tvBio.setOnClickListener {
-            showCustomDialog()
+            editarBio()
         }
 
         return binding.root
-    }
-
-    override fun onStart() {
-        super.onStart()
-
-
     }
 
     fun setIntentCapa() {
@@ -129,7 +129,6 @@ class PerfilPessoalFragment : Fragment() {
         startActivityForResult(Intent.createChooser(intent, "captura_imagem"), COD_IMG_AVATAR)
     }
 
-
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
@@ -145,6 +144,7 @@ class PerfilPessoalFragment : Fragment() {
                     storageReference.downloadUrl
                 }.addOnCompleteListener { task ->
                     if (task.isSuccessful) {
+                        viewModel.deleteCapaAntiga()
                         val urlCapa = task.result.toString()
                         viewModel.updateCapa(urlCapa)
                         Glide.with(binding.root).load(urlCapa).into(binding.ivCapa)
@@ -155,6 +155,7 @@ class PerfilPessoalFragment : Fragment() {
                     storageReference.downloadUrl
                 }.addOnCompleteListener { task ->
                     if (task.isSuccessful) {
+                        viewModel.deleteAvatarAntigo()
                         val urlAvatar = task.result.toString()
                         viewModel.updateAvatar(urlAvatar)
                         Glide.with(binding.root).load(urlAvatar).into(binding.civAvatar)
@@ -162,27 +163,41 @@ class PerfilPessoalFragment : Fragment() {
                 }
             }
 
+            viewModel.getDadosJogadorLogado()
+
             alertImg.dismiss()
         }
     }
 
-    private lateinit var alertDialog: AlertDialog
+    fun editarBio() {
 
-    private fun showCustomDialog() {
-        val inflater: LayoutInflater = this.layoutInflater
-        val dialogView: View = inflater.inflate(R.layout.dialogue_editar_bio, null)
+        val dialogBio = MaterialDialog(requireContext())
+        var textoBio = binding.tvBio.text
 
-        val dialogBuilder: AlertDialog.Builder = AlertDialog.Builder(context)
-        dialogBuilder.setView(dialogView)
-
-        val botaoSalvar = dialogView.findViewById<AppCompatButton>(R.id.btnSalvarBio)
-
-        botaoSalvar.setOnClickListener {
-            alertDialog.hide()
+        if (textoBio == getString(R.string.clique_aqui_para_editar_sua_bio)) {
+            textoBio = ""
         }
 
-        alertDialog = dialogBuilder.create();
-        alertDialog.show()
-    }
+        dialogBio.show {
 
+            input(maxLength = 100, prefill = textoBio) { dialog, text ->
+
+                val inputField = dialog.getInputField()
+                val bio: String = inputField.text.toString()
+                val bioVazia = bio.isEmpty()
+
+                if (!bioVazia) {
+                    viewModel.updateBio(bio)
+                    viewModel.getDadosJogadorLogado()
+                    Toast.makeText(context, "Bio atualizada com sucesso!", Toast.LENGTH_SHORT).show()
+                }
+
+                inputField.error = if (bioVazia) "Escreva algo" else null
+
+                dialog.setActionButtonEnabled(WhichButton.POSITIVE, !bioVazia)
+            }
+
+            positiveButton(R.string.salvar)
+        }
+    }
 }

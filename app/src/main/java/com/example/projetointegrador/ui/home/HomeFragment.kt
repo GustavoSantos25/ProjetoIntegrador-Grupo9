@@ -18,6 +18,7 @@ import com.example.projetointegrador.MainViewModelFactory
 import com.example.projetointegrador.R
 import com.example.projetointegrador.domain.Crew
 import com.example.projetointegrador.domain.Filme
+import com.example.projetointegrador.domain.ModosDeJogo
 import com.example.projetointegrador.services.dbRepository
 import com.example.projetointegrador.services.repository
 import com.example.projetointegrador.ui.MainViewModel
@@ -102,14 +103,14 @@ class HomeFragment : Fragment() {
 
         dialogView.llTimeLimit.setOnClickListener {
             viewModel.acertos.value = 0
-            viewModel.modoSobrevivencia = false
+            viewModel.modoDeJogo = ModosDeJogo.TIME_LIMIT
             findNavController().navigate(R.id.action_homeVPFragment_to_perguntaFragment)
             alertDialog.cancel()
         }
 
         dialogView.llSurvival.setOnClickListener {
             viewModel.acertos.value = 0
-            viewModel.modoSobrevivencia = true
+            viewModel.modoDeJogo = ModosDeJogo.SOBREVIVENCIA
             findNavController().navigate(R.id.action_homeVPFragment_to_sobrevivenciaFragment)
             alertDialog.cancel()
         }

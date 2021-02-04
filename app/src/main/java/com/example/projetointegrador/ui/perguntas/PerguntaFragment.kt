@@ -111,7 +111,7 @@ class PerguntaFragment : Fragment() {
 
             binding.tvQtdeAcertos.text = it.toString()
 
-            if (model.novoRecorde("timelimit")) {
+            if (model.novoRecorde()) {
                 binding.tvRecorde.text = it.toString()
                 binding.tvRecorde.setTextColor(ContextCompat.getColor(requireContext(), R.color.verdePositivo))
                 binding.tvRecordeString.setTextColor(ContextCompat.getColor(requireContext(), R.color.verdePositivo))
