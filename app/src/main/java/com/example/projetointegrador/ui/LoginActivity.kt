@@ -33,6 +33,7 @@ import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FacebookAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
+import kotlinx.android.synthetic.main.fragment_pergunta.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlin.system.exitProcess
@@ -68,7 +69,7 @@ class LoginActivity : AppCompatActivity() {
         dbRepository = DBRepositoryImplementation(
             dbApp.TemplateDAO(),
             dbApp.FilmeReplaceDAO(),
-            dbApp.ConfiguracoesDAO()
+            dbApp.ConfiguracoesDAO(),
         )
         connect()
 
@@ -101,7 +102,6 @@ class LoginActivity : AppCompatActivity() {
                 if (it == null) Toast.makeText(this, "EMAIL INVÁLIDO!", Toast.LENGTH_LONG).show()
                 else {
                     val intent = Intent(this, HomeActivity::class.java)
-                    intent.putExtra("email", binding.username.text.toString())
                     startActivity(intent)
                 }
             })
@@ -191,8 +191,8 @@ class LoginActivity : AppCompatActivity() {
                     viewModel.configuracoes.observe(this, {
                         if (it == null) viewModel.createConfigurationForUser(user.email.toString())
                         viewModel.updateFacebookLogIn(true)
-                        viewModel.verificarSeTemUsername()
                     })
+                    viewModel.verificarSeTemUsername()
                 }
 
                 hideProgressBar()
@@ -265,8 +265,9 @@ class LoginActivity : AppCompatActivity() {
                     viewModel.configuracoes.observe(this, {
                         if (it == null) viewModel.createConfigurationForUser(user.email.toString())
                         viewModel.updateFacebookLogIn(true)
-                        viewModel.verificarSeTemUsername()
                     })
+                    viewModel.verificarSeTemUsername()
+
                 } else {
                     // If sign in fails, display a message to the user.
                     Log.w("Não deu bom", "signInWithCredential:failure", task.exception)

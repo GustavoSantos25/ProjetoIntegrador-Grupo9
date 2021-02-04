@@ -1,8 +1,13 @@
 package com.example.projetointegrador.domain
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+import org.jetbrains.annotations.NotNull
+
 data class Genre(val id: Int, val name: String)
 
 data class Genres(val genres: ArrayList<Genre>)
+
 
 data class Filme(
     val backdrop_path : String,
@@ -16,6 +21,7 @@ data class Filme(
     val production_countries: ArrayList<ProductionCountries>,
     val tagline: String
 )
+
 
 data class Sugestions(var results : ArrayList<Filme>)
 

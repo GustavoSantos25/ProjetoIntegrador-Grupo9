@@ -52,10 +52,9 @@ class HomeFragment : Fragment() {
         }
 
         viewModel.jogadorLogado.observe(viewLifecycleOwner, {
-            val date = Calendar.getInstance().time
-            Log.i("HOME", date.toString())
             viewModel.getFilmeSugestion()
         })
+
 
         viewModel.filmeSugestion.observe(viewLifecycleOwner, { it ->
             filmeCard = it

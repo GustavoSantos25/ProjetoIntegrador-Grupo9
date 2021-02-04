@@ -4,12 +4,12 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.migration.Migration
+import androidx.sqlite.db.SupportSQLiteDatabase
 import com.example.projetointegrador.dao.ConfiguracoesDAO
 import com.example.projetointegrador.dao.FilmeReplaceDAO
 import com.example.projetointegrador.dao.TemplateDAO
-import com.example.projetointegrador.domain.Configuracoes
-import com.example.projetointegrador.domain.FilmeReplace
-import com.example.projetointegrador.domain.Template
+import com.example.projetointegrador.domain.*
 
 @Database(entities = [Template::class, FilmeReplace::class, Configuracoes::class], version = 1)
 abstract class AppDataBase: RoomDatabase() {
@@ -17,6 +17,7 @@ abstract class AppDataBase: RoomDatabase() {
     abstract fun TemplateDAO(): TemplateDAO
     abstract fun FilmeReplaceDAO(): FilmeReplaceDAO
     abstract fun ConfiguracoesDAO(): ConfiguracoesDAO
+
 
     companion object {
         @Volatile

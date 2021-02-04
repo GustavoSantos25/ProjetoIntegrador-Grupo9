@@ -1,6 +1,7 @@
 package com.example.projetointegrador.ui
 
 import android.os.CountDownTimer
+import android.util.Log
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatButton
 import androidx.lifecycle.MutableLiveData
@@ -34,6 +35,7 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
     val pergunta = MutableLiveData<Pergunta>()
     var acertos = MutableLiveData(0)
     var jogadorLogado = MutableLiveData<MutableMap<String, Any>>()
+    var countFSPerLogin = 1
 
     //Instancias do firebase
     var firebaseAuth: FirebaseAuth = FirebaseAuth.getInstance()
@@ -270,15 +272,17 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
         }
     }
 
-    fun getFilmeSugestion() {
+    fun getFilmeSugestion(){
         viewModelScope.launch {
-            val generosFavoritos = jogadorLogado.value!!["generosFavoritos"] as ArrayList<Int>
-            //val generoEscolhido  : Int = generosFavoritos.random()
-            listSugestion =
-                repository.getSugestionMovieRepo(apiKey, IDIOMA, "popularity.desc", 80).results
-            filmeSugestion.value = listSugestion.random()
-            crewSugestion.value =
-                repository.getCrewMovieSugestionRepo(filmeSugestion.value!!.id, apiKey, IDIOMA)
+            if(countFSPerLogin > 0){
+                val generosFavoritos = jogadorLogado.value!!["generosFavoritos"] as ArrayList<Int>
+                //val generoEscolhido  : Int = generosFavoritos.random()
+                listSugestion =
+                    repository.getSugestionMovieRepo(apiKey, IDIOMA, "popularity.desc", 80).results
+                filmeSugestion.value = listSugestion.random()
+                crewSugestion.value = repository.getCrewMovieSugestionRepo(filmeSugestion.value!!.id, apiKey, IDIOMA)
+                countFSPerLogin--
+            }
         }
     }
 
@@ -649,9 +653,7 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
         }
     }
 
-    fun atualizarEmailUser(email: String) {
-        emailUser.value = email
-    }
+
 
     fun updateFacebookLogIn(isLogged: Boolean) {
         facebookIsLogged.value = isLogged

@@ -35,16 +35,17 @@ public final class AppDataBase_Impl extends AppDataBase {
 
   private volatile ConfiguracoesDAO _configuracoesDAO;
 
+
   @Override
   protected SupportSQLiteOpenHelper createOpenHelper(DatabaseConfiguration configuration) {
-    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(configuration, new RoomOpenHelper.Delegate(1) {
+    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(configuration, new RoomOpenHelper.Delegate(2) {
       @Override
       public void createAllTables(SupportSQLiteDatabase _db) {
         _db.execSQL("CREATE TABLE IF NOT EXISTS `template` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `perguntaPrimeiraMetade` TEXT NOT NULL, `perguntaSegundaMetade` TEXT NOT NULL, `tipoDePergunta` TEXT NOT NULL)");
         _db.execSQL("CREATE TABLE IF NOT EXISTS `filmes` (`id` INTEGER NOT NULL, `nome` TEXT NOT NULL, `pais` TEXT NOT NULL, `dataLancamento` TEXT NOT NULL, `diretor` TEXT NOT NULL, PRIMARY KEY(`id`))");
         _db.execSQL("CREATE TABLE IF NOT EXISTS `configuracoes` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `email` TEXT NOT NULL, `vibrar` INTEGER NOT NULL, `notificacoes` INTEGER NOT NULL)");
         _db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
-        _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '71e1bb9bfbc438146b9b0c205c6bc54d')");
+        _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'fa3da521db5aa9f50ef7f8f3d6dc2a56')");
       }
 
       @Override
@@ -52,6 +53,7 @@ public final class AppDataBase_Impl extends AppDataBase {
         _db.execSQL("DROP TABLE IF EXISTS `template`");
         _db.execSQL("DROP TABLE IF EXISTS `filmes`");
         _db.execSQL("DROP TABLE IF EXISTS `configuracoes`");
+        _db.execSQL("DROP TABLE IF EXISTS `filmeSugestao`");
         if (mCallbacks != null) {
           for (int _i = 0, _size = mCallbacks.size(); _i < _size; _i++) {
             mCallbacks.get(_i).onDestructiveMigration(_db);
@@ -133,9 +135,26 @@ public final class AppDataBase_Impl extends AppDataBase {
                   + " Expected:\n" + _infoConfiguracoes + "\n"
                   + " Found:\n" + _existingConfiguracoes);
         }
+        final HashMap<String, TableInfo.Column> _columnsFilmeSugestao = new HashMap<String, TableInfo.Column>(7);
+        _columnsFilmeSugestao.put("backdrop_path", new TableInfo.Column("backdrop_path", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsFilmeSugestao.put("id", new TableInfo.Column("id", "INTEGER", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsFilmeSugestao.put("overview", new TableInfo.Column("overview", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsFilmeSugestao.put("popularity", new TableInfo.Column("popularity", "REAL", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsFilmeSugestao.put("poster_path", new TableInfo.Column("poster_path", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsFilmeSugestao.put("release_date", new TableInfo.Column("release_date", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsFilmeSugestao.put("title", new TableInfo.Column("title", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        final HashSet<TableInfo.ForeignKey> _foreignKeysFilmeSugestao = new HashSet<TableInfo.ForeignKey>(0);
+        final HashSet<TableInfo.Index> _indicesFilmeSugestao = new HashSet<TableInfo.Index>(0);
+        final TableInfo _infoFilmeSugestao = new TableInfo("filmeSugestao", _columnsFilmeSugestao, _foreignKeysFilmeSugestao, _indicesFilmeSugestao);
+        final TableInfo _existingFilmeSugestao = TableInfo.read(_db, "filmeSugestao");
+        if (! _infoFilmeSugestao.equals(_existingFilmeSugestao)) {
+          return new RoomOpenHelper.ValidationResult(false, "filmeSugestao(com.example.projetointegrador.domain.FilmeSugestion).\n"
+                  + " Expected:\n" + _infoFilmeSugestao + "\n"
+                  + " Found:\n" + _existingFilmeSugestao);
+        }
         return new RoomOpenHelper.ValidationResult(true, null);
       }
-    }, "71e1bb9bfbc438146b9b0c205c6bc54d", "0c29f78136233b58125359c5d2424bee");
+    }, "fa3da521db5aa9f50ef7f8f3d6dc2a56", "b52d7242f11e90bc727cba2c90bef77c");
     final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(configuration.context)
         .name(configuration.name)
         .callback(_openCallback)
@@ -148,7 +167,7 @@ public final class AppDataBase_Impl extends AppDataBase {
   protected InvalidationTracker createInvalidationTracker() {
     final HashMap<String, String> _shadowTablesMap = new HashMap<String, String>(0);
     HashMap<String, Set<String>> _viewTables = new HashMap<String, Set<String>>(0);
-    return new InvalidationTracker(this, _shadowTablesMap, _viewTables, "template","filmes","configuracoes");
+    return new InvalidationTracker(this, _shadowTablesMap, _viewTables, "template","filmes","configuracoes","filmeSugestao");
   }
 
   @Override
@@ -160,6 +179,7 @@ public final class AppDataBase_Impl extends AppDataBase {
       _db.execSQL("DELETE FROM `template`");
       _db.execSQL("DELETE FROM `filmes`");
       _db.execSQL("DELETE FROM `configuracoes`");
+      _db.execSQL("DELETE FROM `filmeSugestao`");
       super.setTransactionSuccessful();
     } finally {
       super.endTransaction();
@@ -211,4 +231,5 @@ public final class AppDataBase_Impl extends AppDataBase {
       }
     }
   }
+
 }

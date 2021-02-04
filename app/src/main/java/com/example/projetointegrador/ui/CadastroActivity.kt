@@ -43,7 +43,6 @@ class CadastroActivity : AppCompatActivity() {
         bind.btnCadastrar.setOnClickListener {
             viewModel.createConfigurationForUser(bind.edEmailCad.text.toString())
             val intent = Intent(this, HomeActivity::class.java)
-            intent.putExtra("email", bind.edEmailCad.text.toString())
             startActivity(intent)
         }
 

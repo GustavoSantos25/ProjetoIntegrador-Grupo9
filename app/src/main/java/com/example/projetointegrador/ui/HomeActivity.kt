@@ -1,6 +1,8 @@
 package com.example.projetointegrador.ui
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
@@ -26,10 +28,11 @@ class HomeActivity : AppCompatActivity() {
         viewModel.updateLastMovieId()
 
         viewModel.initializeOfflineTemplates()
-        viewModel.getDadosJogadorLogado()
 
 
         viewModel.getConfigurationForUser(viewModel.firebaseAuth.currentUser!!.email.toString())
+
+
 
         navController = findNavController(R.id.navHostFragmentHome)
 

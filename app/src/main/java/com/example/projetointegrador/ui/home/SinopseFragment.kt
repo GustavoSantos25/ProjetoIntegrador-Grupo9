@@ -45,8 +45,6 @@ class SinopseFragment : Fragment() {
         val view =  inflater.inflate(R.layout.fragment_sinopse, container, false)
 
 
-        viewModel.atualizarEmailUser("oba")
-
         view.toolbarSinopse.setTitleTextColor(resources.getColor(R.color.black))
         view.toolbarSinopse.title = "Sinopse"
 

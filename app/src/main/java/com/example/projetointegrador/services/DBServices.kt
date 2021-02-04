@@ -4,9 +4,7 @@ import com.example.projetointegrador.dao.ConfiguracoesDAO
 import com.example.projetointegrador.dao.FilmeReplaceDAO
 import com.example.projetointegrador.dao.TemplateDAO
 import com.example.projetointegrador.database.AppDataBase
-import com.example.projetointegrador.domain.Configuracoes
-import com.example.projetointegrador.domain.FilmeReplace
-import com.example.projetointegrador.domain.Template
+import com.example.projetointegrador.domain.*
 import com.example.projetointegrador.ui.LoginActivity
 
 interface DBRepository {
@@ -54,10 +52,12 @@ class DBRepositoryImplementation(
     override suspend fun getConfiguracoesForUserTask(email: String) = configuracoesDAO
         .getConfiguracoesForUser(email)
 
+
     override suspend fun updateConfiguracoesTask(configuracoes: Configuracoes): Configuracoes {
         configuracoesDAO.updateConfiguracoes(configuracoes)
         return configuracoesDAO.getConfiguracoesForUser(configuracoes.email)
     }
+
 }
 
 

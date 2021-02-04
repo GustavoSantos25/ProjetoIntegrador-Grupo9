@@ -8,6 +8,13 @@ com/example/projetointegrador/databinding/ActivityCadastroBinding.java
  com.example.projetointegrador.databinding.ActivityCadastroBinding
 androidx/databinding/library/baseAdapters/BR.java
  androidx.databinding.library.baseAdapters.BR
+com/example/projetointegrador/dao/FilmeSugestaoDAO_Impl.java
+ com.example.projetointegrador.dao.FilmeSugestaoDAO_Impl
+ com.example.projetointegrador.dao.FilmeSugestaoDAO_Impl$1
+ com.example.projetointegrador.dao.FilmeSugestaoDAO_Impl$2
+ com.example.projetointegrador.dao.FilmeSugestaoDAO_Impl$3
+ com.example.projetointegrador.dao.FilmeSugestaoDAO_Impl$4
+ com.example.projetointegrador.dao.FilmeSugestaoDAO_Impl$5
 com/example/projetointegrador/databinding/FragmentPerguntaBinding.java
  com.example.projetointegrador.databinding.FragmentPerguntaBinding
 com/example/projetointegrador/databinding/ProgressbarLayoutBindingImpl.java
