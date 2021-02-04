@@ -35,6 +35,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import kotlin.system.exitProcess
 
 //keytool -keystore path-to-debug-or-production-keystore -list -v
@@ -68,10 +69,11 @@ class LoginActivity : AppCompatActivity() {
         dbRepository = DBRepositoryImplementation(
             dbApp.TemplateDAO(),
             dbApp.FilmeReplaceDAO(),
-            dbApp.ConfiguracoesDAO()
+            dbApp.ConfiguracoesDAO(),
+            dbApp.PaisMappingDAO()
         )
         connect()
-
+        initializePaisesMapping()
 
         onBackPressedDispatcher.addCallback(this) {
             exitProcess(0)
@@ -152,6 +154,26 @@ class LoginActivity : AppCompatActivity() {
         //Inicializar botao de login do facebook
         callbackManager = CallbackManager.Factory.create()
     }
+
+    fun initializePaisesMapping(){
+        scope.launch {
+            if (dbRepository.testIsEmptyDBService() == null) {
+                Log.i("*******", "Tabela países é nula")
+                dbRepository.populatePaisesMappingDBService()
+            }
+            else {
+                val country = dbRepository.getPaisPortuguesDBService("Brazil")
+                Log.i("*******", "Tabela países não é mais nula")
+                Log.i("*******", "Tabela países não é mais nula")
+                Log.i("*******", "Tabela países não é mais nula")
+                Log.i("*******", "Tabela países não é mais nula")
+                Log.i("*******", "Tabela países não é mais nula")
+                Log.i("País", country)
+            }
+        }
+    }
+
+
 
     override fun onStart() {
         super.onStart()
