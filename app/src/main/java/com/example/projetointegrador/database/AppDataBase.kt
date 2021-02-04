@@ -13,7 +13,7 @@ import com.example.projetointegrador.domain.FilmeReplace
 import com.example.projetointegrador.domain.PaisMapping
 import com.example.projetointegrador.domain.Template
 
-@Database(entities = [Template::class, FilmeReplace::class, Configuracoes::class, PaisMapping::class], version = 2)
+@Database(entities = [Template::class, FilmeReplace::class, Configuracoes::class, PaisMapping::class], version = 1)
 abstract class AppDataBase: RoomDatabase() {
 
     abstract fun TemplateDAO(): TemplateDAO
@@ -33,7 +33,6 @@ abstract class AppDataBase: RoomDatabase() {
         private fun buildDatabase(context: Context) = Room.databaseBuilder(
             context,
             AppDataBase::class.java, "cinefilos.db"
-        ).fallbackToDestructiveMigration()
-            .build()
+        ).build()
     }
 }

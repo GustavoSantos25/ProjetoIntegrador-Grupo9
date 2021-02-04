@@ -34,6 +34,7 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
     val pergunta = MutableLiveData<Pergunta>()
     var acertos = MutableLiveData(0)
     var jogadorLogado = MutableLiveData<MutableMap<String, Any>>()
+    var countFilmeSugestionPerLogin = 1
 
     //Instancias do firebase
     var firebaseAuth: FirebaseAuth = FirebaseAuth.getInstance()
@@ -272,13 +273,16 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
 
     fun getFilmeSugestion() {
         viewModelScope.launch {
-            val generosFavoritos = jogadorLogado.value!!["generosFavoritos"] as ArrayList<Int>
-            //val generoEscolhido  : Int = generosFavoritos.random()
-            listSugestion =
-                repository.getSugestionMovieRepo(apiKey, IDIOMA, "popularity.desc", 80).results
-            filmeSugestion.value = listSugestion.random()
-            crewSugestion.value =
-                repository.getCrewMovieSugestionRepo(filmeSugestion.value!!.id, apiKey, IDIOMA)
+            if(countFilmeSugestionPerLogin > 0){
+                val generosFavoritos = jogadorLogado.value!!["generosFavoritos"] as ArrayList<Int>
+                //val generoEscolhido  : Int = generosFavoritos.random()
+                listSugestion =
+                    repository.getSugestionMovieRepo(apiKey, IDIOMA, "popularity.desc", 80).results
+                filmeSugestion.value = listSugestion.random()
+                crewSugestion.value =
+                    repository.getCrewMovieSugestionRepo(filmeSugestion.value!!.id, apiKey, IDIOMA)
+                countFilmeSugestionPerLogin--
+            }
         }
     }
 

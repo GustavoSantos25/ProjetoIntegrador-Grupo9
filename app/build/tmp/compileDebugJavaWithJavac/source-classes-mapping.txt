@@ -63,6 +63,13 @@ com/example/projetointegrador/databinding/ActivityLoginBinding.java
  com.example.projetointegrador.databinding.ActivityLoginBinding
 com/example/projetointegrador/databinding/FragmentSobrevivenciaBindingImpl.java
  com.example.projetointegrador.databinding.FragmentSobrevivenciaBindingImpl
+com/example/projetointegrador/dao/PaisMappingDAO_Impl.java
+ com.example.projetointegrador.dao.PaisMappingDAO_Impl
+ com.example.projetointegrador.dao.PaisMappingDAO_Impl$1
+ com.example.projetointegrador.dao.PaisMappingDAO_Impl$2
+ com.example.projetointegrador.dao.PaisMappingDAO_Impl$3
+ com.example.projetointegrador.dao.PaisMappingDAO_Impl$4
+ com.example.projetointegrador.dao.PaisMappingDAO_Impl$5
 com/example/projetointegrador/databinding/FragmentResultadoBindingImpl.java
  com.example.projetointegrador.databinding.FragmentResultadoBindingImpl
 androidx/databinding/DataBindingComponent.java
