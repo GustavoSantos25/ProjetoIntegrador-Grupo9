@@ -186,5 +186,8 @@
     <string name="_0">0</string>
     <string name="recorde">Recorde</string>
     <string name="acertos">Acertos</string>
+    <string name="esqueciSenha">Esqueceu sua senha?</string>
+    <string name="recoverEmail">Email para recuperação de senha</string>
+    <string name="enviarEmail">Enviar email</string>
 
 </resources>

@@ -18,6 +18,8 @@ import com.example.projetointegrador.dao.ConfiguracoesDAO;
 import com.example.projetointegrador.dao.ConfiguracoesDAO_Impl;
 import com.example.projetointegrador.dao.FilmeReplaceDAO;
 import com.example.projetointegrador.dao.FilmeReplaceDAO_Impl;
+import com.example.projetointegrador.dao.PaisMappingDAO;
+import com.example.projetointegrador.dao.PaisMappingDAO_Impl;
 import com.example.projetointegrador.dao.TemplateDAO;
 import com.example.projetointegrador.dao.TemplateDAO_Impl;
 import java.lang.Override;
@@ -35,6 +37,8 @@ public final class AppDataBase_Impl extends AppDataBase {
 
   private volatile ConfiguracoesDAO _configuracoesDAO;
 
+  private volatile PaisMappingDAO _paisMappingDAO;
+
   @Override
   protected SupportSQLiteOpenHelper createOpenHelper(DatabaseConfiguration configuration) {
     final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(configuration, new RoomOpenHelper.Delegate(1) {
@@ -43,8 +47,9 @@ public final class AppDataBase_Impl extends AppDataBase {
         _db.execSQL("CREATE TABLE IF NOT EXISTS `template` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `perguntaPrimeiraMetade` TEXT NOT NULL, `perguntaSegundaMetade` TEXT NOT NULL, `tipoDePergunta` TEXT NOT NULL)");
         _db.execSQL("CREATE TABLE IF NOT EXISTS `filmes` (`id` INTEGER NOT NULL, `nome` TEXT NOT NULL, `pais` TEXT NOT NULL, `dataLancamento` TEXT NOT NULL, `diretor` TEXT NOT NULL, PRIMARY KEY(`id`))");
         _db.execSQL("CREATE TABLE IF NOT EXISTS `configuracoes` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `email` TEXT NOT NULL, `vibrar` INTEGER NOT NULL, `notificacoes` INTEGER NOT NULL)");
+        _db.execSQL("CREATE TABLE IF NOT EXISTS `paismapping` (`id` INTEGER NOT NULL, `nomePortugues` TEXT NOT NULL, `nomeIngles` TEXT NOT NULL, PRIMARY KEY(`id`))");
         _db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
-        _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '71e1bb9bfbc438146b9b0c205c6bc54d')");
+        _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '453d350186cb7c30f7bb72b94f046de1')");
       }
 
       @Override
@@ -52,6 +57,7 @@ public final class AppDataBase_Impl extends AppDataBase {
         _db.execSQL("DROP TABLE IF EXISTS `template`");
         _db.execSQL("DROP TABLE IF EXISTS `filmes`");
         _db.execSQL("DROP TABLE IF EXISTS `configuracoes`");
+        _db.execSQL("DROP TABLE IF EXISTS `paismapping`");
         if (mCallbacks != null) {
           for (int _i = 0, _size = mCallbacks.size(); _i < _size; _i++) {
             mCallbacks.get(_i).onDestructiveMigration(_db);
@@ -133,9 +139,22 @@ public final class AppDataBase_Impl extends AppDataBase {
                   + " Expected:\n" + _infoConfiguracoes + "\n"
                   + " Found:\n" + _existingConfiguracoes);
         }
+        final HashMap<String, TableInfo.Column> _columnsPaismapping = new HashMap<String, TableInfo.Column>(3);
+        _columnsPaismapping.put("id", new TableInfo.Column("id", "INTEGER", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsPaismapping.put("nomePortugues", new TableInfo.Column("nomePortugues", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsPaismapping.put("nomeIngles", new TableInfo.Column("nomeIngles", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        final HashSet<TableInfo.ForeignKey> _foreignKeysPaismapping = new HashSet<TableInfo.ForeignKey>(0);
+        final HashSet<TableInfo.Index> _indicesPaismapping = new HashSet<TableInfo.Index>(0);
+        final TableInfo _infoPaismapping = new TableInfo("paismapping", _columnsPaismapping, _foreignKeysPaismapping, _indicesPaismapping);
+        final TableInfo _existingPaismapping = TableInfo.read(_db, "paismapping");
+        if (! _infoPaismapping.equals(_existingPaismapping)) {
+          return new RoomOpenHelper.ValidationResult(false, "paismapping(com.example.projetointegrador.domain.PaisMapping).\n"
+                  + " Expected:\n" + _infoPaismapping + "\n"
+                  + " Found:\n" + _existingPaismapping);
+        }
         return new RoomOpenHelper.ValidationResult(true, null);
       }
-    }, "71e1bb9bfbc438146b9b0c205c6bc54d", "0c29f78136233b58125359c5d2424bee");
+    }, "453d350186cb7c30f7bb72b94f046de1", "42cbee7d490172c96fc012347fd2c0f7");
     final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(configuration.context)
         .name(configuration.name)
         .callback(_openCallback)
@@ -148,7 +167,7 @@ public final class AppDataBase_Impl extends AppDataBase {
   protected InvalidationTracker createInvalidationTracker() {
     final HashMap<String, String> _shadowTablesMap = new HashMap<String, String>(0);
     HashMap<String, Set<String>> _viewTables = new HashMap<String, Set<String>>(0);
-    return new InvalidationTracker(this, _shadowTablesMap, _viewTables, "template","filmes","configuracoes");
+    return new InvalidationTracker(this, _shadowTablesMap, _viewTables, "template","filmes","configuracoes","paismapping");
   }
 
   @Override
@@ -160,6 +179,7 @@ public final class AppDataBase_Impl extends AppDataBase {
       _db.execSQL("DELETE FROM `template`");
       _db.execSQL("DELETE FROM `filmes`");
       _db.execSQL("DELETE FROM `configuracoes`");
+      _db.execSQL("DELETE FROM `paismapping`");
       super.setTransactionSuccessful();
     } finally {
       super.endTransaction();
@@ -208,6 +228,20 @@ public final class AppDataBase_Impl extends AppDataBase {
           _configuracoesDAO = new ConfiguracoesDAO_Impl(this);
         }
         return _configuracoesDAO;
+      }
+    }
+  }
+
+  @Override
+  public PaisMappingDAO PaisMappingDAO() {
+    if (_paisMappingDAO != null) {
+      return _paisMappingDAO;
+    } else {
+      synchronized(this) {
+        if(_paisMappingDAO == null) {
+          _paisMappingDAO = new PaisMappingDAO_Impl(this);
+        }
+        return _paisMappingDAO;
       }
     }
   }

@@ -8,6 +8,7 @@ import androidx.databinding.DataBindingComponent;
 import androidx.databinding.ViewDataBinding;
 import com.example.projetointegrador.databinding.ActivityCadastroBindingImpl;
 import com.example.projetointegrador.databinding.ActivityLoginBindingImpl;
+import com.example.projetointegrador.databinding.ActivityNewPasswordBindingImpl;
 import com.example.projetointegrador.databinding.FragmentConfiguracoesBindingImpl;
 import com.example.projetointegrador.databinding.FragmentPerfilPessoalBindingImpl;
 import com.example.projetointegrador.databinding.FragmentPerguntaBindingImpl;
@@ -29,23 +30,26 @@ public class DataBinderMapperImpl extends DataBinderMapper {
 
   private static final int LAYOUT_ACTIVITYLOGIN = 2;
 
-  private static final int LAYOUT_FRAGMENTCONFIGURACOES = 3;
+  private static final int LAYOUT_ACTIVITYNEWPASSWORD = 3;
 
-  private static final int LAYOUT_FRAGMENTPERFILPESSOAL = 4;
+  private static final int LAYOUT_FRAGMENTCONFIGURACOES = 4;
 
-  private static final int LAYOUT_FRAGMENTPERGUNTA = 5;
+  private static final int LAYOUT_FRAGMENTPERFILPESSOAL = 5;
 
-  private static final int LAYOUT_FRAGMENTRESULTADO = 6;
+  private static final int LAYOUT_FRAGMENTPERGUNTA = 6;
 
-  private static final int LAYOUT_FRAGMENTSOBREVIVENCIA = 7;
+  private static final int LAYOUT_FRAGMENTRESULTADO = 7;
 
-  private static final int LAYOUT_PROGRESSBARLAYOUT = 8;
+  private static final int LAYOUT_FRAGMENTSOBREVIVENCIA = 8;
 
-  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(8);
+  private static final int LAYOUT_PROGRESSBARLAYOUT = 9;
+
+  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(9);
 
   static {
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.projetointegrador.R.layout.activity_cadastro, LAYOUT_ACTIVITYCADASTRO);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.projetointegrador.R.layout.activity_login, LAYOUT_ACTIVITYLOGIN);
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.projetointegrador.R.layout.activity_new_password, LAYOUT_ACTIVITYNEWPASSWORD);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.projetointegrador.R.layout.fragment_configuracoes, LAYOUT_FRAGMENTCONFIGURACOES);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.projetointegrador.R.layout.fragment_perfil_pessoal, LAYOUT_FRAGMENTPERFILPESSOAL);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.projetointegrador.R.layout.fragment_pergunta, LAYOUT_FRAGMENTPERGUNTA);
@@ -74,6 +78,12 @@ public class DataBinderMapperImpl extends DataBinderMapper {
             return new ActivityLoginBindingImpl(component, view);
           }
           throw new IllegalArgumentException("The tag for activity_login is invalid. Received: " + tag);
+        }
+        case  LAYOUT_ACTIVITYNEWPASSWORD: {
+          if ("layout/activity_new_password_0".equals(tag)) {
+            return new ActivityNewPasswordBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for activity_new_password is invalid. Received: " + tag);
         }
         case  LAYOUT_FRAGMENTCONFIGURACOES: {
           if ("layout/fragment_configuracoes_0".equals(tag)) {
@@ -164,11 +174,12 @@ public class DataBinderMapperImpl extends DataBinderMapper {
   }
 
   private static class InnerLayoutIdLookup {
-    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(8);
+    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(9);
 
     static {
       sKeys.put("layout/activity_cadastro_0", com.example.projetointegrador.R.layout.activity_cadastro);
       sKeys.put("layout/activity_login_0", com.example.projetointegrador.R.layout.activity_login);
+      sKeys.put("layout/activity_new_password_0", com.example.projetointegrador.R.layout.activity_new_password);
       sKeys.put("layout/fragment_configuracoes_0", com.example.projetointegrador.R.layout.fragment_configuracoes);
       sKeys.put("layout/fragment_perfil_pessoal_0", com.example.projetointegrador.R.layout.fragment_perfil_pessoal);
       sKeys.put("layout/fragment_pergunta_0", com.example.projetointegrador.R.layout.fragment_pergunta);
