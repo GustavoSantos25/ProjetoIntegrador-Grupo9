@@ -61,6 +61,8 @@ class MainViewModel(repository: Repository, dbRepository: DBRepository) : ViewMo
 
     //Variável para ver se a pergunta está sendo carregada
     var carregandoPergunta = MutableLiveData<Boolean>()
+    //Variável para ver se o card de sugestão está sendo carregado
+    var carregandoCard = MutableLiveData<Boolean>()
 
     private val apiKey = "2ae684da617a0a9eb2d4bd28815050e8"
     private val IDIOMA = "pt-BR"
@@ -271,8 +273,10 @@ class MainViewModel(repository: Repository, dbRepository: DBRepository) : ViewMo
     }
 
     fun getFilmeSugestion() {
+
         viewModelScope.launch {
             if(countFilmeSugestionPerLogin > 0){
+                carregandoCard.value = true
                 val generosFavoritos = jogadorLogado.value!!["generosFavoritos"] as ArrayList<Int>
                 //val generoEscolhido  : Int = generosFavoritos.random()
                 listSugestion =
@@ -281,8 +285,10 @@ class MainViewModel(repository: Repository, dbRepository: DBRepository) : ViewMo
                 crewSugestion.value =
                     repository.getCrewMovieSugestionRepo(filmeSugestion.value!!.id, apiKey, IDIOMA)
                 countFilmeSugestionPerLogin--
+                carregandoCard.value = false
             }
         }
+
     }
 
     fun gerarPerguntaAleatoria() {
@@ -737,6 +743,8 @@ class MainViewModel(repository: Repository, dbRepository: DBRepository) : ViewMo
 
             override fun onFinish() {
                 cancel()
+                timeLeftInMili = 150000
+                timeRunning = false
             }
 
         }.start()
@@ -747,6 +755,11 @@ class MainViewModel(repository: Repository, dbRepository: DBRepository) : ViewMo
         clock.cancel()
         timeRunning = false
     }
+
+    fun cancelTimer(){
+        clock.onFinish()
+    }
+
 
     fun startStopTimer() {
         if (timeRunning) stopTimer()

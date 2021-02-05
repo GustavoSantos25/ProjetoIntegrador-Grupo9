@@ -2024,8 +2024,10 @@ id btnTelaInicialResultado
 id btnTerceiraResposta
 id btnTerceiraRespostaSobrevivencia
 id btn_cadastrar
+id btn_continuarQuiz
 id btn_help
 id btn_ranking
+id btn_sairQuiz
 id button
 id buttonPanel
 id cache_measures
@@ -2213,6 +2215,7 @@ id llLogo
 id llLogout
 id llSurvival
 id llTimeLimit
+id ll_TitleDirSug
 id loading
 id loginActivity
 id masked
@@ -2300,6 +2303,7 @@ id password_toggle
 id path
 id pathRelative
 id pb
+id pb_cardSugestao
 id peekHeight
 id percent
 id perfilTerceiroFragment
@@ -2406,6 +2410,7 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textView
+id textView2
 id textView3
 id textView4
 id textView5
@@ -2579,6 +2584,7 @@ layout com_facebook_tooltip_bubble
 layout custom_dialog
 layout custom_dialog_acerto
 layout custom_dialog_erro
+layout custom_dialogue_sair_quiz
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
@@ -2743,6 +2749,7 @@ string appbar_scrolling_view_behavior
 string avaliacaoDosUsuarios
 string avaliacao_KB
 string aventura
+string avisoSaidaQuiz
 string black_mamba
 string bottom_sheet_behavior
 string cadastre_se
@@ -2893,6 +2900,7 @@ string mtrl_picker_toggle_to_day_selection
 string mtrl_picker_toggle_to_text_input_mode
 string mtrl_picker_toggle_to_year_selection
 string mudar_senha
+string nao
 string nav_app_bar_navigate_up_description
 string nav_app_bar_open_drawer_description
 string nome_filmeKB
@@ -2922,6 +2930,7 @@ string sci_fi
 string search_menu_title
 string seguidores
 string seguir
+string sim
 string sinopse
 string sinopse_killBill
 string snake_charmer

@@ -23,6 +23,7 @@ import com.example.projetointegrador.services.EventObserver
 import com.example.projetointegrador.services.dbRepository
 import com.example.projetointegrador.services.repository
 import com.example.projetointegrador.ui.MainViewModel
+import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_home.view.*
 import kotlinx.android.synthetic.main.fragment_modos.view.*
 import kotlinx.android.synthetic.main.icon_plus_appname.view.*
@@ -51,16 +52,26 @@ class HomeFragment : Fragment() {
         }
 
         viewModel.jogadorLogado.observe(viewLifecycleOwner, {
-            val date = Calendar.getInstance().time
-            Log.i("HOME", date.toString())
             viewModel.getFilmeSugestion()
+        })
+
+        viewModel.carregandoCard.observe(viewLifecycleOwner, {
+            if(it){
+                view.pb_cardSugestao.visibility = View.VISIBLE
+                view.ivCardHome.visibility = View.GONE
+                view.ll_TitleDirSug.visibility = View.GONE
+            }
+            else{
+                view.pb_cardSugestao.visibility = View.GONE
+                view.ivCardHome.visibility = View.VISIBLE
+                view.ll_TitleDirSug.visibility = View.VISIBLE
+            }
         })
 
         viewModel.filmeSugestion.observe(viewLifecycleOwner, { it ->
             filmeCard = it
             Glide.with(view.context).asBitmap()
                 .load("https://image.tmdb.org/t/p/w500/" + filmeCard.backdrop_path)
-                .placeholder(ColorDrawable(Color.YELLOW))
                 .into(view.ivCardHome)
             view.tvTitleFilmeSus.text = filmeCard.title
             viewModel.crewSugestion.observe(viewLifecycleOwner, {

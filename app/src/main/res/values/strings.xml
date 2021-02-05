@@ -194,5 +194,8 @@
     <string name="terceiroSemBio">Este jogador ainda não inseriu uma descrição</string>
     <string name="jogador_1">Jogador 1</string>
     <string name="_1_acerto">1 ACERTO</string>
+    <string name="avisoSaidaQuiz">Realmente deseja sair?\n(Seu resultado atual não será contabilizado)</string>
+    <string name="sim">SIM</string>
+    <string name="nao">NÃO</string>
 
 </resources>
