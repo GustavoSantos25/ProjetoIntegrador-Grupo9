@@ -77,9 +77,11 @@ dependencies {
     implementation 'com.google.firebase:firebase-database:19.6.0'
     implementation 'com.google.firebase:firebase-core:18.0.2'
     implementation "com.firebaseui:firebase-ui-firestore:7.1.1"
+    implementation 'com.google.firebase:firebase-analytics-ktx'
 
     //RecyclerView
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'com.google.firebase:firebase-messaging:21.0.1'
 
     //Dependência Room
     def room_version = "2.2.5"

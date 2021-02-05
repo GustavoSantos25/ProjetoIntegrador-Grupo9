@@ -1,5 +1,7 @@
 package com.example.projetointegrador.services
 
+import androidx.fragment.app.activityViewModels
+import com.example.projetointegrador.MainViewModelFactory
 import com.example.projetointegrador.dao.ConfiguracoesDAO
 import com.example.projetointegrador.dao.FilmeReplaceDAO
 import com.example.projetointegrador.dao.PaisMappingDAO
@@ -9,6 +11,9 @@ import com.example.projetointegrador.domain.Configuracoes
 import com.example.projetointegrador.domain.FilmeReplace
 import com.example.projetointegrador.domain.PaisMapping
 import com.example.projetointegrador.domain.Template
+import com.example.projetointegrador.ui.MainViewModel
+import kotlinx.coroutines.coroutineScope
+import kotlin.properties.Delegates
 
 interface DBRepository {
 
@@ -334,3 +339,4 @@ class DBRepositoryImplementation(
 
 lateinit var dbApp: AppDataBase
 lateinit var dbRepository: DBRepository
+var notifications = false

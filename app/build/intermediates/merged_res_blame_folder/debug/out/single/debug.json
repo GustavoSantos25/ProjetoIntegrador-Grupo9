@@ -8,12 +8,12 @@
         "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\ic_icons8_google.png"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_pergunta.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\fragment_pergunta.xml"
-    },
-    {
         "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_exit_to_app_24.xml.flat",
         "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\ic_baseline_exit_to_app_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_pergunta.xml.flat",
+        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\fragment_pergunta.xml"
     },
     {
         "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_help.xml.flat",
@@ -40,16 +40,16 @@
         "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout\\fragment_ranking.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_outline_vibration_24.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\ic_outline_vibration_24.xml"
+        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_outline_camera_alt_24.xml.flat",
+        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\ic_outline_camera_alt_24.xml"
     },
     {
         "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_gradient_preto.xml.flat",
         "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\gradient_preto.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_outline_camera_alt_24.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\ic_outline_camera_alt_24.xml"
+        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_outline_vibration_24.xml.flat",
+        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\ic_outline_vibration_24.xml"
     },
     {
         "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
@@ -88,12 +88,12 @@
         "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v24\\ic_icons8_google.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_outline_person_24.xml.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\ic_outline_person_24.xml"
-    },
-    {
         "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_borda_right.xml.flat",
         "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\borda_right.xml"
+    },
+    {
+        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_outline_person_24.xml.flat",
+        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\ic_outline_person_24.xml"
     },
     {
         "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout_dialogue_editar_bio.xml.flat",
@@ -124,12 +124,12 @@
         "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\drawable\\gradient_amarelo.xml"
     },
     {
-        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
-    },
-    {
         "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\layout-v26_fragment_home.xml.flat",
         "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\layout-v26\\fragment_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
     },
     {
         "merged": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_facebook_24.xml.flat",

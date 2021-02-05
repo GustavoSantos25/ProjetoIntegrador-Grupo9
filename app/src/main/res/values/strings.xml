@@ -189,5 +189,7 @@
     <string name="esqueciSenha">Esqueceu sua senha?</string>
     <string name="recoverEmail">Email para recuperação de senha</string>
     <string name="enviarEmail">Enviar email</string>
+    <string name="default_notification_channel_id">100</string>
+    <string name="fcm_message">Cinéfilos</string>
 
 </resources>

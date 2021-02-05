@@ -2806,6 +2806,7 @@ string cottonmouth
 string crime
 string dados_pessoais
 string data_lançamentoKB
+string default_notification_channel_id
 string default_web_client_id
 string desafiar
 string diretor_quentin_tarantino
@@ -2828,6 +2829,8 @@ string facebook
 string facebook_app_id
 string fantasia
 string fb_login_protocol_scheme
+string fcm_fallback_notification_channel_label
+string fcm_message
 string gcm_defaultSenderId
 string generos_KB
 string generos_favoritos
