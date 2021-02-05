@@ -1,62 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.home.RankingFragment"
-    android:background="@color/darkGreyBackground">
+        
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbarRank"
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/fundo_amarelo_gradiente"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:navigationIcon="@drawable/ic_back_arrow"
-        tools:layout_editor_absoluteX="0dp" />
+        android:layout_height="match_parent"
+        android:background="@color/darkGreyBackground"
+        tools:context=".ui.home.RankingFragment" android:tag="layout/fragment_ranking_0">
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/vpRanking"
-        android:layout_width="match_parent"
-        android:layout_height="603dp"
-        android:clipToPadding="false"
-        android:foregroundGravity="center"
-        android:overScrollMode="never"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        tools:layout_editor_absoluteX="0dp">
-
-
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tl_ranking"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/grey"
-            app:tabIndicatorColor="@color/black"
-            app:tabRippleColor="@color/black"
-            app:tabSelectedTextColor="@color/black"
-            app:tabTextColor="@color/black">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-
-            <com.google.android.material.tabs.TabItem
-                android:id="@+id/tl_item_mod1"
-                android:layout_width="wrap_content"
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbarRank"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="SOBREVIVÊNCIA" />
+                android:background="@drawable/fundo_amarelo_gradiente"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                app:navigationIcon="@drawable/ic_back_arrow"
+                tools:layout_editor_absoluteX="0dp" />
 
-            <com.google.android.material.tabs.TabItem
-                android:id="@+id/tl_item_mod2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TIME LIMIT" />
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/vpRanking"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:overScrollMode="never"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="0dp">
 
-        </com.google.android.material.tabs.TabLayout>
-    </androidx.viewpager.widget.ViewPager>
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tl_ranking"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/grey"
+                    app:tabIndicatorColor="@color/black"
+                    app:tabRippleColor="@color/black"
+                    app:tabSelectedTextColor="@color/black"
+                    app:tabTextColor="@color/black">
 
+                    <com.google.android.material.tabs.TabItem
+                        android:id="@+id/tl_item_mod1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="SOBREVIVÊNCIA" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                    <com.google.android.material.tabs.TabItem
+                        android:id="@+id/tl_item_mod2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TIME LIMIT" />
+
+                </com.google.android.material.tabs.TabLayout>
+
+            </androidx.viewpager.widget.ViewPager>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+         

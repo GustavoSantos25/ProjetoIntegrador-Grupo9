@@ -18,9 +18,6 @@ import java.lang.Object;
 
 public abstract class FragmentResultadoBinding extends ViewDataBinding {
   @NonNull
-  public final AppCompatButton btnCompartilharVitoria;
-
-  @NonNull
   public final AppCompatButton btnTelaInicialResultado;
 
   @NonNull
@@ -30,25 +27,23 @@ public abstract class FragmentResultadoBinding extends ViewDataBinding {
   public final ImageView ivTrofeu;
 
   @NonNull
-  public final LinearLayout linearLayout;
+  public final LinearLayout llLogo;
 
   @NonNull
-  public final LinearLayout llLogo;
+  public final TextView textView;
 
   @NonNull
   public final TextView tvQtdeAcertosResultado;
 
   protected FragmentResultadoBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      AppCompatButton btnCompartilharVitoria, AppCompatButton btnTelaInicialResultado,
-      ImageView imageView4, ImageView ivTrofeu, LinearLayout linearLayout, LinearLayout llLogo,
-      TextView tvQtdeAcertosResultado) {
+      AppCompatButton btnTelaInicialResultado, ImageView imageView4, ImageView ivTrofeu,
+      LinearLayout llLogo, TextView textView, TextView tvQtdeAcertosResultado) {
     super(_bindingComponent, _root, _localFieldCount);
-    this.btnCompartilharVitoria = btnCompartilharVitoria;
     this.btnTelaInicialResultado = btnTelaInicialResultado;
     this.imageView4 = imageView4;
     this.ivTrofeu = ivTrofeu;
-    this.linearLayout = linearLayout;
     this.llLogo = llLogo;
+    this.textView = textView;
     this.tvQtdeAcertosResultado = tvQtdeAcertosResultado;
   }
 

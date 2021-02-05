@@ -3,6 +3,7 @@ package com.example.projetointegrador.ui
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentManager
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import com.example.projetointegrador.MainViewModelFactory
@@ -28,12 +29,9 @@ class HomeActivity : AppCompatActivity() {
 
         viewModel.initializeOfflineTemplates()
         viewModel.getDadosJogadorLogado()
-
-
         viewModel.getConfigurationForUser(viewModel.firebaseAuth.currentUser!!.email.toString())
 
         navController = findNavController(R.id.navHostFragmentHome)
-
     }
 
     override fun onBackPressed() {

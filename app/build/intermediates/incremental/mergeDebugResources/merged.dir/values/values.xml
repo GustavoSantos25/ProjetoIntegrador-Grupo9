@@ -1089,6 +1089,7 @@
     <string name="_0">0</string>
     <string name="_007">007</string>
     <string name="_1">1</string>
+    <string name="_1_acerto">1 ACERTO</string>
     <string name="_201">201</string>
     <string name="_589">589</string>
     <string name="_6">6</string>
@@ -1229,6 +1230,7 @@
     <string name="instagram">Instagram</string>
     <string name="item_view_role_description">Tab</string>
     <string name="jogador">Jogador</string>
+    <string name="jogador_1">Jogador 1</string>
     <string name="jogar">Jogar</string>
     <string name="john_doe">John Doe</string>
     <string name="kill_bill_volume_1_2003">Kill Bill: Volume 1 (2003)</string>
@@ -1407,6 +1409,7 @@
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="sugest_o_do_dia">Sugestão do dia:</string>
     <string name="tela_inicial">Tela Inicial</string>
+    <string name="terceiroSemBio">Este jogador ainda não inseriu uma descrição</string>
     <string name="terror">Terror</string>
     <string name="time_limit">Time limit</string>
     <string name="user_hint">Username</string>

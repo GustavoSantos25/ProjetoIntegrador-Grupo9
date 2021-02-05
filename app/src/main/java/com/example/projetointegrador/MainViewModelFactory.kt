@@ -7,9 +7,9 @@ import com.example.projetointegrador.services.Repository
 import com.example.projetointegrador.services.dbRepository
 import com.example.projetointegrador.services.repository
 import com.example.projetointegrador.ui.MainViewModel
-import java.lang.IllegalArgumentException
 
-class MainViewModelFactory(repository: Repository, dbRepository: DBRepository) : ViewModelProvider.Factory {
+class MainViewModelFactory(repository: Repository, dbRepository: DBRepository) :
+    ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(MainViewModel::class.java)) {
             return MainViewModel(repository, dbRepository) as T

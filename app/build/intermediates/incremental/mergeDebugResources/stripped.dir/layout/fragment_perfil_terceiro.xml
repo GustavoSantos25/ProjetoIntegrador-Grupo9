@@ -1,207 +1,171 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/darkGreyBackground"
-    tools:context=".ui.perfil.PerfilTerceiroFragment">
+        
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:background="@color/darkGreyBackground"
+        tools:context=".ui.perfil.PerfilTerceiroFragment" android:tag="layout/fragment_perfil_terceiro_0">
 
-        <ImageView
-            android:id="@+id/imageView"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="180dp"
-            android:scaleType="fitXY"
-            android:src="@drawable/placeholder_profile_cover"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_height="wrap_content">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/civAvatar"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="108dp"
-            android:src="@drawable/ic_undraw_male_avatar_323b"
-            app:civ_border_color="@color/white"
-            app:civ_border_width="3dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbarPerfilTerceiro"
+                android:layout_width="match_parent"
+                android:background="@drawable/md_transparent"
+                android:elevation="1dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:navigationIcon="@drawable/ic_back_arrow" />
 
-        <TextView
-            android:id="@+id/tvNomePerfil"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:fontFamily="@font/roboto_regular"
-            android:text="@string/jogador"
-            android:textSize="24sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/civAvatar" />
+            <ImageView
+                android:id="@+id/ivCapa"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/placeholder_profile_cover"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/tvBioTerceiro"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:fontFamily="@font/roboto_regular"
-            android:text="@string/lorem_perfil"
-            android:textAlignment="center"
-            android:textSize="18sp"
-            app:layout_constraintTop_toBottomOf="@+id/tvNomePerfil"
-            tools:layout_editor_absoluteX="30dp" />
 
-        <LinearLayout
-            android:id="@+id/linearLayout"
-            android:layout_width="400dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:gravity="center"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvBioTerceiro"
-            app:layout_constraintBottom_toTopOf="@id/gridLayout"
-            android:orientation="horizontal">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/civAvatar"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="108dp"
+                android:src="@drawable/ic_undraw_male_avatar_323b"
+                app:civ_border_color="@color/white"
+                app:civ_border_width="3dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-<!--            <androidx.appcompat.widget.AppCompatButton-->
-<!--                android:id="@+id/btnSeguir"-->
-<!--                android:layout_width="200dp"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:background="@drawable/botao_redondo_amarelo"-->
-<!--                android:fontFamily="@font/roboto_regular"-->
-<!--                android:text="@string/seguir"-->
-<!--                android:textColor="@color/black"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toBottomOf="@+id/textView2" />-->
-
-            <!--            <androidx.appcompat.widget.AppCompatButton-->
-            <!--                android:id="@+id/btnDesafiar"-->
-            <!--                android:layout_width="wrap_content"-->
-            <!--                android:layout_height="wrap_content"-->
-            <!--                android:layout_marginStart="30dp"-->
-            <!--                android:layout_marginEnd="30dp"-->
-            <!--                android:layout_weight="1"-->
-            <!--                android:background="@drawable/botao_redondo_transparente"-->
-            <!--                android:fontFamily="@font/roboto_regular"-->
-            <!--                android:text="@string/desafiar"-->
-            <!--                android:textColor="#fbff00"-->
-            <!--                app:layout_constraintStart_toStartOf="parent"-->
-            <!--                app:layout_constraintTop_toBottomOf="@+id/textView2" />-->
-
-        </LinearLayout>
-
-        <GridLayout
-            android:id="@+id/gridLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/borda_top_bottom"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-            tools:layout_editor_absoluteX="0dp">
-
-            <LinearLayout
+            <TextView
+                android:id="@+id/tvNomePerfil"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_columnWeight="1"
-                android:background="@drawable/borda_right"
-                android:orientation="vertical">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="19dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="@string/john_doe"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/civAvatar" />
 
-                <TextView
-                    android:id="@+id/tvQtdePerguntas"
+            <!--        <androidx.appcompat.widget.AppCompatButton-->
+            <!--            android:id="@+id/btnEditar"-->
+            <!--            android:layout_width="80dp"-->
+            <!--            android:layout_height="40dp"-->
+            <!--            android:layout_marginTop="12dp"-->
+            <!--            android:background="@drawable/botao_redondo_transparente"-->
+            <!--            android:fontFamily="@font/roboto_regular"-->
+            <!--            android:text="@string/editar"-->
+            <!--            android:textColor="@color/yellow"-->
+            <!--            app:layout_constraintEnd_toEndOf="parent"-->
+            <!--            app:layout_constraintHorizontal_bias="1.0"-->
+            <!--            app:layout_constraintStart_toEndOf="@+id/tvNomePerfil"-->
+            <!--            app:layout_constraintTop_toBottomOf="@+id/ibFotoCapa" />-->
+
+            <TextView
+                android:id="@+id/tvBio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="@string/clique_aqui_para_editar_sua_bio"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                app:layout_constraintTop_toBottomOf="@+id/tvNomePerfil"
+                tools:layout_editor_absoluteX="30dp" />
+
+            <GridLayout
+                android:id="@+id/gridLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/borda_top_bottom"
+                app:layout_constraintTop_toBottomOf="@+id/tvBio">
+
+                <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:fontFamily="@font/roboto_regular"
-                    android:text="@string/_589"
-                    android:textSize="21sp"
-                    android:textStyle="bold" />
+                    android:layout_height="match_parent"
+                    android:layout_columnWeight="1.5"
+                    android:background="@drawable/borda_right"
+                    android:orientation="vertical">
 
-                <TextView
+                    <TextView
+                        android:id="@+id/tvAcertosTimeLimit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="@string/_589"
+                        android:textColor="@color/white"
+                        android:textSize="21sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="@string/time_limit"
+                        android:textAllCaps="true"
+                        android:textColor="@color/grey" />
+
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:fontFamily="@font/roboto_regular"
-                    android:text="@string/perguntas"
-                    android:textAllCaps="true"
-                    android:textColor="@color/grey" />
+                    android:layout_height="match_parent"
+                    android:layout_columnWeight="1"
+                    android:orientation="vertical">
 
-            </LinearLayout>
+                    <TextView
+                        android:id="@+id/tvAcertosSobrevivencia"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="@string/_1"
+                        android:textColor="@color/white"
+                        android:textSize="21sp"
+                        android:textStyle="bold" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_columnWeight="1"
-                android:background="@drawable/borda_right"
-                android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="@string/sobreviv_ncia"
+                        android:textAllCaps="true"
+                        android:textColor="@color/grey" />
 
-                <TextView
-                    android:id="@+id/tvQtdeVitorias"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:fontFamily="@font/roboto_regular"
-                    android:text="@string/_1"
-                    android:textSize="21sp"
-                    android:textStyle="bold" />
+                </LinearLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:fontFamily="@font/roboto_regular"
-                    android:text="@string/vitoria"
-                    android:textAllCaps="true"
-                    android:textColor="@color/grey" />
+            </GridLayout>
 
-            </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvGenerosTerceiro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal"
+                android:scrollbars="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@+id/gridLayout"
+                tools:listitem="@layout/card_genero" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_columnWeight="1"
-                android:orientation="vertical">
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <TextView
-                    android:id="@+id/tvQtdeSeguidores"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:fontFamily="@font/roboto_regular"
-                    android:text="@string/_201"
-                    android:textSize="21sp"
-                    android:textStyle="bold" />
+    </RelativeLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:fontFamily="@font/roboto_regular"
-                    android:text="@string/seguidores"
-                    android:textAllCaps="true"
-                    android:textColor="@color/grey" />
-
-            </LinearLayout>
-
-        </GridLayout>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvGenerosTerceiro"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="15dp"
-            android:orientation="horizontal"
-            android:scrollbars="horizontal"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintTop_toBottomOf="@+id/gridLayout"
-            tools:listitem="@layout/card_genero" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-</RelativeLayout>
+         

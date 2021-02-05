@@ -1,3 +1,5 @@
+com/example/projetointegrador/databinding/FragmentRankingBinding.java
+ com.example.projetointegrador.databinding.FragmentRankingBinding
 com/example/projetointegrador/databinding/FragmentPerfilPessoalBindingImpl.java
  com.example.projetointegrador.databinding.FragmentPerfilPessoalBindingImpl
 androidx/databinding/DataBinderMapperImpl.java
@@ -19,6 +21,8 @@ com/example/projetointegrador/database/AppDataBase_Impl.java
  com.example.projetointegrador.database.AppDataBase_Impl$1
 com/example/projetointegrador/DataBindingTriggerClass.java
  com.example.projetointegrador.DataBindingTriggerClass
+com/example/projetointegrador/databinding/FragmentRankingBindingImpl.java
+ com.example.projetointegrador.databinding.FragmentRankingBindingImpl
 com/example/projetointegrador/dao/TemplateDAO_Impl.java
  com.example.projetointegrador.dao.TemplateDAO_Impl
  com.example.projetointegrador.dao.TemplateDAO_Impl$1
@@ -43,12 +47,16 @@ com/example/projetointegrador/databinding/ActivityCadastroBindingImpl.java
  com.example.projetointegrador.databinding.ActivityCadastroBindingImpl
 com/example/projetointegrador/BuildConfig.java
  com.example.projetointegrador.BuildConfig
+com/example/projetointegrador/databinding/FragmentPerfilTerceiroBinding.java
+ com.example.projetointegrador.databinding.FragmentPerfilTerceiroBinding
 com/example/projetointegrador/databinding/FragmentResultadoBinding.java
  com.example.projetointegrador.databinding.FragmentResultadoBinding
 com/example/projetointegrador/databinding/FragmentSobrevivenciaBinding.java
  com.example.projetointegrador.databinding.FragmentSobrevivenciaBinding
 com/example/projetointegrador/BR.java
  com.example.projetointegrador.BR
+com/example/projetointegrador/databinding/FragmentPerfilTerceiroBindingImpl.java
+ com.example.projetointegrador.databinding.FragmentPerfilTerceiroBindingImpl
 com/example/projetointegrador/databinding/ProgressbarLayoutBinding.java
  com.example.projetointegrador.databinding.ProgressbarLayoutBinding
 com/example/projetointegrador/databinding/FragmentConfiguracoesBindingImpl.java
