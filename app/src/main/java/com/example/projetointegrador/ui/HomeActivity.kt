@@ -28,11 +28,9 @@ class HomeActivity : AppCompatActivity() {
 
         viewModel.initializeOfflineTemplates()
         viewModel.getDadosJogadorLogado()
-
         viewModel.getConfigurationForUser(viewModel.firebaseAuth.currentUser!!.email.toString())
 
         navController = findNavController(R.id.navHostFragmentHome)
-
     }
 
     override fun onBackPressed() {

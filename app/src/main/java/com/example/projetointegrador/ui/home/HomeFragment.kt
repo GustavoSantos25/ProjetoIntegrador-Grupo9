@@ -10,6 +10,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.example.projetointegrador.MainViewModelFactory
@@ -17,6 +19,7 @@ import com.example.projetointegrador.R
 import com.example.projetointegrador.domain.Crew
 import com.example.projetointegrador.domain.Filme
 import com.example.projetointegrador.domain.ModosDeJogo
+import com.example.projetointegrador.services.EventObserver
 import com.example.projetointegrador.services.dbRepository
 import com.example.projetointegrador.services.repository
 import com.example.projetointegrador.ui.MainViewModel
@@ -28,6 +31,7 @@ import java.util.*
 
 class HomeFragment : Fragment() {
 
+    private lateinit var navController: NavController
     lateinit var filmeCard: Filme
     lateinit var crewCard: Crew
 
@@ -43,10 +47,12 @@ class HomeFragment : Fragment() {
         val view: View = inflater.inflate(R.layout.fragment_home, container, false)
 
         view.btn_ranking.setOnClickListener {
-            findNavController().navigate(R.id.action_homeVPFragment_to_rankingFragment)
+            viewModel.goToRanking()
         }
 
         viewModel.jogadorLogado.observe(viewLifecycleOwner, {
+            val date = Calendar.getInstance().time
+            Log.i("HOME", date.toString())
             viewModel.getFilmeSugestion()
         })
 
@@ -65,7 +71,7 @@ class HomeFragment : Fragment() {
         })
 
         view.ivCardHome.setOnClickListener {
-            findNavController().navigate(R.id.action_homeVPFragment_to_sinopseFragment)
+            viewModel.goToSinopse()
         }
 
         view.ivAppName.setImageResource(R.drawable.icon_cinefilos)
@@ -75,7 +81,7 @@ class HomeFragment : Fragment() {
         }
 
         view.btn_help.setOnClickListener {
-            findNavController().navigate(R.id.action_homeVPFragment_to_ajudaFragment)
+            viewModel.goToAjuda()
         }
 
         viewModel.getDadosJogadorLogado()
@@ -98,15 +104,25 @@ class HomeFragment : Fragment() {
         dialogView.llTimeLimit.setOnClickListener {
             viewModel.acertos.value = 0
             viewModel.modoDeJogo = ModosDeJogo.TIME_LIMIT
-            findNavController().navigate(R.id.action_homeVPFragment_to_perguntaFragment)
+            viewModel.goToPergunta()
             alertDialog.cancel()
         }
 
         dialogView.llSurvival.setOnClickListener {
             viewModel.acertos.value = 0
             viewModel.modoDeJogo = ModosDeJogo.SOBREVIVENCIA
-            findNavController().navigate(R.id.action_homeVPFragment_to_sobrevivenciaFragment)
+            viewModel.goToSobrevivencia()
             alertDialog.cancel()
         }
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        navController = Navigation.findNavController(view)
+
+        viewModel.navigateScreen.observe(viewLifecycleOwner, EventObserver {
+            navController.navigate(it)
+        })
     }
 }

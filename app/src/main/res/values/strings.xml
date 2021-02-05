@@ -189,5 +189,8 @@
     <string name="esqueciSenha">Esqueceu sua senha?</string>
     <string name="recoverEmail">Email para recuperação de senha</string>
     <string name="enviarEmail">Enviar email</string>
+    <string name="terceiroSemBio">Este jogador ainda não inseriu uma descrição</string>
+    <string name="jogador_1">Jogador 1</string>
+    <string name="_1_acerto">1 ACERTO</string>
 
 </resources>

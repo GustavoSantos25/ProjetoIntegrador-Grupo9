@@ -8,10 +8,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.projetointegrador.R
 import com.example.projetointegrador.domain.*
-import com.example.projetointegrador.services.DBRepository
-import com.example.projetointegrador.services.Repository
-import com.example.projetointegrador.services.dbRepository
-import com.example.projetointegrador.services.repository
+import com.example.projetointegrador.services.*
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.CollectionReference
@@ -36,6 +33,8 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
     var acertos = MutableLiveData(0)
     var jogadorLogado = MutableLiveData<MutableMap<String, Any>>()
     var countFilmeSugestionPerLogin = 1
+    private val _navigateScreen = MutableLiveData<Event<Int>>()
+    val navigateScreen: MutableLiveData<Event<Int>> = _navigateScreen
 
     //Instancias do firebase
     var firebaseAuth: FirebaseAuth = FirebaseAuth.getInstance()
@@ -85,6 +84,8 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
 
     val listJogadoresSobrevivencia = MutableLiveData<ArrayList<Jogador>>()
     val listJogadoresTimeLimit = MutableLiveData<ArrayList<Jogador>>()
+
+    var jogadorClicado = Jogador()
 
     init {
         collectionReference = dbFirestore.collection("jogadores")
@@ -375,10 +376,13 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
 
                     if (filme.popularity < POPULARIDADE_MINIMA && alternativas == 0) continue
 
+                    var paisDeProducao =
+                        filme.production_countries[0].name.toUpperCase(Locale.ROOT).trim()
+
+                    paisDeProducao = dbRepository.getPaisPortuguesDBService(paisDeProducao)
+
                     if (filme.production_countries.size != 0) {
 
-                        val paisDeProducao =
-                            filme.production_countries[0].name.toUpperCase(Locale.ROOT).trim()
                         //Verificar se o país já está nas alternativas
                         if (paises.contains(paisDeProducao) || paisDeProducao.isEmpty()) {
                             continue
@@ -531,7 +535,7 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
         dbFirestore.collection("jogadores")
             .whereGreaterThanOrEqualTo("recordeSobrevivencia", 1)
             .orderBy("recordeSobrevivencia", Query.Direction.DESCENDING)
-            .limit(10)
+            .limit(15)
             .get()
             .addOnSuccessListener { document ->
                 document?.forEach { jogador ->
@@ -560,7 +564,7 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
         dbFirestore.collection("jogadores")
             .whereGreaterThanOrEqualTo("recordeTimeLimit", 1)
             .orderBy("recordeTimeLimit", Query.Direction.DESCENDING)
-            .limit(10)
+            .limit(15)
             .get()
             .addOnSuccessListener { document ->
                 document?.forEach { jogador ->
@@ -759,7 +763,6 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
         timer.value = newString
     }
 
-
 /*
 fun alterConfiguracoesDB(configuracoes: Configuracoes) {
     viewModelScope.launch {
@@ -783,5 +786,38 @@ suspend fun initializeOfflineTemplates() {
     }
 }
 */
+
+    fun goToHome() {
+        _navigateScreen.value = Event(R.id.homeVPFragment)
+    }
+
+    fun goToPerfilTerceiro() {
+        _navigateScreen.value = Event(R.id.perfilTerceiroFragment)
+    }
+
+    fun goToSinopse() {
+        _navigateScreen.value = Event(R.id.sinopseFragment)
+    }
+
+    fun goToRanking() {
+        _navigateScreen.value = Event(R.id.rankingFragment)
+    }
+
+    fun goToPergunta() {
+        _navigateScreen.value = Event(R.id.perguntaFragment)
+    }
+
+    fun goToSobrevivencia() {
+        _navigateScreen.value = Event(R.id.sobrevivenciaFragment)
+    }
+
+    fun goToResultado() {
+        _navigateScreen.value = Event(R.id.resultadoFragment)
+    }
+
+    fun goToAjuda() {
+        _navigateScreen.value = Event(R.id.ajudaFragment)
+    }
+
 }
 
