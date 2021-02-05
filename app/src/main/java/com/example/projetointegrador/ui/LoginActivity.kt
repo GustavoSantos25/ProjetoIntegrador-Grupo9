@@ -78,6 +78,7 @@ class LoginActivity : AppCompatActivity() {
             exitProcess(0)
         }
 
+
         viewModel.jaTemUsername.observe(this, { jaTemUsername ->
             if (jaTemUsername) {
                 val intent = Intent(this, HomeActivity::class.java)

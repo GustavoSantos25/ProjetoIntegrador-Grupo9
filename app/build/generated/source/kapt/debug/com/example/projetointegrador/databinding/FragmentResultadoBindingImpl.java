@@ -16,11 +16,10 @@ public class FragmentResultadoBindingImpl extends FragmentResultadoBinding  {
         sViewsWithIds = new android.util.SparseIntArray();
         sViewsWithIds.put(R.id.ivTrofeu, 1);
         sViewsWithIds.put(R.id.tvQtdeAcertosResultado, 2);
-        sViewsWithIds.put(R.id.llLogo, 3);
-        sViewsWithIds.put(R.id.imageView4, 4);
-        sViewsWithIds.put(R.id.linearLayout, 5);
-        sViewsWithIds.put(R.id.btnCompartilharVitoria, 6);
-        sViewsWithIds.put(R.id.btnTelaInicialResultado, 7);
+        sViewsWithIds.put(R.id.textView, 3);
+        sViewsWithIds.put(R.id.llLogo, 4);
+        sViewsWithIds.put(R.id.imageView4, 5);
+        sViewsWithIds.put(R.id.btnTelaInicialResultado, 6);
     }
     // views
     @NonNull
@@ -31,16 +30,15 @@ public class FragmentResultadoBindingImpl extends FragmentResultadoBinding  {
     // Inverse Binding Event Handlers
 
     public FragmentResultadoBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 8, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 7, sIncludes, sViewsWithIds));
     }
     private FragmentResultadoBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
             , (androidx.appcompat.widget.AppCompatButton) bindings[6]
-            , (androidx.appcompat.widget.AppCompatButton) bindings[7]
-            , (android.widget.ImageView) bindings[4]
+            , (android.widget.ImageView) bindings[5]
             , (android.widget.ImageView) bindings[1]
-            , (android.widget.LinearLayout) bindings[5]
-            , (android.widget.LinearLayout) bindings[3]
+            , (android.widget.LinearLayout) bindings[4]
+            , (android.widget.TextView) bindings[3]
             , (android.widget.TextView) bindings[2]
             );
         this.mboundView0 = (androidx.constraintlayout.widget.ConstraintLayout) bindings[0];

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Lucas\\AndroidStudioProjects\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-id\\values-id.xml",
+            "outputFile": "C:\\Users\\Desktop\\Desktop\\CODERS MOBILE\\PI\\ProjetoIntegrador-Grupo9\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-id\\values-id.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Lucas\\.gradle\\caches\\transforms-2\\files-2.1\\1f59bdc98e87492eabe90c1144cfc3fb\\jetified-facebook-common-5.15.3\\res\\values-id\\values-id.xml",
+                    "source": "C:\\Users\\Desktop\\.gradle\\caches\\transforms-2\\files-2.1\\6babfe189f13bf35c3a95d0162a700f7\\jetified-facebook-common-5.15.3\\res\\values-id\\values-id.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

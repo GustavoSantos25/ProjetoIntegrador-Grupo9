@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+                                                       
+                                                   
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/darkGreyBackground"
+        tools:context=".ui.perguntas.SobrevivenciaFragment" android:tag="layout/fragment_sobrevivencia_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+
+        <include
+            android:id="@+id/includeToolbarQuizSobrevivencia"
+            layout="@layout/toolbar_quiz"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="390dp"
+            app:layout_constraintTop_toBottomOf="@+id/includeToolbarQuiz"
+            tools:layout_editor_absoluteX="0dp">
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:background="@drawable/corpo_pergunta_arredondar"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <FrameLayout
+                android:id="@+id/frameLayout"
+                android:layout_width="380dp"
+                android:layout_height="250dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:scrollbars="vertical">
+
+                    <TextView
+                        android:id="@+id/tvPerguntaSobrevivencia"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/placeholder_pergunta"
+                        android:textAlignment="center"
+                        android:textColor="@color/yellow"
+                        android:textSize="18sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </ScrollView>
+
+            </FrameLayout>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/civPontosSobrevivencia"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@drawable/circulo"
+                app:civ_border_color="@color/white"
+                android:layout_marginStart="10dp"
+                app:civ_border_width="3dp"
+                app:layout_constraintHorizontal_bias="0.125"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                app:layout_constraintTop_toTopOf="@+id/civPontosSobrevivencia"
+                app:layout_constraintBottom_toBottomOf="@+id/civPontosSobrevivencia"
+                app:layout_constraintEnd_toEndOf="@+id/civPontosSobrevivencia"
+                app:layout_constraintStart_toStartOf="@+id/civPontosSobrevivencia">
+
+                <TextView
+                    android:id="@+id/tvQtdeAcertos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/_0"
+                    android:textAlignment="center"
+                    android:textColor="@color/yellow"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvAcertosString"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/acertos"
+                    android:textAlignment="center"
+                    android:textColor="@color/yellow"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/civPerguntas"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@drawable/circulo"
+                app:civ_border_color="@color/white"
+                app:civ_border_width="3dp"
+                android:layout_marginEnd="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                app:layout_constraintTop_toTopOf="@+id/civPerguntas"
+                app:layout_constraintBottom_toBottomOf="@+id/civPerguntas"
+                app:layout_constraintEnd_toEndOf="@+id/civPerguntas"
+                app:layout_constraintStart_toStartOf="@+id/civPerguntas">
+
+                <TextView
+                    android:id="@+id/tvRecorde"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/_0"
+                    android:textAlignment="center"
+                    android:textColor="@color/yellow"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/tvRecordeString"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/recorde"
+                    android:textAlignment="center"
+                    android:textColor="@color/yellow"
+                    android:textStyle="bold"/>
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnPrimeiraRespostaSobrevivencia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/botao_redondo_amarelo"
+            android:stateListAnimator="@null"
+            android:text="@string/snake_charmer"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSegundaRespostaSobrevivencia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/botao_redondo_amarelo"
+            android:stateListAnimator="@null"
+            android:text="@string/cottonmouth"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnPrimeiraRespostaSobrevivencia" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnTerceiraRespostaSobrevivencia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/botao_redondo_amarelo"
+            android:stateListAnimator="@null"
+            android:text="@string/black_mamba"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnSegundaRespostaSobrevivencia" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnQuartaRespostaSobrevivencia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/botao_redondo_amarelo"
+            android:stateListAnimator="@null"
+            android:text="@string/_007"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            app:layout_constraintTop_toBottomOf="@+id/btnTerceiraRespostaSobrevivencia" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+         

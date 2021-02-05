@@ -2008,7 +2008,6 @@ id browser_actions_menu_item_icon
 id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
-id btnCompartilharVitoria
 id btnJogar
 id btnLogin
 id btnOkAcerto
@@ -2175,7 +2174,6 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
-id imageView
 id imageView3
 id imageView4
 id includeToolbarQuiz
@@ -2207,7 +2205,6 @@ id light
 id line1
 id line3
 id linear
-id linearLayout
 id linearLayout3
 id listMode
 id list_item
@@ -2408,7 +2405,7 @@ id textEnd
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
-id textView2
+id textView
 id textView3
 id textView4
 id textView5
@@ -2433,6 +2430,7 @@ id tl_item_mod2
 id tl_ranking
 id toggle
 id toolbarAjuda
+id toolbarPerfilTerceiro
 id toolbarRank
 id toolbarSinopse
 id toolbar_quiz
@@ -2452,7 +2450,6 @@ id tvAcertosSobrevivencia
 id tvAcertosString
 id tvAcertosTimeLimit
 id tvBio
-id tvBioTerceiro
 id tvCadastre_se
 id tvDirSinopse
 id tvEditarBio
@@ -2469,9 +2466,6 @@ id tvPergunta
 id tvPerguntaSobrevivencia
 id tvQtdeAcertos
 id tvQtdeAcertosResultado
-id tvQtdePerguntas
-id tvQtdeSeguidores
-id tvQtdeVitorias
 id tvRecorde
 id tvRecordeString
 id tvSinopse
@@ -2709,6 +2703,7 @@ string TimeOut
 string _0
 string _007
 string _1
+string _1_acerto
 string _201
 string _589
 string _6
@@ -2806,6 +2801,7 @@ string cottonmouth
 string crime
 string dados_pessoais
 string data_lançamentoKB
+string default_notification_channel_id
 string default_web_client_id
 string desafiar
 string diretor_quentin_tarantino
@@ -2828,6 +2824,8 @@ string facebook
 string facebook_app_id
 string fantasia
 string fb_login_protocol_scheme
+string fcm_fallback_notification_channel_label
+string fcm_message
 string gcm_defaultSenderId
 string generos_KB
 string generos_favoritos
@@ -2844,6 +2842,7 @@ string insira_usuario
 string instagram
 string item_view_role_description
 string jogador
+string jogador_1
 string jogar
 string john_doe
 string kill_bill_volume_1_2003
@@ -2932,6 +2931,7 @@ string sons
 string status_bar_notification_info_overflow
 string sugest_o_do_dia
 string tela_inicial
+string terceiroSemBio
 string terror
 string time_limit
 string user_hint

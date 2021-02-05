@@ -9,6 +9,7 @@ import androidx.navigation.findNavController
 import com.example.projetointegrador.MainViewModelFactory
 import com.example.projetointegrador.R
 import com.example.projetointegrador.services.dbRepository
+import com.example.projetointegrador.services.notifications
 import com.example.projetointegrador.services.repository
 
 

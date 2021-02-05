@@ -20,7 +20,7 @@ import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.collections.HashMap
 
-class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewModel() {
+class MainViewModel(repository: Repository, dbRepository: DBRepository) : ViewModel() {
     val listGeneros = MutableLiveData<ArrayList<Genero>>()
     val pagesRanking = MutableLiveData<ArrayList<ArrayList<Jogador>>>()
     val listGenres = MutableLiveData<Genres>()

@@ -15,15 +15,19 @@ import com.example.projetointegrador.MainViewModelFactory
 import com.example.projetointegrador.R
 import com.example.projetointegrador.databinding.FragmentConfiguracoesBinding
 import com.example.projetointegrador.services.dbRepository
+import com.example.projetointegrador.services.notifications
 import com.example.projetointegrador.services.repository
 import com.example.projetointegrador.ui.LoginActivity
 import com.example.projetointegrador.ui.MainViewModel
 import com.facebook.login.LoginManager
 import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.analytics.ktx.analytics
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import com.google.firebase.messaging.FirebaseMessaging
 
 class ConfiguracoesFragment : Fragment() {
 
@@ -56,6 +60,7 @@ class ConfiguracoesFragment : Fragment() {
             val config = it
 
             binding.scNotificacao.isChecked = config.notificacoes
+            notifications = config.notificacoes
             binding.scVibrar.isChecked = config.vibrar
         })
 
@@ -65,6 +70,7 @@ class ConfiguracoesFragment : Fragment() {
 
         binding.scNotificacao.setOnClickListener {
             viewModel.updateConfiguracoes(binding.scNotificacao.isChecked, "notificação")
+
         }
 
         viewModel.jogadorLogado.observe(viewLifecycleOwner, { jogadorLogado ->
@@ -76,6 +82,8 @@ class ConfiguracoesFragment : Fragment() {
             FirebaseAuth.getInstance().signOut()
             startActivity(Intent(activity, LoginActivity::class.java))
         }
+
+        notifications = binding.scNotificacao.isChecked
 
         return binding.root
     }
