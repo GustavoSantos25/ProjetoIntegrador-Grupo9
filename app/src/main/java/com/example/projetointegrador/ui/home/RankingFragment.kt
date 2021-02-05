@@ -5,38 +5,47 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.activity.addCallback
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager.widget.ViewPager
 import com.example.projetointegrador.MainViewModelFactory
 import com.example.projetointegrador.R
 import com.example.projetointegrador.adapters.JogadorRankingAdapter
 import com.example.projetointegrador.adapters.RankingAdapter
+import com.example.projetointegrador.databinding.FragmentRankingBinding
 import com.example.projetointegrador.domain.Jogador
+import com.example.projetointegrador.services.EventObserver
 import com.example.projetointegrador.services.dbRepository
 import com.example.projetointegrador.services.repository
 import com.example.projetointegrador.ui.MainViewModel
 import kotlinx.android.synthetic.main.fragment_pergunta.view.*
+import kotlinx.android.synthetic.main.fragment_ranking.*
 import kotlinx.android.synthetic.main.fragment_ranking.view.*
 
 
-class RankingFragment : Fragment() {
+class RankingFragment : Fragment(), JogadorRankingAdapter.OnClickJogadorListener {
 
+    private lateinit var binding: FragmentRankingBinding
     private val listRankings = ArrayList<ArrayList<Jogador>>()
+    private var progressoVisivel = false
+    private lateinit var progressView: ViewGroup
     lateinit var adapter : RankingAdapter
-    val viewModel by activityViewModels<MainViewModel>{
-        MainViewModelFactory(repository, dbRepository)
-    }
+    private lateinit var viewModel: MainViewModel
+    private lateinit var navController: NavController
+//    val viewModel by activityViewModels<MainViewModel>{
+//        MainViewModelFactory(repository, dbRepository)
+//    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         requireActivity().onBackPressedDispatcher.addCallback(this){
-            findNavController().navigate(R.id.action_rankingFragment_to_homeVPFragment)
+            viewModel.goToHome()
         }
     }
 
@@ -45,23 +54,49 @@ class RankingFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        // Inflate the layout for this fragment
-        val view: View = inflater!!.inflate(R.layout.fragment_ranking, container, false)
-        view.toolbarRank.setNavigationOnClickListener {
-            findNavController().navigate(R.id.action_rankingFragment_to_homeVPFragment)
+        binding = DataBindingUtil.inflate(
+            inflater,
+            R.layout.fragment_ranking,
+            container,
+            false
+        )
+
+        binding.toolbarRank.setNavigationOnClickListener {
+            viewModel.goToHome()
         }
-        adapter = RankingAdapter(view.context, listRankings)
-//        viewModel.popPagesRanking()
-        viewModel.pagesRanking.observe(viewLifecycleOwner, {
-            adapter.addAll(it)
+
+        // Inflate the layout for this fragment
+//        val view: View = inflater!!.inflate(R.layout.fragment_ranking, container, false)
+//        view.toolbarRank.setNavigationOnClickListener {
+//            viewModel.goToHome()
+//        }
+
+        viewModel = ViewModelProvider(requireActivity()).get(MainViewModel::class.java)
+
+        adapter = RankingAdapter(requireContext(), viewModel, listRankings)
+
+        viewModel.getDadosJogadoresSobrevivencia()
+
+        showProgressBar()
+
+        viewModel.listJogadoresSobrevivencia.observe(viewLifecycleOwner, {
+            viewModel.getDadosJogadoresTimeLimit()
         })
 
-        view.toolbarRank.title = "Ranking"
-        view.toolbarRank.setTitleTextColor(resources.getColor(R.color.black))
+        viewModel.listJogadoresTimeLimit.observe(viewLifecycleOwner, {
+            viewModel.popPagesRanking()
+        })
 
+        viewModel.pagesRanking.observe(viewLifecycleOwner, {
+            adapter.addAll(it)
+            hideProgressBar()
+        })
 
-        view.vpRanking.adapter = adapter
-        view.vpRanking.addOnPageChangeListener(object  : ViewPager.OnPageChangeListener{
+        binding.toolbarRank.title = "Ranking"
+        binding.toolbarRank.setTitleTextColor(resources.getColor(R.color.black))
+
+        binding.vpRanking.adapter = adapter
+        binding.vpRanking.addOnPageChangeListener(object  : ViewPager.OnPageChangeListener{
             override fun onPageScrolled(
                 position: Int,
                 positionOffset: Float,
@@ -79,11 +114,42 @@ class RankingFragment : Fragment() {
             }
         })
 
-        view.tl_ranking.setupWithViewPager(view.vpRanking)
-        return view
+        binding.tlRanking.setupWithViewPager(binding.vpRanking)
+        return binding.root
     }
 
+    override fun onClickJogador(position: Int) {
 
+    }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
+        navController = Navigation.findNavController(view)
+        viewModel.navigateScreen.observe(viewLifecycleOwner, EventObserver {
+            navController.navigate(it)
+        })
+    }
+
+    private fun showProgressBar() {
+        if (!progressoVisivel) {
+            progressoVisivel = true
+            progressView = layoutInflater.inflate(R.layout.progressbar_layout, null) as ViewGroup
+            //Centralizar progress bar
+            progressView.layoutParams = ViewGroup.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.MATCH_PARENT
+            )
+            val view = binding.root
+            val viewGroup: ViewGroup = view as ViewGroup
+            viewGroup.addView(progressView)
+        }
+    }
+
+    private fun hideProgressBar() {
+        val view = binding.root
+        val viewGroup: ViewGroup = view as ViewGroup
+        viewGroup.removeView(progressView)
+        progressoVisivel = false
+    }
 }

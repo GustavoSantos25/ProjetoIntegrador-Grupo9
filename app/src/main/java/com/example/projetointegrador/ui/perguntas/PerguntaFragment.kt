@@ -10,10 +10,13 @@ import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.example.projetointegrador.MainViewModelFactory
 import com.example.projetointegrador.R
 import com.example.projetointegrador.databinding.FragmentPerguntaBinding
+import com.example.projetointegrador.services.EventObserver
 import com.example.projetointegrador.services.dbRepository
 import com.example.projetointegrador.services.repository
 import com.example.projetointegrador.ui.MainViewModel
@@ -25,16 +28,17 @@ class PerguntaFragment : Fragment() {
     private lateinit var binding: FragmentPerguntaBinding
     private lateinit var alertDialog: AlertDialog
     private lateinit var progressView: ViewGroup
+    private lateinit var navController: NavController
     private var progressoVisivel = false
 
-    private val model by activityViewModels<MainViewModel> {
+    private val viewModel by activityViewModels<MainViewModel> {
         MainViewModelFactory(repository, dbRepository)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         requireActivity().onBackPressedDispatcher.addCallback(this) {
-            findNavController().navigate(R.id.action_perguntaFragment_to_homeVPFragment)
+            viewModel.goToHome()
         }
     }
 
@@ -51,24 +55,24 @@ class PerguntaFragment : Fragment() {
             false
         )
 
-        model.gerarPerguntaAleatoria()
+        viewModel.gerarPerguntaAleatoria()
 
-        model.carregandoPergunta.observe(viewLifecycleOwner, {
-            if (model.carregandoPergunta.value == true) {
+        viewModel.carregandoPergunta.observe(viewLifecycleOwner, {
+            if (viewModel.carregandoPergunta.value == true) {
                 showProgressBar()
             } else {
                 hideProgressBar()
-                model.startStopTimer()
+                viewModel.startStopTimer()
             }
         })
 
-        model.pergunta.observe(viewLifecycleOwner, {
-            binding.tvPergunta.text = model.pergunta.value?.enunciado
+        viewModel.pergunta.observe(viewLifecycleOwner, {
+            binding.tvPergunta.text = viewModel.pergunta.value?.enunciado
             popAlternativas()
         })
 
         binding.btnPrimeiraResposta.setOnClickListener {
-            if (binding.btnPrimeiraResposta.text == model.pergunta.value?.alternativaCerta) {
+            if (binding.btnPrimeiraResposta.text == viewModel.pergunta.value?.alternativaCerta) {
                 onAcerto()
             } else {
                 onErro()
@@ -76,7 +80,7 @@ class PerguntaFragment : Fragment() {
         }
 
         binding.btnSegundaResposta.setOnClickListener {
-            if (binding.btnSegundaResposta.text == model.pergunta.value?.alternativaCerta) {
+            if (binding.btnSegundaResposta.text == viewModel.pergunta.value?.alternativaCerta) {
                 onAcerto()
             } else {
                 onErro()
@@ -84,7 +88,7 @@ class PerguntaFragment : Fragment() {
         }
 
         binding.btnTerceiraResposta.setOnClickListener {
-            if (binding.btnTerceiraResposta.text == model.pergunta.value?.alternativaCerta) {
+            if (binding.btnTerceiraResposta.text == viewModel.pergunta.value?.alternativaCerta) {
                 onAcerto()
             } else {
                 onErro()
@@ -92,26 +96,26 @@ class PerguntaFragment : Fragment() {
         }
 
         binding.btnQuartaResposta.setOnClickListener {
-            if (binding.btnQuartaResposta.text == model.pergunta.value?.alternativaCerta) {
+            if (binding.btnQuartaResposta.text == viewModel.pergunta.value?.alternativaCerta) {
                 onAcerto()
             } else {
                 onErro()
             }
         }
 
-        model.updateTimer()
-        model.timer.observe(viewLifecycleOwner, {
+        viewModel.updateTimer()
+        viewModel.timer.observe(viewLifecycleOwner, {
             binding.timerQuestion.text = it
-            if(it == "0:00") findNavController().navigate(R.id.action_perguntaFragment_to_resultadoFragment)
+            if(it == "0:00") viewModel.goToResultado()
         })
 
-        binding.tvRecorde.text = model.recordeTimeLimit.value.toString()
+        binding.tvRecorde.text = viewModel.recordeTimeLimit.value.toString()
 
-        model.acertos.observe(viewLifecycleOwner, {
+        viewModel.acertos.observe(viewLifecycleOwner, {
 
             binding.tvQtdeAcertos.text = it.toString()
 
-            if (model.novoRecorde()) {
+            if (viewModel.novoRecorde()) {
                 binding.tvRecorde.text = it.toString()
                 binding.tvRecorde.setTextColor(ContextCompat.getColor(requireContext(), R.color.verdePositivo))
                 binding.tvRecordeString.setTextColor(ContextCompat.getColor(requireContext(), R.color.verdePositivo))
@@ -122,9 +126,9 @@ class PerguntaFragment : Fragment() {
     }
 
     fun onAcerto() {
-        val qtdAcertos = model.onAcerto()
+        val qtdAcertos = viewModel.onAcerto()
         binding.tvQtdeAcertos.text = qtdAcertos.toString()
-        binding.tvAcertosString.text = model.acertoSingularOuPlural()
+        binding.tvAcertosString.text = viewModel.acertoSingularOuPlural()
 
         val inflater: LayoutInflater = this.layoutInflater
         val dialogView: View = inflater.inflate(R.layout.custom_dialog_acerto, null)
@@ -136,7 +140,7 @@ class PerguntaFragment : Fragment() {
         alertDialog.show()
         dialogView.btnOkAcerto.setOnClickListener {
             alertDialog.cancel()
-            model.startStopTimer()
+            viewModel.startStopTimer()
             onFecharDialogAcerto()
         }
     }
@@ -153,18 +157,18 @@ class PerguntaFragment : Fragment() {
         alertDialog.show()
         dialogView.btnOkErro.setOnClickListener {
             alertDialog.cancel()
-            model.startStopTimer()
+            viewModel.startStopTimer()
             onFecharDialogAcerto()
         }
     }
 
     //Gerar próxima pergunta
     private fun onFecharDialogAcerto() {
-        model.gerarPerguntaAleatoria()
+        viewModel.gerarPerguntaAleatoria()
     }
 
     fun popAlternativas() {
-        model.popAlternativas(
+        viewModel.popAlternativas(
             arrayOf(
                 binding.btnPrimeiraResposta,
                 binding.btnSegundaResposta,
@@ -194,5 +198,15 @@ class PerguntaFragment : Fragment() {
         val viewGroup: ViewGroup = view as ViewGroup
         viewGroup.removeView(progressView)
         progressoVisivel = false
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        navController = Navigation.findNavController(view)
+
+        viewModel.navigateScreen.observe(viewLifecycleOwner, EventObserver {
+            navController.navigate(it)
+        })
     }
 }
