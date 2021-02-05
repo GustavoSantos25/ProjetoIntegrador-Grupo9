@@ -22,6 +22,7 @@ import com.example.projetointegrador.services.dbRepository
 import com.example.projetointegrador.services.repository
 import com.example.projetointegrador.ui.MainViewModel
 import kotlinx.android.synthetic.main.fragment_pergunta.view.*
+import kotlinx.android.synthetic.main.fragment_ranking.*
 import kotlinx.android.synthetic.main.fragment_ranking.view.*
 
 
@@ -50,15 +51,25 @@ class RankingFragment : Fragment() {
         view.toolbarRank.setNavigationOnClickListener {
             findNavController().navigate(R.id.action_rankingFragment_to_homeVPFragment)
         }
+
         adapter = RankingAdapter(view.context, listRankings)
-//        viewModel.popPagesRanking()
+
+        viewModel.getDadosJogadoresSobrevivencia()
+
+        viewModel.listJogadoresSobrevivencia.observe(viewLifecycleOwner, {
+            viewModel.getDadosJogadoresTimeLimit()
+        })
+
+        viewModel.listJogadoresTimeLimit.observe(viewLifecycleOwner, {
+            viewModel.popPagesRanking()
+        })
+
         viewModel.pagesRanking.observe(viewLifecycleOwner, {
             adapter.addAll(it)
         })
 
         view.toolbarRank.title = "Ranking"
         view.toolbarRank.setTitleTextColor(resources.getColor(R.color.black))
-
 
         view.vpRanking.adapter = adapter
         view.vpRanking.addOnPageChangeListener(object  : ViewPager.OnPageChangeListener{
@@ -82,8 +93,4 @@ class RankingFragment : Fragment() {
         view.tl_ranking.setupWithViewPager(view.vpRanking)
         return view
     }
-
-
-
-
 }

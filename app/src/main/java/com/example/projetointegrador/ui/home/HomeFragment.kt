@@ -10,8 +10,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.example.projetointegrador.MainViewModelFactory
@@ -25,19 +23,16 @@ import com.example.projetointegrador.ui.MainViewModel
 import kotlinx.android.synthetic.main.fragment_home.view.*
 import kotlinx.android.synthetic.main.fragment_modos.view.*
 import kotlinx.android.synthetic.main.icon_plus_appname.view.*
+import java.lang.reflect.Field
 import java.util.*
 
 class HomeFragment : Fragment() {
 
-    lateinit var filmeCard : Filme
-    lateinit var crewCard : Crew
+    lateinit var filmeCard: Filme
+    lateinit var crewCard: Crew
 
-    private val viewModel by activityViewModels<MainViewModel>{
+    private val viewModel by activityViewModels<MainViewModel> {
         MainViewModelFactory(repository, dbRepository)
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
     }
 
     override fun onCreateView(
@@ -58,13 +53,14 @@ class HomeFragment : Fragment() {
         viewModel.filmeSugestion.observe(viewLifecycleOwner, { it ->
             filmeCard = it
             Glide.with(view.context).asBitmap()
-                .load("https://image.tmdb.org/t/p/w500/"+ filmeCard.backdrop_path)
+                .load("https://image.tmdb.org/t/p/w500/" + filmeCard.backdrop_path)
                 .placeholder(ColorDrawable(Color.YELLOW))
                 .into(view.ivCardHome)
             view.tvTitleFilmeSus.text = filmeCard.title
             viewModel.crewSugestion.observe(viewLifecycleOwner, {
                 crewCard = it
-                view.tvNomeDir.text = "Diretor: ${crewCard.crew.find { it.job == "Director" }?.name}"
+                view.tvNomeDir.text =
+                    "Diretor: ${crewCard.crew.find { it.job == "Director" }?.name}"
             })
         })
 

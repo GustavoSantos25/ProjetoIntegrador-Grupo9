@@ -16,6 +16,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.Query
 import com.google.firebase.storage.FirebaseStorage
 import kotlinx.coroutines.launch
 import java.util.*
@@ -81,6 +82,9 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
 
     var recordeSobrevivencia = MutableLiveData<Int>()
     var recordeTimeLimit = MutableLiveData<Int>()
+
+    val listJogadoresSobrevivencia = MutableLiveData<ArrayList<Jogador>>()
+    val listJogadoresTimeLimit = MutableLiveData<ArrayList<Jogador>>()
 
     init {
         collectionReference = dbFirestore.collection("jogadores")
@@ -252,12 +256,6 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
             acertos.value!! > recordeTimeLimit.value!!
         }
     }
-
-//    fun popPagesRanking() {
-//        viewModelScope.launch {
-//            pagesRanking.value = arrayListOf(getAllJogadoresRank1(), getAllJogadoresRank2())
-//        }
-//    }
 
     fun updateLastMovieId() {
         viewModelScope.launch {
@@ -519,31 +517,70 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
         Genero(4, "Terror", R.drawable.terror)
     )
 
-//    private fun getAllJogadoresRank1() = arrayListOf(
-//        Jogador("Jogador 1", "10 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
-//        Jogador("Jogador 2", "9 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
-//        Jogador("Jogador 3", "8 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
-//        Jogador("Jogador 4", "7 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
-//        Jogador("Jogador 5", "6 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
-//        Jogador("Jogador 6", "5 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
-//        Jogador("Jogador 7", "4 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
-//        Jogador("Jogador 8", "3 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
-//        Jogador("Jogador 9", "2 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
-//        Jogador("Jogador 10", "1 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
-//    )
+    fun popPagesRanking() {
+        viewModelScope.launch {
+            pagesRanking.value =
+                arrayListOf(listJogadoresSobrevivencia.value!!, listJogadoresTimeLimit.value!!)
+        }
+    }
 
-//    private fun getAllJogadoresRank2() = arrayListOf(
-//        Jogador("Jogador 1", "10 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
-//        Jogador("Jogador 2", "9 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
-//        Jogador("Jogador 3", "8 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
-//        Jogador("Jogador 4", "7 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
-//        Jogador("Jogador 5", "6 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
-//        Jogador("Jogador 6", "5 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
-//        Jogador("Jogador 7", "4 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
-//        Jogador("Jogador 8", "3 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
-//        Jogador("Jogador 9", "2 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
-//        Jogador("Jogador 10", "1 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
-//    )
+    fun getDadosJogadoresSobrevivencia() {
+
+        val listJogadores = ArrayList<Jogador>()
+
+        dbFirestore.collection("jogadores")
+            .whereGreaterThanOrEqualTo("recordeSobrevivencia", 1)
+            .orderBy("recordeSobrevivencia", Query.Direction.DESCENDING)
+            .limit(10)
+            .get()
+            .addOnSuccessListener { document ->
+                document?.forEach { jogador ->
+                    listJogadores.add(
+                        Jogador(
+                            jogador["uid"].toString(),
+                            jogador["userName"].toString(),
+                            jogador["bio"].toString(),
+                            jogador["recordeTimeLimit"].toString().toInt(),
+                            jogador["recordeSobrevivencia"].toString().toInt(),
+                            jogador["generosFavoritos"] as ArrayList<Int>,
+                            jogador["urlAvatar"].toString(),
+                            jogador["urlCapa"].toString(),
+                        )
+                    )
+                }
+
+                listJogadoresSobrevivencia.value = listJogadores
+            }
+    }
+
+    fun getDadosJogadoresTimeLimit() {
+
+        val listJogadores = ArrayList<Jogador>()
+
+        dbFirestore.collection("jogadores")
+            .whereGreaterThanOrEqualTo("recordeTimeLimit", 1)
+            .orderBy("recordeTimeLimit", Query.Direction.DESCENDING)
+            .limit(10)
+            .get()
+            .addOnSuccessListener { document ->
+                document?.forEach { jogador ->
+                    listJogadores.add(
+                        Jogador(
+                            jogador["uid"].toString(),
+                            jogador["userName"].toString(),
+                            jogador["bio"].toString(),
+                            jogador["recordeTimeLimit"].toString().toInt(),
+                            jogador["recordeSobrevivencia"].toString().toInt(),
+                            jogador["generosFavoritos"] as ArrayList<Int>,
+                            jogador["urlAvatar"].toString(),
+                            jogador["urlCapa"].toString(),
+                        )
+                    )
+                }
+
+                listJogadoresTimeLimit.value = listJogadores
+            }
+    }
 
     private fun popTemplates() = arrayListOf(
         "Em que ano o filme \"REPLACE\" foi lançado?",
