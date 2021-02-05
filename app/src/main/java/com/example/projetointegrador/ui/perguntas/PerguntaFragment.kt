@@ -22,6 +22,7 @@ import com.example.projetointegrador.services.repository
 import com.example.projetointegrador.ui.MainViewModel
 import kotlinx.android.synthetic.main.custom_dialog_acerto.view.*
 import kotlinx.android.synthetic.main.custom_dialog_erro.view.*
+import kotlinx.android.synthetic.main.custom_dialogue_sair_quiz.view.*
 
 class PerguntaFragment : Fragment() {
 
@@ -38,7 +39,8 @@ class PerguntaFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         requireActivity().onBackPressedDispatcher.addCallback(this) {
-            viewModel.goToHome()
+            viewModel.startStopTimer()
+            showDialogueSairQuiz()
         }
     }
 
@@ -208,5 +210,25 @@ class PerguntaFragment : Fragment() {
         viewModel.navigateScreen.observe(viewLifecycleOwner, EventObserver {
             navController.navigate(it)
         })
+    }
+
+    fun showDialogueSairQuiz(){
+        val inflater: LayoutInflater = this.layoutInflater
+        val dialogView: View = inflater.inflate(R.layout.custom_dialogue_sair_quiz, null)
+
+        val dialogBuilder: AlertDialog.Builder = AlertDialog.Builder(context)
+        dialogBuilder.setView(dialogView)
+
+        alertDialog = dialogBuilder.create();
+        alertDialog.show()
+        dialogView.btn_sairQuiz.setOnClickListener {
+            alertDialog.cancel()
+            viewModel.cancelTimer()
+            viewModel.goToHome()
+        }
+        dialogView.btn_continuarQuiz.setOnClickListener {
+            alertDialog.cancel()
+            viewModel.startStopTimer()
+        }
     }
 }

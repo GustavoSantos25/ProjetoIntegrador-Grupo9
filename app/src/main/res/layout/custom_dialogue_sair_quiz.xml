@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/blackFundo"
+    android:padding="15dp"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/avisoSaidaQuiz"
+        android:textSize="18sp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="5dp"
+        android:gravity="center">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_sairQuiz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/botao_redondo_amarelo"
+            android:text="@string/sim"
+            android:textColor="@color/black"
+            android:layout_marginEnd="20dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_continuarQuiz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/botao_redondo_amarelo"
+            android:text="@string/nao"
+            android:textColor="@color/black"
+            android:layout_marginEnd="20dp"/>
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
