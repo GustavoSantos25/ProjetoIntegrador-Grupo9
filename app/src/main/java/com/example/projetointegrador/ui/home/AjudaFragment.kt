@@ -6,13 +6,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.addCallback
+import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.example.projetointegrador.R
+import com.example.projetointegrador.services.EventObserver
+import com.example.projetointegrador.ui.MainViewModel
 import kotlinx.android.synthetic.main.fragment_ajuda.view.*
 
 
 class AjudaFragment : Fragment() {
 
+    private lateinit var navController: NavController
+    private lateinit var viewModel: MainViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,10 +37,21 @@ class AjudaFragment : Fragment() {
         view.toolbarAjuda.title = "Ajuda"
         view.toolbarAjuda.setTitleTextColor(resources.getColor(R.color.black))
         view.toolbarAjuda.setNavigationOnClickListener {
-            findNavController().navigate(R.id.action_ajudaFragment_to_homeVPFragment)
+            viewModel.goToHome()
         }
+
+        viewModel = ViewModelProvider(requireActivity()).get(MainViewModel::class.java)
+
         return view
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
+        navController = Navigation.findNavController(view)
+
+        viewModel.navigateScreen.observe(viewLifecycleOwner, EventObserver {
+            navController.navigate(it)
+        })
+    }
 }

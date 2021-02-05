@@ -9,20 +9,21 @@ import androidx.activity.addCallback
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.example.projetointegrador.MainViewModelFactory
 import com.example.projetointegrador.R
 import com.example.projetointegrador.domain.Filme
-import com.example.projetointegrador.services.DBRepository
-import com.example.projetointegrador.services.Repository
-import com.example.projetointegrador.services.dbRepository
-import com.example.projetointegrador.services.repository
+import com.example.projetointegrador.services.*
 import com.example.projetointegrador.ui.MainViewModel
 import kotlinx.android.synthetic.main.fragment_home.view.*
 import kotlinx.android.synthetic.main.fragment_sinopse.view.*
 
 class SinopseFragment : Fragment() {
+
+    private lateinit var navController: NavController
 
     private val viewModel by activityViewModels<MainViewModel>{
         MainViewModelFactory(repository, dbRepository)
@@ -70,5 +71,13 @@ class SinopseFragment : Fragment() {
         return view
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
+        navController = Navigation.findNavController(view)
+
+        viewModel.navigateScreen.observe(viewLifecycleOwner, EventObserver {
+            navController.navigate(it)
+        })
+    }
 }

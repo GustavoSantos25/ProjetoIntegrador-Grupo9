@@ -8,14 +8,12 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.projetointegrador.R
 import com.example.projetointegrador.domain.*
-import com.example.projetointegrador.services.DBRepository
-import com.example.projetointegrador.services.Repository
-import com.example.projetointegrador.services.dbRepository
-import com.example.projetointegrador.services.repository
+import com.example.projetointegrador.services.*
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.Query
 import com.google.firebase.storage.FirebaseStorage
 import kotlinx.coroutines.launch
 import java.util.*
@@ -35,6 +33,8 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
     var acertos = MutableLiveData(0)
     var jogadorLogado = MutableLiveData<MutableMap<String, Any>>()
     var countFilmeSugestionPerLogin = 1
+    private val _navigateScreen = MutableLiveData<Event<Int>>()
+    val navigateScreen: MutableLiveData<Event<Int>> = _navigateScreen
 
     //Instancias do firebase
     var firebaseAuth: FirebaseAuth = FirebaseAuth.getInstance()
@@ -81,6 +81,11 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
 
     var recordeSobrevivencia = MutableLiveData<Int>()
     var recordeTimeLimit = MutableLiveData<Int>()
+
+    val listJogadoresSobrevivencia = MutableLiveData<ArrayList<Jogador>>()
+    val listJogadoresTimeLimit = MutableLiveData<ArrayList<Jogador>>()
+
+    var jogadorClicado = Jogador()
 
     init {
         collectionReference = dbFirestore.collection("jogadores")
@@ -253,12 +258,6 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
         }
     }
 
-//    fun popPagesRanking() {
-//        viewModelScope.launch {
-//            pagesRanking.value = arrayListOf(getAllJogadoresRank1(), getAllJogadoresRank2())
-//        }
-//    }
-
     fun updateLastMovieId() {
         viewModelScope.launch {
             lastMovieId.value = repository.getLastMovieInApi(apiKey, "pt-BR").id
@@ -377,10 +376,13 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
 
                     if (filme.popularity < POPULARIDADE_MINIMA && alternativas == 0) continue
 
+                    var paisDeProducao =
+                        filme.production_countries[0].name.toUpperCase(Locale.ROOT).trim()
+
+                    paisDeProducao = dbRepository.getPaisPortuguesDBService(paisDeProducao)
+
                     if (filme.production_countries.size != 0) {
 
-                        val paisDeProducao =
-                            filme.production_countries[0].name.toUpperCase(Locale.ROOT).trim()
                         //Verificar se o país já está nas alternativas
                         if (paises.contains(paisDeProducao) || paisDeProducao.isEmpty()) {
                             continue
@@ -519,31 +521,70 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
         Genero(4, "Terror", R.drawable.terror)
     )
 
-//    private fun getAllJogadoresRank1() = arrayListOf(
-//        Jogador("Jogador 1", "10 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
-//        Jogador("Jogador 2", "9 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
-//        Jogador("Jogador 3", "8 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
-//        Jogador("Jogador 4", "7 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
-//        Jogador("Jogador 5", "6 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
-//        Jogador("Jogador 6", "5 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
-//        Jogador("Jogador 7", "4 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
-//        Jogador("Jogador 8", "3 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
-//        Jogador("Jogador 9", "2 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
-//        Jogador("Jogador 10", "1 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
-//    )
+    fun popPagesRanking() {
+        viewModelScope.launch {
+            pagesRanking.value =
+                arrayListOf(listJogadoresSobrevivencia.value!!, listJogadoresTimeLimit.value!!)
+        }
+    }
 
-//    private fun getAllJogadoresRank2() = arrayListOf(
-//        Jogador("Jogador 1", "10 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
-//        Jogador("Jogador 2", "9 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
-//        Jogador("Jogador 3", "8 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
-//        Jogador("Jogador 4", "7 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
-//        Jogador("Jogador 5", "6 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
-//        Jogador("Jogador 6", "5 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
-//        Jogador("Jogador 7", "4 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
-//        Jogador("Jogador 8", "3 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
-//        Jogador("Jogador 9", "2 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
-//        Jogador("Jogador 10", "1 ACERTOS", R.drawable.ic_undraw_male_avatar_323b),
-//    )
+    fun getDadosJogadoresSobrevivencia() {
+
+        val listJogadores = ArrayList<Jogador>()
+
+        dbFirestore.collection("jogadores")
+            .whereGreaterThanOrEqualTo("recordeSobrevivencia", 1)
+            .orderBy("recordeSobrevivencia", Query.Direction.DESCENDING)
+            .limit(15)
+            .get()
+            .addOnSuccessListener { document ->
+                document?.forEach { jogador ->
+                    listJogadores.add(
+                        Jogador(
+                            jogador["uid"].toString(),
+                            jogador["userName"].toString(),
+                            jogador["bio"].toString(),
+                            jogador["recordeTimeLimit"].toString().toInt(),
+                            jogador["recordeSobrevivencia"].toString().toInt(),
+                            jogador["generosFavoritos"] as ArrayList<Int>,
+                            jogador["urlAvatar"].toString(),
+                            jogador["urlCapa"].toString(),
+                        )
+                    )
+                }
+
+                listJogadoresSobrevivencia.value = listJogadores
+            }
+    }
+
+    fun getDadosJogadoresTimeLimit() {
+
+        val listJogadores = ArrayList<Jogador>()
+
+        dbFirestore.collection("jogadores")
+            .whereGreaterThanOrEqualTo("recordeTimeLimit", 1)
+            .orderBy("recordeTimeLimit", Query.Direction.DESCENDING)
+            .limit(15)
+            .get()
+            .addOnSuccessListener { document ->
+                document?.forEach { jogador ->
+                    listJogadores.add(
+                        Jogador(
+                            jogador["uid"].toString(),
+                            jogador["userName"].toString(),
+                            jogador["bio"].toString(),
+                            jogador["recordeTimeLimit"].toString().toInt(),
+                            jogador["recordeSobrevivencia"].toString().toInt(),
+                            jogador["generosFavoritos"] as ArrayList<Int>,
+                            jogador["urlAvatar"].toString(),
+                            jogador["urlCapa"].toString(),
+                        )
+                    )
+                }
+
+                listJogadoresTimeLimit.value = listJogadores
+            }
+    }
 
     private fun popTemplates() = arrayListOf(
         "Em que ano o filme \"REPLACE\" foi lançado?",
@@ -722,7 +763,6 @@ class MainViewModel(repositorys: Repository, dbRepository: DBRepository) : ViewM
         timer.value = newString
     }
 
-
 /*
 fun alterConfiguracoesDB(configuracoes: Configuracoes) {
     viewModelScope.launch {
@@ -746,5 +786,38 @@ suspend fun initializeOfflineTemplates() {
     }
 }
 */
+
+    fun goToHome() {
+        _navigateScreen.value = Event(R.id.homeVPFragment)
+    }
+
+    fun goToPerfilTerceiro() {
+        _navigateScreen.value = Event(R.id.perfilTerceiroFragment)
+    }
+
+    fun goToSinopse() {
+        _navigateScreen.value = Event(R.id.sinopseFragment)
+    }
+
+    fun goToRanking() {
+        _navigateScreen.value = Event(R.id.rankingFragment)
+    }
+
+    fun goToPergunta() {
+        _navigateScreen.value = Event(R.id.perguntaFragment)
+    }
+
+    fun goToSobrevivencia() {
+        _navigateScreen.value = Event(R.id.sobrevivenciaFragment)
+    }
+
+    fun goToResultado() {
+        _navigateScreen.value = Event(R.id.resultadoFragment)
+    }
+
+    fun goToAjuda() {
+        _navigateScreen.value = Event(R.id.ajudaFragment)
+    }
+
 }
 

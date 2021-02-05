@@ -8,8 +8,12 @@ import android.view.ViewGroup
 import androidx.activity.addCallback
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import com.example.projetointegrador.MainViewModelFactory
 import com.example.projetointegrador.R
+import com.example.projetointegrador.services.dbRepository
+import com.example.projetointegrador.services.repository
 import com.example.projetointegrador.ui.config.ConfiguracoesFragment
 import com.example.projetointegrador.ui.home.HomeFragment
 import com.example.projetointegrador.ui.perfil.PerfilPessoalFragment
@@ -18,12 +22,15 @@ import kotlinx.android.synthetic.main.fragment_home_v_p.view.*
 
 class HomeVPFragment : Fragment() {
 
+    private val viewModel by activityViewModels<MainViewModel> {
+        MainViewModelFactory(repository, dbRepository)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        requireActivity().onBackPressedDispatcher.addCallback(this){
-            findNavController().navigate(R.id.action_homeVPFragment_to_loginActivity)
-        }
+//        requireActivity().onBackPressedDispatcher.addCallback(this){
+//            findNavController().navigate(R.id.action_homeVPFragment_to_loginActivity)
+//        }
     }
 
     override fun onCreateView(

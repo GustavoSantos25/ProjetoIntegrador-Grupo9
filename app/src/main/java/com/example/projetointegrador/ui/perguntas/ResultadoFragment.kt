@@ -7,10 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.example.projetointegrador.MainViewModelFactory
 import com.example.projetointegrador.R
 import com.example.projetointegrador.databinding.FragmentResultadoBinding
+import com.example.projetointegrador.services.EventObserver
 import com.example.projetointegrador.services.dbRepository
 import com.example.projetointegrador.services.repository
 import com.example.projetointegrador.ui.MainViewModel
@@ -19,8 +22,9 @@ import kotlinx.android.synthetic.main.fragment_resultado.view.*
 class ResultadoFragment : Fragment() {
 
     private lateinit var binding: FragmentResultadoBinding
+    private lateinit var navController: NavController
 
-    private val model by activityViewModels<MainViewModel> {
+    private val viewModel by activityViewModels<MainViewModel> {
         MainViewModelFactory(repository, dbRepository)
     }
 
@@ -37,14 +41,24 @@ class ResultadoFragment : Fragment() {
             false
         )
 
-        binding.tvQtdeAcertosResultado.text = model.acertos.value.toString()
+        binding.tvQtdeAcertosResultado.text = viewModel.acertos.value.toString()
 
         binding.btnTelaInicialResultado.setOnClickListener {
-            findNavController().navigate(R.id.action_resultadoFragment_to_homeVPFragment)
+            viewModel.goToHome()
         }
 
-        model.verificarNovoRecorde()
+        viewModel.verificarNovoRecorde()
 
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        navController = Navigation.findNavController(view)
+
+        viewModel.navigateScreen.observe(viewLifecycleOwner, EventObserver {
+            navController.navigate(it)
+        })
     }
 }
