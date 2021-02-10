@@ -13,6 +13,7 @@ import com.example.projetointegrador.R
 import com.example.projetointegrador.databinding.ActivityCadastroBinding
 import com.example.projetointegrador.services.dbRepository
 import com.example.projetointegrador.services.repository
+import com.facebook.login.LoginManager
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import kotlinx.android.synthetic.main.activity_cadastro.*
@@ -35,13 +36,17 @@ class CadastroActivity : AppCompatActivity() {
         }
 
         viewModel.usernameCriado.observe(this, {
-            if (it) {
+            if(it){
                 val intent = Intent(this, HomeActivity::class.java)
                 startActivity(intent)
-            } else {
-                showMsg("Username indisponível, escolha outro.")
+            }
+            else {
+                showMsg("Username inválido!")
+                viewModel.firebaseAuth.currentUser!!.delete()
             }
         })
+
+
 
 
         bind.btnCadastrar.setOnClickListener {
