@@ -141,7 +141,7 @@
     <string name="modo1">Sobrevivência:</string>
     <string name="explicacao_modo1">Este modo consiste em responder o máximo de perguntas possíveis, sem errar.
         A pontuação final do jogador será a quantidade de perguntas respondidas corretamente.</string>
-    <string name="explicacao_modo2">Este modo consiste em responder o máximo de perguntas possíveis, num intervalo de tempo de 2 minutos.
+    <string name="explicacao_modo2">Este modo consiste em responder o máximo de perguntas possíveis, num intervalo de tempo de 1 minuto.
         A pontuação final do jogador será a quantidade de perguntas respondidas corretamente.</string>
     <string name="label_mod1">Responda as perguntas\nATÉ VOCÊ ERRAR!</string>
     <string name="label_mod2">Responda corretamente o máximo de perguntas possíveis,\nNUM TEMPO LIMITADO!</string>

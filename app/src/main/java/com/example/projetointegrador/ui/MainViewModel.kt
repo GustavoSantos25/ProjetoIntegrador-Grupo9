@@ -1,6 +1,7 @@
 package com.example.projetointegrador.ui
 
 import android.os.CountDownTimer
+import android.util.Log
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatButton
 import androidx.lifecycle.MutableLiveData
@@ -56,7 +57,7 @@ class MainViewModel(repository: Repository, dbRepository: DBRepository) : ViewMo
 
     }
     val timer = MutableLiveData<String>()
-    var timeLeftInMili: Long = 150000
+    var timeLeftInMili: Long = 60000
     var timeRunning: Boolean = false
 
     //Variável para ver se a pergunta está sendo carregada
@@ -66,7 +67,7 @@ class MainViewModel(repository: Repository, dbRepository: DBRepository) : ViewMo
 
     private val apiKey = "2ae684da617a0a9eb2d4bd28815050e8"
     private val IDIOMA = "pt-BR"
-    private val POPULARIDADE_MINIMA = 3.0
+    private val POPULARIDADE_MINIMA = 2.0
 
     //val dbRepository: DBRepository
     val configuracoes = MutableLiveData<Configuracoes>()
@@ -188,6 +189,11 @@ class MainViewModel(repository: Repository, dbRepository: DBRepository) : ViewMo
         collectionReference.document(uid).set(jogador)
     }
 
+    fun deleteJogador(jogadorUser : String){
+
+    }
+
+
     fun updateJogador(jogador: MutableMap<String, Any>) {
         val uid = jogador["uid"].toString()
         collectionReference.document(uid).update(jogador)
@@ -297,7 +303,7 @@ class MainViewModel(repository: Repository, dbRepository: DBRepository) : ViewMo
 
         viewModelScope.launch {
 
-            val indiceEnunciado = (0 until 4).random()
+            val indiceEnunciado = (0 until 3).random()
 //            val indiceEnunciado = 1
             val perguntaGerada = Pergunta()
 
@@ -331,7 +337,10 @@ class MainViewModel(repository: Repository, dbRepository: DBRepository) : ViewMo
                     idFilme = (0..lastMovieId.value!!).random()
                     val filme: Filme = repository.getMovieById(idFilme, apiKey, IDIOMA)
 
+
+                    if(filme.production_countries.find { it.name == "China" } != null || filme.production_countries.find { it.name == "Japan" } != null) continue
                     if (filme.popularity < POPULARIDADE_MINIMA && alternativas == 0) continue
+
 
                     if (filme.release_date.isNotEmpty() && filme.popularity >= POPULARIDADE_MINIMA) {
 
@@ -380,7 +389,10 @@ class MainViewModel(repository: Repository, dbRepository: DBRepository) : ViewMo
                     idFilme = (0..lastMovieId.value!!).random()
                     val filme: Filme = repository.getMovieById(idFilme, apiKey, IDIOMA)
 
+
+                    if(filme.production_countries.find { it.name == "China" } != null || filme.production_countries.find { it.name == "Japan" } != null) continue
                     if (filme.popularity < POPULARIDADE_MINIMA && alternativas == 0) continue
+
 
                     var paisDeProducao =
                         filme.production_countries[0].name.toUpperCase(Locale.ROOT).trim()
@@ -432,7 +444,9 @@ class MainViewModel(repository: Repository, dbRepository: DBRepository) : ViewMo
                     idFilme = (0..lastMovieId.value!!).random()
                     val filme: Filme = repository.getMovieById(idFilme, apiKey, IDIOMA)
 
+                    if(filme.production_countries.find { it.name == "China" } != null || filme.production_countries.find { it.name == "Japan" } != null) continue
                     if (filme.popularity < POPULARIDADE_MINIMA && alternativas == 0) continue
+
 
                     val credits = repository.getMovieCredits(idFilme, apiKey, IDIOMA)
                     var diretor = ""
@@ -486,7 +500,9 @@ class MainViewModel(repository: Repository, dbRepository: DBRepository) : ViewMo
                     idFilme = (0..lastMovieId.value!!).random()
                     val filme: Filme = repository.getMovieById(idFilme, apiKey, IDIOMA)
 
+                    if(filme.production_countries.find { it.name == "China" } != null || filme.production_countries.find { it.name == "Japan" } != null) continue
                     if ((filme.popularity < POPULARIDADE_MINIMA && alternativas == 0) || filme.popularity < POPULARIDADE_MINIMA) continue
+
 
                     val nomeFilme = filme.title.trim().toUpperCase(Locale.ROOT)
                     val sinopse = filme.overview.trim()
@@ -733,7 +749,7 @@ class MainViewModel(repository: Repository, dbRepository: DBRepository) : ViewMo
     }
 
     fun startTimer() {
-        timer.value = "02:30"
+        timer.value = "01:00"
         var newTime: Long = timeLeftInMili
         clock = object : CountDownTimer(newTime, 1000) {
             override fun onTick(p0: Long) {
@@ -743,7 +759,7 @@ class MainViewModel(repository: Repository, dbRepository: DBRepository) : ViewMo
 
             override fun onFinish() {
                 cancel()
-                timeLeftInMili = 150000
+                timeLeftInMili = 60000
                 timeRunning = false
             }
 
